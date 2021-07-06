@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import NotFoundPage from './pages/NotFoundPage';
+import MainPage from './pages/MainPage';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary FallbackComponent={ErrorPage}>
+      <BrowserRouter>
+        <Switch>
+          <Route component={MainPage} exact path='/' />
+          <Route component={LoginPage} path='/login' />
+          <Route component={SignUpPage} path='/signup' />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 }
 
