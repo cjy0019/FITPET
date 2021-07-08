@@ -6,6 +6,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import MainPage from './pages/MainPage';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorPage from './pages/ErrorPage';
+import GlobalStyles from './assets/GlobalStyles';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route component={NotFoundPage} />
         </Switch>
       </BrowserRouter>
+      <GlobalStyles />
     </ErrorBoundary>
   );
 }
