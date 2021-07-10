@@ -1,91 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CloseOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
-import LoginInput from './LoginInput';
-import FindId from './FindId';
-import LoginButton from './LoginButton';
-import LoginSocialBtn from './LoginSocialBtn';
+import LoginBottom from './LoginBottom';
+import LoginHeader from './LoginHeader';
+import Slogan from './Slogan';
 
 const Login = () => {
   return (
     <form>
       <LoginWrapper>
-        <div className='header'>
-          <h1>로그인</h1>
-          <CloseOutlined />
-        </div>
+        <LoginHeader />
+        {/* 로고 */}
         <Logo />
-        <div className='slogan'>
-          <p>반려동물과 함께하는 맞춤 힐링여행!</p>
-          <p>핏펫에 오신걸 환영합니다&#58;&#41;</p>
-        </div>
-        {/* login input 컴포넌트 */}
-        <div
-          style={{
-            margin: '0 auto',
-            width: '19.5vw',
-          }}>
-          <LoginInput kind='email' />
-          <LoginInput kind='password' />
 
-          {/* 아이디 저장 및 찾기 */}
-          <FindId />
+        {/* 슬로건 */}
+        <Slogan />
 
-          <LoginButton />
-          <p style={{ marginTop: '3.6rem' }}>
-            SNS 계정으로 간편하게 로그인하기
-          </p>
-
-          {/* 소셜 로그인 버튼 */}
-          <LoginSocialBtn />
-          <div
-            style={{
-              borderBottom: 'solid 0.5px #979797',
-              marginTop: '3.6rem',
-            }}></div>
-
-          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <p style={{ display: 'inline-block', textAlign: 'center' }}>
-              아직 핏펫 회원이 아니신가요?
-            </p>
-            <Link to='/signup'>회원가입</Link>
-          </div>
-        </div>
+        {/* 팝업에서 아래쪽 부분 */}
+        <LoginBottom />
       </LoginWrapper>
     </form>
   );
 };
 
 // style
-// 최상위 wrapper
+// login wrapper
 const LoginWrapper = styled.div`
-  width: 27.3vw;
-  /* height: 75.1vh; */
+  width: 52.4rem;
   padding: 5rem 3.9rem 4.7rem;
   background-color: aliceblue;
   border-radius: 30px;
+
   a:visited {
-    color: #979797;
-  }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #979797;
-  }
-
-  .slogan {
-    margin-top: 0.6rem;
-  }
-
-  p {
-    font-size: 14px;
-    font-style: normal;
-    letter-spacing: -0.28px;
-    text-align: center;
     color: #979797;
   }
 `;
@@ -96,9 +41,9 @@ const Logo = styled.img.attrs({
   alt: 'FitPet',
 })`
   display: block;
-  width: 7.71vw;
-  height: 15.4vh;
-  margin: 3.5rem auto 0 auto;
+  width: 14.8rem;
+  height: 16.6rem;
+  margin: 3.5rem auto 0;
 `;
 
 export default Login;

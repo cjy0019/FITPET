@@ -11,6 +11,8 @@ const StyledButton = styled.button`
   border-radius: 26px;
   background-color: #979797;
   cursor: pointer;
+  outline: none;
+  border: none;
   color: #ffffff;
 `;
 export default LoginButton;

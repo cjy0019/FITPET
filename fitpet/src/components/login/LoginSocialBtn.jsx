@@ -16,7 +16,7 @@ const SocialButton = styled.ul`
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
-  padding: 0 3rem;
+  padding: 0 2.3rem;
 `;
 
 export default LoginSocialBtn;

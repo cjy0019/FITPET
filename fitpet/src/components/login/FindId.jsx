@@ -6,8 +6,10 @@ const FindId = () => {
   return (
     <AboutId>
       <div>
-        <input type='checkbox' />
-        <span>아이디 저장</span>
+        <input type='checkbox' id='saveId' />
+        <label htmlFor='saveId'>
+          <span>아이디 저장</span>
+        </label>
       </div>
       <Link to='/signup'>아이디/비밀번호 찾기</Link>
     </AboutId>
@@ -22,18 +24,22 @@ const AboutId = styled.div`
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.17;
   letter-spacing: -0.24px;
   text-align: left;
-  background-color: antiquewhite;
-  margin-bottom: 3.6rem;
+  margin: 0.6rem 0 3.6rem;
+  line-height: 1.17;
   color: #979797;
 
   span {
     vertical-align: bottom;
+    cursor: pointer;
   }
   input {
     vertical-align: bottom;
+    cursor: pointer;
+  }
+  a {
+    transform: translateY(0.5rem);
   }
 `;
 

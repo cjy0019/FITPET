@@ -10,14 +10,13 @@ const LoginInput = ({ kind, password }) => {
 
 const StyledInput = styled.input`
   display: block;
-  margin: 0 auto;
+  width: 100%;
   border: solid 0.5px #979797;
   border-left-width: 0;
   border-right-width: 0;
   border-top-width: 0;
   margin-top: 3.6rem;
-  width: 100%;
-  padding-bottom: 0.7rem;
+  padding-bottom: 1.4rem;
 `;
 
 export default LoginInput;
