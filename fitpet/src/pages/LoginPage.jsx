@@ -1,8 +1,9 @@
 // 로그인
 import React from 'react';
+import Login from '../components/login/Login';
 
 const LoginPage = () => {
-  return <div>로그인</div>;
+  return <Login />;
 };
 
 export default LoginPage;
