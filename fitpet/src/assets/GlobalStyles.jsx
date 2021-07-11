@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
     }
     
     html {
+        font-family: Pretendard;
         font-size: 10px;
     }
     a {
@@ -19,6 +20,8 @@ const GlobalStyles = createGlobalStyle`
     a:visited{
         text-decoration: none;
     }
+    
+
 `;
 
 export default GlobalStyles;
