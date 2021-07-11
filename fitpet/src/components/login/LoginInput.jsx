@@ -44,12 +44,12 @@ const LoginInput = () => {
   function changePassword(e) {
     setPassword(e.target.value);
   }
-
+  // id 클릭 ref
   function click() {
     idRef.current.style = 'border-bottom: solid 0.5px red';
     passRef.current.style = 'border-bottom: solid 0.5px #979797;';
   }
-
+  // 비밀번호 클릭 ref
   function passClick() {
     idRef.current.style = 'border-bottom: solid 0.5px #979797';
     passRef.current.style = 'border-bottom: solid 0.5px red;';
