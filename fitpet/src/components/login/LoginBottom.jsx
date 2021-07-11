@@ -10,8 +10,7 @@ const LoginBottom = () => {
   return (
     <BottomContainer>
       {/* login input 컴포넌트 */}
-      <LoginInput kind='email' />
-      <LoginInput kind='password' />
+      <LoginInput />
 
       {/* 아이디 저장 및 찾기 */}
       <FindId />
