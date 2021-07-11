@@ -27,8 +27,8 @@ const Login = () => {
 const LoginWrapper = styled.div`
   width: 52.4rem;
   padding: 5rem 3.9rem 4.7rem;
-  background-color: aliceblue;
   border-radius: 30px;
+  border: 1px solid black;
 
   a:visited {
     color: #979797;
