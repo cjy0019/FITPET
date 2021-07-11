@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 const LoginInput = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const idRef = useRef();
+  const passRef = useRef();
 
   return (
     <>
@@ -15,6 +17,8 @@ const LoginInput = () => {
         type='email'
         value={email}
         onChange={changeId}
+        onClick={click}
+        ref={idRef}
       />
 
       {password && <StyledText>비밀번호</StyledText>}
@@ -25,6 +29,8 @@ const LoginInput = () => {
         type='password'
         value={password}
         onChange={changePassword}
+        onClick={passClick}
+        ref={passRef}
       />
     </>
   );
@@ -37,6 +43,16 @@ const LoginInput = () => {
   // 비밀번호
   function changePassword(e) {
     setPassword(e.target.value);
+  }
+
+  function click() {
+    idRef.current.style = 'border-bottom: solid 0.5px red';
+    passRef.current.style = 'border-bottom: solid 0.5px #979797;';
+  }
+
+  function passClick() {
+    idRef.current.style = 'border-bottom: solid 0.5px #979797';
+    passRef.current.style = 'border-bottom: solid 0.5px red;';
   }
 };
 
