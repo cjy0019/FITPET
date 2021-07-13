@@ -1,11 +1,13 @@
 import React from 'react';
-//import SignUp from '../components/signUp/SignUp';
+import { Route } from 'react-router-dom';
+import SignUp from '../components/signUp/SignUp';
 import SignUpEnd from '../components/signUp/SignUpEnd';
+
 const SignUpPage = () => {
   return (
     <div>
-      {/* <SignUp /> */}
-      <SignUpEnd />
+      <Route path='/signUp' component={SignUp} />
+      <Route path='/signUpEnd' component={SignUpEnd} />
     </div>
   );
 };
