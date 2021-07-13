@@ -13,6 +13,10 @@ const MiddleSizeButton = (props) => {
     pb,
     pr,
     pl,
+    mt,
+    mb,
+    mr,
+    ml,
     color,
     fs,
     fw,
@@ -27,6 +31,10 @@ const MiddleSizeButton = (props) => {
     pb: pb,
     pl: pl,
     pr: pr,
+    mt: mt,
+    mb: mb,
+    ml: ml,
+    mr: mr,
     fs: fs,
     fw: fw,
     border: border,
@@ -67,6 +75,10 @@ const StyledButton = styled.button`
   padding-bottom: ${(props) => props.pb};
   padding-left: ${(props) => props.pl};
   padding-right: ${(props) => props.pr};
+  margin-top: ${(props) => props.mt};
+  margin-right: ${(props) => props.mr};
+  margin-bottom: ${(props) => props.mb};
+  margin-left: ${(props) => props.ml};
   border: ${(props) => props.border};
 `;
 
