@@ -1,33 +1,9 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { CloseOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import SignUpEnd from './SignUpEnd';
 
 const SignUp = () => {
-  const inputBox = useRef();
-  const inputBox1 = useRef();
-  const inputBox2 = useRef();
-
-  function onClick(e) {
-    inputBox.current.focus();
-    inputBox.current.style = 'border-bottom: 0.5px solid red';
-    inputBox1.current.style = 'border-bottom: 0.5px solid #979797';
-    inputBox2.current.style = 'border-bottom: 0.5px solid #979797';
-  }
-  function onClick1(e) {
-    inputBox1.current.focus();
-    inputBox.current.style = 'border-bottom: 0.5px solid #979797';
-    inputBox1.current.style = 'border-bottom: 0.5px solid red';
-    inputBox2.current.style = 'border-bottom: 0.5px solid #979797';
-  }
-  function onClick2(e) {
-    inputBox2.current.focus();
-    inputBox.current.style = 'border-bottom: 0.5px solid #979797';
-    inputBox1.current.style = 'border-bottom: 0.5px solid #979797';
-    inputBox2.current.style = 'border-bottom: 0.5px solid red';
-  }
-
   return (
     <form>
       <SignUpWrapper>
@@ -42,24 +18,9 @@ const SignUp = () => {
         <SignUpContent>
           {/* 회원 정보 입력 칸, 다음으로 버튼 */}
 
-          <Input
-            placeholder='이메일 아이디'
-            type='email'
-            ref={inputBox}
-            onClick={onClick}
-          />
-          <Input
-            placeholder='비밀번호'
-            type='password'
-            ref={inputBox1}
-            onClick={onClick1}
-          />
-          <Input
-            placeholder='비밀번호 확인'
-            type='password'
-            ref={inputBox2}
-            onClick={onClick2}
-          />
+          <Input placeholder='이메일 아이디' type='email' />
+          <Input placeholder='비밀번호' type='password' />
+          <Input placeholder='비밀번호 확인' type='password' />
           <NextButton>다음으로</NextButton>
 
           {/* sns계정으로 가입 */}
@@ -139,6 +100,9 @@ const Input = styled.input`
   outline: none;
   :not(:first-child) {
     margin-top: 36px;
+  }
+  &:focus {
+    border-bottom: 0.5px solid #707070;
   }
 `;
 const NextButton = styled.button`
