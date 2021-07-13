@@ -17,7 +17,7 @@ const LoginInput = () => {
         type='email'
         value={email}
         onChange={changeId}
-        onClick={click}
+        // onClick={click}
         ref={idRef}
       />
 
@@ -29,7 +29,7 @@ const LoginInput = () => {
         type='password'
         value={password}
         onChange={changePassword}
-        onClick={passClick}
+        // onClick={passClick}
         ref={passRef}
       />
     </>
@@ -44,16 +44,17 @@ const LoginInput = () => {
   function changePassword(e) {
     setPassword(e.target.value);
   }
-  // id 클릭 ref
-  function click() {
-    idRef.current.style = 'border-bottom: solid 0.5px red';
-    passRef.current.style = 'border-bottom: solid 0.5px #979797;';
-  }
-  // 비밀번호 클릭 ref
-  function passClick() {
-    idRef.current.style = 'border-bottom: solid 0.5px #979797';
-    passRef.current.style = 'border-bottom: solid 0.5px red;';
-  }
+
+  // 리팩토링 JS => CSS 📌
+  // function click() {
+  //   idRef.current.style = 'border-bottom: solid 0.5px red';
+  //   passRef.current.style = 'border-bottom: solid 0.5px #979797;';
+  // }
+
+  // function passClick() {
+  //   idRef.current.style = 'border-bottom: solid 0.5px #979797';
+  //   passRef.current.style = 'border-bottom: solid 0.5px red;';
+  // }
 };
 
 const StyledInput = styled.input`
@@ -73,6 +74,10 @@ const StyledInput = styled.input`
   text-align: left;
   outline: none;
   margin-top: 0.4rem;
+
+  &:focus {
+    border-bottom: solid 0.5px red;
+  }
 `;
 
 const StyledText = styled.p`
