@@ -1,6 +1,7 @@
 const size = {
-  mobile: '768px',
-  tablet: '1200px',
+  mobile: '360px',
+  tablet: '768px',
+  laptop: '1024px',
 };
 
 // 임시로 세팅. 컬러, 로고 전달되면 바꾸기
@@ -13,6 +14,7 @@ const theme = {
   button_grey: '##979797',
   mobile: `(max-width:${size.mobile})`,
   tablet: `(max-width:${size.tablet})`,
+  laptop: `(max-width:${size.laptop})`,
 };
 
 export default theme;
