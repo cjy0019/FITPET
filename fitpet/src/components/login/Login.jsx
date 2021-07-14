@@ -6,8 +6,8 @@ import Slogan from './Slogan';
 
 const Login = () => {
   return (
-    <form>
-      <LoginWrapper>
+    <StyledForm>
+      <div>
         <LoginHeader />
         {/* 로고 */}
         <Logo />
@@ -17,14 +17,15 @@ const Login = () => {
 
         {/* 팝업에서 아래쪽 부분 */}
         <LoginBottom />
-      </LoginWrapper>
-    </form>
+      </div>
+    </StyledForm>
   );
 };
 
 // style
 // login wrapper
-const LoginWrapper = styled.div`
+const StyledForm = styled.form`
+  display: block;
   width: 52.4rem;
   padding: 5rem 3.9rem 4.7rem;
   border-radius: 30px;
