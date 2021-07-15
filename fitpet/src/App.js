@@ -7,6 +7,7 @@ import MainPage from './pages/MainPage';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorPage from './pages/ErrorPage';
 import GlobalStyles from './assets/GlobalStyles';
+import CommonPage from './pages/CommonPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route component={MainPage} exact path='/' />
           <Route component={LoginPage} path='/login' />
           <Route component={SignUpPage} path='/signup' />
+          <Route component={CommonPage} path='/common' />
           <Route component={NotFoundPage} />
         </Switch>
       </BrowserRouter>
