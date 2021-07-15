@@ -1,6 +1,8 @@
 // Common 테스트 파일입니다.
 import React from 'react';
-import { Font, CoursePage } from '../common';
+import styled from 'styled-components';
+
+import { Font, CoursePage, Tag } from '../common';
 
 const CommonPage = () => {
   return (
@@ -10,9 +12,17 @@ const CommonPage = () => {
       <br />
       <Font>코스페이지 컨텐츠 박스</Font>
       <br />
-      <CoursePage>ddssd</CoursePage>
+      <CoursePage></CoursePage>
+      <TagBlock>
+        <Tag margin='0 4rem 0 0'></Tag>
+        <Tag></Tag>
+      </TagBlock>
     </div>
   );
 };
 
 export default CommonPage;
+
+const TagBlock = styled.div`
+  display: float;
+`;
