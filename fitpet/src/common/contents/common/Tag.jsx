@@ -35,7 +35,7 @@ const TagBox = styled.div`
 `;
 const TagBlock = styled.div`
   display: inline-block;
-  margin: 30.4rem 0 3.6rem 3rem;
+  margin: 30.4rem 3rem 3.6rem 3rem;
   color: #fff;
 `;
 const Text = styled.p`

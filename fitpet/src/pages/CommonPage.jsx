@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Font, CoursePage, Tag } from '../common';
+import { Font, CoursePage, Tag, Only } from '../common';
 
 const CommonPage = () => {
   return (
@@ -17,6 +17,10 @@ const CommonPage = () => {
         <Tag margin='0 4rem 0 0'></Tag>
         <Tag></Tag>
       </TagBlock>
+      <OnlyBlock>
+        <Only></Only>
+        <Only></Only>
+      </OnlyBlock>
     </div>
   );
 };
@@ -24,5 +28,9 @@ const CommonPage = () => {
 export default CommonPage;
 
 const TagBlock = styled.div`
+  display: float;
+`;
+
+const OnlyBlock = styled.div`
   display: float;
 `;

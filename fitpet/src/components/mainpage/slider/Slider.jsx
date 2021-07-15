@@ -1,5 +1,5 @@
 import React from 'react';
-import { Font, Tag } from '../../../common';
+import { Font, Only, Tag } from '../../../common';
 import styled from 'styled-components';
 
 const Slider = () => {
@@ -18,7 +18,11 @@ const Slider = () => {
       {/* 오직 핏펫에서만 슬라이드 부분 */}
       <OnlyFitpetBlock>
         <Font color='#707070'>오직 핏펫에서만</Font>
-        <OnlyFitpetWrapper>슬라이드 상자</OnlyFitpetWrapper>
+        <OnlyFitpetWrapper>
+          <Only margin='0 4rem 0 0'></Only>
+          <Only margin='0 4rem 0 0'></Only>
+          <Only margin='0 4rem 0 0'></Only>
+        </OnlyFitpetWrapper>
       </OnlyFitpetBlock>
     </SliderBlock>
   );
@@ -48,5 +52,5 @@ const OnlyFitpetBlock = styled.div`
 const OnlyFitpetWrapper = styled.div`
   margin-top: 1.6rem;
   height: 40rem;
-  background-color: #5396d1;
+  display: flex;
 `;

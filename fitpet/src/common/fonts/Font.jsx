@@ -23,6 +23,7 @@ const H1 = styled.h1`
   font-family: Pretendard;
   font-weight: bold;
   font-size: 42px;
+  /* letter-spacing: -20px; */
   color: ${(props) => props.color};
   ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
   padding: ${(props) => props.padding};
