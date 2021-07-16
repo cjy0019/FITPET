@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CourseLeft from './CourseLeft';
+import CourseRight from './CourseRight';
 
 const Course = () => {
   return (
@@ -14,6 +15,7 @@ const Course = () => {
         </div>
 
         {/* 오른쪽 지도 파트 */}
+        <CourseRight />
       </LeRiWrapper>
     </CourseSection>
   );
@@ -21,7 +23,7 @@ const Course = () => {
 
 const CourseSection = styled.section`
   background-color: #b0cfcf;
-  padding: 4rem 32rem 4rem 32rem;
+  padding: 4rem 0;
   color: #ffffff;
 
   p {
@@ -37,9 +39,6 @@ const LeRiWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
-// 왼쪽
-
-const LeftContainer = styled.div``;
 
 const StyledH2 = styled.h2`
   font-size: 4rem;
