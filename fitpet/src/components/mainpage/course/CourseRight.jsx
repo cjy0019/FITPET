@@ -1,22 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import GoogleMapReact from 'google-map-react';
 
-const CourseRight = ({ google }) => {
-  const mapStyles = {
-    width: '84rem',
-    height: '50rem',
-    outline: 'none',
-  };
+const CourseRight = ({ center, zoom }) => {
+  const key = 'AIzaSyCBMaPLmEzBLSgbKQqd645gSJI7RBunzSY';
 
   return (
     <StyledDiv>
-      <Map
-        google={google}
-        style={mapStyles}
-        zoom={16}
-        initialCenter={{ lat: 37.542694, lng: 127.076378 }}
-      />
+      <GoogleMapReact
+        bootstrapURLKeys={{ key }}
+        defaultCenter={center}
+        defaultZoom={zoom}></GoogleMapReact>
     </StyledDiv>
   );
 };
@@ -27,6 +21,13 @@ const StyledDiv = styled.div`
   height: 50rem;
   margin-left: 9.9rem;
 `;
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyCBMaPLmEzBLSgbKQqd645gSJI7RBunzSY',
-})(CourseRight);
+
+CourseRight.defaultProps = {
+  center: {
+    lat: 37.542694,
+    lng: 127.076274,
+  },
+  zoom: 16,
+};
+
+export default CourseRight;
