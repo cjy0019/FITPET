@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import GoogleMapReact from 'google-map-react';
+import Marker from '../../../common/map/Marker';
 
 const CourseRight = ({ center, zoom }) => {
   const key = 'AIzaSyCBMaPLmEzBLSgbKQqd645gSJI7RBunzSY';
@@ -10,7 +11,9 @@ const CourseRight = ({ center, zoom }) => {
       <GoogleMapReact
         bootstrapURLKeys={{ key }}
         defaultCenter={center}
-        defaultZoom={zoom}></GoogleMapReact>
+        defaultZoom={zoom}>
+        <Marker lat='37.542936' lng='127.076425' />
+      </GoogleMapReact>
     </StyledDiv>
   );
 };
