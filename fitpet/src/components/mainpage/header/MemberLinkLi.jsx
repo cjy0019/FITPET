@@ -27,6 +27,10 @@ const StyeldLi = styled.li`
       color: #707070;
     }
   }
+
+  p {
+    word-break: keep-all;
+  }
 `;
 
 const StyledImg = styled.img`
