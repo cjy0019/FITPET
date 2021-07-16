@@ -5,6 +5,7 @@ const MiddleSizeButton = (props) => {
   const {
     text,
     children,
+    height,
     bgc,
     _onClick,
     br,
@@ -27,6 +28,7 @@ const MiddleSizeButton = (props) => {
     dp: 'inline-block',
     color: color,
     width: width,
+    height: height,
     pt: pt,
     pb: pb,
     pl: pl,
@@ -64,6 +66,7 @@ MiddleSizeButton.defaultProps = {
 
 const StyledButton = styled.button`
   width: ${(props) => props.width};
+  height: ${(props) => props.height};
   cursor: pointer;
   font-size: ${(props) => props.fs};
   font-weight: ${(props) => props.fw};

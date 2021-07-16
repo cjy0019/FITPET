@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const MainNav = () => {
   return (
-    <nav>
+    <StyledNav>
       <ListWrapper>
         <MenuLi>
           <NavLink to='/'>홈</NavLink>
@@ -22,9 +22,14 @@ const MainNav = () => {
           <NavLink to='community'>커뮤니티</NavLink>
         </MenuLi>
       </ListWrapper>
-    </nav>
+    </StyledNav>
   );
 };
+
+const StyledNav = styled.nav`
+  min-height: 2.6rem;
+`;
+
 const ListWrapper = styled.ul`
   display: flex;
 `;
