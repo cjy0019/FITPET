@@ -27,12 +27,16 @@ const OnlyBox = styled.div`
   background-color: #979797;
   border-radius: 25px;
   cursor: pointer;
+  /* box-sizing: border-box;
+  margin: 0;
+  padding: 0; */
   /* &:hover {
     margin-top: -1rem;
   } */
-  ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
+  ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0')}
 `;
 const OnlyBlock = styled.div`
+  display: inline-block;
   margin: 28.6rem 3.8rem 3.6rem 3.8rem;
   color: #fff;
 `;
