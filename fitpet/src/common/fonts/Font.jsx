@@ -2,27 +2,66 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Font = (props) => {
-  const { bold, color, children, size, _onClick } = props;
+  const {
+    fontSize,
+    fontWeight,
+    color,
+    children,
+    _onClick,
+    margin,
+    padding,
+    borderBottom,
+    textDecoration,
+  } = props;
 
   const styles = {
-    bold: bold,
+    fontSize: fontSize,
+    fontWeight: fontWeight,
     color: color,
-    size: size,
+    margin: margin,
+    padding: padding,
+    borderBottom: borderBottom,
+    textDecoration: textDecoration,
   };
 
   return (
-    <H1 {...styles} onClick={_onClick}>
+    <StyledFont {...styles} onClick={_onClick}>
       {children}
-    </H1>
+    </StyledFont>
   );
 };
 
 export default Font;
 
-const H1 = styled.h1`
+/**
+ * 폰트 사이즈
+ * H1 : 42px / Bold
+ * H2 : 28px / Medium (default)
+ * H3 : 24px / Regular
+ * H4 : 18px / Regular
+ * H5 : 16px / Regular
+ * H6 : 14px / Regular
+ */
+
+Font.defaultProps = {
+  children: null,
+  fontFamily: 'Pretendard',
+  fontSize: '28px',
+  fontWeight: 'Medium',
+  color: '#707070',
+  borderBottom: 'none',
+  textDecoration: 'none',
+  _onClick: () => {},
+};
+
+const StyledFont = styled.p`
+  font-family: Pretendard;
+  font-size: ${(props) => props.fontSize};
+  font-weight: ${(props) => props.fontWeight};
+  /* letter-spacing: -20px; */
   color: ${(props) => props.color};
-  font-size: 40px;
-  font-weight: ${(props) => (props.bold ? '600' : '400')};
   ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
   padding: ${(props) => props.padding};
+  border-bottom: ${(props) => props.borderBottom};
+  text-decoration: ${(props) => props.textDecoration};
 `;

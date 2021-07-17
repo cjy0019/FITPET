@@ -5,32 +5,30 @@ import styled from 'styled-components';
 
 const CoursePage = () => {
   return (
-    <>
-      <CoursePageBox>
-        <TextBlock>
-          <SubText>강원도에서 6박 7일의 일정</SubText>
-          <MainText>도시가 지칠 땐 조용한 숲 속으로</MainText>
-          <Text>
-            최근 편하게 밖을 나다닐 수 없는 상황 속에서 도시가 어쩌 구저쩌구
-            하는 설명글을 이 공간에 적을 것이다. 나도 열심 히 글을 쓰고는 싶은데
-            마감이 나에게서 모든 ...
-          </Text>
-          <TagBlock>
-            <Tag>#강원도</Tag>
-            <Tag>#숲</Tag>
-            <Tag>#일상의 힐링</Tag>
-            <Tag>#소형견</Tag>
-          </TagBlock>
-          <GotoCourse>코스 보러가기</GotoCourse>
-        </TextBlock>
-        <Map>
-          <WishBlock>
-            <WishBtn></WishBtn>
-            <WishNumber>4920</WishNumber>
-          </WishBlock>
-        </Map>
-      </CoursePageBox>
-    </>
+    <CoursePageBox>
+      <TextBlock>
+        <SubText>강원도에서 6박 7일의 일정</SubText>
+        <MainText>도시가 지칠 땐 조용한 숲 속으로</MainText>
+        <Text>
+          최근 편하게 밖을 나다닐 수 없는 상황 속에서 도시가 어쩌 구저쩌구 하는
+          설명글을 이 공간에 적을 것이다. 나도 열심 히 글을 쓰고는 싶은데 마감이
+          나에게서 모든 ...
+        </Text>
+        <TagBlock>
+          <Tag>#강원도</Tag>
+          <Tag>#숲</Tag>
+          <Tag>#일상의 힐링</Tag>
+          <Tag>#소형견</Tag>
+        </TagBlock>
+        <GotoCourse>코스 보러가기</GotoCourse>
+      </TextBlock>
+      <Map>
+        <WishBlock>
+          <WishBtn></WishBtn>
+          <WishNumber>4920</WishNumber>
+        </WishBlock>
+      </Map>
+    </CoursePageBox>
   );
 };
 

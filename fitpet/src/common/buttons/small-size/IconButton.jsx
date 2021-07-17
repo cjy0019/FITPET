@@ -2,15 +2,43 @@ import React from 'react';
 import styled from 'styled-components';
 
 const IconButton = (props) => {
-  const { Icon, text, bgc, hoColor, border, br, p, _onClick, color } = props;
+  const {
+    Icon,
+    text,
+    fontSize,
+    backColor,
+    hoverColor,
+    border,
+    margin,
+    borderRadius,
+    _onClick,
+    color,
+    pt,
+    pb,
+    pr,
+    pl,
+    mt,
+    mb,
+    mr,
+    ml,
+  } = props;
 
   const styles = {
-    bgc: bgc,
-    hoColor: hoColor,
+    backColor: backColor,
+    hoverColor: hoverColor,
     border: border,
     color: color,
-    p: p,
-    br: br,
+    fontSize: fontSize,
+    margin: margin,
+    borderRadius: borderRadius,
+    pt: pt,
+    pb: pb,
+    pl: pl,
+    pr: pr,
+    mt: mt,
+    mb: mb,
+    ml: ml,
+    mr: mr,
   };
 
   return (
@@ -24,8 +52,9 @@ IconButton.defaultProps = {
   text: '버튼',
   transition: 0,
   border: 'solid 1px #707070',
-  br: '1000px',
+  borderRadius: '1000px',
   color: '#fff',
+  margin: '0',
   _onClick: () => {},
 };
 
@@ -33,17 +62,26 @@ const IconWrapper = styled.button`
   outline: none;
   cursor: pointer;
   transition: 0.4s;
-  background-color: ${(props) => props.bgc};
+  font-size: ${(props) => props.fontSize};
+  background-color: ${(props) => props.backColor};
   border: ${(props) => props.border};
-  border-radius: ${(props) => props.br};
-  padding: ${(props) => props.p};
+  border-radius: ${(props) => props.borderRadius};
   display: flex;
   justify-content: center;
   align-items: center;
   color: ${(props) => props.color};
-
+  ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
+  padding-top: ${(props) => props.pt};
+  padding-bottom: ${(props) => props.pb};
+  padding-left: ${(props) => props.pl};
+  padding-right: ${(props) => props.pr};
+  margin-top: ${(props) => props.mt};
+  margin-right: ${(props) => props.mr};
+  margin-bottom: ${(props) => props.mb};
+  margin-left: ${(props) => props.ml};
+  border: ${(props) => props.border};
   &:hover {
-    background-color: ${(props) => props.hoColor};
+    background-color: ${(props) => props.hoverColor};
   }
 `;
 
