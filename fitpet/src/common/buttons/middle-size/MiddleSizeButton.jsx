@@ -5,11 +5,11 @@ const MiddleSizeButton = (props) => {
   const {
     text,
     children,
-    height,
-    bgc,
+    backColor,
     _onClick,
-    br,
+    borderRadius,
     width,
+    height,
     p,
     pt,
     pb,
@@ -20,12 +20,9 @@ const MiddleSizeButton = (props) => {
     mr,
     ml,
     color,
-    fs,
-    fw,
+    fontSize,
+    fontWeight,
     border,
-    size,
-    bgp,
-    url,
   } = props;
 
   const styles = {
@@ -42,14 +39,11 @@ const MiddleSizeButton = (props) => {
     mb: mb,
     ml: ml,
     mr: mr,
-    fs: fs,
-    fw: fw,
+    fontSize: fontSize,
+    fontWeight: fontWeight,
     border: border,
-    bgc: bgc,
-    br: br,
-    bgp: bgp,
-    url: url,
-    size: size,
+    backColor: backColor,
+    borderRadius: borderRadius,
   };
 
   return (
@@ -63,9 +57,9 @@ MiddleSizeButton.defaultProps = {
   text: '버튼 이름',
   children: null,
   width: '31rem',
-  br: '1.2rem',
-  fs: '2.4rem',
-  fw: 'normal',
+  borderRadius: '1.2rem',
+  fontSize: '2.4rem',
+  fontWeight: 'normal',
   color: 'black',
   border: 'solid 1px #707070',
 
@@ -74,13 +68,13 @@ MiddleSizeButton.defaultProps = {
 
 const StyledButton = styled.button`
   width: ${(props) => props.width};
-  height: ${(props) => props.height};
-  padding: ${(props) => props.p};
-  font-size: ${(props) => props.fs};
-  font-weight: ${(props) => props.fw};
+  cursor: pointer;
+  font-size: ${(props) => props.fontSize};
+  font-weight: ${(props) => props.fontWeight};
+  outline: none;
   color: ${(props) => props.color};
-  background-color: ${(props) => props.bgc};
-  border-radius: ${(props) => props.br};
+  background-color: ${(props) => props.backColor};
+  border-radius: ${(props) => props.borderRadius};
   padding-top: ${(props) => props.pt};
   padding-bottom: ${(props) => props.pb};
   padding-left: ${(props) => props.pl};
