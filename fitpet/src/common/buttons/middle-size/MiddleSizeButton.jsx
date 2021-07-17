@@ -5,10 +5,12 @@ const MiddleSizeButton = (props) => {
   const {
     text,
     children,
+    height,
     bgc,
     _onClick,
     br,
     width,
+    p,
     pt,
     pb,
     pr,
@@ -21,12 +23,17 @@ const MiddleSizeButton = (props) => {
     fs,
     fw,
     border,
+    size,
+    bgp,
+    url,
   } = props;
 
   const styles = {
+    p: p,
     dp: 'inline-block',
     color: color,
     width: width,
+    height: height,
     pt: pt,
     pb: pb,
     pl: pl,
@@ -40,6 +47,9 @@ const MiddleSizeButton = (props) => {
     border: border,
     bgc: bgc,
     br: br,
+    bgp: bgp,
+    url: url,
+    size: size,
   };
 
   return (
@@ -64,10 +74,10 @@ MiddleSizeButton.defaultProps = {
 
 const StyledButton = styled.button`
   width: ${(props) => props.width};
-  cursor: pointer;
+  height: ${(props) => props.height};
+  padding: ${(props) => props.p};
   font-size: ${(props) => props.fs};
   font-weight: ${(props) => props.fw};
-  outline: none;
   color: ${(props) => props.color};
   background-color: ${(props) => props.bgc};
   border-radius: ${(props) => props.br};
@@ -80,6 +90,14 @@ const StyledButton = styled.button`
   margin-bottom: ${(props) => props.mb};
   margin-left: ${(props) => props.ml};
   border: ${(props) => props.border};
+  background-position: ${(props) => props.bgp};
+  background-image: url(${(props) => props.url});
+  background-size: ${(props) => props.size};
+
+  cursor: pointer;
+  white-space: nowrap;
+  background-repeat: no-repeat;
+  outline: none;
 `;
 
 export default MiddleSizeButton;

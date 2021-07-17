@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Font = (props) => {
-  const { bold, color, children, size, _onClick } = props;
+  const { color, children, _onClick, margin, padding } = props;
 
   const styles = {
-    bold: bold,
     color: color,
-    size: size,
+    margin: margin,
+    padding: padding,
   };
 
   return (
@@ -20,9 +20,11 @@ const Font = (props) => {
 export default Font;
 
 const H1 = styled.h1`
+  font-family: Pretendard;
+  font-weight: bold;
+  font-size: 42px;
+  /* letter-spacing: -20px; */
   color: ${(props) => props.color};
-  font-size: 40px;
-  font-weight: ${(props) => (props.bold ? '600' : '400')};
   ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
   padding: ${(props) => props.padding};
 `;
