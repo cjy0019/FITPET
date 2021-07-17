@@ -23,6 +23,7 @@ const Header = () => {
 };
 
 const MainHeader = styled.header`
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
