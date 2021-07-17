@@ -17,12 +17,10 @@ const SignUp = () => {
         {/* 회원가입 내용 */}
         <SignUpContent>
           {/* 회원 정보 입력 칸, 다음으로 버튼 */}
-
           <Input placeholder='이메일 아이디' type='email' />
           <Input placeholder='비밀번호' type='password' />
           <Input placeholder='비밀번호 확인' type='password' />
           <NextButton>다음으로</NextButton>
-
           {/* sns계정으로 가입 */}
           <SocialBlock>
             <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>

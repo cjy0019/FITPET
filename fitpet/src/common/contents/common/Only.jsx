@@ -32,7 +32,6 @@ const OnlyBox = styled.div`
   ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
 `;
 const OnlyBlock = styled.div`
-  display: inline-block;
   margin: 28.6rem 3.8rem 3.6rem 3.8rem;
   color: #fff;
 `;
