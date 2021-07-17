@@ -26,6 +26,7 @@ const OnlyBox = styled.div`
   height: 40rem;
   background-color: #979797;
   border-radius: 25px;
+  cursor: pointer;
   /* &:hover {
     margin-top: -1rem;
   } */
@@ -37,6 +38,6 @@ const OnlyBlock = styled.div`
 `;
 const Text = styled.p`
   height: 7.8rem;
-  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.2; // 줄 간격
 `;

@@ -35,18 +35,18 @@ export default Font;
 
 /**
  * 폰트 사이즈
- * H1 : 42px / Bold
- * H2 : 28px / Medium (default)
- * H3 : 24px / Regular
- * H4 : 18px / Regular
- * H5 : 16px / Regular
- * H6 : 14px / Regular
+ * H1 : 4.2rem / Bold
+ * H2 : 2.8rem / Medium (default)
+ * H3 : 2.4rem / Regular
+ * H4 : 1.8rem / Regular
+ * H5 : 1.6rem / Regular
+ * H6 : 1.4rem / Regular
  */
 
 Font.defaultProps = {
   children: null,
   fontFamily: 'Pretendard',
-  fontSize: '28px',
+  fontSize: '2.8rem',
   fontWeight: 'Medium',
   color: '#707070',
   borderBottom: 'none',
