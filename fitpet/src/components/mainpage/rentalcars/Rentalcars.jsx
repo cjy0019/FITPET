@@ -7,9 +7,11 @@ const Rentalcars = () => {
     <RentalcarsBlock>
       {/* 렌트카 부분 */}
       <RantalcarsBox>
-        <Font color='#707070' fontSize='4.2rem' fontWeight='bold'>
-          렌트카
-        </Font>
+        <TextBlock>
+          <Font color='#707070' fontSize='4.2rem' fontWeight='bold'>
+            렌트카
+          </Font>
+        </TextBlock>
         {/* 렌트카 태그 모음 부분 */}
         <TagBlock>
           <IconButton
@@ -121,13 +123,13 @@ const Rentalcars = () => {
 
 export default Rentalcars;
 
-const RentalcarsBlock = styled.div`
-  display: flow-root;
-  height: 115.1rem;
-  margin: 0 32rem;
-`;
+const RentalcarsBlock = styled.div``;
 const RantalcarsBox = styled.div`
   margin: 12rem 0;
+`;
+const TextBlock = styled.div`
+  margin: 1.6rem auto 0;
+  width: 128rem;
 `;
 const TagBlock = styled.div`
   display: flex;
@@ -145,6 +147,7 @@ const Rentalcar = styled.div`
   }
 `;
 const OtherRentalcars = styled.div`
+  //width: 128rem;
   display: flex;
   justify-content: flex-end;
 `;
