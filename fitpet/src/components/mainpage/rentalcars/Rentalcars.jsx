@@ -112,7 +112,6 @@ export default Rentalcars;
 const RentalcarsBlock = styled.div`
   display: flow-root;
   height: 115.1rem;
-  width: 128rem;
   margin: 0 32rem;
 `;
 const RantalcarsBox = styled.div`
@@ -125,6 +124,7 @@ const TagBlock = styled.div`
 `;
 const RentalcarsWrapper = styled.div`
   display: flex;
+  justify-content: center;
 `;
 const Rentalcar = styled.div`
   display: block;
@@ -135,9 +135,9 @@ const OtherRentalcars = styled.div`
 `;
 const BandBanner = styled.div`
   margin-top: 12rem;
-  width: 1280px;
   height: 171px;
   text-align: center;
+  justify-content: center;
   padding-top: 60px;
   background-color: #979797;
 `;

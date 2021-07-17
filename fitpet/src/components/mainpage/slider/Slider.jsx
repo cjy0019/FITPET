@@ -39,22 +39,24 @@ export default Slider;
 const SliderBlock = styled.div`
   display: flow-root;
   margin: 0 32rem;
-  width: 128rem; // 40+48+40
-  height: 129.2rem;
+  padding: 12rem 0;
 `;
 const LocationBlock = styled.div`
-  margin: 12rem 0;
+  justify-content: center;
 `;
 
 const LocationWrapper = styled.div`
   margin-top: 1.6rem;
   height: 40rem;
   display: flex;
+  justify-content: center;
 `;
 const OnlyFitpetBlock = styled.div`
+  justify-content: center;
   margin: 12rem 0;
 `;
 const OnlyFitpetWrapper = styled.div`
+  justify-content: center;
   margin-top: 1.6rem;
   height: 40rem;
   display: flex;
