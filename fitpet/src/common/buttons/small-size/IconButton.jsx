@@ -21,9 +21,17 @@ const IconButton = (props) => {
     mb,
     mr,
     ml,
+    width,
+    height,
+    position,
+    top,
+    right,
   } = props;
 
   const styles = {
+    position: position,
+    top: top,
+    right: right,
     backColor: backColor,
     hoverColor: hoverColor,
     border: border,
@@ -31,6 +39,8 @@ const IconButton = (props) => {
     fontSize: fontSize,
     margin: margin,
     borderRadius: borderRadius,
+    width: width,
+    height: height,
     pt: pt,
     pb: pb,
     pl: pl,
@@ -62,6 +72,9 @@ const IconWrapper = styled.button`
   outline: none;
   cursor: pointer;
   transition: 0.4s;
+  right: ${({ right }) => right};
+  top: ${({ top }) => top};
+  position: ${({ position }) => position};
   font-size: ${(props) => props.fontSize};
   background-color: ${(props) => props.backColor};
   border: ${(props) => props.border};
@@ -80,6 +93,9 @@ const IconWrapper = styled.button`
   margin-bottom: ${(props) => props.mb};
   margin-left: ${(props) => props.ml};
   border: ${(props) => props.border};
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+
   &:hover {
     background-color: ${(props) => props.hoverColor};
   }
