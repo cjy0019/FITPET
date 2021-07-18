@@ -19,8 +19,8 @@ const SignUpEnd = () => {
 };
 
 const SignUpEndWrapper = styled.div`
-  width: 524px;
-  height: 476px;
+  width: 52.4rem;
+  height: 47.6rem;
   border-radius: 30px;
   border: solid 1px #707070;
   background-color: #ffffff;

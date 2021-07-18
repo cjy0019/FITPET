@@ -23,19 +23,21 @@ const WishBox = styled.div`
   height: 29rem;
   background-color: #979797;
   border-radius: 25px;
+  cursor: pointer;
+
   /* &:hover {
     margin-top: -1rem;
   } */
-  ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
+  ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0')}
 `;
 // const WishBlock = styled.div`
 //   margin: 28.6rem 3.8rem 3.6rem 3.8rem;
 //   color: #fff;
 // `;
 const WishBtn = styled.button`
-  margin: 28px 28px 214px 214px;
-  width: 48px;
-  height: 48px;
+  margin: 2.8rem 2.8rem 21.4rem 21.4rem;
+  width: 4.8rem;
+  height: 4.8rem;
   background-color: #cbcbcb;
   border: none;
   border-radius: 50px;
