@@ -23,6 +23,9 @@ const MiddleSizeButton = (props) => {
     fontSize,
     fontWeight,
     border,
+    size,
+    bgp,
+    url,
   } = props;
 
   const styles = {
@@ -44,6 +47,9 @@ const MiddleSizeButton = (props) => {
     border: border,
     backColor: backColor,
     borderRadius: borderRadius,
+    size: size,
+    bgp: bgp,
+    url: url,
   };
 
   return (
@@ -75,6 +81,7 @@ const StyledButton = styled.button`
   color: ${(props) => props.color};
   background-color: ${(props) => props.backColor};
   border-radius: ${(props) => props.borderRadius};
+  padding: ${(props) => props.p};
   padding-top: ${(props) => props.pt};
   padding-bottom: ${(props) => props.pb};
   padding-left: ${(props) => props.pl};

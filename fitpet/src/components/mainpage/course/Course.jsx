@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { A11yHidden } from '../../../common/accessibility/Hidden';
 import CourseLeft from './CourseLeft';
 import CourseRight from './CourseRight';
 
@@ -10,6 +11,7 @@ const Course = () => {
         {/* 코스짜기 왼쪽 파트 */}
         <div>
           <StyledH2>코스짜기</StyledH2>
+          <A11yHidden>지도에서 확인하세요</A11yHidden>
           <p>나만의 맞춤 여행코스를 계획해보세요.</p>
           <CourseLeft />
         </div>
