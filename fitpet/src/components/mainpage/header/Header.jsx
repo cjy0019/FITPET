@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import MemberLinkUl from './MemberLinkUl';
+import { A11yHidden } from '../../../common/accessibility/Hidden';
 
 const Header = () => {
   return (
@@ -30,28 +31,7 @@ const MainHeader = styled.header`
   width: 100%;
   padding: 2.6rem 3.4rem 2.6rem 6rem;
   background-color: beige;
-`;
-
-// 웹 접근성을 위한 a11y-hidden style
-const A11yHidden = styled.span`
-  overflow: hidden;
-  position: absolute;
-  clip: rect(0 0 0 0); /* IE 6,7 */
-  clip: rect(0, 0, 0, 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  &:focus {
-    overflow: visible;
-    position: static;
-    clip: auto;
-    width: auto;
-    height: auto;
-    margin: 0;
-  }
+  z-index: 999;
 `;
 
 const FitPetLogo = styled.img.attrs({
