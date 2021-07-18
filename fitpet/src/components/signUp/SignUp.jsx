@@ -68,10 +68,10 @@ const HeaderText = styled.div`
 `;
 const CloseBtn = styled.div`
   cursor: pointer;
-  margin: 0 0 0 337px;
+  margin: 0 0 0 33.7rem;
   font-size: 2.2rem;
-  width: 15.2px;
-  height: 15.2px;
+  width: 1.52rem;
+  height: 1.52rem;
   color: #707070;
   background-color: #ffffff;
 `;
@@ -83,7 +83,7 @@ const SignUpContent = styled.div`
 
 const Input = styled.input`
   display: block;
-  width: 383.9px;
+  width: 38.39rem;
   height: 3.3rem;
   font-size: 1.6rem;
   font-weight: normal;
@@ -97,7 +97,7 @@ const Input = styled.input`
   border-bottom: 0.5px solid #979797;
   outline: none;
   :not(:first-child) {
-    margin-top: 36px;
+    margin-top: 3.6rem;
   }
   &:focus {
     border-bottom: 0.5px solid #707070;
@@ -105,14 +105,14 @@ const Input = styled.input`
 `;
 const NextButton = styled.button`
   cursor: pointer;
-  width: 374px;
-  height: 52px;
+  width: 37.4rem;
+  height: 5.2rem;
   border-radius: 26px;
   background-color: #979797;
   border: none;
   color: #ffffff;
   font-size: 1.8rem;
-  margin-top: 36px;
+  margin-top: 3.6rem;
 `;
 
 // sns로 회원가입 하기

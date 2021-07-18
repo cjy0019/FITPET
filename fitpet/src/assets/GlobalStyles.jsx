@@ -10,17 +10,20 @@ const GlobalStyles = createGlobalStyle`
     }
     
     html {
-        font-family: Pretendard;
-        font-size: 10px;
+      font-family: Pretendard;
+      font-size: 10px;
     }
     a {
-        text-decoration: none;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     a:visited{
-        text-decoration: none;
+      text-decoration: none;
     }
-    
+    button{
+      cursor: pointer;
+    }
 
 `;
 

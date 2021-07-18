@@ -1,6 +1,6 @@
 import React from 'react';
 import Rentalcars from '../components/mainpage/rentalcars/Rentalcars';
-import Slider from '../components/mainpage/slider/Slider';
+import Sliders from '../components/mainpage/slider/Sliders';
 import Banner from '../components/mainpage/banner/Banner';
 import Course from '../components/mainpage/course/Course';
 import Header from '../components/mainpage/header/Header';
@@ -12,7 +12,7 @@ const MainPage = () => {
     <MainWrapper>
       <Header />
       <Banner />
-      <Slider />
+      <Sliders />
       <Course />
       <Rentalcars />
       <Community />

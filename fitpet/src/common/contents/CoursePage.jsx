@@ -36,12 +36,12 @@ export default CoursePage;
 
 const CoursePageBox = styled.div`
   display: flex;
+  cursor: pointer;
 `;
 
 const TextBlock = styled.div`
-  width: 548px;
-  height: 620px;
-
+  width: 54.8rem;
+  height: 6.2rem;
   border-radius: 25px 0 0 25px;
   box-shadow: 3px 6px 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #979797;
@@ -49,61 +49,61 @@ const TextBlock = styled.div`
   color: #fff;
 `;
 const SubText = styled.div`
-  margin: 49px 0 74px 49px;
-  font-size: 30px;
+  margin: 4.9rem 0 7.4rem 4.9rem;
+  font-size: 3rem;
 `;
 const MainText = styled.div`
-  margin: 0 65px 24px 48px;
-  font-size: 36px;
+  margin: 0 6.5rem 2.4rem 4.8rem;
+  font-size: 3.6rem;
   font-weight: bold;
 `;
 const Text = styled.div`
-  margin: 0 65px 40px 48px;
-  font-size: 20px;
+  margin: 0 6.5rem 4rem 4.8rem;
+  font-size: 2rem;
 `;
 const TagBlock = styled.div`
-  margin: 0 65px 95px 48px;
+  margin: 0 6.5rem 9.5rem 4.8rem;
   display: flex;
 `;
 const Tag = styled.div`
-  font-size: 18px;
-  margin-right: 21px;
+  font-size: 1.8rem;
+  margin-right: 2.1rem;
 `;
 const GotoCourse = styled.div`
-  margin: 0 174px 40px 48px;
-  width: 326px;
-  height: 54px;
-  padding: 16px 107px 13px;
+  margin: 0 17.4rem 4rem 4.8rem;
+  width: 32.6rem;
+  height: 5.4rem;
+  padding: 1.6rem 10.7rem 1.3rem;
   border-radius: 27px;
-  font-size: 20px;
+  font-size: 2rem;
   color: #707070;
   background-color: #ffffff;
 `;
 
 const Map = styled.div`
-  width: 732px;
-  height: 620px;
+  width: 73.2rem;
+  height: 62rem;
   border-radius: 0 25px 25px 0;
   background-color: #ffffff;
   box-shadow: 3px 6px 6px 0 rgba(0, 0, 0, 0.16);
 `;
 
 const WishBlock = styled.div`
-  margin: 43px 46px 0 0;
+  margin: 4.3rem 4.6rem 0 0;
   float: right;
   display: block;
 `;
 const WishBtn = styled.button`
-  width: 80px;
-  height: 80px;
+  width: 8rem;
+  height: 8rem;
   background-color: #cbcbcb;
   border: none;
   border-radius: 50px;
 `;
 
 const WishNumber = styled.p`
-  margin-top: 14px;
+  margin-top: 1.4rem;
   color: #cbcbcb;
   text-align: center;
-  font-size: 20px;
+  font-size: 2rem;
 `;

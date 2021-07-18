@@ -28,10 +28,12 @@ const TagBox = styled.div`
   height: 40rem;
   background-color: #979797;
   border-radius: 25px;
+  cursor: pointer;
+
   &:hover {
     margin-top: -1rem;
   }
-  ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
+  ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0')}
 `;
 const TagBlock = styled.div`
   display: inline-block;
@@ -40,12 +42,12 @@ const TagBlock = styled.div`
 `;
 const Text = styled.p`
   height: 3.5rem;
-  font-size: 30px;
+  font-size: 3rem;
   margin-bottom: 0.9rem;
 `;
 const TagTextBox = styled.div`
   display: flex;
-  font-size: 20px;
+  font-size: 2rem;
 `;
 const TagText = styled.p`
   margin-right: 1.5rem;
