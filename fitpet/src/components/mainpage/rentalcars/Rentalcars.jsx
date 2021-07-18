@@ -14,109 +14,214 @@ const Rentalcars = () => {
         </TextBlock>
         {/* 렌트카 태그 모음 부분 */}
         <TagBlock>
-          <IconButton
-            text='신차'
-            backColor='#cbcbcb'
-            color='#fff'
-            pt='1.1rem'
-            pr='1.9rem'
-            pl='1.9rem'
-            pb='1rem'
-            fontSize='1.6rem'
-            borderRadius='2.6rem'
-            hoverColor='#707070'
-            border='none'
-            margin='0 0.5rem 1rem 0.5rem'
-          />
-          <IconButton
-            text='오픈카'
-            backColor='#cbcbcb'
-            color='#fff'
-            pt='1.1rem'
-            pr='1.9rem'
-            pl='1.9rem'
-            pb='1rem'
-            fontSize='1.6rem'
-            borderRadius='2.6rem'
-            hoverColor='#707070'
-            border='none'
-            margin='0 0.5rem 1rem 0.5rem'
-          />
-          <IconButton
-            text='전기차'
-            backColor='#cbcbcb'
-            color='#fff'
-            pt='1.1rem'
-            pr='1.9rem'
-            pl='1.9rem'
-            pb='1rem'
-            fontSize='1.6rem'
-            borderRadius='2.6rem'
-            hoverColor='#707070'
-            border='none'
-            margin='0 0.5rem 1rem 0.5rem'
-          />
+          {/* 태그 첫 번째 줄 */}
+          <TagOne>
+            <IconButton
+              text='신차'
+              backColor='#cbcbcb'
+              color='#fff'
+              pt='1.1rem'
+              pr='1.9rem'
+              pl='1.9rem'
+              pb='1rem'
+              fontSize='1.6rem'
+              borderRadius='2.6rem'
+              hoverColor='#707070'
+              border='none'
+              margin='0 0.5rem 1rem 0.5rem'
+            />
+            <IconButton
+              text='오픈카'
+              backColor='#cbcbcb'
+              color='#fff'
+              pt='1.1rem'
+              pr='1.9rem'
+              pl='1.9rem'
+              pb='1rem'
+              fontSize='1.6rem'
+              borderRadius='2.6rem'
+              hoverColor='#707070'
+              border='none'
+              margin='0 0.5rem 1rem 0.5rem'
+            />
+            <IconButton
+              text='전기차'
+              backColor='#cbcbcb'
+              color='#fff'
+              pt='1.1rem'
+              pr='1.9rem'
+              pl='1.9rem'
+              pb='1rem'
+              fontSize='1.6rem'
+              borderRadius='2.6rem'
+              hoverColor='#707070'
+              border='none'
+              margin='0 0.5rem 1rem 0.5rem'
+            />
+            <IconButton
+              text='수입'
+              backColor='#cbcbcb'
+              color='#fff'
+              pt='1.1rem'
+              pr='1.9rem'
+              pl='1.9rem'
+              pb='1rem'
+              fontSize='1.6rem'
+              borderRadius='2.6rem'
+              hoverColor='#707070'
+              border='none'
+              margin='0 0.5rem 1rem 0.5rem'
+            />
+          </TagOne>
+          {/* 태그 두 번째 줄 */}
+          <TagTwo>
+            <IconButton
+              text='SUV'
+              backColor='#cbcbcb'
+              color='#fff'
+              pt='1.1rem'
+              pr='1.9rem'
+              pl='1.9rem'
+              pb='1rem'
+              fontSize='1.6rem'
+              borderRadius='2.6rem'
+              hoverColor='#707070'
+              border='none'
+              margin='0 0.5rem 1rem 0.5rem'
+            />
+            <IconButton
+              text='경소형'
+              backColor='#cbcbcb'
+              color='#fff'
+              pt='1.1rem'
+              pr='1.9rem'
+              pl='1.9rem'
+              pb='1rem'
+              fontSize='1.6rem'
+              borderRadius='2.6rem'
+              hoverColor='#707070'
+              border='none'
+              margin='0 0.5rem 1rem 0.5rem'
+            />
+            <IconButton
+              text='준소형'
+              backColor='#cbcbcb'
+              color='#fff'
+              pt='1.1rem'
+              pr='1.9rem'
+              pl='1.9rem'
+              pb='1rem'
+              fontSize='1.6rem'
+              borderRadius='2.6rem'
+              hoverColor='#707070'
+              border='none'
+              margin='0 0.5rem 1rem 0.5rem'
+            />
+            <IconButton
+              text='중대형'
+              backColor='#cbcbcb'
+              color='#fff'
+              pt='1.1rem'
+              pr='1.9rem'
+              pl='1.9rem'
+              pb='1rem'
+              fontSize='1.6rem'
+              borderRadius='2.6rem'
+              hoverColor='#707070'
+              border='none'
+              margin='0 0.5rem 1rem 0.5rem'
+            />
+            <IconButton
+              text='승합차'
+              backColor='#cbcbcb'
+              color='#fff'
+              pt='1.1rem'
+              pr='1.9rem'
+              pl='1.9rem'
+              pb='1rem'
+              fontSize='1.6rem'
+              borderRadius='2.6rem'
+              hoverColor='#707070'
+              border='none'
+              margin='0 0.5rem 1rem 0.5rem'
+            />
+          </TagTwo>
         </TagBlock>
-        {/* 렌트카 슬라이드 부분 */}
-        <RentalcarsWrapper>
-          <Rentalcar>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#707070'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              [경차] 레이
-              <br />
-              <span>44,900</span>~ 50,000
+        {/* 렌트카 슬라이드 + 띠배너 */}
+        <RentalcarsMore>
+          {/* 렌트카 슬라이드 부분 */}
+          <RentalcarsWrapper>
+            <Rentalcar>
+              <WishSmall margin='0 4rem 0 0'></WishSmall>
+              <Font
+                color='#707070'
+                fontSize='1.8rem'
+                margin='1.4rem 0 3.8rem 2.3rem'>
+                <span>
+                  [경차] 레이
+                  <br />
+                  44,900
+                </span>
+                ~ 50,000
+              </Font>
+            </Rentalcar>
+            <Rentalcar>
+              <WishSmall margin='0 4rem 0 0'></WishSmall>
+              <Font
+                color='#707070'
+                fontSize='1.8rem'
+                margin='1.4rem 0 3.8rem 2.3rem'>
+                <span>
+                  [경차] 레이
+                  <br />
+                  44,900
+                </span>
+                ~ 50,000
+              </Font>
+            </Rentalcar>
+            <Rentalcar>
+              <WishSmall margin='0 4rem 0 0'></WishSmall>
+              <Font
+                color='#707070'
+                fontSize='1.8rem'
+                margin='1.4rem 0 3.8rem 2.3rem'>
+                <span>
+                  [경차] 레이
+                  <br />
+                  44,900
+                </span>
+                ~ 50,000
+              </Font>
+            </Rentalcar>
+            <Rentalcar>
+              <WishSmall></WishSmall>
+              <Font
+                color='#707070'
+                fontSize='1.8rem'
+                margin='1.4rem 0 3.8rem 2.3rem'>
+                <span>
+                  [경차] 레이
+                  <br />
+                  44,900
+                </span>
+                ~ 50,000
+              </Font>
+            </Rentalcar>
+          </RentalcarsWrapper>
+          {/* 렌트카 페이지로 이동 */}
+          <OtherRentalcars>
+            <Font fontSize='1.4rem' borderBottom='1px solid' pb='5px'>
+              더 다양한 옵션 보러가기
             </Font>
-          </Rentalcar>
-          <Rentalcar>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#707070'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              [경차] 레이
-              <br />
-              <span>44,900</span>~ 50,000
+          </OtherRentalcars>
+          {/* 띠배너 부분 */}
+          <BandBanner>
+            <Font color='#fff' fontSize='4.2rem'>
+              띠배너
             </Font>
-          </Rentalcar>
-          <Rentalcar>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#707070'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              [경차] 레이
-              <br />
-              <span>44,900</span>~ 50,000
-            </Font>
-          </Rentalcar>
-          <Rentalcar>
-            <WishSmall></WishSmall>
-            <Font
-              color='#707070'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              [경차] 레이
-              <br />
-              <span>44,900</span>~ 50,000
-            </Font>
-          </Rentalcar>
-        </RentalcarsWrapper>
-        <OtherRentalcars>
-          <Font fontSize='1.4rem' borderBottom='1px solid'>
-            더 다양한 옵션 보러가기
-          </Font>
-        </OtherRentalcars>
-
-        {/* 띠배너 부분 */}
+          </BandBanner>
+        </RentalcarsMore>
       </RantalcarsBox>
-      <BandBanner>
-        <Font color='#fff' fontSize='4.2rem'>
-          띠배너
-        </Font>
-      </BandBanner>
     </RentalcarsBlock>
   );
 };
@@ -132,22 +237,36 @@ const TextBlock = styled.div`
   width: 128rem;
 `;
 const TagBlock = styled.div`
-  display: flex;
-  justify-content: center;
+  display: block;
   margin: 0.7rem auto 4rem;
 `;
+const TagOne = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+const TagTwo = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+const RentalcarsMore = styled.div`
+  display: block;
+  margin: 0 auto;
+  width: 128rem;
+`;
+
 const RentalcarsWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
 const Rentalcar = styled.div`
-  //display: block;
   span {
     font-weight: bold;
   }
+  p {
+    line-height: 25px;
+  }
 `;
 const OtherRentalcars = styled.div`
-  //width: 128rem;
   display: flex;
   justify-content: flex-end;
 `;

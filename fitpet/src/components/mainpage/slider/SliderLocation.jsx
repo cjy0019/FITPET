@@ -41,7 +41,6 @@ function SliderLocation() {
       <Block>
         <Content>
           <LocationWrapper ref={slideRef}>
-            {/* <SliderLeftButton onClick={PrevSlide} /> */}
             <Location>
               <Tag margin='0 4rem 0 0'></Tag>
             </Location>
@@ -62,6 +61,7 @@ function SliderLocation() {
             </Location>
           </LocationWrapper>
         </Content>
+        {/* 슬라이드 버튼 */}
         <ControlsBtn>
           <PrevBtn>
             <SliderLeftButton handleClick={PrevSlide}></SliderLeftButton>
