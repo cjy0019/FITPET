@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import IconButton from './IconButton';
 import { BsArrowUp } from 'react-icons/bs';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const GoUpBtn = () => {
   const [btnRender, setBtnRender] = useState(false);
@@ -34,7 +34,7 @@ const GoUpBtn = () => {
 
   //
   function btnAppear() {
-    if (window.pageYOffset > 3450) {
+    if (window.pageYOffset > 3160) {
       setBtnRender(true);
     } else {
       setBtnRender(false);
