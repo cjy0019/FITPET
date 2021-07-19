@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import MemberLinkUl from './MemberLinkUl';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
+import HeaderNav from './HeaderNav';
 
 const Header = () => {
   return (
@@ -15,6 +16,9 @@ const Header = () => {
         </NavLink>
       </h1>
 
+      {/* 네브 */}
+      <HeaderNav />
+
       {/* 멤버 링크 부분 */}
       <nav>
         <MemberLinkUl />
@@ -24,13 +28,14 @@ const Header = () => {
 };
 
 const MainHeader = styled.header`
+  display: grid;
+  grid-template-columns: 1.17fr repeat(2, 1fr);
   position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-  padding: 2.6rem 3.4rem 2.6rem 6rem;
-  background-color: beige;
+  height: 8rem;
+  top: 0;
+  padding: 2.6rem 6rem 2.6rem 6rem;
+  background-color: darkgoldenrod;
   z-index: 999;
 `;
 

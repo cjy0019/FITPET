@@ -1,7 +1,7 @@
 const size = {
   mobile: '360px',
   tablet: '768px',
-  laptop: '1024px',
+  laptop: '1440px',
 };
 
 // 임시로 세팅. 컬러, 로고 전달되면 바꾸기

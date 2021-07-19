@@ -36,8 +36,7 @@ const BannerWrappr = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2.6rem;
-  width: 100%;
+  padding-top: 10.6rem;
   height: 60rem;
   background-color: #979797;
 `;
@@ -68,7 +67,7 @@ const SectionTitle = styled.h2`
   font-size: 3.8rem;
   font-weight: bold;
   line-height: 1.18;
-  margin: 20.3rem 0 0 0;
+  margin: 12.3rem 0 0 0;
   color: #ffffff;
 `;
 
