@@ -2,21 +2,25 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Only, SliderLeftButton, SliderRightButton } from '../../../common';
 
-const TOTAL_SLIDES = 1; // 전체 슬라이드 개수(총1개. 배열로 계산)
+const TOTAL_SLIDES = 1;
 
 function SliderOnly() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
 
+  // 5개 슬라이드 효과 주기 translateX(-68.7%)
   useEffect(() => {
+    let slideValue = currentSlide * 6 * 10;
+    if (currentSlide > 0) {
+      slideValue += 8.7;
+    }
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
-    slideRef.current.style.transform = `translateX(-${currentSlide * 4}0%)`;
+    slideRef.current.style.transform = `translateX(-${slideValue}%)`;
   }, [currentSlide]);
 
   // Next 버튼 클릭 시
   const NextSlide = () => {
     console.log('next');
-
     if (currentSlide >= TOTAL_SLIDES) {
       // 더 이상 넘어갈 슬라이드가 없으면
       console.log('다음 슬라이드가 없습니다.');

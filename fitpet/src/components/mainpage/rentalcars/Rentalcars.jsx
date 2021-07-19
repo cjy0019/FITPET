@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, IconButton, WishSmall } from '../../../common';
+import { Font, IconButton } from '../../../common';
+import SliderRentalcar from '../slider/SliderRentalcar';
 
 const Rentalcars = () => {
   return (
@@ -151,62 +152,7 @@ const Rentalcars = () => {
         <RentalcarsMore>
           {/* 렌트카 슬라이드 부분 */}
           <RentalcarsWrapper>
-            <Rentalcar>
-              <WishSmall margin='0 4rem 0 0'></WishSmall>
-              <Font
-                color='#707070'
-                fontSize='1.8rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span>
-                  [경차] 레이
-                  <br />
-                  44,900
-                </span>
-                ~ 50,000
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <WishSmall margin='0 4rem 0 0'></WishSmall>
-              <Font
-                color='#707070'
-                fontSize='1.8rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span>
-                  [경차] 레이
-                  <br />
-                  44,900
-                </span>
-                ~ 50,000
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <WishSmall margin='0 4rem 0 0'></WishSmall>
-              <Font
-                color='#707070'
-                fontSize='1.8rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span>
-                  [경차] 레이
-                  <br />
-                  44,900
-                </span>
-                ~ 50,000
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <WishSmall></WishSmall>
-              <Font
-                color='#707070'
-                fontSize='1.8rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span>
-                  [경차] 레이
-                  <br />
-                  44,900
-                </span>
-                ~ 50,000
-              </Font>
-            </Rentalcar>
+            <SliderRentalcar />
           </RentalcarsWrapper>
           {/* 렌트카 페이지로 이동 */}
           <OtherRentalcars>
@@ -258,14 +204,7 @@ const RentalcarsWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
-const Rentalcar = styled.div`
-  span {
-    font-weight: bold;
-  }
-  p {
-    line-height: 25px;
-  }
-`;
+
 const OtherRentalcars = styled.div`
   display: flex;
   justify-content: flex-end;
