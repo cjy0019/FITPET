@@ -35,13 +35,14 @@ const GoUpBtn = () => {
     )
   );
 
-  //
   function btnAppear() {
-    if (window.pageYOffset > 500) {
-      setBtnRender(true);
-    } else {
-      setBtnRender(false);
-    }
+    const top =
+      window.pageYOffset ||
+      window.scrollY ||
+      document.documentElement.scrollTop || // 익스9 이하 버전 지원
+      document.body.scrollTop; // 오페라 크롬 사파리 지원
+
+    top >= 500 ? setBtnRender(true) : setBtnRender(false);
   }
 
   // 클릭시 최상단으로 이동
