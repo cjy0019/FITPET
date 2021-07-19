@@ -9,7 +9,14 @@ const Font = (props) => {
     children,
     _onClick,
     margin,
-    padding,
+    pt,
+    pb,
+    pr,
+    pl,
+    mt,
+    mb,
+    mr,
+    ml,
     borderBottom,
     textDecoration,
   } = props;
@@ -19,7 +26,14 @@ const Font = (props) => {
     fontWeight: fontWeight,
     color: color,
     margin: margin,
-    padding: padding,
+    pt: pt,
+    pb: pb,
+    pl: pl,
+    pr: pr,
+    mt: mt,
+    mb: mb,
+    ml: ml,
+    mr: mr,
     borderBottom: borderBottom,
     textDecoration: textDecoration,
   };
@@ -61,7 +75,14 @@ const StyledFont = styled.p`
   /* letter-spacing: -20px; */
   color: ${(props) => props.color};
   ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
-  padding: ${(props) => props.padding};
+  padding-top: ${(props) => props.pt};
+  padding-bottom: ${(props) => props.pb};
+  padding-left: ${(props) => props.pl};
+  padding-right: ${(props) => props.pr};
+  margin-top: ${(props) => props.mt};
+  margin-right: ${(props) => props.mr};
+  margin-bottom: ${(props) => props.mb};
+  margin-left: ${(props) => props.ml};
   border-bottom: ${(props) => props.borderBottom};
   text-decoration: ${(props) => props.textDecoration};
 `;
