@@ -25,6 +25,11 @@ const GlobalStyles = createGlobalStyle`
       cursor: pointer;
     }
 
+    @media ${(props) => props.theme.laptop}{
+      html {
+        font-size: 8px;
+      }
+    }
 `;
 
 export default GlobalStyles;
