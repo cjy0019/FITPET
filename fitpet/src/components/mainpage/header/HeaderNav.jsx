@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import useWindowScroll from '../../../hooks/useWindowScroll';
 
-const MainNav = () => {
+const HeaderNav = () => {
+  const yOffset = useWindowScroll();
+  const _nav = useRef(null);
+
+  useEffect(() => {
+    function headerChange() {
+      if (yOffset > 35) {
+        _nav.current.style = 'opacity : 1; pointer-events : all;';
+      } else _nav.current.style = 'opacity : 0; pointer-events : none;';
+    }
+    headerChange();
+  }, [yOffset]);
+
   return (
-    <StyledNav>
+    <StyledNav ref={_nav}>
       <ListWrapper>
         <MenuLi>
           <NavLink to='/'>홈</NavLink>
@@ -29,6 +42,9 @@ const MainNav = () => {
 const StyledNav = styled.nav`
   min-height: 2.8rem;
   white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s;
 `;
 
 const ListWrapper = styled.ul`
@@ -53,4 +69,4 @@ const MenuLi = styled.li`
   }
 `;
 
-export default MainNav;
+export default HeaderNav;

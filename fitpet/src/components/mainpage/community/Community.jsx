@@ -80,6 +80,7 @@ const Community = () => {
 
 const StyledSection = styled.section`
   background-color: blanchedalmond;
+  overflow: hidden;
   width: 128rem;
   margin: 0 auto;
 `;
@@ -96,6 +97,7 @@ const StyledH2 = styled.h2`
 const CardWrapper = styled.div`
   display: flex;
   transform: translateX(25.4rem);
+  overflow: hidden;
 `;
 
 const CommunityCard = styled.div`
