@@ -4,7 +4,7 @@ import { BsArrowUp } from 'react-icons/bs';
 import styled from 'styled-components';
 
 const GoUpBtn = () => {
-  const [btnRender, setBtnRender] = useState(false);
+  const [btnRender, setBtnRender] = useState(true);
 
   useEffect(() => {
     window.addEventListener('scroll', btnAppear);
@@ -19,13 +19,16 @@ const GoUpBtn = () => {
       <IconWrapper>
         <IconButton
           Icon={BsArrowUp}
-          width='4.8rem'
-          height='4.8rem'
+          width='6rem'
+          height='6rem'
+          border='solid 1px #979797'
           color='#979797'
           fontSize='4rem'
           backColor='#ffffff'
-          position='absolute'
-          right='11.6rem'
+          hoverColor='#ff8a8a'
+          position='fixed'
+          top='85rem'
+          right='7%'
           _onClick={handleClick}
         />
       </IconWrapper>
@@ -34,7 +37,7 @@ const GoUpBtn = () => {
 
   //
   function btnAppear() {
-    if (window.pageYOffset > 3160) {
+    if (window.pageYOffset > 500) {
       setBtnRender(true);
     } else {
       setBtnRender(false);

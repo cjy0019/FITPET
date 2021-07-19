@@ -63,6 +63,9 @@ const MenuLi = styled.li`
   a {
     color: black;
     padding: 0 0.4rem;
+    height: 2.8rem;
+    display: table-cell;
+    vertical-align: middle;
   }
   a:visited {
     color: black;
