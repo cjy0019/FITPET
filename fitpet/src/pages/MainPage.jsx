@@ -23,6 +23,7 @@ const MainPage = () => {
 
 const MainWrapper = styled.div`
   margin-bottom: 20rem;
+  max-width: 100%;
 `;
 
 export default MainPage;

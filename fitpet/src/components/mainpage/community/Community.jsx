@@ -1,85 +1,31 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
+import Carousel from './Carousel';
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 const Community = () => {
   return (
     <StyledSection>
       <StyledH2>커뮤니티</StyledH2>
 
-      <CardWrapper>
-        <CommunityCard>
-          <ImgWrapper></ImgWrapper>
-          <h3>배가 고프다</h3>
-          <p>
-            운동도 해야하는데 배가 고프다 마음이 서글프다 어흐흑어흐흑 이거 다
-            언제 끝내지
-          </p>
-          <span>by.민정</span>
-        </CommunityCard>
+      {/* 캐러셀 */}
+      <Carousel />
 
-        <CommunityCard>
-          <ImgWrapper></ImgWrapper>
-          <h3>배가 고프다</h3>
-          <p>
-            운동도 해야하는데 배가 고프다 마음이 서글프다 어흐흑어흐흑 이거 다
-            언제 끝내지
-          </p>
-          <span>by.민정</span>
-        </CommunityCard>
+      {/* 다음버튼 */}
+      <NextButton next>
+        <AiOutlineArrowRight />
+      </NextButton>
 
-        <CommunityCard>
-          <ImgWrapper></ImgWrapper>
-          <h3>배가 고프다</h3>
-          <p>
-            운동도 해야하는데 배가 고프다 마음이 서글프다 어흐흑어흐흑 이거 다
-            언제 끝내지
-          </p>
-          <span>by.민정</span>
-        </CommunityCard>
-
-        <CommunityCard>
-          <ImgWrapper></ImgWrapper>
-          <h3>배가 고프다</h3>
-          <p>
-            운동도 해야하는데 배가 고프다 마음이 서글프다 어흐흑어흐흑 이거 다
-            언제 끝내지
-          </p>
-          <span>by.민정</span>
-        </CommunityCard>
-        <CommunityCard>
-          <ImgWrapper></ImgWrapper>
-          <h3>배가 고프다</h3>
-          <p>
-            운동도 해야하는데 배가 고프다 마음이 서글프다 어흐흑어흐흑 이거 다
-            언제 끝내지
-          </p>
-          <span>by.민정</span>
-        </CommunityCard>
-        <CommunityCard>
-          <ImgWrapper></ImgWrapper>
-          <h3>배가 고프다</h3>
-          <p>
-            운동도 해야하는데 배가 고프다 마음이 서글프다 어흐흑어흐흑 이거 다
-            언제 끝내지
-          </p>
-          <span>by.민정</span>
-        </CommunityCard>
-        <CommunityCard>
-          <ImgWrapper></ImgWrapper>
-          <h3>배가 고프다</h3>
-          <p>
-            운동도 해야하는데 배가 고프다 마음이 서글프다 어흐흑어흐흑 이거 다
-            언제 끝내지
-          </p>
-          <span>by.민정</span>
-        </CommunityCard>
-      </CardWrapper>
+      {/* 이전버튼 */}
+      <NextButton prev>
+        <AiOutlineArrowLeft />
+      </NextButton>
     </StyledSection>
   );
 };
 
 const StyledSection = styled.section`
-  background-color: blanchedalmond;
+  position: relative;
+  overflow: hidden;
   width: 128rem;
   margin: 0 auto;
 `;
@@ -93,42 +39,34 @@ const StyledH2 = styled.h2`
   text-align: left;
 `;
 
-const CardWrapper = styled.div`
+const NextButton = styled.button`
+  position: absolute;
+  top: 50%;
   display: flex;
-  transform: translateX(25.4rem);
-`;
+  justify-content: center;
+  align-items: center;
 
-const CommunityCard = styled.div`
-  width: 25.4rem;
-  margin-right: 2.2rem;
-  color: #979797;
+  width: 5.8rem;
+  height: 5.8rem;
+  font-size: 3rem;
+  opacity: 0.5;
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.16);
+  background-color: #707070;
 
-  h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    line-height: 1.17;
-    letter-spacing: -0.36;
-    margin-top: 2rem;
-  }
+  ${(props) =>
+    props.next &&
+    css`
+      right: 0;
+    `}
 
-  p {
-    font-size: 1.4rem;
-    line-height: 1.14;
-    margin-top: 1.4rem;
-    margin-bottom: 2.4rem;
-    letter-spacing: -0.28px;
-  }
-
-  span {
-    font-size: 1.6rem;
-    letter-spacing: -0.28px;
-  }
-`;
-
-const ImgWrapper = styled.div`
-  width: 25.4rem;
-  height: 25rem;
-  background-color: #979797;
+  ${(props) =>
+    props.prev &&
+    css`
+      left: 0;
+    `}
 `;
 
 export default Community;

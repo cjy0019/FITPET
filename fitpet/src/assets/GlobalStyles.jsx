@@ -25,6 +25,23 @@ const GlobalStyles = createGlobalStyle`
       cursor: pointer;
     }
 
+    @media ${(props) => props.theme.laptop}{
+      html {
+        font-size: 8px;
+      }
+    }
+
+    @media ${(props) => props.theme.tablet}{
+      html {
+        font-size: 5px;
+      }
+    }
+
+    @media ${(props) => props.theme.mobile}{
+      html {
+        font-size: 3px;
+      }
+    }
 `;
 
 export default GlobalStyles;
