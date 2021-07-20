@@ -2,43 +2,27 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Only, SliderLeftButton, SliderRightButton } from '../../../common';
 
-const TOTAL_SLIDES = 1;
-
-function SliderOnly() {
+const SliderOnly = () => {
+  const TOTAL_SLIDES = 1;
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
+  const prevBtnRef = useRef(null);
+  const nextBtnRef = useRef(null);
 
   // 5개 슬라이드 효과 주기 translateX(-68.7%)
   useEffect(() => {
     let slideValue = currentSlide * 6 * 10;
     if (currentSlide > 0) {
       slideValue += 8.7;
+      nextBtnRef.current.style = 'visibility:hidden;';
+      prevBtnRef.current.style = 'visibility:visible;';
+    } else {
+      nextBtnRef.current.style = 'visibility:visible;';
+      prevBtnRef.current.style = 'visibility:hidden;';
     }
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${slideValue}%)`;
   }, [currentSlide]);
-
-  // Next 버튼 클릭 시
-  const NextSlide = () => {
-    console.log('next');
-    if (currentSlide >= TOTAL_SLIDES) {
-      // 더 이상 넘어갈 슬라이드가 없으면
-      console.log('다음 슬라이드가 없습니다.');
-      return; // 클릭이 작동하지 않습니다.
-    } else {
-      setCurrentSlide(currentSlide + 1);
-    }
-  };
-  // Prev 버튼 클릭 시
-  const PrevSlide = () => {
-    console.log('prev');
-    if (currentSlide === 0) {
-      console.log('다음 슬라이드가 없습니다.');
-      return; // 클릭이 작동하지 않습니다.
-    } else {
-      setCurrentSlide(currentSlide - 1);
-    }
-  };
 
   return (
     <ContentBox>
@@ -64,23 +48,39 @@ function SliderOnly() {
           </OnlyWrapper>
         </Content>
         <ControlsBtn>
-          <PrevBtn>
-            <SliderLeftButton handleClick={PrevSlide}></SliderLeftButton>
+          <PrevBtn ref={prevBtnRef}>
+            <SliderLeftButton handleClick={prevSlide}></SliderLeftButton>
           </PrevBtn>
-          <NextBtn>
-            <SliderRightButton handleClick={NextSlide}></SliderRightButton>
+          <NextBtn ref={nextBtnRef}>
+            <SliderRightButton handleClick={nextSlide}></SliderRightButton>
           </NextBtn>
         </ControlsBtn>
       </Block>
     </ContentBox>
   );
-}
 
-export default SliderOnly;
+  // Next 버튼 클릭 시
+  function nextSlide() {
+    if (currentSlide >= TOTAL_SLIDES) {
+      // 더 이상 넘어갈 슬라이드가 없으면
+      return; // 클릭이 작동하지 않습니다.
+    } else {
+      setCurrentSlide(currentSlide + 1);
+    }
+  }
+  // Prev 버튼 클릭 시
+  function prevSlide() {
+    if (currentSlide === 0) {
+      return; // 클릭이 작동하지 않습니다.
+    } else {
+      setCurrentSlide(currentSlide - 1);
+    }
+  }
+};
+
 const ContentBox = styled.div`
   max-width: 128rem;
 `;
-
 const Block = styled.div`
   max-width: 128rem;
   margin: 0px auto;
@@ -91,7 +91,6 @@ const Content = styled.div`
   position: relative;
 `;
 const OnlyWrapper = styled.ul`
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
   display: flex;
@@ -115,3 +114,5 @@ const NextBtn = styled.span`
   position: absolute;
   bottom: 20rem;
 `;
+
+export default SliderOnly;
