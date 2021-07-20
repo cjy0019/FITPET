@@ -12,15 +12,21 @@ const TOTAL_SLIDES = 1;
 const SliderRentalcar = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
+  const prevBtnRef = useRef(null);
+  const nextBtnRef = useRef(null);
 
   // 6개 슬라이드 효과 주기 translateX(-51.5%)
   useEffect(() => {
     let slideValue = currentSlide * 5 * 10;
     if (currentSlide > 0) {
       slideValue += 1.5;
+      nextBtnRef.current.style = 'visibility:hidden;';
+      prevBtnRef.current.style = 'visibility:visible;';
+    } else {
+      nextBtnRef.current.style = 'visibility:visible;';
+      prevBtnRef.current.style = 'visibility:hidden;';
     }
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
-    console.log('slideValue: ' + slideValue);
     slideRef.current.style.transform = `translateX(-${slideValue}0%)`;
   }, [currentSlide]);
 
@@ -117,10 +123,10 @@ const SliderRentalcar = () => {
         </Content>
         {/* 슬라이드 버튼 */}
         <ControlsBtn>
-          <PrevBtn>
+          <PrevBtn ref={prevBtnRef}>
             <SliderLeftButton handleClick={prevSlide}></SliderLeftButton>
           </PrevBtn>
-          <NextBtn>
+          <NextBtn ref={nextBtnRef}>
             <SliderRightButton handleClick={nextSlide}></SliderRightButton>
           </NextBtn>
         </ControlsBtn>
@@ -160,7 +166,6 @@ const Content = styled.div`
   position: relative;
 `;
 const RentalcarWrapper = styled.ul`
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
   display: flex;
