@@ -25,10 +25,11 @@ const GoUpBtn = () => {
           color='#979797'
           fontSize='4rem'
           backColor='#ffffff'
-          hoverColor='#ff8a8a'
+          hoverColor='#979797'
+          textHover='#ffffff'
           position='fixed'
-          top='85rem'
-          right='7%'
+          top='90vh'
+          right='5vw'
           _onClick={handleClick}
         />
       </IconWrapper>

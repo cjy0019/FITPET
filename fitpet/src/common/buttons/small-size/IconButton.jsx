@@ -8,6 +8,7 @@ const IconButton = (props) => {
     fontSize,
     backColor,
     hoverColor,
+    textHover,
     border,
     margin,
     borderRadius,
@@ -41,6 +42,7 @@ const IconButton = (props) => {
     borderRadius: borderRadius,
     width: width,
     height: height,
+    textHover: textHover,
     pt: pt,
     pb: pb,
     pl: pl,
@@ -98,6 +100,7 @@ const IconWrapper = styled.button`
 
   &:hover {
     background-color: ${(props) => props.hoverColor};
+    color: ${(props) => props.textHover};
   }
 `;
 
