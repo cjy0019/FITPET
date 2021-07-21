@@ -28,8 +28,8 @@ const GoUpBtn = () => {
           hoverColor='#979797'
           textHover='#ffffff'
           position='fixed'
-          top='85rem'
-          right='7%'
+          top='90vh'
+          right='5vw'
           _onClick={handleClick}
         />
       </IconWrapper>
