@@ -3,31 +3,40 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { A11yHidden } from '../../common/accessibility/Hidden';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import ReservationInput from './ReservationInput';
+import ReservationSticker from './ReservationSticker';
 
 const Reservation = () => {
   return (
     <div>
       <StyledArticle>
         {/* 예약 정보 입력 왼쪽 파트 */}
-        <section>
+        <section style={{ width: '100%' }}>
           <StyledH1>예약 정보 입력</StyledH1>
-          <div>구분선</div>
+          <Line />
+
+          {/* 예약자 정보 */}
           <section>
-            <h2>예약자 정보</h2>
-            <p>성명</p>
-            <input type='text' />
-            <p>휴대폰 번호</p>
-            <input type='text' />
+            <StyledH2>예약자 정보</StyledH2>
+
+            <ReservationInput hint='체크인 시 확인가능한 예약자 실명을 입력해주세요.'>
+              성명
+            </ReservationInput>
+            <ReservationInput hint="예약 문자를 받을 휴대폰 번호를 입력해주세요('-'없이 전체자리)">
+              휴대폰 번호
+            </ReservationInput>
+
+            {/* 쿠폰 / 포인트 */}
           </section>
 
           <section>
-            <h2>쿠폰 / 포인트</h2>
-            <p>쿠폰 적용</p>
-            <input type='text' />
-
-            <p>포인트 사용</p>
-            <input type='text' />
-            <button>모두 사용</button>
+            <StyledH2>쿠폰 / 포인트</StyledH2>
+            <ReservationInput hint='사용가능한 쿠폰 0개 / 전체 0개'>
+              쿠폰 적용
+            </ReservationInput>
+            <ReservationInput hint='0' point>
+              포인트 사용
+            </ReservationInput>
           </section>
 
           <section>
@@ -61,38 +70,7 @@ const Reservation = () => {
         </section>
 
         {/* 오른쪽 파트 */}
-        <RightSection>
-          <h2>
-            <A11yHidden>예약 정보 확인</A11yHidden>
-          </h2>
-          <p>롯데호텔 제주</p>
-          <div>선</div>
-          <p>객실타입</p>
-          <p>스탠다드 더블룸 / 더블침대 1개</p>
-
-          <p>인원 및 반려동물 수</p>
-          <p>성인 2인 / 소형견 1마리</p>
-
-          <p>체크인-체크아웃 날짜</p>
-          <p>8월 6일 (금) - 8월 7일 (토) 1박</p>
-
-          <div>선</div>
-
-          <p>결제 금액</p>
-          <p>쿠폰 할인 금액</p>
-          <p>0원</p>
-          <p>포인트사용</p>
-          <p>0원</p>
-
-          <p>최종 결제 금액</p>
-          <p>466,790 원</p>
-          <NavLink to='/'>
-            서비스 및 요금포함{' '}
-            <div style={{ backgroundColor: '#62997b', verticalAlign: 'top' }}>
-              <MdKeyboardArrowRight />
-            </div>
-          </NavLink>
-        </RightSection>
+        <ReservationSticker />
       </StyledArticle>
     </div>
   );
@@ -102,8 +80,9 @@ const StyledArticle = styled.article`
   width: 128rem;
   display: flex;
   justify-content: space-between;
-  background-color: #bea2bd;
+  /* background-color: #bea2bd; */
   margin: 0 auto;
+  padding-top: 6rem;
 `;
 
 const StyledH1 = styled.h1`
@@ -114,10 +93,19 @@ const StyledH1 = styled.h1`
   color: #707070;
 `;
 
-// 레이아웃 오른쪽 내용 확인 부분
-const RightSection = styled.section`
-  background-color: navajowhite;
-  padding: 4.2rem 3.55rem 4.2rem 3.6rem;
+const StyledH2 = styled.h2`
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 2.8rem;
+  margin-top: 2.8rem;
+  color: #707070;
+`;
+
+const Line = styled.div`
+  border-bottom: solid 1.5px #979797;
+  margin-top: 1.4rem;
+  width: 100%;
 `;
 
 export default Reservation;
