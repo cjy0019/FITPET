@@ -4,7 +4,7 @@ import Carousel from './Carousel';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 const Community = () => {
   const totalSlides = 5;
-  const [ImgArr, setImgArr] = useState([
+  const [ImgArr] = useState([
     '/img/start.jpg',
     '/img/dog1.jpg',
     '/img/dog2.jpg',
