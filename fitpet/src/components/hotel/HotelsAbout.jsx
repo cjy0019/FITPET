@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Font, SampleIcon } from '../../common';
-import { AiFillStar } from 'react-icons/ai';
+import HotelNameBlock from './HotelNameBlock';
 
 const HotelsAbout = () => {
   return (
@@ -9,6 +9,7 @@ const HotelsAbout = () => {
       {/* 숙소 이미지 3장 */}
       <HotelImages>
         <SampleIcon width='88rem' height='50rem' mr='1rem' />
+        {/* 숙소 서브 사진들 */}
         <div className='subImage'>
           <SampleIcon width='39rem' height='24.5rem' mb='1rem' />
           <SampleIcon width='39rem' height='24.5rem' />
@@ -18,34 +19,10 @@ const HotelsAbout = () => {
       <Contents>
         {/* 상세내용 왼쪽 (숙소 이름, 편의시설..) */}
         <ContentsLeft>
-          <div>
-            <HotelName>
-              <Font fontSize='1.6rem' fontWeight='bold' mb='1.4rem'>
-                호텔 | 5성급
-              </Font>
-              <Font fontSize='3.8rem' color='#707070' fontWeight='bold'>
-                롯데호텔 제주
-              </Font>
-              <Font fontSize='1.6rem' color='#979797' mt='1rem' mb='1.1rem'>
-                Lotte Hotel JEJU
-              </Font>
-            </HotelName>
-            <Star>
-              <AiFillStar size='2rem' color='#979797' />
-              <Font fontSize='1.6rem' color='#979797' ml='0.73rem'>
-                4.5
-              </Font>
-            </Star>
-            <PetInfo>
-              <Font fontSize='1.4rem' color='#707070' mt='2rem'>
-                소형견 | 중형견 | 애견동반
-              </Font>
-            </PetInfo>
-          </div>
+          <HotelNameBlock />
+          {/* 찜, 공유 */}
           <div className='icons'>
-            {/* 찜 */}
             <SampleIcon></SampleIcon>
-            {/* 공유 */}
             <SampleIcon ml='1rem' mr='2.4rem'></SampleIcon>
           </div>
         </ContentsLeft>
@@ -188,21 +165,10 @@ const ContentsLeft = styled.div`
     margin-left: auto;
   }
 `;
-const HotelName = styled.div`
-  display: column;
-`;
-const Star = styled.div`
-  display: flex;
-  text-align: center;
-  align-items: center;
-`;
-const PetInfo = styled.div``;
-
 const ContentsRight = styled.div`
   display: block;
   margin-left: 2.4rem;
 `;
-
 const PriceBlock = styled.div`
   display: flex;
   text-align: center;
