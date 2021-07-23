@@ -20,6 +20,8 @@ const SampleIcon = (props) => {
     position,
     top,
     right,
+    border,
+    borderRadius,
   } = props;
 
   const styles = {
@@ -40,6 +42,8 @@ const SampleIcon = (props) => {
     mb: mb,
     ml: ml,
     mr: mr,
+    border: border,
+    borderRadius: borderRadius,
   };
 
   return <Icon {...styles} />;
@@ -71,6 +75,8 @@ const Icon = styled.div`
   margin-left: ${(props) => props.ml};
   width: ${({ width }) => width};
   height: ${({ height }) => height};
+  border: ${(props) => props.border};
+  border-radius: ${(props) => props.borderRadius};
 `;
 
 export default SampleIcon;
