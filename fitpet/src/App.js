@@ -8,6 +8,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import ErrorPage from './pages/ErrorPage';
 import GlobalStyles from './assets/GlobalStyles';
 import CommonPage from './pages/CommonPage';
+import HotelsAboutPage from './pages/HotelsAboutPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route component={LoginPage} path='/login' />
           <Route component={SignUpPage} path='/signup' />
           <Route component={CommonPage} path='/common' />
+          <Route component={HotelsAboutPage} path='/hotels' />
           <Route component={NotFoundPage} />
         </Switch>
       </BrowserRouter>

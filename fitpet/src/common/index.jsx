@@ -8,6 +8,7 @@ import IconButton from './buttons/small-size/IconButton';
 import ToggleButton from './buttons/small-size/ToggleButton';
 import MiddleSizeButton from './buttons/middle-size/MiddleSizeButton';
 import WishSmall from './contents/common/WishSmall';
+import SampleIcon from './icons/SampleIcon';
 export {
   Font,
   CoursePage,
@@ -19,4 +20,5 @@ export {
   ToggleButton,
   IconButton,
   WishSmall,
+  SampleIcon,
 };
