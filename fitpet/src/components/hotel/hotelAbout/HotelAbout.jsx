@@ -5,6 +5,7 @@ import HotelNameBlock from '../hotelAbout/HotelNameBlock';
 import HotelOneRoom from '../hotelAbout/HotelOneRoom';
 import HotelTwoRoom from '../hotelAbout/HotelTwoRoom';
 import OtherHotelSlider from '../hotelAbout/OtherHotelSlider';
+import HotelDate from '../hotel_common/HotelDate';
 
 const HotelAbout = () => {
   return (
@@ -165,14 +166,17 @@ const HotelAbout = () => {
       </About>
       {/* 객실 선택 */}
       <RoomChoose>
-        <Font
-          fontSize='2.4rem'
-          fontWeight='bold'
-          color='#707070'
-          mt='6rem'
-          mb='3.3rem'>
-          객실 선택
-        </Font>
+        <div className='RoomDateBox'>
+          <Font
+            fontSize='2.4rem'
+            fontWeight='bold'
+            color='#707070'
+            mt='6rem'
+            mb='3.3rem'>
+            객실 선택
+          </Font>
+          <HotelDate />
+        </div>
         <div class='RoomBox'>
           <IconButton
             text='조식포함'
@@ -458,6 +462,9 @@ const RoomChoose = styled.div`
   width: 128rem;
   margin: 0 auto;
   border-bottom: 1.5px solid #979797;
+  .RoomDateBox {
+    display: flex;
+  }
   .RoomBox {
     display: flex;
     margin-bottom: 2.4rem;

@@ -82,6 +82,7 @@ MiddleSizeButton.defaultProps = {
 
 const StyledButton = styled.button`
   width: ${(props) => props.width};
+  height: ${(props) => props.height};
   cursor: pointer;
   float: ${(props) => props.float};
   font-size: ${(props) => props.fontSize};
