@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Font, IconButton, SampleIcon } from '../../common';
-import Footer from '../common/Footer';
 import HotelNameBlock from './HotelNameBlock';
+import HotelOneRoom from './HotelOneRoom';
+import HotelTwoRoom from './HotelTwoRoom';
 import OtherHotelSlider from './OtherHotelSlider';
 
 const HotelsAbout = () => {
@@ -110,7 +111,7 @@ const HotelsAbout = () => {
           mb='1.4rem'>
           숙소 정보
         </Font>
-        <div className='Aboutbox'>
+        <div className='aboutBox'>
           <SampleIcon />
           <Font
             fontSize='1.6rem'
@@ -121,7 +122,7 @@ const HotelsAbout = () => {
           </Font>
         </div>
 
-        <div className='Aboutbox'>
+        <div className='aboutBox'>
           <SampleIcon />
           <Font
             fontSize='1.6rem'
@@ -131,7 +132,7 @@ const HotelsAbout = () => {
             체크인 15:00 PM - 체크아웃 12:00 PM
           </Font>
         </div>
-        <div className='Aboutbox'>
+        <div className='aboutBox'>
           <SampleIcon />
           <Font
             fontSize='1.6rem'
@@ -141,7 +142,7 @@ const HotelsAbout = () => {
             11층 / 800객실
           </Font>
         </div>
-        <div className='Aboutbox'>
+        <div className='aboutBox'>
           <SampleIcon />
           <Font
             fontSize='1.6rem'
@@ -151,7 +152,7 @@ const HotelsAbout = () => {
             전화 82-64-908-8800
           </Font>
         </div>
-        <div className='Aboutbox'>
+        <div className='aboutBox'>
           <SampleIcon />
           <Font
             fontSize='1.6rem'
@@ -204,6 +205,11 @@ const HotelsAbout = () => {
           않습니다)
         </Font>
       </RoomChoose>
+      <HotelTwoRoom />
+      <HotelOneRoom />
+      <HotelTwoRoom />
+      <HotelTwoRoom />
+      <HotelOneRoom />
       {/* 숙소 상세정보 */}
       <HotelDetail>
         <Font
@@ -364,7 +370,6 @@ const HotelsAbout = () => {
         </Font>
         <OtherHotelSlider />
       </OthertravelersHotel>
-      <Footer />
     </HotelsAboutWrapper>
   );
 };
@@ -439,7 +444,7 @@ const About = styled.div`
   width: 128rem;
   margin: 0 auto;
   border-bottom: 1.5px solid #979797;
-  .Aboutbox {
+  .aboutBox {
     display: flex;
     margin-bottom: 0.8rem;
     align-items: center;
