@@ -55,7 +55,7 @@ const IconButton = (props) => {
 
   return (
     <IconWrapper {...styles} onClick={_onClick}>
-      {Icon && text ? <Icon /> : text}
+      {Icon && text ? <Icon size={fontSize} /> : text}
     </IconWrapper>
   );
 };
