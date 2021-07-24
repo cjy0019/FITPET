@@ -10,6 +10,7 @@ import GlobalStyles from './assets/GlobalStyles';
 import CommonPage from './pages/CommonPage';
 import ReservationPage from './pages/ReservationPage';
 import HotelsAboutPage from './pages/HotelsAboutPage';
+import HotelListPage from './pages/HotelListPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route component={CommonPage} path='/common' />
           <Route component={ReservationPage} path='/reservation' />
           <Route component={HotelsAboutPage} path='/hotels' />
+          <Route component={HotelListPage} path='/hotel' />
           <Route component={NotFoundPage} />
         </Switch>
       </BrowserRouter>

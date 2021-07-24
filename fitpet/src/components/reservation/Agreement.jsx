@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import MiddleSizeButton from '../../common/buttons/middle-size/MiddleSizeButton';
-import { SmallLine } from './ReservationSticker';
+import SmallLine from '../../common/utility/SmallLine';
 
 const Agreement = () => {
   return (
