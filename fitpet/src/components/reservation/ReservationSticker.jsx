@@ -44,7 +44,7 @@ const ReservationSticker = () => {
       </Price>
 
       <NavLink to='/' activeStyle={navStyle}>
-        <span>서비스 및 요금 포함</span>
+        <span>세금 서비스 및 요금 포함</span>
         <MdKeyboardArrowRight
           style={{ display: 'inline', verticalAlign: 'bottom' }}
         />
@@ -55,15 +55,18 @@ const ReservationSticker = () => {
 
 const navStyle = {
   display: 'inline-block',
-  marginTop: '0.6rem',
+  marginTop: '1rem',
   fontSize: '1.4rem',
   color: '#707070',
 };
 
 const RightSection = styled.section`
+  position: sticky;
+  top: 0;
   background-color: #ffedd1;
   padding: 4.2rem 3.55rem 4.2rem 3.6rem;
   min-width: 39.8rem;
+  max-height: 57.4rem;
   margin-left: 4.2rem;
 `;
 
@@ -75,7 +78,7 @@ const HotelName = styled.p`
   color: #707070;
 `;
 
-const SmallLine = styled.div`
+export const SmallLine = styled.div`
   border-bottom: solid 0.5px #979797;
 
   ${({ margin }) =>

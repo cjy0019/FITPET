@@ -1,8 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { A11yHidden } from '../../common/accessibility/Hidden';
-import { MdKeyboardArrowRight } from 'react-icons/md';
+import Agreement from './Agreement';
+import Payment from './Payment';
 import ReservationInput from './ReservationInput';
 import ReservationSticker from './ReservationSticker';
 
@@ -22,7 +21,10 @@ const Reservation = () => {
             <ReservationInput hint='체크인 시 확인가능한 예약자 실명을 입력해주세요.'>
               성명
             </ReservationInput>
-            <ReservationInput hint="예약 문자를 받을 휴대폰 번호를 입력해주세요('-'없이 전체자리)">
+            <ReservationInput
+              btn
+              text='인증하기'
+              hint="예약 문자를 받을 휴대폰 번호를 입력해주세요. ('-'없이 전체자리)">
               휴대폰 번호
             </ReservationInput>
 
@@ -34,39 +36,13 @@ const Reservation = () => {
             <ReservationInput hint='사용가능한 쿠폰 0개 / 전체 0개'>
               쿠폰 적용
             </ReservationInput>
-            <ReservationInput hint='0' point>
+            <ReservationInput btn text='모두사용' hint='0' point>
               포인트 사용
             </ReservationInput>
           </section>
 
-          <section>
-            <h2>결제 수단 선택</h2>
-            <div>
-              <input type='radio' id='kakaopay' value='kakaopay' />
-              <label for='kakaopay'>카카오 페이</label>
-
-              <input type='radio' id='toss' value='toss' />
-              <label for='toss'>토스</label>
-
-              <input type='radio' id='naverpay' value='naverpay' />
-              <label for='naverpay'>네이버 페이</label>
-
-              <input type='radio' id='payco' value='payco' />
-              <label for='payco'>PAYCO</label>
-
-              <input type='radio' id='credit' value='credit' />
-              <label for='credit'>신용/체크 카드</label>
-
-              <input type='radio' id='phone' value='phone' />
-              <label for='phone'>휴대폰 결제</label>
-            </div>
-          </section>
-
-          <div>
-            <p>이용 약관 동의</p>
-          </div>
-
-          <button>확인 및 결제</button>
+          <Payment />
+          <Agreement />
         </section>
 
         {/* 오른쪽 파트 */}
@@ -81,7 +57,7 @@ const StyledArticle = styled.article`
   display: flex;
   justify-content: space-between;
   /* background-color: #bea2bd; */
-  margin: 0 auto;
+  margin: 0 auto 46rem;
   padding-top: 6rem;
 `;
 

@@ -1,17 +1,36 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import MiddleSizeButton from '../../common/buttons/middle-size/MiddleSizeButton';
 
-const ReservationInput = ({ children, hint, point }) => {
+const ReservationInput = ({ children, hint, point, btn, text }) => {
   return (
     <StyledDiv m4>
       <StyledP>{children}</StyledP>
       <StyledInput type='text' placeholder={hint} />
       {point && <StyledPoint>사용가능한 포인트 : 0</StyledPoint>}
+      {btn && (
+        <MiddleSizeButton
+          text={text}
+          width='11.6rem'
+          color='#ffffff'
+          backColor='#cbcbcb'
+          border='none'
+          pt='1.5rem'
+          pb='1.4rem'
+          borderRadius='7px'
+          fontSize='1.6rem'
+          position='absolute'
+          top='0'
+          right='0'
+        />
+      )}
     </StyledDiv>
   );
 };
 
 const StyledDiv = styled.div`
+  position: relative;
+
   ${(props) =>
     props.m4 &&
     css`
@@ -39,7 +58,7 @@ const StyledInput = styled.input`
   border: none;
   border-bottom: solid 0.05rem #979797;
   padding-bottom: 1.4rem;
-  padding-top: 1rem;
+  margin-top: 1rem;
   outline: none;
   width: 100%;
 
