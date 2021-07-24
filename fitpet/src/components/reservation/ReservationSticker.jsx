@@ -1,8 +1,9 @@
 import React from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { A11yHidden } from '../../common/accessibility/Hidden';
+import SmallLine from '../../common/utility/SmallLine';
 
 const ReservationSticker = () => {
   return (
@@ -76,16 +77,6 @@ const HotelName = styled.p`
   line-height: 1.21;
   margin-bottom: 1.3rem;
   color: #707070;
-`;
-
-export const SmallLine = styled.div`
-  border-bottom: solid 0.5px #979797;
-
-  ${({ margin }) =>
-    margin &&
-    css`
-      margin-top: 2.8rem;
-    `}
 `;
 
 // 결제 금액 아래 part
