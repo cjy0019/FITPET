@@ -9,7 +9,7 @@ import ErrorPage from './pages/ErrorPage';
 import GlobalStyles from './assets/GlobalStyles';
 import CommonPage from './pages/CommonPage';
 import ReservationPage from './pages/ReservationPage';
-import HotelsAboutPage from './pages/HotelsAboutPage';
+import HotelAboutPage from './pages/HotelAboutPage';
 import HotelListPage from './pages/HotelListPage';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <Route component={SignUpPage} path='/signup' />
           <Route component={CommonPage} path='/common' />
           <Route component={ReservationPage} path='/reservation' />
-          <Route component={HotelsAboutPage} path='/hotels' />
+          <Route component={HotelAboutPage} path='/hotelAbout' />
           <Route component={HotelListPage} path='/hotel' />
           <Route component={NotFoundPage} />
         </Switch>

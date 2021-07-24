@@ -1,13 +1,12 @@
 import React from 'react';
 import GoUpBtn from '../common/buttons/small-size/GoUpBtn';
 import Footer from '../components/common/Footer';
-import HotelsAbout from '../components/hotel/HotelsAbout';
-import RoomDetailModal from '../components/hotel/popup/RoomDetailModal';
+import HotelAbout from '../components/hotel/hotelAbout/HotelAbout';
 
 const HotelsAboutPage = () => {
   return (
     <div>
-      <HotelsAbout />
+      <HotelAbout />
       <GoUpBtn />
       <Footer />
       {/* <RoomDetailModal />*/}

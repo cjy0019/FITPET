@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, IconButton, SampleIcon } from '../../common';
-import HotelNameBlock from './HotelNameBlock';
-import HotelOneRoom from './HotelOneRoom';
-import HotelTwoRoom from './HotelTwoRoom';
-import OtherHotelSlider from './OtherHotelSlider';
+import { Font, IconButton, SampleIcon } from '../../../common';
+import HotelNameBlock from '../hotelAbout/HotelNameBlock';
+import HotelOneRoom from '../hotelAbout/HotelOneRoom';
+import HotelTwoRoom from '../hotelAbout/HotelTwoRoom';
+import OtherHotelSlider from '../hotelAbout/OtherHotelSlider';
 
-const HotelsAbout = () => {
+const HotelAbout = () => {
   return (
     <HotelsAboutWrapper>
       {/* 숙소 이미지 3장 */}
@@ -523,4 +523,4 @@ const OthertravelersHotel = styled.div`
   margin: 0 auto 25.6rem;
 `;
 
-export default HotelsAbout;
+export default HotelAbout;

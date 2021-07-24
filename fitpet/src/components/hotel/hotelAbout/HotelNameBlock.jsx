@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font } from '../../common';
+import { Font } from '../../../common';
 import { AiFillStar } from 'react-icons/ai';
 
 const HotelNameBlock = () => {
