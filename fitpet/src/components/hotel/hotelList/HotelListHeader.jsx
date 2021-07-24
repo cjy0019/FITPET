@@ -37,7 +37,6 @@ const HotelListHeader = () => {
 const SmallHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  background-color: wheat;
   margin-bottom: 2.2rem;
 
   h2 {
