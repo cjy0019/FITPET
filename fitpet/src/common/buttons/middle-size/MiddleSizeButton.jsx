@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const MiddleSizeButton = (props) => {
   const {
     text,
+    float,
+    top,
+    right,
+    position,
     children,
     backColor,
     _onClick,
@@ -30,6 +34,10 @@ const MiddleSizeButton = (props) => {
 
   const styles = {
     p: p,
+    position: position,
+    float: float,
+    top: top,
+    right: right,
     dp: 'inline-block',
     color: color,
     width: width,
@@ -75,6 +83,7 @@ MiddleSizeButton.defaultProps = {
 const StyledButton = styled.button`
   width: ${(props) => props.width};
   cursor: pointer;
+  float: ${(props) => props.float};
   font-size: ${(props) => props.fontSize};
   font-weight: ${(props) => props.fontWeight};
   outline: none;
@@ -94,6 +103,9 @@ const StyledButton = styled.button`
   background-position: ${(props) => props.bgp};
   background-image: url(${(props) => props.url});
   background-size: ${(props) => props.size};
+  position: ${(props) => props.position};
+  top: ${(props) => props.top};
+  right: ${(props) => props.right};
 
   cursor: pointer;
   white-space: nowrap;
