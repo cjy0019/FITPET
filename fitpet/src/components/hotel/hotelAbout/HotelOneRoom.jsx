@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, SampleIcon, OpenBtn, RoundSquareBtn } from '../../common';
+import { Font, SampleIcon, OpenBtn, RoundSquareBtn } from '../../../common';
 
 const HotelOneRoom = () => {
   return (

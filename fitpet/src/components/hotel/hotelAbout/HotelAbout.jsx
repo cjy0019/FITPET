@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, IconButton, SampleIcon } from '../../common';
-import HotelNameBlock from './HotelNameBlock';
-import HotelOneRoom from './HotelOneRoom';
-import HotelTwoRoom from './HotelTwoRoom';
-import OtherHotelSlider from './OtherHotelSlider';
+import { Font, IconButton, SampleIcon } from '../../../common';
+import HotelNameBlock from '../hotelAbout/HotelNameBlock';
+import HotelOneRoom from '../hotelAbout/HotelOneRoom';
+import HotelTwoRoom from '../hotelAbout/HotelTwoRoom';
+import OtherHotelSlider from '../hotelAbout/OtherHotelSlider';
+import HotelDate from '../hotel_common/HotelDate';
 
-const HotelsAbout = () => {
+const HotelAbout = () => {
   return (
     <HotelsAboutWrapper>
       {/* 숙소 이미지 3장 */}
@@ -165,14 +166,17 @@ const HotelsAbout = () => {
       </About>
       {/* 객실 선택 */}
       <RoomChoose>
-        <Font
-          fontSize='2.4rem'
-          fontWeight='bold'
-          color='#707070'
-          mt='6rem'
-          mb='3.3rem'>
-          객실 선택
-        </Font>
+        <div className='RoomDateBox'>
+          <Font
+            fontSize='2.4rem'
+            fontWeight='bold'
+            color='#707070'
+            mt='6rem'
+            mb='3.3rem'>
+            객실 선택
+          </Font>
+          <HotelDate />
+        </div>
         <div class='RoomBox'>
           <IconButton
             text='조식포함'
@@ -458,6 +462,9 @@ const RoomChoose = styled.div`
   width: 128rem;
   margin: 0 auto;
   border-bottom: 1.5px solid #979797;
+  .RoomDateBox {
+    display: flex;
+  }
   .RoomBox {
     display: flex;
     margin-bottom: 2.4rem;
@@ -523,4 +530,4 @@ const OthertravelersHotel = styled.div`
   margin: 0 auto 25.6rem;
 `;
 
-export default HotelsAbout;
+export default HotelAbout;
