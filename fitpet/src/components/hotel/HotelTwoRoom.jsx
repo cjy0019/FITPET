@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, SampleIcon, IconButton, OpenBtn } from '../../common';
+import { Font, SampleIcon, OpenBtn, RoundSquareBtn } from '../../common';
 
 const HotelTwoRoom = () => {
   return (
@@ -92,28 +92,17 @@ const HotelTwoRoom = () => {
                 <span className='one'> 원</span>
               </div>
               <div className='buttons'>
-                <IconButton
-                  text='장바구니'
-                  backColor='#cbcbcb'
-                  height='48px'
-                  pr='2.8rem'
-                  pl='2.8rem'
-                  color='#707070'
+                <RoundSquareBtn
                   fontSize='1.6rem'
-                  borderRadius='7px'
-                  border='none'
-                  mr='1.4rem'
+                  color='#707070'
+                  text='장바구니'
                 />
-                <IconButton
+                <RoundSquareBtn
                   text='예약하기'
                   backColor='#979797'
-                  height='48px'
-                  pr='2.8rem'
-                  pl='2.8rem'
                   color='#fff'
                   fontSize='1.6rem'
-                  borderRadius='7px'
-                  border='none'
+                  ml='1.4rem'
                 />
               </div>
             </div>
@@ -193,28 +182,17 @@ const HotelTwoRoom = () => {
                 <span className='one'> 원</span>
               </div>
               <div className='buttons'>
-                <IconButton
-                  text='장바구니'
-                  backColor='#cbcbcb'
-                  height='48px'
-                  pr='2.8rem'
-                  pl='2.8rem'
-                  color='#707070'
+                <RoundSquareBtn
                   fontSize='1.6rem'
-                  borderRadius='7px'
-                  border='none'
-                  mr='1.4rem'
+                  color='#707070'
+                  text='장바구니'
                 />
-                <IconButton
+                <RoundSquareBtn
                   text='예약하기'
                   backColor='#979797'
-                  height='48px'
-                  pr='2.8rem'
-                  pl='2.8rem'
                   color='#fff'
                   fontSize='1.6rem'
-                  borderRadius='7px'
-                  border='none'
+                  ml='1.4rem'
                 />
               </div>
             </div>
