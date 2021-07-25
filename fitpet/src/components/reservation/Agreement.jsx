@@ -1,23 +1,40 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import MiddleSizeButton from '../../common/buttons/middle_size/MiddleSizeButton';
 import SmallLine from '../../common/utility/SmallLine';
+import { DownButton, UpButton } from '../hotel/hotel_common/filterCommon';
 
 const Agreement = () => {
+  const [showAll, setShowAll] = useState(true);
+  const showRef = useRef(null);
+
+  useEffect(() => {
+    if (showAll) {
+      showRef.current.style = 'visibility : visible; opacity : 1;';
+    } else {
+      showRef.current.style = 'height:0rem; visibility : hidden; opacity:0';
+    }
+  }, [showAll]);
+
   return (
     <AgreeWrapper>
       <StyledP>이용 약관 동의</StyledP>
 
-      <RadioWrapper>
+      <RadioWrapper firstline>
         <Agree id='agreeAll' type='radio' />
         <AgreeLabel htmlFor='agreeAll'>
           주문 상품 정보 및 서비스 이용약관에 모두 동의
         </AgreeLabel>
+        {showAll ? (
+          <UpButton handleClick={handleClick} />
+        ) : (
+          <DownButton handleClick={handleClick} />
+        )}
       </RadioWrapper>
 
       <SmallLine />
       {/* 숨겨지는 부분 */}
-      <RadioWrapper flex>
+      <RadioWrapper flex ref={showRef}>
         <Agree id='agreeAll' type='radio' />
         <AgreeLabel htmlFor='agreeAll' margin>
           [필수] 숙소이용규칙 및 취소/환불규정 동의
@@ -54,6 +71,10 @@ const Agreement = () => {
       />
     </AgreeWrapper>
   );
+
+  function handleClick() {
+    setShowAll(!showAll);
+  }
 };
 
 const AgreeWrapper = styled.div`
@@ -78,10 +99,20 @@ const RadioWrapper = styled.div`
   margin-bottom: 1.3rem;
 
   ${(props) =>
+    props.firstline &&
+    css`
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    `}
+
+  ${(props) =>
     props.flex &&
     css`
       display: flex;
       flex-direction: column;
+      height: 11rem;
+      transition: all 0.2s;
     `}
 `;
 
