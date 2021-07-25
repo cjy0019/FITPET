@@ -1,23 +1,42 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { MiddleSizeButton } from '../../../common';
 
-const HotelSearch = () => {
+const HotelSearch = ({ isScroll }) => {
   return (
-    <SearchContainer>
-      <SearchBox placeholder='제주도' />
-      <SearchBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
-      <SearchBox placeholder='성인1 | 객실1 | 소형견1' />
-      <MiddleSizeButton
-        fontSize='1.6rem'
-        width='7.4rem'
-        text='검색'
-        border='none'
-        borderRadius='7px'
-        pt='1.5rem'
-        pb='1.4rem'
-      />
-    </SearchContainer>
+    <>
+      {isScroll ? (
+        <SearchContainer>
+          <SearchBox placeholder='제주도' />
+          <SearchBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
+          <SearchBox placeholder='성인1 | 객실1 | 소형견1' />
+          <MiddleSizeButton
+            fontSize='1.6rem'
+            width='7.4rem'
+            text='검색'
+            border='none'
+            borderRadius='7px'
+            pt='1.5rem'
+            pb='1.4rem'
+          />
+        </SearchContainer>
+      ) : (
+        <SearchContainer scroll>
+          <SearchBox placeholder='제주도' />
+          <SearchBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
+          <SearchBox placeholder='성인1 | 객실1 | 소형견1' />
+          <MiddleSizeButton
+            fontSize='1.6rem'
+            width='7.4rem'
+            text='검색'
+            border='none'
+            borderRadius='7px'
+            pt='1.5rem'
+            pb='1.4rem'
+          />
+        </SearchContainer>
+      )}
+    </>
   );
 };
 
@@ -30,6 +49,13 @@ const SearchContainer = styled.div`
   padding: 2.6rem 2.8rem;
   margin: 0 auto;
   margin-top: 5.6rem;
+  animation-timing-function: ease-in-out;
+
+  ${(props) =>
+    props.scroll &&
+    css`
+      margin-top: 0;
+    `}
 `;
 
 const SearchBox = styled.input`
