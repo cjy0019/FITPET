@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HotelInfo from './HotelInfo';
 import HotelListHeader from './HotelListHeader';
-import GoUpBtn from '../../../common/buttons/small-size/GoUpBtn';
+import GoUpBtn from '../../../common/buttons/small_size/GoUpBtn';
 import HotelBanner from './HotelBanner';
 import HotelFilter from './HotelFilter';
 import Header from '../../mainpage/header/Header';
