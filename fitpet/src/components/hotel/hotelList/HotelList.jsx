@@ -7,6 +7,7 @@ import HotelListHeader from './HotelListHeader';
 import GoUpBtn from '../../../common/buttons/small-size/GoUpBtn';
 import HotelBanner from './HotelBanner';
 import HotelFilter from './HotelFilter';
+import Header from '../../mainpage/header/Header';
 
 const HotelList = () => {
   const hotels = [
@@ -19,7 +20,8 @@ const HotelList = () => {
   ];
 
   return (
-    <div>
+    <Container>
+      <Header />
       <HotelBanner />
       <HotelMain>
         <h1>
@@ -34,17 +36,21 @@ const HotelList = () => {
           {hotels.map((hotel) => {
             return (
               <>
-                <HotelInfo key={hotel.id} />
-                <SmallLine key={hotel.id} />
+                <HotelInfo key={hotel.id * 11.123} />
+                <SmallLine key={hotel.id * 11.9982} />
               </>
             );
           })}
         </PossibleHotel>
         <GoUpBtn />
       </HotelMain>
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  padding-top: 33rem;
+`;
 
 const HotelMain = styled.main`
   margin: 0 auto;
