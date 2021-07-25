@@ -6,6 +6,7 @@ import HotelInfo from './HotelInfo';
 import HotelListHeader from './HotelListHeader';
 import GoUpBtn from '../../../common/buttons/small-size/GoUpBtn';
 import HotelBanner from './HotelBanner';
+import HotelFilter from './HotelFilter';
 
 const HotelList = () => {
   const hotels = [
@@ -25,7 +26,7 @@ const HotelList = () => {
           <A11yHidden>숙소 목록</A11yHidden>
         </h1>
 
-        <section>필터링 부분</section>
+        <HotelFilter />
 
         {/* 예약 가능한 숙소 부분 */}
         <PossibleHotel>
