@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Font, HoverText, IconButton, SampleIcon } from '../../../common';
+import ImgMoreBtn from '../../../common/buttons/small-size/ImgMoreBtn';
 import HotelNameBlock from '../hotelAbout/HotelNameBlock';
 import HotelOneRoom from '../hotelAbout/HotelOneRoom';
 import HotelTwoRoom from '../hotelAbout/HotelTwoRoom';
@@ -17,6 +18,7 @@ const HotelAbout = () => {
         <div className='subImage'>
           <SampleIcon width='39rem' height='24.5rem' mb='1rem' />
           <SampleIcon width='39rem' height='24.5rem' />
+          <ImgMoreBtn />
         </div>
       </HotelImages>
       {/* 숙소 상세 내용 */}
@@ -71,7 +73,7 @@ const HotelAbout = () => {
         <ServiceBox>
           <SampleIcon width='12.5rem' height='12.5rem' />
           <Font fontSize='2rem' fontWeight='normal' color='#707070' mt='0.7rem'>
-            운동장
+            소형견
           </Font>
         </ServiceBox>
         <ServiceBox>
@@ -381,6 +383,7 @@ const HotelImages = styled.div`
   margin: 2.6rem auto 4rem;
   width: 128rem;
   //height: 55rem;
+  position: relative;
   display: flex;
   .subImage {
     display: block;

@@ -10,7 +10,7 @@ const MiddleSizeButton = (props) => {
     position,
     children,
     backColor,
-    _onClick,
+    handleClick,
     borderRadius,
     width,
     height,
@@ -61,7 +61,7 @@ const MiddleSizeButton = (props) => {
   };
 
   return (
-    <StyledButton {...styles} onClick={_onClick}>
+    <StyledButton {...styles} onClick={handleClick}>
       {text ? text : children}
     </StyledButton>
   );
@@ -77,7 +77,7 @@ MiddleSizeButton.defaultProps = {
   color: 'black',
   border: 'solid 1px #707070',
 
-  _onClick: () => {},
+  handleClick: () => {},
 };
 
 const StyledButton = styled.button`

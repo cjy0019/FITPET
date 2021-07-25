@@ -14,7 +14,7 @@ const HoverText = () => {
         마음껏 뛰어 놀 수 있어요!
       </p>
       <Font fontSize='2rem' fontWeight='normal' color='#707070' mt='0.7rem'>
-        소형견
+        운동장
       </Font>
     </HoverTextWrapper>
   );

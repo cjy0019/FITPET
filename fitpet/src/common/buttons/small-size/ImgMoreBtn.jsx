@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const RoundSquareBtn = (props) => {
+const ImgMoreBtn = (props) => {
   const {
     text,
     children,
@@ -52,26 +52,33 @@ const RoundSquareBtn = (props) => {
     ml: ml,
     mr: mr,
   };
+
   return (
-    <RoundSquareBtnWrapper {...styles} onClick={handleClick}>
+    <ImgMoreWrapper {...styles} onClick={handleClick}>
       {text ? text : children}
-    </RoundSquareBtnWrapper>
+    </ImgMoreWrapper>
   );
 };
 
-RoundSquareBtn.defaultProps = {
+ImgMoreBtn.defaultProps = {
+  text: '10 +',
   backColor: '#cbcbcb',
-  height: '4.8rem',
+  color: '#fff',
+  pt: '1.1rem',
+  pr: '1.9rem',
+  pl: '1.9rem',
+  pb: '1rem',
+  fontSize: '2rem',
+  borderRadius: '2.6rem',
+  hoverColor: '#707070',
   border: 'none',
-  borderRadius: '7px',
-  pr: '2.8rem',
-  pl: '2.8rem',
-  fontSize: '1.6rem',
-  text: '버튼 이름',
+  margin: '0 0.5rem 1rem 0.5rem',
+  position: 'absolute',
+  top: '',
   handleClick: () => {},
 };
 
-const RoundSquareBtnWrapper = styled.button`
+const ImgMoreWrapper = styled.button`
   outline: none;
   cursor: pointer;
   transition: 0.4s;
@@ -104,4 +111,5 @@ const RoundSquareBtnWrapper = styled.button`
     color: ${(props) => props.textHover};
   }
 `;
-export default RoundSquareBtn;
+
+export default ImgMoreBtn;

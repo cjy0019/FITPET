@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const WishSmall = (props) => {
-  const { margin, _onClick } = props;
+  const { margin, handleClick } = props;
 
   const styles = {
     margin: margin,
   };
   return (
-    <WishBox {...styles} onClick={_onClick}>
+    <WishBox {...styles} onClick={handleClick}>
       <WishBtn />
       {/* <WishBlock>
       </WishBlock> */}

@@ -12,6 +12,7 @@ import SampleIcon from './icons/SampleIcon';
 import OpenBtn from './buttons/small-size/OpenBtn';
 import RoundSquareBtn from './buttons/small-size/RoundSquareBtn';
 import HoverText from './contents/common/HoverText';
+import ImgMoreBtn from './buttons/small-size/ImgMoreBtn';
 export {
   Font,
   CoursePage,
@@ -27,4 +28,5 @@ export {
   OpenBtn,
   RoundSquareBtn,
   HoverText,
+  ImgMoreBtn,
 };
