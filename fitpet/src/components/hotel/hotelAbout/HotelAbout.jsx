@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, IconButton, SampleIcon } from '../../../common';
+import { Font, HoverText, IconButton, SampleIcon } from '../../../common';
 import HotelNameBlock from '../hotelAbout/HotelNameBlock';
 import HotelOneRoom from '../hotelAbout/HotelOneRoom';
 import HotelTwoRoom from '../hotelAbout/HotelTwoRoom';
@@ -66,10 +66,7 @@ const HotelAbout = () => {
       {/* 서비스 및 편의시설 */}
       <ServiceBlock>
         <ServiceBox>
-          <SampleIcon width='12.5rem' height='12.5rem' />
-          <Font fontSize='2rem' fontWeight='normal' color='#707070' mt='0.7rem'>
-            소형견
-          </Font>
+          <HoverText />
         </ServiceBox>
         <ServiceBox>
           <SampleIcon width='12.5rem' height='12.5rem' />
@@ -84,10 +81,7 @@ const HotelAbout = () => {
           </Font>
         </ServiceBox>
         <ServiceBox>
-          <SampleIcon width='12.5rem' height='12.5rem' />
-          <Font fontSize='2rem' fontWeight='normal' color='#707070' mt='0.7rem'>
-            피트니스
-          </Font>
+          <HoverText />
         </ServiceBox>
         <ServiceBox>
           <SampleIcon width='12.5rem' height='12.5rem' />
@@ -461,7 +455,7 @@ const RoomChoose = styled.div`
   display: block;
   width: 128rem;
   margin: 0 auto;
-  border-bottom: 1.5px solid #979797;
+  border-bottom: 1px solid #979797;
   .RoomDateBox {
     display: flex;
   }

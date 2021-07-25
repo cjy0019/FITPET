@@ -11,6 +11,7 @@ import WishSmall from './contents/common/WishSmall';
 import SampleIcon from './icons/SampleIcon';
 import OpenBtn from './buttons/small-size/OpenBtn';
 import RoundSquareBtn from './buttons/small-size/RoundSquareBtn';
+import HoverText from './contents/common/HoverText';
 export {
   Font,
   CoursePage,
@@ -25,4 +26,5 @@ export {
   SampleIcon,
   OpenBtn,
   RoundSquareBtn,
+  HoverText,
 };

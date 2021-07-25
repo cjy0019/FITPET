@@ -11,6 +11,7 @@ import CommonPage from './pages/CommonPage';
 import ReservationPage from './pages/ReservationPage';
 import HotelAboutPage from './pages/HotelAboutPage';
 import HotelListPage from './pages/HotelListPage';
+import RoomDetailModalPage from './pages/RoomDetailModalPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route component={CommonPage} path='/common' />
           <Route component={ReservationPage} path='/reservation' />
           <Route component={HotelAboutPage} path='/hotelAbout' />
+          <Route component={RoomDetailModalPage} path='/roomDetail' />
           <Route component={HotelListPage} path='/hotel' />
           <Route component={NotFoundPage} />
         </Switch>

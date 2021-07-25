@@ -35,7 +35,7 @@ const MainHeader = styled.header`
   height: 8rem;
   top: 0;
   padding: 2.6rem 6rem 2.6rem 6rem;
-  background-color: darkgoldenrod;
+  background-color: #fff;
   z-index: 999;
 `;
 
