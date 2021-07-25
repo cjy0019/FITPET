@@ -29,13 +29,13 @@ const HotelFilter = () => {
 
 const FilterSection = styled.div`
   min-width: 28rem;
-  background-color: aliceblue;
 `;
 
 const MapContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #cbcbcb;
   height: 9.6rem;
 `;
 

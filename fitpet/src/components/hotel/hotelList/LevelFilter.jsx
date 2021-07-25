@@ -1,35 +1,53 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { IconButton } from '../../../common';
-import { IoIosArrowUp } from 'react-icons/io';
-import { FilterBtn, FilterTitle } from '../hotel_common/filterCommon';
+import {
+  DownButton,
+  FilterBtn,
+  FilterTitle,
+  UpButton,
+} from '../hotel_common/filterCommon';
 
 const LevelFilter = () => {
+  const [isFold, setisFold] = useState(true);
+  const foldingRef = useRef(null);
+
+  useEffect(() => {
+    if (isFold) {
+      foldingRef.current.style =
+        'visibility : visible; height: 10rem; opacity:1; ';
+    } else {
+      foldingRef.current.style = 'visibility : hidden; height: 0rem; opacity:0';
+    }
+  }, [isFold]);
+
   return (
     <AllWrapper>
       <ButtonContainer>
         <FilterTitle>등급</FilterTitle>
-        <IconButton
-          Icon={IoIosArrowUp}
-          width='2.8rem'
-          height='2.8rem'
-          border='none'
-          borderRadius='0'
-          backColor='#cbcbcb'
-          color='black'
-        />
+        {isFold ? (
+          <UpButton _onClick={handleClick} />
+        ) : (
+          <DownButton _onClick={handleClick} />
+        )}
       </ButtonContainer>
-      <LineWrapper>
-        <FilterBtn noMargin>5성급</FilterBtn>
-        <FilterBtn>4성급</FilterBtn>
-        <FilterBtn>3성급</FilterBtn>
-        <FilterBtn>2성급</FilterBtn>
-      </LineWrapper>
-      <LineWrapper>
-        <FilterBtn noMargin>1성급 이하</FilterBtn>
-      </LineWrapper>
+
+      <Folder ref={foldingRef}>
+        <LineWrapper>
+          <FilterBtn noMargin>5성급</FilterBtn>
+          <FilterBtn>4성급</FilterBtn>
+          <FilterBtn>3성급</FilterBtn>
+          <FilterBtn>2성급</FilterBtn>
+        </LineWrapper>
+        <LineWrapper>
+          <FilterBtn noMargin>1성급 이하</FilterBtn>
+        </LineWrapper>
+      </Folder>
     </AllWrapper>
   );
+
+  function handleClick() {
+    setisFold(!isFold);
+  }
 };
 
 // 필터링 버튼 컨테이너
@@ -45,6 +63,11 @@ const ButtonContainer = styled.div`
 
 const LineWrapper = styled.div`
   margin-top: 1.2rem;
+`;
+
+const Folder = styled.div`
+  transition: ease 0.2s;
+  height: 9rem;
 `;
 
 export default LevelFilter;

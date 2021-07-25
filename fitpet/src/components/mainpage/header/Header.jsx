@@ -29,13 +29,13 @@ const Header = () => {
 
 const MainHeader = styled.header`
   display: grid;
+  background-color: #ffffff;
   grid-template-columns: 1.17fr repeat(2, 1fr);
   position: fixed;
   width: 100%;
   height: 8rem;
   top: 0;
   padding: 2.6rem 6rem 2.6rem 6rem;
-  background-color: #fff;
   z-index: 999;
 `;
 
