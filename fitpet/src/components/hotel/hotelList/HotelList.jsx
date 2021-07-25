@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
-import SmallLine from '../../../common/utility/SmallLine';
 import HotelInfo from './HotelInfo';
 import HotelListHeader from './HotelListHeader';
 import GoUpBtn from '../../../common/buttons/small-size/GoUpBtn';
@@ -28,16 +27,16 @@ const HotelList = () => {
           <A11yHidden>숙소 목록</A11yHidden>
         </h1>
 
+        {/* 필터링 기능 부분 */}
         <HotelFilter />
 
         {/* 예약 가능한 숙소 부분 */}
         <PossibleHotel>
           <HotelListHeader />
-          {hotels.map((hotel) => {
+          {hotels.map((hotel, i) => {
             return (
               <>
-                <HotelInfo key={hotel.id * 11.123} />
-                <SmallLine key={hotel.id * 11.9982} />
+                <HotelInfo key={hotel.id} />
               </>
             );
           })}
