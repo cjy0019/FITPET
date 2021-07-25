@@ -26,7 +26,6 @@ const DateContainer = styled.div`
   background-color: #fff;
   border-radius: 15px;
   margin-left: auto;
-  margin-top: 5.6rem;
 `;
 
 const DateBox = styled.input`

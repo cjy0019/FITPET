@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Font, HoverText, IconButton, SampleIcon } from '../../../common';
-import ImgMoreBtn from '../../../common/buttons/small-size/ImgMoreBtn';
+import ImgMoreBtn from '../../../common/buttons/small_size/ImgMoreBtn';
 import HotelNameBlock from '../hotelAbout/HotelNameBlock';
 import HotelOneRoom from '../hotelAbout/HotelOneRoom';
 import HotelTwoRoom from '../hotelAbout/HotelTwoRoom';
@@ -17,8 +17,10 @@ const HotelAbout = () => {
         {/* 숙소 서브 사진들 */}
         <div className='subImage'>
           <SampleIcon width='39rem' height='24.5rem' mb='1rem' />
-          <SampleIcon width='39rem' height='24.5rem' />
-          <ImgMoreBtn />
+          <div className='imgBtn'>
+            <SampleIcon width='39rem' height='24.5rem' />
+            <ImgMoreBtn position='absolute' top='18rem' right='1rem' />
+          </div>{' '}
         </div>
       </HotelImages>
       {/* 숙소 상세 내용 */}
@@ -167,11 +169,11 @@ const HotelAbout = () => {
             fontSize='2.4rem'
             fontWeight='bold'
             color='#707070'
-            mt='6rem'
+            mt='1rem'
             mb='3.3rem'>
             객실 선택
           </Font>
-          <HotelDate />
+          <HotelDate mt='5.6rem' />
         </div>
         <div class='RoomBox'>
           <IconButton
@@ -383,10 +385,12 @@ const HotelImages = styled.div`
   margin: 2.6rem auto 4rem;
   width: 128rem;
   //height: 55rem;
-  position: relative;
   display: flex;
   .subImage {
     display: block;
+  }
+  .imgBtn {
+    position: relative;
   }
 `;
 const Contents = styled.div`
@@ -459,6 +463,7 @@ const RoomChoose = styled.div`
   width: 128rem;
   margin: 0 auto;
   border-bottom: 1px solid #979797;
+  padding-top: 5rem;
   .RoomDateBox {
     display: flex;
   }
