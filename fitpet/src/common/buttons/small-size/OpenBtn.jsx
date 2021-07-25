@@ -11,7 +11,7 @@ const OpenBtn = (props) => {
     border,
     margin,
     borderRadius,
-    _onClick,
+    handleClick,
     color,
     pt,
     pb,
@@ -53,7 +53,7 @@ const OpenBtn = (props) => {
   };
 
   return (
-    <OpenBtnWrapper {...styles} onClick={_onClick}>
+    <OpenBtnWrapper {...styles} onClick={handleClick}>
       <AiOutlineRight size='1.5rem' color='#707070' />
     </OpenBtnWrapper>
   );
@@ -66,7 +66,7 @@ OpenBtn.defaultProps = {
   height: '2.8rem',
   border: 'none',
   margin: '0',
-  _onClick: () => {},
+  handleClick: () => {},
 };
 
 const OpenBtnWrapper = styled.button`

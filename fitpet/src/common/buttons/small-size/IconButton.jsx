@@ -12,7 +12,7 @@ const IconButton = (props) => {
     border,
     margin,
     borderRadius,
-    _onClick,
+    handleClick,
     color,
     pt,
     pb,
@@ -54,7 +54,7 @@ const IconButton = (props) => {
   };
 
   return (
-    <IconWrapper {...styles} onClick={_onClick}>
+    <IconWrapper {...styles} onClick={handleClick}>
       {Icon && text ? <Icon size={fontSize} /> : text}
     </IconWrapper>
   );
@@ -67,7 +67,7 @@ IconButton.defaultProps = {
   borderRadius: '1000px',
   color: '#fff',
   margin: '0',
-  _onClick: () => {},
+  handleClick: () => {},
 };
 
 const IconWrapper = styled.button`

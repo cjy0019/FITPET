@@ -50,6 +50,7 @@ const SampleIcon = (props) => {
 };
 
 SampleIcon.defaultProps = {
+  position: 'relative',
   color: '#fff',
   margin: '0',
   padding: '0',

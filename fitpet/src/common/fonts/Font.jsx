@@ -7,7 +7,7 @@ const Font = (props) => {
     fontWeight,
     color,
     children,
-    _onClick,
+    handleClick,
     margin,
     pt,
     pb,
@@ -39,7 +39,7 @@ const Font = (props) => {
   };
 
   return (
-    <StyledFont {...styles} onClick={_onClick}>
+    <StyledFont {...styles} onClick={handleClick}>
       {children}
     </StyledFont>
   );
@@ -65,7 +65,7 @@ Font.defaultProps = {
   color: '#707070',
   borderBottom: 'none',
   textDecoration: 'none',
-  _onClick: () => {},
+  handleClick: () => {},
 };
 
 const StyledFont = styled.p`

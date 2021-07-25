@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Tag = (props) => {
-  const { margin, _onClick } = props;
+  const { margin, handleClick } = props;
 
   const styles = {
     margin: margin,
   };
   return (
-    <TagBox {...styles} onClick={_onClick}>
+    <TagBox {...styles} onClick={handleClick}>
       <TagBlock>
         <Text>제주도</Text>
         <TagTextBox>
