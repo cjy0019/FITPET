@@ -5,7 +5,7 @@ import Banner from '../components/mainpage/banner/Banner';
 import Course from '../components/mainpage/course/Course';
 import Header from '../components/mainpage/header/Header';
 import Community from '../components/mainpage/community/Community';
-import GoUpBtn from '../common/buttons/small-size/GoUpBtn';
+import GoUpBtn from '../common/buttons/small_size/GoUpBtn';
 import styled from 'styled-components';
 import Footer from '../components/common/Footer';
 const MainPage = () => {
