@@ -30,7 +30,7 @@ const GoUpBtn = () => {
           position='fixed'
           top='90vh'
           right='5vw'
-          _onClick={handleClick}
+          handleClick={handleClick}
         />
       </IconWrapper>
     )

@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Only = (props) => {
-  const { margin, _onClick } = props;
+  const { margin, handleClick } = props;
 
   const styles = {
     margin: margin,
   };
   return (
-    <OnlyBox {...styles} onClick={_onClick}>
+    <OnlyBox {...styles} onClick={handleClick}>
       <OnlyBlock>
         <Text>
           올 여름은 <br />
