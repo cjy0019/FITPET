@@ -1,40 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-import IconButton from '../../../common/buttons/small-size/IconButton';
-import { GrNext, GrPrevious } from 'react-icons/gr';
 import HotelTextInfo from './HotelTextInfo';
 import HotelDetails from './HotelDetails';
+import SmallLine from '../../../common/utility/SmallLine';
+import { LeftButton, RightButton } from '../hotel_common/filterCommon';
 
 const HotelInfo = () => {
   return (
-    <Info>
-      {/* 이미지 부분 */}
-      <ImgBox>
-        <LikeBtn />
-        <IconButton
-          width='2.8rem'
-          height='2.8rem'
-          borderRadius='0'
-          border='none'
-          color='black'
-          Icon={GrPrevious}
-        />
-        <IconButton
-          width='2.8rem'
-          height='2.8rem'
-          borderRadius='0'
-          border='none'
-          color='black'
-          Icon={GrNext}
-        />
-      </ImgBox>
+    <>
+      <Info>
+        {/* 이미지 부분 */}
+        <ImgBox>
+          <LikeBtn />
+          <LeftButton />
+          <RightButton />
+        </ImgBox>
 
-      {/* 텍스트 Info */}
-      <TextDetailWrapper>
-        <HotelTextInfo />
-        <HotelDetails />
-      </TextDetailWrapper>
-    </Info>
+        {/* 텍스트 Info */}
+        <TextDetailWrapper>
+          <HotelTextInfo />
+          <HotelDetails />
+        </TextDetailWrapper>
+      </Info>
+      <SmallLine />
+    </>
   );
 };
 
