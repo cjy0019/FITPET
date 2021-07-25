@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Font, HoverText, IconButton, SampleIcon } from '../../../common';
-import ImgMoreBtn from '../../../common/buttons/small-size/ImgMoreBtn';
+import ImgMoreBtn from '../../../common/buttons/small_size/ImgMoreBtn';
 import HotelNameBlock from '../hotelAbout/HotelNameBlock';
 import HotelOneRoom from '../hotelAbout/HotelOneRoom';
 import HotelTwoRoom from '../hotelAbout/HotelTwoRoom';
