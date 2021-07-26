@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import MiddleSizeButton from '../../common/buttons/middle_size/MiddleSizeButton';
 import SmallLine from '../../common/utility/SmallLine';
 import { DownButton, UpButton } from '../hotel/hotel_common/filterCommon';
+import { HiCheck } from 'react-icons/hi';
 
 const Agreement = () => {
   const [showAll, setShowAll] = useState(true);
@@ -21,8 +22,13 @@ const Agreement = () => {
       <StyledP>이용 약관 동의</StyledP>
 
       <RadioWrapper firstline>
-        <Agree id='agreeAll' type='radio' />
         <AgreeLabel htmlFor='agreeAll'>
+          <Agree id='agreeAll' type='checkbox' />
+          <AgreeCheck>
+            <IconWrapper>
+              <HiCheck />
+            </IconWrapper>
+          </AgreeCheck>
           주문 상품 정보 및 서비스 이용약관에 모두 동의
         </AgreeLabel>
         {showAll ? (
@@ -35,23 +41,43 @@ const Agreement = () => {
       <SmallLine />
       {/* 숨겨지는 부분 */}
       <RadioWrapper flex ref={showRef}>
-        <Agree id='agreeAll' type='radio' />
-        <AgreeLabel htmlFor='agreeAll' margin>
+        <AgreeLabel htmlFor='agreeFirst'>
+          <Agree id='agreeFirst' type='checkbox' />
+          <AgreeCheck>
+            <IconWrapper>
+              <HiCheck />
+            </IconWrapper>
+          </AgreeCheck>
           [필수] 숙소이용규칙 및 취소/환불규정 동의
         </AgreeLabel>
 
-        <Agree id='agreeAll' type='radio' />
-        <AgreeLabel htmlFor='agreeAll' margin>
+        <AgreeLabel htmlFor='agreeSecond'>
+          <Agree id='agreeSecond' type='checkbox' />
+          <AgreeCheck>
+            <IconWrapper>
+              <HiCheck />
+            </IconWrapper>
+          </AgreeCheck>
           [필수] 개인정보 수집 및 이용 동의
         </AgreeLabel>
 
-        <Agree id='agreeAll' type='radio' />
-        <AgreeLabel htmlFor='agreeAll' margin>
+        <AgreeLabel htmlFor='agreeThird'>
+          <Agree id='agreeThird' type='checkbox' />
+          <AgreeCheck>
+            <IconWrapper>
+              <HiCheck />
+            </IconWrapper>
+          </AgreeCheck>
           [필수] 개인정보 제 3자 제공 동의
         </AgreeLabel>
 
-        <Agree id='agreeAll' type='radio' />
-        <AgreeLabel htmlFor='agreeAll' margin>
+        <AgreeLabel htmlFor='agreeFourth'>
+          <Agree id='agreeFourth' type='checkbox' />
+          <AgreeCheck>
+            <IconWrapper>
+              <HiCheck />
+            </IconWrapper>
+          </AgreeCheck>
           [필수] 만 14세 이상 확인
         </AgreeLabel>
       </RadioWrapper>
@@ -112,10 +138,11 @@ const RadioWrapper = styled.div`
       display: flex;
       flex-direction: column;
       height: 11rem;
+      margin: 0;
       transition: all 0.2s;
     `}
 `;
-
+//  체크박스 부분
 const Agree = styled.input`
   margin: 0;
   display: none;
@@ -123,10 +150,11 @@ const Agree = styled.input`
 `;
 
 const AgreeLabel = styled.label`
-  display: inline;
+  display: inline-flex;
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.19;
+  margin-top: 1.1rem;
   cursor: pointer;
   color: #979797;
 
@@ -135,17 +163,43 @@ const AgreeLabel = styled.label`
     css`
       margin-top: 1.1rem;
     `}
+`;
 
-  &:before {
+const AgreeCheck = styled.div`
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: solid 2px #979797;
+  border-radius: 50%;
+  margin-right: 1rem;
+
+  &::after {
     content: '';
-    display: inline-block;
-    width: 2.4rem;
-    height: 2.4rem;
-    border: solid 1px #979797;
+    width: 100%;
+    height: 100%;
+    display: block;
     border-radius: 50%;
-    margin-right: 1rem;
-    vertical-align: middle;
+    transform: scale(0);
   }
+  /* size='1.6rem' color='blue' stroke-width='1.4' */
+  input:checked + &::after {
+    background-color: #0186df;
+    transform: scale(1);
+    transition: transform 0.3s;
+  }
+
+  input:checked + & div {
+    color: yellow;
+  }
+`;
+
+const IconWrapper = styled.div`
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  z-index: 10;
+  color: #000000;
+  transform: translate(-50%, -50%);
 `;
 
 export default Agreement;
