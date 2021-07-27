@@ -36,7 +36,7 @@ const MainHeader = styled.header`
   height: 8rem;
   top: 0;
   padding: 2.6rem 6rem 2.6rem 6rem;
-  z-index: 999;
+  z-index: 10;
 `;
 
 const FitPetLogo = styled.img.attrs({

@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, SampleIcon, OpenBtn, RoundSquareBtn } from '../../../common';
+import {
+  Font,
+  SampleIcon,
+  OpenBtn,
+  RoundSquareBtn,
+  ImgMoreBtn,
+} from '../../../common';
 
 const HotelOneRoom = () => {
   return (
@@ -14,7 +20,10 @@ const HotelOneRoom = () => {
         </Font>
       </div>
       <div className='bedroomsBlock'>
-        <SampleIcon width='39rem' height='24.5rem' borderRadius='2.5rem' />
+        <div className='imgBtn'>
+          <SampleIcon width='39rem' height='24.5rem' borderRadius='2.5rem' />
+          <ImgMoreBtn position='absolute' top='18rem' right='1rem' />
+        </div>
         <div className='bedroomsBox'>
           {/* 싱글침대 2개, 트윈침대 1개 등등 */}
           <div className='bedroom'>
@@ -144,6 +153,9 @@ const HotelOneRoomWrapper = styled.div`
   }
   .bedroomsBlock {
     display: flex;
+    .imgBtn {
+      position: relative;
+    }
     .bedroomsBox {
       display: block;
       margin: 1.8rem 0 5.1rem 2rem;

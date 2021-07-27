@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import SignUpModal from '../../signUp/SignUpModal';
 
 const MemberLinkLi = () => {
   const img = '/img/logo-social.png';
-
+  const [visible, setvisible] = useState(false);
+  const show = () => setvisible(true);
+  const hide = () => setvisible(false);
   return (
     <>
       <StyeldLi>
@@ -14,10 +17,11 @@ const MemberLinkLi = () => {
         </NavLink>
       </StyeldLi>
       <StyeldLi>
-        <NavLink to='/signup'>
-          <StyledImg src={img} alt='회원가입' />
+        {visible && <SignUpModal />}
+        <StyledImg src={img} alt='회원가입' />
+        <button onClick={show}>
           <p>회원가입</p>
-        </NavLink>
+        </button>
       </StyeldLi>
       <StyeldLi>
         <NavLink to='/'>
