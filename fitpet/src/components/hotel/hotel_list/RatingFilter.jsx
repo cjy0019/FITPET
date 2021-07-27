@@ -25,9 +25,9 @@ const RatingFilter = () => {
       <ButtonContainer>
         <FilterTitle>평점</FilterTitle>
         {isFold ? (
-          <UpButton _onClick={handleClick} />
+          <UpButton handleClick={handleClick} />
         ) : (
-          <DownButton _onClick={handleClick} />
+          <DownButton handleClick={handleClick} />
         )}
       </ButtonContainer>
 
