@@ -22,11 +22,9 @@ const HotelDate = () => {
 
 const DateContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
   background-color: #fff;
   border-radius: 15px;
   margin-left: auto;
-  margin-top: 5.6rem;
 `;
 
 const DateBox = styled.input`
