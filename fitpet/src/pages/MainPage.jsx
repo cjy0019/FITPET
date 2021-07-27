@@ -10,16 +10,18 @@ import styled from 'styled-components';
 import Footer from '../components/common/Footer';
 const MainPage = () => {
   return (
-    <MainWrapper>
-      <Header />
-      <Banner />
-      <Sliders />
-      <Course />
-      <Rentalcars />
-      <Community />
-      <GoUpBtn />
-      <Footer />
-    </MainWrapper>
+    <>
+      <MainWrapper>
+        <Header />
+        <Banner />
+        <Sliders />
+        <Course />
+        <Rentalcars />
+        <Community />
+        <GoUpBtn />
+        <Footer />
+      </MainWrapper>
+    </>
   );
 };
 

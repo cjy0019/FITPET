@@ -7,9 +7,12 @@ body {
     'Malgun Gothic', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#loginModal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 #signupModal {
   position: absolute;
