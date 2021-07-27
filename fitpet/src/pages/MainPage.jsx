@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Rentalcars from '../components/mainpage/rentalcars/Rentalcars';
 import Sliders from '../components/mainpage/slider/Sliders';
 import Banner from '../components/mainpage/banner/Banner';

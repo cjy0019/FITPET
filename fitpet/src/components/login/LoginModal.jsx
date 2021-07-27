@@ -2,19 +2,20 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Login from './Login';
 
-const LoginModal = ({ hide }) =>
-  ReactDOM.createPortal(
+const LoginModal = ({ hide }) => {
+  return ReactDOM.createPortal(
     <>
-      <StyledDiv>
-        <div class='center'>
+      <Overlay>
+        <div className='center'>
           <Login hide={hide} />
         </div>
-      </StyledDiv>
+      </Overlay>
     </>,
     document.querySelector('#loginModal'),
   );
+};
 
-const StyledDiv = styled.div`
+const Overlay = styled.div`
   position: absolute;
   top: 0;
   right: 0;

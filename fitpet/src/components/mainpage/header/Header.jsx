@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import MemberLinkUl from './MemberLinkUl';
@@ -9,7 +9,24 @@ import LoginModal from '../../login/LoginModal';
 const Header = () => {
   const [visible, setVisible] = useState(false);
   const show = useCallback(() => setVisible(true), []);
-  const hide = () => setVisible(false);
+  const hide = useCallback(() => setVisible(false), []);
+
+  useEffect(() => {
+    if (visible) {
+      document.body.style.cssText = `
+      position:fixed;
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 100%;;
+    `;
+    }
+
+    return () => {
+      const scrollY = document.body.style.top;
+      document.body.style.cssText = '';
+      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+    };
+  }, [visible]);
 
   return (
     <>
