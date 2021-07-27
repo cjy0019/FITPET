@@ -25,9 +25,9 @@ const LevelFilter = () => {
       <ButtonContainer>
         <FilterTitle>등급</FilterTitle>
         {isFold ? (
-          <UpButton _onClick={handleClick} />
+          <UpButton handleClick={handleClick} />
         ) : (
-          <DownButton _onClick={handleClick} />
+          <DownButton handleClick={handleClick} />
         )}
       </ButtonContainer>
 
