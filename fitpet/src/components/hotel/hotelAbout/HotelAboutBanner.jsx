@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import useWindowScroll from '../../../hooks/useWindowScroll';
-import MainNav from '../../mainpage/banner/MainNav';
 import HotelDate from '../hotel_common/HotelDate';
-import HotelScroll from '../hotel_common/HotelScroll';
-import HotelSearch from '../hotel_common/HotelSearch';
+import HotelMenu from '../hotel_common/HotelMenu';
 
 const HotelAboutBanner = () => {
   const yOffset = useWindowScroll();
@@ -15,14 +13,13 @@ const HotelAboutBanner = () => {
 
   useEffect(() => {
     if (yOffset > 1000) {
-      setIsScrollMenu(true);
       console.log('메뉴헤더만 나와야함');
+      setIsScrollMenu(true);
       setIsScrollDate(false);
-    } else if (yOffset > 15) {
+    } else if (yOffset > 100) {
+      console.log('날짜헤더만 나와야함');
       setIsScrollDate(true);
       setIsScrollMenu(false);
-
-      console.log('날짜헤더만 나와야함');
     } else {
       console.log('둘다 안나와야함');
       setIsScrollDate(false);
@@ -44,7 +41,7 @@ const HotelAboutBanner = () => {
       {isScrollMenu ? (
         <Banner scroll>
           <div class='bannerMenu'>
-            <HotelScroll isScroll={isScrollMenu} />
+            <HotelMenu isScroll={isScrollMenu} />
           </div>
         </Banner>
       ) : (
@@ -58,27 +55,31 @@ const Banner = styled.div`
   position: fixed;
   z-index: 999;
   top: 8rem;
-  display: flex;
+  //display: flex;
   //flex-direction: column;
-  align-items: center;
+  //align-items: center;
   //padding-top: 2.6rem;
   background-color: #fff;
   width: 100%;
-
   .bannerDate {
-    padding-bottom: 2.3rem;
-    background-color: red;
+    height: 8rem;
+    padding-bottom: 1.6rem;
+    padding-top: 1.6rem;
+    padding-right: 60rem;
+    display: -webkit-box; // 오른쪽으로 붙음
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.16);
   }
   .bannerMenu {
-    margin: 0;
-    // box-sizing: content-box;
-
-    background-color: #cdcdcd;
+    height: 8rem;
+    padding-bottom: 3.1rem;
+    padding-top: 3.1rem;
+    padding-left: 32rem;
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.16);
   }
   ${(props) =>
     props.scroll &&
     css`
-      padding-right: 0.2rem;
+      //padding-right: 0.2rem;
       //  padding: 1.6rem auto;
     `}
 `;

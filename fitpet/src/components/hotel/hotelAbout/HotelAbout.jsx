@@ -141,7 +141,7 @@ const HotelAbout = () => {
             11층 / 800객실
           </Font>
         </div>
-        <div className='aboutBox'>
+        <div className='aboutBox' id='roomChoose'>
           <SampleIcon />
           <Font
             fontSize='1.6rem'
@@ -212,7 +212,10 @@ const HotelAbout = () => {
       <HotelTwoRoom />
       <HotelTwoRoom />
       <HotelOneRoom />
+      {/* 스크롤 이동 [다른 추천 호텔] 지점 */}
+      <div id='hotelDetail'></div>
       {/* 숙소 상세정보 */}
+
       <HotelDetail>
         <Font
           fontSize='2.4rem'
@@ -253,9 +256,9 @@ const HotelAbout = () => {
               <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
                 [ 입·퇴실 안내 ]<br />
                 - 체크인 15:00PM - 체크아웃 12:00PM
-                <br />
-                - 객실 내 유무선 인터넷 무료로 이용 가능
-                <br />
+                <br />- 객실 내 유무선 인터넷 무료로 이용 가능
+                {/* 스크롤 이동 [편의시설 및 서비스] 지점 */}
+                <br id='hotelService' />
                 - 호텔 내 레스토랑 이용 시 10% 할인
                 <br />
                 - 호텔 내 실내 수영장, 피트니스 센터 무료 입장 (피트니스의 경우
@@ -277,84 +280,83 @@ const HotelAbout = () => {
         </div>
         {/* 편의시설 및 서비스 아이콘들 */}
         <div className='contents'>
-          <div className='icons'>
-            <SampleIcon
-              width='5rem'
-              height='5rem'
-              backColor='#cbcbcb'
-              borderRadius='50px'
-            />
-            <SampleIcon
-              width='5rem'
-              height='5rem'
-              backColor='#cbcbcb'
-              borderRadius='50px'
-            />
-            <SampleIcon
-              width='5rem'
-              height='5rem'
-              backColor='#cbcbcb'
-              borderRadius='50px'
-            />
-            <SampleIcon
-              width='5rem'
-              height='5rem'
-              backColor='#cbcbcb'
-              borderRadius='50px'
-            />
-            <SampleIcon
-              width='5rem'
-              height='5rem'
-              backColor='#cbcbcb'
-              borderRadius='50px'
-            />
-            <SampleIcon
-              width='5rem'
-              height='5rem'
-              backColor='#cbcbcb'
-              borderRadius='50px'
-            />
-            <SampleIcon
-              width='5rem'
-              height='5rem'
-              backColor='#cbcbcb'
-              borderRadius='50px'
-            />
-          </div>
-          <div className='iconNames'>
-            <div>
+          <div className='iconsBlock'>
+            {/* 스크롤 이동 [다른 추천 호텔] 지점 */}
+            <div className='iconBox' id='othertravelersHotel'>
+              <SampleIcon
+                width='5rem'
+                height='5rem'
+                backColor='#cbcbcb'
+                borderRadius='50px'
+              />
               <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
                 와이파이
               </Font>
-            </div>{' '}
-            <div>
+            </div>
+            <div className='iconBox'>
+              <SampleIcon
+                width='5rem'
+                height='5rem'
+                backColor='#cbcbcb'
+                borderRadius='50px'
+              />
               <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
                 무료주차
               </Font>
-            </div>{' '}
-            <div>
+            </div>
+            <div className='iconBox'>
+              <SampleIcon
+                width='5rem'
+                height='5rem'
+                backColor='#cbcbcb'
+                borderRadius='50px'
+              />
               <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
                 피트니스 센터
               </Font>
-            </div>{' '}
-            <div>
+            </div>
+            <div className='iconBox'>
+              <SampleIcon
+                width='5rem'
+                height='5rem'
+                backColor='#cbcbcb'
+                borderRadius='50px'
+              />
               <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
                 수영장
               </Font>
-            </div>{' '}
-            <div>
+            </div>
+            <div className='iconBox'>
+              <SampleIcon
+                width='5rem'
+                height='5rem'
+                backColor='#cbcbcb'
+                borderRadius='50px'
+              />
               <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
                 운동장
               </Font>
-            </div>{' '}
-            <div>
+            </div>
+            <div className='iconBox'>
+              <SampleIcon
+                width='5rem'
+                height='5rem'
+                backColor='#cbcbcb'
+                borderRadius='50px'
+              />
               <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
                 24시 리셉션
               </Font>
-            </div>{' '}
-            <div>
+            </div>
+            <div className='iconBox'>
+              <SampleIcon
+                width='5rem'
+                height='5rem'
+                backColor='#cbcbcb'
+                borderRadius='50px'
+              />
               <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
-                수하물보관
+                수하물 보관
               </Font>
             </div>
           </div>
@@ -384,7 +386,6 @@ const HotelImages = styled.div`
   background-color: aliceblue;
   margin: 2.6rem auto 4rem;
   width: 128rem;
-  //height: 55rem;
   display: flex;
   .subImage {
     display: block;
@@ -507,15 +508,14 @@ const HotelService = styled.div`
   .contents {
     width: 85rem;
     display: block;
-    margin-left: auto;
+    margin-right: auto;
     margin-top: 4rem;
     margin-bottom: 10.4rem;
     line-height: 20px;
-    .icons {
+    .iconsBlock {
       display: flex;
-      margin-bottom: 1rem;
       div {
-        margin: 0 auto;
+        margin: auto;
       }
     }
     .iconNames {

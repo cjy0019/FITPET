@@ -70,7 +70,6 @@ ImgMoreBtn.defaultProps = {
   pb: '1rem',
   fontSize: '2rem',
   borderRadius: '2.6rem',
-  hoverColor: '#707070',
   border: 'none',
   margin: '0 0.5rem 1rem 0.5rem',
   position: 'absolute',
