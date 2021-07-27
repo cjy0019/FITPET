@@ -8,8 +8,8 @@ import LoginModal from '../../login/LoginModal';
 
 const Header = () => {
   const [visible, setVisible] = useState(false);
-  const show = useCallback(() => setVisible(true), []);
-  const hide = useCallback(() => setVisible(false), []);
+  const showLogin = useCallback(() => setVisible(true), []);
+  const hideLogin = useCallback(() => setVisible(false), []);
 
   useEffect(() => {
     if (visible) {
@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <>
-      {visible && <LoginModal hide={hide} />}
+      {visible && <LoginModal hideLogin={hideLogin} />}
       <MainHeader>
         {/* 로고 부분 */}
         <h1>
@@ -45,7 +45,7 @@ const Header = () => {
 
         {/* 멤버 링크 부분 */}
         <nav>
-          <MemberLinkUl show={show} />
+          <MemberLinkUl showLogin={showLogin} />
         </nav>
       </MainHeader>
     </>

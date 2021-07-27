@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { CloseOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import { IoLogoFacebook } from 'react-icons/io';
-import { SocialBtn } from '../../common';
+//import { SocialBtn } from '../../common';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -46,7 +45,7 @@ const SignUp = () => {
           <SocialBlock>
             <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>
             {/* sns로 가입하기 버튼 */}
-            <SocialBtn />
+            {/* <SocialBtn /> */}
           </SocialBlock>
           <Line />
           {/* 라인 아래 부분 */}

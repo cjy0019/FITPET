@@ -2,12 +2,12 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Login from './Login';
 
-const LoginModal = ({ hide }) => {
+const LoginModal = ({ hideLogin }) => {
   return ReactDOM.createPortal(
     <>
       <Overlay>
         <div className='center'>
-          <Login hide={hide} />
+          <Login hideLogin={hideLogin} />
         </div>
       </Overlay>
     </>,
