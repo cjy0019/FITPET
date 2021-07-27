@@ -1,29 +1,54 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import MemberLinkUl from './MemberLinkUl';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HeaderNav from './HeaderNav';
+import LoginModal from '../../login/LoginModal';
 
 const Header = () => {
+  const [visible, setVisible] = useState(false);
+  const show = useCallback(() => setVisible(true), []);
+  const hide = useCallback(() => setVisible(false), []);
+
+  useEffect(() => {
+    if (visible) {
+      document.body.style.cssText = `
+      position:fixed;
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 100%;;
+    `;
+    }
+
+    return () => {
+      const scrollY = document.body.style.top;
+      document.body.style.cssText = '';
+      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+    };
+  }, [visible]);
+
   return (
-    <MainHeader>
-      {/* 로고 부분 */}
-      <h1>
-        <NavLink to='/'>
-          <A11yHidden>핏펫 홈</A11yHidden>
-          <FitPetLogo />
-        </NavLink>
-      </h1>
+    <>
+      {visible && <LoginModal hide={hide} />}
+      <MainHeader>
+        {/* 로고 부분 */}
+        <h1>
+          <NavLink to='/'>
+            <A11yHidden>핏펫 홈</A11yHidden>
+            <FitPetLogo />
+          </NavLink>
+        </h1>
 
-      {/* 네브 */}
-      <HeaderNav />
+        {/* 네브 */}
+        <HeaderNav />
 
-      {/* 멤버 링크 부분 */}
-      <nav>
-        <MemberLinkUl />
-      </nav>
-    </MainHeader>
+        {/* 멤버 링크 부분 */}
+        <nav>
+          <MemberLinkUl show={show} />
+        </nav>
+      </MainHeader>
+    </>
   );
 };
 
@@ -36,7 +61,7 @@ const MainHeader = styled.header`
   height: 8rem;
   top: 0;
   padding: 2.6rem 6rem 2.6rem 6rem;
-  z-index: 999;
+  z-index: 10;
 `;
 
 const FitPetLogo = styled.img.attrs({

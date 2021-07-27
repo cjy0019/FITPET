@@ -4,32 +4,36 @@ import LoginBottom from './LoginBottom';
 import LoginHeader from './LoginHeader';
 import Slogan from './Slogan';
 
-const Login = () => {
+const Login = ({ hide }) => {
   return (
-    <StyledForm>
-      <div>
-        <LoginHeader />
-        {/* 로고 */}
-        <Logo />
+    <>
+      <StyledForm>
+        <div>
+          <LoginHeader hide={hide} />
+          {/* 로고 */}
+          <Logo />
 
-        {/* 슬로건 */}
-        <Slogan />
+          {/* 슬로건 */}
+          <Slogan />
 
-        {/* 팝업에서 아래쪽 부분 */}
-        <LoginBottom />
-      </div>
-    </StyledForm>
+          {/* 팝업에서 아래쪽 부분 */}
+          <LoginBottom />
+        </div>
+      </StyledForm>
+    </>
   );
 };
 
 // style
 // login wrapper
+
 const StyledForm = styled.form`
   display: block;
   width: 52.4rem;
   padding: 5rem 3.9rem 4.7rem;
   border-radius: 30px;
   border: 1px solid black;
+  background-color: #fff;
 
   a:visited {
     color: #979797;

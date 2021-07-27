@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import NotFoundPage from './pages/NotFoundPage';
 import MainPage from './pages/MainPage';
@@ -19,7 +18,6 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route component={MainPage} exact path='/' />
-          <Route component={LoginPage} path='/login' />
           <Route component={SignUpPage} path='/signup' />
           <Route component={CommonPage} path='/common' />
           <Route component={ReservationPage} path='/reservation' />

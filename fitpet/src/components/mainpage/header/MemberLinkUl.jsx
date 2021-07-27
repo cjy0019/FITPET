@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import MemberLinkLi from './MemberLinkLi';
 
-const MemberLinkUl = () => {
+const MemberLinkUl = ({ show }) => {
   return (
     <MemberWrapper>
-      <MemberLinkLi />
+      <MemberLinkLi show={show} />
     </MemberWrapper>
   );
 };

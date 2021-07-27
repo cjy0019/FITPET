@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const MemberLinkLi = () => {
+const MemberLinkLi = ({ show }) => {
   const img = '/img/logo-social.png';
 
   return (
@@ -20,10 +20,10 @@ const MemberLinkLi = () => {
         </NavLink>
       </StyeldLi>
       <StyeldLi>
-        <NavLink to='/'>
-          <StyledImg src={img} alt='로그인' />
+        <StyledImg src={img} alt='로그인' />
+        <StyledButton onClick={show}>
           <p>로그인</p>
-        </NavLink>
+        </StyledButton>
       </StyeldLi>
       <StyeldLi>
         <NavLink to='/'>
@@ -65,6 +65,13 @@ const StyledImg = styled.img`
   width: 3.4rem;
   height: 3.4rem;
   margin-right: 1rem;
+`;
+
+const StyledButton = styled.button`
+  border: none;
+  font-size: 1.4rem;
+  background-color: #ffffff;
+  color: #707070;
 `;
 
 export default MemberLinkLi;

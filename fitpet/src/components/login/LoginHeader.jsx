@@ -2,11 +2,11 @@ import React from 'react';
 import { CloseOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 
-const LoginHeader = () => {
+const LoginHeader = ({ hide }) => {
   return (
     <StyledDiv>
       <h1>로그인</h1>
-      <StyledX>
+      <StyledX onClick={hide}>
         <CloseOutlined style={{ fontSize: '2.2rem', color: '#979797' }} />
       </StyledX>
     </StyledDiv>
