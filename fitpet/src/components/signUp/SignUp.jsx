@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { CloseOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import { IoLogoFacebook } from 'react-icons/io';
+import { SocialBtn } from '../../common';
 
 const SignUp = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [CheckPassword, setCheckPassword] = useState('');
+
   return (
     <form>
       <SignUpWrapper>
@@ -17,18 +23,30 @@ const SignUp = () => {
         {/* 회원가입 내용 */}
         <SignUpContent>
           {/* 회원 정보 입력 칸, 다음으로 버튼 */}
-          <Input placeholder='이메일 아이디' type='email' />
-          <Input placeholder='비밀번호' type='password' />
-          <Input placeholder='비밀번호 확인' type='password' />
+          <Input
+            onChange={changeId}
+            value={email}
+            placeholder='이메일 아이디'
+            type='email'
+          />
+          <Input
+            onChange={changePassword}
+            value={password}
+            placeholder='비밀번호'
+            type='password'
+          />
+          <Input
+            onChange={changeCheckPassword}
+            value={CheckPassword}
+            placeholder='비밀번호 확인'
+            type='password'
+          />
           <NextButton>다음으로</NextButton>
           {/* sns계정으로 가입 */}
           <SocialBlock>
             <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>
             {/* sns로 가입하기 버튼 */}
-            <SocialBtn>네이버</SocialBtn>
-            <SocialBtn>카카오톡</SocialBtn>
-            <SocialBtn>페이스북</SocialBtn>
-            <SocialBtn>애플</SocialBtn>
+            <SocialBtn />
           </SocialBlock>
           <Line />
           {/* 라인 아래 부분 */}
@@ -42,6 +60,17 @@ const SignUp = () => {
       </SignUpWrapper>
     </form>
   );
+
+  function changeId(e) {
+    setEmail(e.target.value);
+  }
+
+  function changePassword(e) {
+    setPassword(e.target.value);
+  }
+  function changeCheckPassword(e) {
+    setCheckPassword(e.target.value);
+  }
 };
 
 const SignUpWrapper = styled.div`
@@ -132,20 +161,6 @@ const SocialText = styled.p`
   letter-spacing: -0.28px;
   text-align: center;
   color: #979797;
-`;
-const SocialBtn = styled.button`
-  cursor: pointer;
-  width: 5rem;
-  height: 5rem;
-  font-size: 1rem;
-  justify-content: space-between;
-  background-color: #979797;
-  color: white;
-  border-radius: 30px;
-  border: none;
-  :not(:last-child) {
-    margin: 0 3.5rem 0 0;
-  }
 `;
 
 const Line = styled.hr`
