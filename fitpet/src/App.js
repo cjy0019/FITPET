@@ -11,23 +11,27 @@ import ReservationPage from './pages/ReservationPage';
 import HotelAboutPage from './pages/HotelAboutPage';
 import HotelListPage from './pages/HotelListPage';
 import RoomDetailModalPage from './pages/RoomDetailModalPage';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 function App() {
   return (
     <ErrorBoundary FallbackComponent={ErrorPage}>
-      <BrowserRouter>
-        <Switch>
-          <Route component={MainPage} exact path='/' />
-          <Route component={SignUpPage} path='/signup' />
-          <Route component={CommonPage} path='/common' />
-          <Route component={ReservationPage} path='/reservation' />
-          <Route component={HotelAboutPage} path='/hotelAbout' />
-          <Route component={RoomDetailModalPage} path='/roomDetail' />
-          <Route component={HotelListPage} path='/hotel' />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </BrowserRouter>
-      <GlobalStyles />
+      <Provider store={store}>
+        <BrowserRouter>
+          <Switch>
+            <Route component={MainPage} exact path='/' />
+            <Route component={SignUpPage} path='/signup' />
+            <Route component={CommonPage} path='/common' />
+            <Route component={ReservationPage} path='/reservation' />
+            <Route component={HotelAboutPage} path='/hotelAbout' />
+            <Route component={RoomDetailModalPage} path='/roomDetail' />
+            <Route component={HotelListPage} path='/hotel' />
+            <Route component={NotFoundPage} />
+          </Switch>
+        </BrowserRouter>
+        <GlobalStyles />
+      </Provider>
     </ErrorBoundary>
   );
 }
