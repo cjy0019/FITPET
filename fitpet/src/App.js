@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import SignUpPage from './pages/SignUpPage';
+import NotFoundPage from './pages/NotFoundPage';
+import MainPage from './pages/MainPage';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorPage from './pages/ErrorPage';
+import GlobalStyles from './assets/GlobalStyles';
+import CommonPage from './pages/CommonPage';
+import ReservationPage from './pages/ReservationPage';
+import HotelAboutPage from './pages/HotelAboutPage';
+import HotelListPage from './pages/HotelListPage';
+import RoomDetailModalPage from './pages/RoomDetailModalPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary FallbackComponent={ErrorPage}>
+      <BrowserRouter>
+        <Switch>
+          <Route component={MainPage} exact path='/' />
+          <Route component={SignUpPage} path='/signup' />
+          <Route component={CommonPage} path='/common' />
+          <Route component={ReservationPage} path='/reservation' />
+          <Route component={HotelAboutPage} path='/hotelAbout' />
+          <Route component={RoomDetailModalPage} path='/roomDetail' />
+          <Route component={HotelListPage} path='/hotel' />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </BrowserRouter>
+      <GlobalStyles />
+    </ErrorBoundary>
   );
 }
 
