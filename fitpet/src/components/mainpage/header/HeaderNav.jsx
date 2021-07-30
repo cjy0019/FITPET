@@ -20,7 +20,7 @@ const HeaderNav = () => {
     <StyledNav ref={_nav}>
       <ListWrapper>
         <MenuLi>
-          <NavLink to='/'>홈ㄴ</NavLink>
+          <NavLink to='/'>홈</NavLink>
         </MenuLi>
         <MenuLi>
           <NavLink to='/accomodation'>숙소</NavLink>
