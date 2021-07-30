@@ -6,7 +6,7 @@ import HotelListHeader from './HotelListHeader';
 import GoUpBtn from '../../../common/buttons/small_size/GoUpBtn';
 import HotelBanner from './HotelBanner';
 import HotelFilter from './HotelFilter';
-import Header from '../../mainpage/header/Header';
+import Header from '../../common/header/Header';
 
 const HotelList = () => {
   const hotels = [

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { SliderLeftButton, SliderRightButton, Tag } from '../../../common';
+import { locationSlider } from './sliderData';
 
 const SliderLocation = () => {
   const TOTAL_SLIDES = 1;
@@ -29,24 +30,13 @@ const SliderLocation = () => {
       <Block>
         <Content>
           <LocationWrapper ref={slideRef}>
-            <Location>
-              <Tag margin='0 4rem 0 0'></Tag>
-            </Location>
-            <Location>
-              <Tag margin='0 4rem 0 0'></Tag>
-            </Location>
-            <Location>
-              <Tag margin='0 4rem 0 0'></Tag>
-            </Location>
-            <Location>
-              <Tag margin='0 4rem 0 0'></Tag>
-            </Location>
-            <Location>
-              <Tag margin='0 4rem 0 0'></Tag>
-            </Location>
-            <Location>
-              <Tag></Tag>
-            </Location>
+            {locationSlider.map((info, index) => {
+              return (
+                <Location key={index * 9.12}>
+                  <Tag margin='0 4rem 0 0' info={info}></Tag>
+                </Location>
+              );
+            })}
           </LocationWrapper>
         </Content>
         {/* 슬라이드 버튼 */}
