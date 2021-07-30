@@ -16,6 +16,7 @@ import ImgMoreBtn from './buttons/small_size/ImgMoreBtn';
 import SocialBtn from './buttons/middle_size/SocialBtn';
 import BasicBox from './contents/common/BasicBox';
 import FillBox from './contents/common/PillBox';
+import MagazineBox from './contents/common/MagazineBox';
 export {
   Font,
   CoursePage,
@@ -35,4 +36,5 @@ export {
   SocialBtn,
   BasicBox,
   FillBox,
+  MagazineBox,
 };

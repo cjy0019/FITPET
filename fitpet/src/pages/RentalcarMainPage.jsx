@@ -2,19 +2,17 @@ import React from 'react';
 import GoUpBtn from '../common/buttons/small_size/GoUpBtn';
 import Footer from '../components/common/Footer';
 import Header from '../components/common/header/Header';
-import HotelMain from '../components/hotel/hotel_main/HotelMain';
-
-const HotelMainPage = () => {
+import RentalcarMain from '../components/rentalcar/rentalcar_main/RantalcarMain';
+const RentalcarMainPage = () => {
   return (
     <>
       <Header />
       {/* <HeaderNav /> */}
-      <HotelMain />
+      <RentalcarMain />
       <GoUpBtn />
       <Footer />
-      {/* <RoomDetailModal />*/}
     </>
   );
 };
 
-export default HotelMainPage;
+export default RentalcarMainPage;
