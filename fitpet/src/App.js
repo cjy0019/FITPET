@@ -14,6 +14,7 @@ import RoomDetailModalPage from './pages/RoomDetailModalPage';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import HotelMainPage from './pages/HotelMainPage';
+import RentalcarMainPage from './pages/RentalcarMainPage';
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
             <Route component={HotelMainPage} path='/hotel' />
             <Route component={HotelAboutPage} path='/hotelAbout' />
             <Route component={RoomDetailModalPage} path='/roomDetail' />
-            <Route component={HotelListPage} path='/hotel' />
+            <Route component={HotelListPage} path='/hotelList' />
+            <Route component={RentalcarMainPage} path='/rentalcar' />
             <Route component={NotFoundPage} />
           </Switch>
         </BrowserRouter>

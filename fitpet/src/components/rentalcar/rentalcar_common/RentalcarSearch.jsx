@@ -1,36 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, MiddleSizeButton } from '../../../common';
+import { Font, MiddleSizeButton, SampleIcon } from '../../../common';
 
-const HotelTypeSearch = ({ isScroll }) => {
+const RentalcarSearch = ({ isScroll }) => {
   return (
     <>
       <SearchContainer>
-        <div className='typeBox'>
+        <div className='checkBox'>
+          <SampleIcon width='2.4rem' height='2.4rem' borderRadius='3px' />
           <Font
-            fontSize='1.8rem'
+            fontSize='1.4rem'
             fontWeight='normal'
             color='#707070'
-            mr='3.5rem'
-            mb='0.6rem'>
-            호텔/리조트
-          </Font>
-          <Font
-            fontSize='1.8rem'
-            fontWeight='normal'
-            color='#707070'
-            mr='3.5rem'
-            mb='0.6rem'>
-            펜션/캠핑/글램핑
+            ml='0.6rem'
+            margin='auto 0'>
+            다른 장소에서 반납
           </Font>
         </div>
         <div className='inputBox'>
           <SearchLocationBox
             className='location'
-            placeholder='어디로 떠날까요?'
+            placeholder='어디서 픽업하세요?'
           />
           <SearchDateBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
-          <SearchBox placeholder='성인1 | 객실1 | 소형견1' />
+          <SearchBox placeholder='차종' />
           <MiddleSizeButton
             fontSize='1.6rem'
             width='7.4rem'
@@ -41,6 +34,27 @@ const HotelTypeSearch = ({ isScroll }) => {
             pb='1.4rem'
             ml='1rem'
           />
+        </div>
+        <div className='ageCheckBox'>
+          <Font
+            fontSize='1.4rem'
+            fontWeight='normal'
+            color='#707070'
+            mr='0.4rem'
+            margin='auto 0'>
+            운전자 연령
+          </Font>
+          <SampleIcon width='2.4rem' height='2.4rem' borderRadius='3px' />
+          <Font
+            fontSize='1.4rem'
+            fontWeight='normal'
+            color='#707070'
+            ml='0.6rem'
+            mr='0.4rem'
+            margin='auto 0'>
+            : 25~ 65세
+          </Font>
+          <SampleIcon width='2.4rem' height='2.4rem' borderRadius='3px' />
         </div>
       </SearchContainer>
     </>
@@ -57,19 +71,21 @@ const SearchContainer = styled.div`
   margin: 0 auto;
   margin-top: 5.6rem;
   animation-timing-function: ease-in-out;
-  .typeBox {
+  .checkBox {
+    text-align: center;
     display: flex;
-    border-bottom: 1px solid ${(props) => props.theme.grey3_color};
-    margin-bottom: 2.3rem;
+    margin-bottom: 1.4rem;
   }
-  .inputBox {
+  .ageCheckBox {
     display: flex;
+    margin-top: 1.4rem;
+    text-align: center;
   }
 `;
 
 const SearchLocationBox = styled.input`
   border: none;
-  width: 30rem;
+  width: 43.2rem;
   height: 4.8rem;
   padding: 0.7rem 0 0.7rem 5.6rem;
   font-size: 1.6rem;
@@ -77,7 +93,7 @@ const SearchLocationBox = styled.input`
   color: #707070;
   outline: none;
   background-color: #cbcbcb;
-  // background-image: url('/img/logo-social.png');
+  //background-image: url('/img/logo-social.png');
   background-size: 3.4rem 3.4rem;
   background-position: 1.5rem center;
   background-repeat: no-repeat;
@@ -94,7 +110,7 @@ const SearchDateBox = styled.input`
   color: #707070;
   outline: none;
   background-color: #cbcbcb;
-  //  background-image: url('/img/logo-social.png');
+  //background-image: url('/img/logo-social.png');
   background-size: 3.4rem 3.4rem;
   background-position: 1.5rem center;
   background-repeat: no-repeat;
@@ -102,7 +118,7 @@ const SearchDateBox = styled.input`
 
 const SearchBox = styled.input`
   border: none;
-  width: 27.6rem;
+  width: 14.3rem;
   height: 4.8rem;
   padding: 0.7rem 0 0.7rem 5.6rem;
   font-size: 1.6rem;
@@ -110,10 +126,10 @@ const SearchBox = styled.input`
   color: #707070;
   outline: none;
   background-color: #cbcbcb;
-  // background-image: url('/img/logo-social.png');
+  //background-image: url('/img/logo-social.png');
   background-size: 3.4rem 3.4rem;
   background-position: 1.5rem center;
   background-repeat: no-repeat;
 `;
 
-export default HotelTypeSearch;
+export default RentalcarSearch;
