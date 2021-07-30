@@ -21,7 +21,7 @@ export default WishSmall;
 const WishBox = styled.div`
   width: 29rem;
   height: 29rem;
-  background-color: #979797;
+  background-color: ${(props) => props.theme.grey5_color};
   border-radius: 25px;
   cursor: pointer;
 
@@ -30,10 +30,6 @@ const WishBox = styled.div`
   } */
   ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0')}
 `;
-// const WishBlock = styled.div`
-//   margin: 28.6rem 3.8rem 3.6rem 3.8rem;
-//   color: #fff;
-// `;
 const WishBtn = styled.button`
   margin: 2.8rem 2.8rem 21.4rem 21.4rem;
   width: 4.8rem;
