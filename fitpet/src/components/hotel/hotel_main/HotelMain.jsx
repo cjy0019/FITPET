@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import {
   BasicBox,
+  FillBox,
   Font,
+  IconButton,
   MiddleSizeButton,
-  Only,
-  Tag,
   WishSmall,
 } from '../../../common';
-import HotelSearch from '../hotel_common/HotelSearch';
+import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 
 const HotelMain = () => {
   return (
@@ -21,7 +21,7 @@ const HotelMain = () => {
               어떤 숙소에서 쉬어볼까요?
             </Font>
             {/* 검색 입력 창 */}
-            <HotelSearch />
+            <HotelTypeSearch />
           </div>
           <div className='MoreHotelBtn'>
             <MiddleSizeButton
@@ -91,8 +91,89 @@ const HotelMain = () => {
       </FitPetEventBlock>
       {/* 반려동물과 함게 펫캉스 즐기자! */}
       <HotelListBlock>
-        <BasicBox></BasicBox>
+        <div className='hotelListBox'>
+          <div className='locationBox'>
+            <HotelLocationWrapper>
+              <Font
+                fontSize='3rem'
+                fontWeight='normal'
+                color='#ffffff'
+                mb='5rem'>
+                반려동물과 함께 <br />
+                펫캉스 즐기자!
+              </Font>
+              <div className='tagBox'>
+                <IconButton
+                  text='제주도'
+                  backColor='#eeeeee'
+                  color='#979797'
+                  pt='1.1rem'
+                  pr='1.9rem'
+                  pl='1.9rem'
+                  pb='1rem'
+                  fontSize='1.6rem'
+                  borderRadius='2.6rem'
+                  textHover='#ffffff'
+                  hoverColor='#2A2A2A'
+                  border='none'
+                  mb='1rem'
+                />
+                <IconButton
+                  text='속초'
+                  backColor='#eeeeee'
+                  color='#979797'
+                  pt='1.1rem'
+                  pr='1.9rem'
+                  pl='1.9rem'
+                  pb='1rem'
+                  fontSize='1.6rem'
+                  borderRadius='2.6rem'
+                  textHover='#ffffff'
+                  hoverColor='#2A2A2A'
+                  border='none'
+                  mb='1rem'
+                />
+                <IconButton
+                  text='전주'
+                  backColor='#eeeeee'
+                  color='#979797'
+                  pt='1.1rem'
+                  pr='1.9rem'
+                  pl='1.9rem'
+                  pb='1rem'
+                  fontSize='1.6rem'
+                  borderRadius='2.6rem'
+                  textHover='#ffffff'
+                  hoverColor='#2A2A2A'
+                  border='none'
+                  mb='1rem'
+                />
+                <IconButton
+                  text='부산'
+                  backColor='#eeeeee'
+                  color='#979797'
+                  pt='1.1rem'
+                  pr='1.9rem'
+                  pl='1.9rem'
+                  pb='1rem'
+                  fontSize='1.6rem'
+                  borderRadius='2.6rem'
+                  textHover='#ffffff'
+                  hoverColor='#2A2A2A'
+                  border='none'
+                  mb='1rem'
+                />
+              </div>
+            </HotelLocationWrapper>
+          </div>
+          <div className='hotelSlider'>
+            <FillBox />
+            <FillBox margin='0 3rem 0 3rem' />
+            <FillBox />
+          </div>
+        </div>
       </HotelListBlock>
+
       {/* 띠배너 부분 */}
       <BandBanner img={'/img/linebanner.png'} />
       {/* 지금 이 숙소가 인기있어요 */}
@@ -249,8 +330,7 @@ const HotelSearchBlock = styled.div`
   align-items: center;
   justify-content: center;
   height: 74.4rem;
-  //padding: 21rem 42rem 0 42rem;
-  background-color: #cbcbcb;
+  background-color: ${(props) => props.theme.grey3_color};
   .searchBox {
     width: 108rem;
   }
@@ -278,8 +358,32 @@ const HotelListBlock = styled.div`
   justify-content: center;
   background-color: ${(props) => props.theme.grey3_color};
   height: 55.6rem;
+  .hotelListBox {
+    display: flex;
+    width: 128rem;
+    height: 55.6rem;
+    .locationBox {
+      margin-top: 10rem;
+      position: absolute;
+    }
+    .hotelSlider {
+      margin-top: 15rem;
+      margin-left: 37rem;
+      position: absolute;
+      display: flex;
+    }
+  }
 `;
-
+const HotelLocationWrapper = styled.div`
+  width: 44rem;
+  height: 57.2rem;
+  color: ${(props) => props.theme.white_color};
+  padding: 5rem 0 0 5rem;
+  position: absolute;
+  display: block;
+  background-color: ${(props) => props.theme.grey2_color};
+  line-height: 1.3; // 줄 간격
+`;
 const BandBanner = styled.div`
   margin: 0 auto;
   width: 128rem;
