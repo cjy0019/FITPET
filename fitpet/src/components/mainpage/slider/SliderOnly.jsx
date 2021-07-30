@@ -34,8 +34,8 @@ const SliderOnly = () => {
 
             {onlySlider.map((info, idx) => {
               return (
-                <OnlySlide>
-                  <Only margin='0 4rem 0 0' {...info} key={idx * 7.23}></Only>
+                <OnlySlide key={idx * 7.23}>
+                  <Only margin='0 4rem 0 0' {...info}></Only>
                 </OnlySlide>
               );
             })}

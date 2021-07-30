@@ -40,7 +40,7 @@ const OnlyBlock = styled.div`
   margin: 28.6rem 3.8rem 3.6rem 3.8rem;
   color: #fff;
 `;
-const Text = styled.p`
+const Text = styled.div`
   height: 7.8rem;
   font-size: 3rem;
   line-height: 1.2; // 줄 간격
