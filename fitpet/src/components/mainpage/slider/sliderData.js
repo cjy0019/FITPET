@@ -43,3 +43,37 @@ export const locationSlider = [
     tag3: '#바닷가',
   },
 ];
+
+// 오직 핏펫에서만 슬라이드 데이터
+export const onlySlider = [
+  {
+    img: '/img/onlySlide.png',
+    text1: '올 여름은',
+    text2: '애견수영장에서 시원하게',
+  },
+  {
+    img: '/img/onlySlide2.png',
+    text1: '제주도 반려동물',
+    text2: '동반펜션 TOP5',
+  },
+  {
+    img: '/img/onlySlide3.png',
+    text1: '시원한 할인 이벤트',
+    text2: '캠핑 떠나자!',
+  },
+  {
+    img: '/img/onlySlide.png',
+    text1: '올 여름은',
+    text2: '애견수영장에서 시원하게',
+  },
+  {
+    img: '/img/onlySlide2.png',
+    text1: '제주도 반려동물',
+    text2: '동반펜션 TOP5',
+  },
+  {
+    img: '/img/onlySlide3.png',
+    text1: '시원한 할인 이벤트',
+    text2: '캠핑 떠나자!',
+  },
+];

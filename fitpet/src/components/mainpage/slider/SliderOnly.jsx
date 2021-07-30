@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Only, SliderLeftButton, SliderRightButton } from '../../../common';
+import { onlySlider } from './sliderData';
 
 const SliderOnly = () => {
   const TOTAL_SLIDES = 1;
@@ -30,21 +31,14 @@ const SliderOnly = () => {
         <Content>
           <OnlyWrapper ref={slideRef}>
             {/* <SliderLeftButton onClick={PrevSlide} /> */}
-            <OnlySlide>
-              <Only margin='0 4rem 0 0'></Only>
-            </OnlySlide>
-            <OnlySlide>
-              <Only margin='0 4rem 0 0'></Only>
-            </OnlySlide>
-            <OnlySlide>
-              <Only margin='0 4rem 0 0'></Only>
-            </OnlySlide>
-            <OnlySlide>
-              <Only margin='0 4rem 0 0'></Only>
-            </OnlySlide>
-            <OnlySlide>
-              <Only margin='0 4rem 0 0'></Only>
-            </OnlySlide>
+
+            {onlySlider.map((info, idx) => {
+              return (
+                <OnlySlide>
+                  <Only margin='0 4rem 0 0' {...info} key={idx * 7.23}></Only>
+                </OnlySlide>
+              );
+            })}
           </OnlyWrapper>
         </Content>
         <ControlsBtn>

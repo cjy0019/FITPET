@@ -3,16 +3,17 @@ import styled from 'styled-components';
 
 const Only = (props) => {
   const { margin, handleClick } = props;
+  const { img, text1, text2 } = props;
 
   const styles = {
     margin: margin,
   };
   return (
-    <OnlyBox {...styles} onClick={handleClick}>
+    <OnlyBox {...styles} onClick={handleClick} img={img}>
       <OnlyBlock>
         <Text>
-          올 여름은 <br />
-          애견수영장에서 시원하게
+          <p>{text1}</p>
+          <p>{text2}</p>
         </Text>
       </OnlyBlock>
     </OnlyBox>
@@ -24,7 +25,9 @@ export default Only;
 const OnlyBox = styled.div`
   width: 40rem;
   height: 40rem;
-  background-color: #979797;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(${(props) => props.img});
   border-radius: 25px;
   cursor: pointer;
   &:hover {
