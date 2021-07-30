@@ -14,6 +14,7 @@ import RoundSquareBtn from './buttons/small_size/RoundSquareBtn';
 import HoverText from './contents/common/HoverText';
 import ImgMoreBtn from './buttons/small_size/ImgMoreBtn';
 import SocialBtn from './buttons/middle_size/SocialBtn';
+import BasicBox from './contents/common/BasicBox';
 export {
   Font,
   CoursePage,
@@ -31,4 +32,5 @@ export {
   HoverText,
   ImgMoreBtn,
   SocialBtn,
+  BasicBox,
 };
