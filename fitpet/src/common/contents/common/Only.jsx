@@ -24,7 +24,7 @@ export default Only;
 const OnlyBox = styled.div`
   width: 40rem;
   height: 40rem;
-  background-color: #979797;
+  background-color: #ccbebe;
   border-radius: 25px;
   cursor: pointer;
   &:hover {
@@ -35,7 +35,7 @@ const OnlyBox = styled.div`
 const OnlyBlock = styled.div`
   display: inline-block;
   margin: 28.6rem 3.8rem 3.6rem 3.8rem;
-  color: #fff;
+  color: #ffffff;
 `;
 const Text = styled.p`
   height: 7.8rem;
