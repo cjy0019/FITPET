@@ -39,7 +39,10 @@ const BannerWrappr = styled.div`
   align-items: center;
   padding-top: 10.6rem;
   height: 60rem;
-  background-color: ${(props) => props.theme.grey2_color};
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/img/bannerImg.png');
 `;
 
 const SearchInput = styled.input`
@@ -51,8 +54,8 @@ const SearchInput = styled.input`
   margin-top: 3rem;
   font-size: 1.8rem;
 
+  background-image: url('/img/bannerSearch.svg');
   background-color: ${(props) => props.theme.white_color};
-  background-image: url('/img/logo-social.png');
   background-size: 4.8rem 4.8rem;
   background-position: 2.3rem center;
   background-repeat: no-repeat;

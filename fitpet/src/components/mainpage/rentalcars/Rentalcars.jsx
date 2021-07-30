@@ -170,11 +170,7 @@ const Rentalcars = () => {
             </Font>
           </OtherRentalcars>
           {/* 띠배너 부분 */}
-          <BandBanner>
-            <Font color='#fff' fontSize='4.2rem'>
-              띠배너
-            </Font>
-          </BandBanner>
+          <BandBanner img={'/img/linebanner.png'} />
         </RentalcarsMore>
       </RantalcarsBox>
     </RentalcarsBlock>
@@ -224,5 +220,8 @@ const BandBanner = styled.div`
   text-align: center;
   justify-content: center;
   padding-top: 6rem;
-  background-color: #979797;
+
+  background-image: url(${(props) => props.img});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
