@@ -101,10 +101,13 @@ const BasicBoxWrapper = styled.div`
 `;
 
 const TextBox = styled.div`
-  display: inline-block;
+  width: 33.9rem;
+  height: 7.7rem;
+  position: relative;
+  top: 70%;
+  //display: inline-block;
   margin: 0 0 4.2rem 3.1rem;
-  margin-bottom: 4.2rem;
-  text-align: center;
+  //margin-bottom: 4.2rem;
   padding-bottom: 42px;
 `;
 export default BasicBox;

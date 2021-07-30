@@ -42,24 +42,20 @@ const HotelMain = () => {
           </Font>
           {/* 핏펫에서 지금 뜨는 혜택! 이미지 블럭 */}
           <EventBlock>
-            <div className='firstLine'>
+            <div className='line'>
               <BasicBox
                 width='40rem'
                 height='40rem'
                 margin='0 4rem 6rem 0'
-                borderRadius='30px'></BasicBox>
+                borderRadius='30px'
+                text='올 여름은 애견 수영장에서'></BasicBox>
               <BasicBox
                 width='40rem'
                 height='52rem'
-                margin='0 4rem 6rem 0'
-                borderRadius='30px'></BasicBox>
-              <BasicBox
-                width='40rem'
-                height='40rem'
-                margin='0 4rem 6rem 0'
+                margin='0 4rem 0 0'
                 borderRadius='30px'></BasicBox>
             </div>
-            <div className='secondLine'>
+            <div className='line'>
               <BasicBox
                 width='40rem'
                 height='52rem'
@@ -68,12 +64,19 @@ const HotelMain = () => {
               <BasicBox
                 width='40rem'
                 height='40rem'
+                margin='0 4rem 0 0'
+                borderRadius='30px'></BasicBox>
+            </div>
+            <div className='line'>
+              <BasicBox
+                width='40rem'
+                height='40rem'
                 margin='0 4rem 6rem 0'
                 borderRadius='30px'></BasicBox>
               <BasicBox
                 width='40rem'
                 height='52rem'
-                margin='0 4rem 6rem 0'
+                margin='0 4rem 0 0'
                 borderRadius='30px'></BasicBox>
             </div>
           </EventBlock>
@@ -107,14 +110,12 @@ const FitPetEventBlock = styled.div`
   width: 128rem;
   display: flex;
   margin: 0 auto;
+  margin-bottom: 12rem;
 `;
 const EventBlock = styled.div`
-  display: block;
-  .firstLine {
-    display: flex;
-  }
-  .secondLine {
-    display: flex;
+  display: flex;
+  .line {
+    display: block;
   }
 `;
 export default HotelMain;
