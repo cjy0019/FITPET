@@ -111,7 +111,7 @@ const Rentalcars = () => {
               margin='0 0.5rem 1rem 0.5rem'
             />
             <IconButton
-              text='준소형'
+              text='준중형'
               backColor='#eeeeee'
               color='#707070'
               pt='1.1rem'
