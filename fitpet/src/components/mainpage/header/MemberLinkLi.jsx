@@ -45,18 +45,18 @@ const StyeldLi = styled.li`
   display: flex;
   margin-right: 2.6rem;
   font-size: 1.4rem;
-  color: #707070;
 
   a {
     display: flex;
     align-items: center;
 
     &:visited {
-      color: #707070;
+      color: ${(props) => props.theme.black1_color};
     }
   }
 
   p {
+    color: ${(props) => props.theme.black1_color};
     word-break: keep-all;
   }
 `;

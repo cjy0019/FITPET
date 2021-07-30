@@ -24,9 +24,9 @@ const Course = () => {
 };
 
 const CourseSection = styled.section`
-  background-color: #b0cfcf;
+  background-color: ${(props) => props.theme.grey5_color};
   padding: 4rem 0;
-  color: #ffffff;
+  color: ${(props) => props.theme.black1_color};
 
   p {
     margin-top: 0.7rem;
