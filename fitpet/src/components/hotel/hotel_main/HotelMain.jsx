@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, MiddleSizeButton, Tag } from '../../../common';
+import { BasicBox, Font, MiddleSizeButton, Only, Tag } from '../../../common';
 import HotelSearch from '../hotel_common/HotelSearch';
 
 const HotelMain = () => {
@@ -30,7 +30,55 @@ const HotelMain = () => {
         </div>
       </HotelSearchBlock>
       {/* 핏펫에서 지금 뜨는 혜택 */}
-      <FitPetEventBlock></FitPetEventBlock>
+      <FitPetEventBlock>
+        <div>
+          <Font
+            fontSize='3.8rem'
+            fontWeight='bold'
+            mt='12rem'
+            mb='3.4rem'
+            color='#2A2A2A'>
+            핏펫에서 지금 뜨는 혜택!
+          </Font>
+          {/* 핏펫에서 지금 뜨는 혜택! 이미지 블럭 */}
+          <EventBlock>
+            <div className='firstLine'>
+              <BasicBox
+                width='40rem'
+                height='40rem'
+                margin='0 4rem 6rem 0'
+                borderRadius='30px'></BasicBox>
+              <BasicBox
+                width='40rem'
+                height='52rem'
+                margin='0 4rem 6rem 0'
+                borderRadius='30px'></BasicBox>
+              <BasicBox
+                width='40rem'
+                height='40rem'
+                margin='0 4rem 6rem 0'
+                borderRadius='30px'></BasicBox>
+            </div>
+            <div className='secondLine'>
+              <BasicBox
+                width='40rem'
+                height='52rem'
+                margin='0 4rem 6rem 0'
+                borderRadius='30px'></BasicBox>
+              <BasicBox
+                width='40rem'
+                height='40rem'
+                margin='0 4rem 6rem 0'
+                borderRadius='30px'></BasicBox>
+              <BasicBox
+                width='40rem'
+                height='52rem'
+                margin='0 4rem 6rem 0'
+                borderRadius='30px'></BasicBox>
+            </div>
+          </EventBlock>
+        </div>
+      </FitPetEventBlock>
     </HotelMainWraper>
   );
 };
@@ -55,5 +103,18 @@ const HotelSearchBlock = styled.div`
     justify-content: center;
   }
 `;
-const FitPetEventBlock = styled.div``;
+const FitPetEventBlock = styled.div`
+  width: 128rem;
+  display: flex;
+  margin: 0 auto;
+`;
+const EventBlock = styled.div`
+  display: block;
+  .firstLine {
+    display: flex;
+  }
+  .secondLine {
+    display: flex;
+  }
+`;
 export default HotelMain;
