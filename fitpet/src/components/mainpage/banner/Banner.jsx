@@ -38,7 +38,10 @@ const BannerWrappr = styled.div`
   align-items: center;
   padding-top: 10.6rem;
   height: 60rem;
-  background-color: #979797;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/img/bannerImg.png');
 `;
 
 const SearchInput = styled.input`
@@ -50,8 +53,7 @@ const SearchInput = styled.input`
   margin-top: 3rem;
   font-size: 1.8rem;
 
-  background-color: darkkhaki;
-  background-image: url('/img/logo-social.png');
+  background-image: url('/img/bannerSearch.svg');
   background-size: 4.8rem 4.8rem;
   background-position: 2.3rem center;
   background-repeat: no-repeat;

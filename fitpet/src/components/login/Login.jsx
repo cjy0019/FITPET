@@ -47,7 +47,7 @@ const StyledForm = styled.form`
 
 // 로고부분
 const Logo = styled.img.attrs({
-  src: '/img/logo-social.png',
+  src: '/img/loginLogo.svg',
   alt: 'FitPet',
 })`
   display: block;

@@ -3,18 +3,19 @@ import styled from 'styled-components';
 
 const Tag = (props) => {
   const { margin, handleClick } = props;
+  const { img, title, tag1, tag2, tag3 } = props.info;
 
   const styles = {
     margin: margin,
   };
   return (
-    <TagBox {...styles} onClick={handleClick}>
+    <TagBox {...styles} onClick={handleClick} img={img}>
       <TagBlock>
-        <Text>제주도</Text>
+        <Text>{title}</Text>
         <TagTextBox>
-          <TagText>#섬</TagText>
-          <TagText>#아름다운</TagText>
-          <TagText>#바닷가</TagText>
+          <TagText>{tag1}</TagText>
+          <TagText>{tag2}</TagText>
+          <TagText>{tag3}</TagText>
         </TagTextBox>
       </TagBlock>
     </TagBox>
@@ -26,7 +27,9 @@ export default Tag;
 const TagBox = styled.div`
   width: 29rem;
   height: 40rem;
-  background-color: #979797;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(${(props) => props.img});
   border-radius: 25px;
   cursor: pointer;
 
@@ -51,4 +54,5 @@ const TagTextBox = styled.div`
 `;
 const TagText = styled.p`
   margin-right: 1.5rem;
+  white-space: nowrap;
 `;
