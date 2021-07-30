@@ -90,7 +90,7 @@ const StyledH2 = styled.h2`
   font-weight: bold;
   line-height: 1.19;
   margin-bottom: 1.6rem;
-  color: #707070;
+  color: ${(props) => props.themeblack1_color};
   text-align: left;
 `;
 

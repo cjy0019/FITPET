@@ -4,12 +4,12 @@ import LoginBottom from './LoginBottom';
 import LoginHeader from './LoginHeader';
 import Slogan from './Slogan';
 
-const Login = ({ hide }) => {
+const Login = ({ hideLogin }) => {
   return (
     <>
-      <StyledForm>
+      <StyledForm onSubmit={handleSubmit}>
         <div>
-          <LoginHeader hide={hide} />
+          <LoginHeader hideLogin={hideLogin} />
           {/* 로고 */}
           <Logo />
 
@@ -22,6 +22,11 @@ const Login = ({ hide }) => {
       </StyledForm>
     </>
   );
+
+  // form 기본동작 방지
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
 };
 
 // style

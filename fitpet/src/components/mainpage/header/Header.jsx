@@ -17,14 +17,14 @@ const Header = () => {
       position:fixed;
       top: -${window.scrollY}px;
       overflow-y: scroll;
-      width: 100%;;
+      width: 100%;
     `;
     }
 
     return () => {
       const scrollY = document.body.style.top;
       document.body.style.cssText = '';
-      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
     };
   }, [visible]);
 
@@ -54,7 +54,7 @@ const Header = () => {
 
 const MainHeader = styled.header`
   display: grid;
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.white_color};
   grid-template-columns: 1.17fr repeat(2, 1fr);
   position: fixed;
   width: 100%;
