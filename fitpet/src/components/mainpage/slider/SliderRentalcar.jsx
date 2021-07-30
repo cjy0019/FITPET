@@ -38,7 +38,7 @@ const SliderRentalcar = () => {
             <Rentalcar>
               <WishSmall margin='0 4rem 0 0'></WishSmall>
               <Font
-                color='#707070'
+                color='#2A2A2A'
                 fontSize='1.8rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span>
@@ -52,7 +52,7 @@ const SliderRentalcar = () => {
             <Rentalcar>
               <WishSmall margin='0 4rem 0 0'></WishSmall>
               <Font
-                color='#707070'
+                color='#2A2A2A'
                 fontSize='1.8rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span>
@@ -66,7 +66,7 @@ const SliderRentalcar = () => {
             <Rentalcar>
               <WishSmall margin='0 4rem 0 0'></WishSmall>
               <Font
-                color='#707070'
+                color='#2A2A2A'
                 fontSize='1.8rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span>
@@ -80,7 +80,7 @@ const SliderRentalcar = () => {
             <Rentalcar>
               <WishSmall margin='0 4rem 0 0'></WishSmall>
               <Font
-                color='#707070'
+                color='#2A2A2A'
                 fontSize='1.8rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span>
@@ -94,7 +94,7 @@ const SliderRentalcar = () => {
             <Rentalcar>
               <WishSmall margin='0 4rem 0 0'></WishSmall>
               <Font
-                color='#707070'
+                color='#2A2A2A'
                 fontSize='1.8rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span>
@@ -108,7 +108,7 @@ const SliderRentalcar = () => {
             <Rentalcar>
               <WishSmall></WishSmall>
               <Font
-                color='#707070'
+                color='#2A2A2A'
                 fontSize='1.8rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span>

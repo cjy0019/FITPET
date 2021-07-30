@@ -25,7 +25,8 @@ const banner = () => {
         pr='4.2rem'
         pl='4.2rem'
         mt='6.2rem'
-        backColor='#636363'
+        backColor='#4765ff'
+        border='none'
         height='5.2rem'
         color='#ffffff'></MiddleSizeButton>
     </BannerWrappr>
@@ -38,7 +39,7 @@ const BannerWrappr = styled.div`
   align-items: center;
   padding-top: 10.6rem;
   height: 60rem;
-  background-color: #979797;
+  background-color: ${(props) => props.theme.grey2_color};
 `;
 
 const SearchInput = styled.input`
@@ -50,14 +51,14 @@ const SearchInput = styled.input`
   margin-top: 3rem;
   font-size: 1.8rem;
 
-  background-color: darkkhaki;
+  background-color: ${(props) => props.theme.white_color};
   background-image: url('/img/logo-social.png');
   background-size: 4.8rem 4.8rem;
   background-position: 2.3rem center;
   background-repeat: no-repeat;
 
   &::placeholder {
-    color: #707070;
+    color: ${(props) => props.theme.grey1_color};
     font-weight: 500;
     font-size: 1.8rem;
   }
@@ -68,7 +69,7 @@ const SectionTitle = styled.h2`
   font-weight: bold;
   line-height: 1.18;
   margin: 12.3rem 0 0 0;
-  color: #ffffff;
+  color: ${(props) => props.theme.white_color};
 `;
 
 export default banner;

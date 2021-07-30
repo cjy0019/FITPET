@@ -54,7 +54,7 @@ const Header = () => {
 
 const MainHeader = styled.header`
   display: grid;
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.white_color};
   grid-template-columns: 1.17fr repeat(2, 1fr);
   position: fixed;
   width: 100%;

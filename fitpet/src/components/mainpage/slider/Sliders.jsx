@@ -8,7 +8,7 @@ const Sliders = () => {
   return (
     <SliderBlock>
       <TextBlock>
-        <Font color='#707070' fontSize='4.2rem' fontWeight='bold'>
+        <Font color='#2A2A2A' fontSize='4.2rem' fontWeight='bold'>
           어디로 갈까요?
         </Font>
       </TextBlock>
@@ -18,7 +18,7 @@ const Sliders = () => {
       </LocationBlock>
       <TextBlock>
         <Font
-          color='#707070'
+          color='#2A2A2A'
           fontSize='4.2rem'
           fontWeight='bold'
           margin='12rem auto 0'>
@@ -57,9 +57,3 @@ const OnlyFitpetBlock = styled.div`
   width: 128rem;
   height: 40rem;
 `;
-// const OnlyFitpetWrapper = styled.div`
-//   justify-content: center;
-//   margin-top: 1.6rem;
-//   height: 40rem;
-//   display: flex;
-// `;

@@ -57,18 +57,18 @@ const MenuLi = styled.li`
   padding-bottom: 0.4rem;
 
   &:hover {
-    border-bottom: solid 4px red;
+    border-bottom: solid 4px #4765ff;
   }
 
   a {
-    color: black;
+    color: ${(props) => props.theme.main_color};
     padding: 0 0.4rem;
     height: 2.8rem;
     display: table-cell;
     vertical-align: middle;
   }
   a:visited {
-    color: black;
+    color: ${(props) => props.theme.main_color};
   }
 `;
 
