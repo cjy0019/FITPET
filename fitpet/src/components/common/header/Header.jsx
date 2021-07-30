@@ -54,13 +54,14 @@ const Header = () => {
 
 const MainHeader = styled.header`
   display: grid;
+  align-items: center;
   background-color: #ffffff;
   grid-template-columns: 1.17fr 1.15fr 0.7fr;
   position: fixed;
   width: 100%;
   height: 8rem;
   top: 0;
-  padding: 2.6rem 6rem 2.6rem 6rem;
+  padding: 0rem 6rem 0rem 6rem;
   z-index: 10;
 `;
 
@@ -68,8 +69,8 @@ const FitPetLogo = styled.img.attrs({
   src: '/img/mainlogo.svg',
   alt: '핏펫 홈',
 })`
-  width: 11rem;
-  height: 2.9rem;
+  width: 18.6rem;
+  height: 5.2rem;
 `;
 
 export default Header;
