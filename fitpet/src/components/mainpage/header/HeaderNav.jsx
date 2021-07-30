@@ -40,7 +40,7 @@ const HeaderNav = () => {
 };
 
 const StyledNav = styled.nav`
-  min-height: 2.8rem;
+  min-height: 3;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;

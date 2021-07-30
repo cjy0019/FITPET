@@ -3,37 +3,35 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MemberLinkLi = ({ showSignUp, showLogin }) => {
-  const img = '/img/logo-social.png';
-
   return (
     <>
       <StyeldLi>
         <NavLink to='/'>
-          <StyledImg src={img} alt='검색' />
+          <StyledImg src={'/img/searchImg.svg'} alt='검색' />
           <p>검색</p>
         </NavLink>
       </StyeldLi>
       <StyeldLi>
-        <StyledImg src={img} alt='회원가입' />
+        <StyledImg src={'/img/signInImg.svg'} alt='회원가입' />
         <StyledButton onClick={showSignUp}>
           <p>회원가입</p>
         </StyledButton>
       </StyeldLi>
       <StyeldLi>
-        <StyledImg src={img} alt='로그인' />
+        <StyledImg src={'/img/loginImg.svg'} alt='로그인' />
         <StyledButton onClick={showLogin}>
           <p>로그인</p>
         </StyledButton>
       </StyeldLi>
-      <StyeldLi>
+      {/* <StyeldLi>
         <NavLink to='/'>
-          <StyledImg src={img} alt='마이메뉴' />
+          <StyledImg src={'/img/cartImg.svg'} alt='마이메뉴' />
           <p>마이메뉴</p>
         </NavLink>
-      </StyeldLi>
+      </StyeldLi> */}
       <StyeldLi style={{ marginRight: 0 }}>
         <NavLink to='/'>
-          <StyledImg src={img} alt='장바구니' />
+          <StyledImg src={'/img/cartImg.svg'} alt='장바구니' />
           <p>장바구니</p>
         </NavLink>
       </StyeldLi>
