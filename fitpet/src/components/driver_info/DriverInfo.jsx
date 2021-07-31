@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Line } from '../reservation/Reservation';
+import DriverAgreement from './DriverAgreement';
 import DriverInput from './DriverInput';
 import DriverPayment from './DriverPayment';
 import LicenseButton from './LicenseButton';
@@ -60,6 +61,9 @@ const DriverInfo = () => {
 
           {/* 결제 수단 선택 */}
           <DriverPayment />
+
+          {/* 이용약관 동의 */}
+          <DriverAgreement />
         </section>
 
         {/* 오른쪽 파트 */}
