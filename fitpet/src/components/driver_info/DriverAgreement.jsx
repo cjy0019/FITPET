@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import MiddleSizeButton from '../../common/buttons/middle_size/MiddleSizeButton';
 import SmallLine from '../../common/utility/SmallLine';
 import { DownButton, Rect, UpButton } from '../hotel/hotel_common/filterCommon';
 import { HiCheck } from 'react-icons/hi';
@@ -195,7 +194,7 @@ const AgreeCheck = styled.div`
   /* size='1.6rem' color='blue' stroke-width='1.4' */
   input:checked + &::after {
     background-color: #0186df;
-    transform: scale(1);
+    transform: scale(1.15);
     transition: transform 0.3s;
   }
 

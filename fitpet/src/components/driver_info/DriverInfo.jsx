@@ -4,6 +4,7 @@ import { Line } from '../reservation/Reservation';
 import DriverAgreement from './DriverAgreement';
 import DriverInput from './DriverInput';
 import DriverPayment from './DriverPayment';
+import DriverSticky from './DriverSticky';
 import LicenseButton from './LicenseButton';
 
 const DriverInfo = () => {
@@ -67,6 +68,7 @@ const DriverInfo = () => {
         </section>
 
         {/* 오른쪽 파트 */}
+        <DriverSticky />
       </StyledArticle>
     </div>
   );
