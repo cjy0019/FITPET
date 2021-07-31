@@ -35,9 +35,9 @@ const HotelList = () => {
           <HotelListHeader />
           {hotels.map((hotel, i) => {
             return (
-              <>
+              <div key={i}>
                 <HotelInfo key={hotel.id} />
-              </>
+              </div>
             );
           })}
         </PossibleHotel>

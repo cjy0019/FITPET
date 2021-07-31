@@ -13,8 +13,11 @@ import HotelListPage from './pages/HotelListPage';
 import RoomDetailModalPage from './pages/RoomDetailModalPage';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import RentCarPage from './pages/RentCarPage';
 import HotelMainPage from './pages/HotelMainPage';
 import RentalcarMainPage from './pages/RentalcarMainPage';
+
+store = { store };
 
 function App() {
   return (
@@ -31,6 +34,7 @@ function App() {
             <Route component={RoomDetailModalPage} path='/roomDetail' />
             <Route component={HotelListPage} path='/hotelList' />
             <Route component={RentalcarMainPage} path='/rentalcar' />
+            <Route component={RentCarPage} path='/rentcar' />
             <Route component={NotFoundPage} />
           </Switch>
         </BrowserRouter>

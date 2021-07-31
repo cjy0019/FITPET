@@ -44,18 +44,12 @@ const MapButton = styled.button`
   height: 4rem;
   font-size: 1.6rem;
   font-weight: 500;
-  padding: 0.3rem 1.5rem 0.3rem 5.4rem;
   white-space: nowrap;
   border: none;
   border-radius: 26px;
   outline: none;
   background-color: #979797;
   color: #ffffff;
-
-  background-image: url('/img/logo-social.png');
-  background-size: 3.4rem 3.4rem;
-  background-position: 1.2rem center;
-  background-repeat: no-repeat;
 `;
 
 export default HotelFilter;
