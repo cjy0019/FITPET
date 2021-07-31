@@ -4,15 +4,16 @@ import { NavLink } from 'react-router-dom';
 import MemberLinkUl from './MemberLinkUl';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HeaderNav from './HeaderNav';
-import LoginModal from '../../login/LoginModal';
+import Login from '../../login/Login';
+import Modal from '../../modal/Modal';
 
 const Header = () => {
-  const [visible, setVisible] = useState(false);
-  const showLogin = useCallback(() => setVisible(true), []);
-  const hideLogin = useCallback(() => setVisible(false), []);
+  const [isOpen, setIsOpen] = useState(false);
+  const showLogin = useCallback(() => setIsOpen(true), []);
+  const hideLogin = useCallback(() => setIsOpen(false), []);
 
   useEffect(() => {
-    if (visible) {
+    if (isOpen) {
       document.body.style.cssText = `
       position:fixed;
       top: -${window.scrollY}px;
@@ -26,11 +27,10 @@ const Header = () => {
       document.body.style.cssText = '';
       window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
     };
-  }, [visible]);
+  }, [isOpen]);
 
   return (
     <>
-      {visible && <LoginModal hideLogin={hideLogin} />}
       <MainHeader>
         {/* 로고 부분 */}
         <h1>
@@ -48,6 +48,12 @@ const Header = () => {
           <MemberLinkUl showLogin={showLogin} />
         </nav>
       </MainHeader>
+      {/* 로그인 모달 */}
+      {isOpen ? (
+        <Modal>
+          <Login hideLogin={hideLogin} />
+        </Modal>
+      ) : null}
     </>
   );
 };
