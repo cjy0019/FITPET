@@ -11,7 +11,7 @@ import ReservationPage from './pages/ReservationPage';
 import HotelAboutPage from './pages/HotelAboutPage';
 import HotelListPage from './pages/HotelListPage';
 import RoomDetailModalPage from './pages/RoomDetailModalPage';
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 // import store from './redux/store';
 import RentCarPage from './pages/RentCarPage';
 import HotelMainPage from './pages/HotelMainPage';

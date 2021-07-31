@@ -13,7 +13,7 @@ const MemberLinkLi = ({ showSignUp, showLogin }) => {
       </StyeldLi>
 
       <StyeldLi>
-        <StyledButton onClick={showSignUp} img='/img/signInImg.svg'>
+        <StyledButton onClick={showSignUp}>
           <StyledImg src={'/img/signInImg.svg'} alt='회원가입' />
           <p>회원가입</p>
         </StyledButton>
@@ -74,8 +74,7 @@ const StyledButton = styled.button`
   align-items: center;
   border: none;
   font-size: 1.4rem;
-  background-color: #ffffff;
-  color: #707070;
+  background-color: ${(props) => props.theme.white_color};
 `;
 
 export default MemberLinkLi;

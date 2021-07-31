@@ -5,12 +5,15 @@ import MemberLinkUl from './MemberLinkUl';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HeaderNav from './HeaderNav';
 import Login from '../../login/Login';
+import SignUp from '../../signUp/SignUp';
 import Modal from '../../modal/Modal';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const showLogin = useCallback(() => setIsOpen(true), []);
   const hideLogin = useCallback(() => setIsOpen(false), []);
+  const showSignUp = useCallback(() => setIsOpen(true), []);
+  const hideSignUp = useCallback(() => setIsOpen(false), []);
 
   useEffect(() => {
     if (isOpen) {
@@ -45,13 +48,15 @@ const Header = () => {
 
         {/* 멤버 링크 부분 */}
         <nav>
-          <MemberLinkUl showLogin={showLogin} />
+          {/* <MemberLinkUl showLogin={showLogin} /> */}
+          <MemberLinkUl showSignUp={showSignUp} />
         </nav>
       </MainHeader>
       {/* 로그인 모달 */}
       {isOpen ? (
         <Modal>
-          <Login hideLogin={hideLogin} />
+          {/* <Login hideLogin={hideLogin} /> */}
+          <SignUp hideSignUp={hideSignUp} />
         </Modal>
       ) : null}
     </>
