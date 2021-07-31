@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
+  AllWrapper,
+  ButtonContainer,
   DownButton,
   FilterBtn,
   FilterTitle,
-  UpButton,
-  AllWrapper,
-  ButtonContainer,
   Folder,
   LineWrapper,
-} from '../hotel_common/filterCommon';
+  UpButton,
+} from '../hotel/hotel_common/filterCommon';
 
-const LevelFilter = () => {
+const FuelFilter = () => {
   const [isFold, setisFold] = useState(true);
   const foldingRef = useRef(null);
 
@@ -26,7 +26,7 @@ const LevelFilter = () => {
   return (
     <AllWrapper>
       <ButtonContainer>
-        <FilterTitle>등급</FilterTitle>
+        <FilterTitle>연료</FilterTitle>
         {isFold ? (
           <UpButton handleClick={handleClick} />
         ) : (
@@ -36,13 +36,13 @@ const LevelFilter = () => {
 
       <Folder ref={foldingRef}>
         <LineWrapper>
-          <FilterBtn noMargin>5성급</FilterBtn>
-          <FilterBtn>4성급</FilterBtn>
-          <FilterBtn>3성급</FilterBtn>
-          <FilterBtn>2성급</FilterBtn>
+          <FilterBtn noMargin>휘발유(가솔린)</FilterBtn>
+          <FilterBtn>경유(디젤)</FilterBtn>
+          <FilterBtn>LPG</FilterBtn>
         </LineWrapper>
         <LineWrapper>
-          <FilterBtn noMargin>1성급 이하</FilterBtn>
+          <FilterBtn noMargin>하이브리드</FilterBtn>
+          <FilterBtn>전기</FilterBtn>
         </LineWrapper>
       </Folder>
     </AllWrapper>
@@ -53,4 +53,4 @@ const LevelFilter = () => {
   }
 };
 
-export default LevelFilter;
+export default FuelFilter;

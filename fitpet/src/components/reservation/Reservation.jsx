@@ -56,7 +56,6 @@ const StyledArticle = styled.article`
   width: 128rem;
   display: flex;
   justify-content: space-between;
-  /* background-color: #bea2bd; */
   margin: 0 auto 46rem;
   padding-top: 6rem;
 `;
