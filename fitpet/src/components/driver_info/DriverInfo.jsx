@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { Line } from '../reservation/Reservation';
 import DriverInput from './DriverInput';
+import DriverPayment from './DriverPayment';
 import LicenseButton from './LicenseButton';
 
 const DriverInfo = () => {
@@ -44,6 +45,21 @@ const DriverInfo = () => {
             <LicenseButton name='special_M'>1종 보통</LicenseButton>
             <LicenseButton name='special_L'>1종 대형</LicenseButton>
           </LicenseWrapper>
+
+          {/* 쿠폰 포인트 */}
+          <section>
+            <StyledH2>쿠폰 / 포인트</StyledH2>
+            <Line />
+            <DriverInput hint='사용가능한 쿠폰 0개 / 전체 0개'>
+              쿠폰 적용
+            </DriverInput>
+            <DriverInput btn text='모두사용' hint='0' point>
+              포인트 사용
+            </DriverInput>
+          </section>
+
+          {/* 결제 수단 선택 */}
+          <DriverPayment />
         </section>
 
         {/* 오른쪽 파트 */}
@@ -120,6 +136,15 @@ const LicenseTitle = styled.p`
 const LicenseWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+const StyledH2 = styled.h2`
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 2.8rem;
+  margin-top: 6.2rem;
+  color: ${(props) => props.theme.grey1_color};
 `;
 
 export default DriverInfo;
