@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Line } from '../reservation/Reservation';
+import DriverInput from './DriverInput';
+import LicenseButton from './LicenseButton';
 
 const DriverInfo = () => {
   return (
@@ -18,16 +20,30 @@ const DriverInfo = () => {
               </AddDriverLabel>
             </FlexContainer>
 
-            <AddDriverLabel htmlFor='driverDiff' color>
+            <AddDriverLabel htmlFor='driverDiff' color='true'>
               <Rect></Rect>
               운전자가 달라요
               <input type='checkbox' id='driverDiff' />
             </AddDriverLabel>
           </FlexContainer>
-
           <Line />
 
           {/* 예약자 정보 */}
+
+          <section>
+            <DriverInput value='김혜진'>운전자 이름</DriverInput>
+            <DriverInput value='01054729026'>휴대폰 번호</DriverInput>
+            <DriverInput value='YYMMDD'>이메일 주소</DriverInput>
+            <DriverInput value='931028'>생년월일</DriverInput>
+          </section>
+
+          <LicenseTitle>운전 면허 종류</LicenseTitle>
+          <LicenseWrapper>
+            <LicenseButton name='normal_M'>2종 보통</LicenseButton>
+            <LicenseButton name='normal_S'>2종 소형</LicenseButton>
+            <LicenseButton name='special_M'>1종 보통</LicenseButton>
+            <LicenseButton name='special_L'>1종 대형</LicenseButton>
+          </LicenseWrapper>
         </section>
 
         {/* 오른쪽 파트 */}
@@ -90,6 +106,20 @@ const FlexContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: ${(props) => props.space};
+`;
+
+// 운전자 이름 ~ 생년월일
+const LicenseTitle = styled.p`
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.14;
+  color: ${(props) => props.theme.grey1_color};
+  margin: 4rem 0 1.3rem;
+`;
+
+const LicenseWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export default DriverInfo;
