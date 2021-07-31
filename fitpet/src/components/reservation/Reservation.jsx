@@ -77,7 +77,7 @@ const StyledH2 = styled.h2`
   color: #707070;
 `;
 
-const Line = styled.div`
+export const Line = styled.div`
   border-bottom: solid 1.5px #979797;
   margin-top: 1.4rem;
   width: 100%;
