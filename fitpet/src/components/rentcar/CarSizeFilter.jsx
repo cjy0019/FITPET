@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
+  AllWrapper,
+  ButtonContainer,
   DownButton,
   FilterBtn,
   FilterTitle,
-  UpButton,
-  AllWrapper,
-  ButtonContainer,
   Folder,
   LineWrapper,
-} from '../hotel_common/filterCommon';
+  UpButton,
+} from '../hotel/hotel_common/filterCommon';
 
-const LevelFilter = () => {
+const CarSizeFilter = () => {
   const [isFold, setisFold] = useState(true);
   const foldingRef = useRef(null);
 
@@ -26,7 +26,7 @@ const LevelFilter = () => {
   return (
     <AllWrapper>
       <ButtonContainer>
-        <FilterTitle>등급</FilterTitle>
+        <FilterTitle>차종</FilterTitle>
         {isFold ? (
           <UpButton handleClick={handleClick} />
         ) : (
@@ -36,13 +36,16 @@ const LevelFilter = () => {
 
       <Folder ref={foldingRef}>
         <LineWrapper>
-          <FilterBtn noMargin>5성급</FilterBtn>
-          <FilterBtn>4성급</FilterBtn>
-          <FilterBtn>3성급</FilterBtn>
-          <FilterBtn>2성급</FilterBtn>
+          <FilterBtn noMargin>경소형</FilterBtn>
+          <FilterBtn>준중형</FilterBtn>
+          <FilterBtn>중대형</FilterBtn>
+          <FilterBtn>승합차</FilterBtn>
         </LineWrapper>
         <LineWrapper>
-          <FilterBtn noMargin>1성급 이하</FilterBtn>
+          <FilterBtn noMargin>오픈카</FilterBtn>
+          <FilterBtn>전기차</FilterBtn>
+          <FilterBtn>수입</FilterBtn>
+          <FilterBtn>신차</FilterBtn>
         </LineWrapper>
       </Folder>
     </AllWrapper>
@@ -53,4 +56,4 @@ const LevelFilter = () => {
   }
 };
 
-export default LevelFilter;
+export default CarSizeFilter;
