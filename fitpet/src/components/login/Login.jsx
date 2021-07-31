@@ -42,12 +42,12 @@ const Overlay = styled.div`
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 100;
+  z-index: 999999999;
   background-color: rgba(0, 0, 0, 0.7);
 
   .center {
     position: absolute;
-    top: 10%;
+    top: 50vh;
     left: 50%;
     transform: translate(-50%, -50%);
   }
