@@ -25,6 +25,10 @@ const GlobalStyles = createGlobalStyle`
       cursor: pointer;
     }
 
+    li{
+      list-style: none;
+    }
+
     @media ${(props) => props.theme.laptop}{
       html {
         font-size: 8px;
