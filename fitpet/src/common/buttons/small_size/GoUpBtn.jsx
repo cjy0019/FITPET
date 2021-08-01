@@ -8,11 +8,12 @@ const GoUpBtn = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', btnAppear);
+    if (btnRender) setBtnRender(false);
 
     return () => {
       window.removeEventListener('scroll', btnAppear);
     };
-  });
+  }, []);
 
   return (
     btnRender && (

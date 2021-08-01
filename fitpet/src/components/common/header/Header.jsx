@@ -107,7 +107,7 @@ const MainHeader = styled.header`
 `;
 
 const FitPetLogo = styled.img.attrs({
-  src: '/img/mainlogo.svg',
+  src: '/img/header/mainlogo.svg',
   alt: '핏펫 홈',
 })`
   width: 18.6rem;

@@ -42,7 +42,7 @@ const BannerWrappr = styled.div`
 
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('/img/bannerImg.png');
+  background-image: url('/img/main/bannerImg.png');
 `;
 
 const SearchInput = styled.input`
@@ -54,7 +54,7 @@ const SearchInput = styled.input`
   margin-top: 3rem;
   font-size: 1.8rem;
 
-  background-image: url('/img/bannerSearch.svg');
+  background-image: url('/img/main/bannerSearch.svg');
   background-color: ${(props) => props.theme.white_color};
   background-size: 4.8rem 4.8rem;
   background-position: 2.3rem center;

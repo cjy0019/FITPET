@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Marker = () => {
   return (
     <div>
-      <MarkerImg src='/img/markerImg.png' />
+      <MarkerImg src='/img/main/markerImg.png' />
     </div>
   );
 };
