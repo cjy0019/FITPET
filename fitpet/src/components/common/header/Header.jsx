@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import MemberLinkLoginUl from './MemberLinkLoginUl';
-import MemberLinkSignUpUl from './MemberLinkSignUpUl';
+import MemberLinkLoginUl from './MemberLinkSignUpUl';
+import MemberLinkSignUpUl from './MemberLinkLoginUl';
 
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HeaderNav from './HeaderNav';

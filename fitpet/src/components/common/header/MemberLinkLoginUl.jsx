@@ -2,16 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import MemberLinkLi from './MemberLinkLi';
 
-// 회원가입 모달
-const MemberLinkSignUpUI = ({ showSignUp }) => {
+//로그인 모달
+const MemberLinkLoginUl = ({ showLogin }) => {
   return (
     <MemberWrapper>
-      <MemberLinkLi showSignUp={showSignUp} />
+      <MemberLinkLi showLogin={showLogin} />
     </MemberWrapper>
   );
 };
 
-// const MemberLinkSignUpUI = ({ showSignUp, showLogin }) => {
+// const MemberLinkLoginUl = ({ showSignUp, showLogin }) => {
 //   console.log('ch' + showSignUp);
 
 //   return (
@@ -25,4 +25,4 @@ const MemberWrapper = styled.ul`
   display: flex;
 `;
 
-export default MemberLinkSignUpUI;
+export default MemberLinkLoginUl;
