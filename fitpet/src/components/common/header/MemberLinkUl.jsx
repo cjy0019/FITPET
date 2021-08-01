@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import MemberLinkLi from './MemberLinkLi';
 
-const MemberLinkUl = ({ showLogin }) => {
+const MemberLinkLoginUl = ({ showLogin, showSignUp }) => {
   return (
     <MemberWrapper>
-      <MemberLinkLi showLogin={showLogin} />
+      <MemberLinkLi showLogin={showLogin} showSignUp={showSignUp} />
     </MemberWrapper>
   );
 };
@@ -14,4 +14,4 @@ const MemberWrapper = styled.ul`
   display: flex;
 `;
 
-export default MemberLinkUl;
+export default MemberLinkLoginUl;

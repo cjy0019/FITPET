@@ -7,21 +7,21 @@ const MemberLinkLi = ({ showSignUp, showLogin }) => {
     <>
       <StyeldLi>
         <NavLink to='/'>
-          <StyledImg src={'/img/searchImg.svg'} alt='검색' />
+          <StyledImg src={'/img/header/searchImg.svg'} alt='검색' />
           <p>검색</p>
         </NavLink>
       </StyeldLi>
 
       <StyeldLi>
-        <StyledButton onClick={showSignUp} img='/img/signInImg.svg'>
-          <StyledImg src={'/img/signInImg.svg'} alt='회원가입' />
+        <StyledButton onClick={showSignUp}>
+          <StyledImg src={'/img/header/signInImg.svg'} alt='회원가입' />
           <p>회원가입</p>
         </StyledButton>
       </StyeldLi>
 
       <StyeldLi>
         <StyledButton onClick={showLogin}>
-          <StyledImg src={'/img/loginImg.svg'} alt='로그인' />
+          <StyledImg src={'/img/header/loginImg.svg'} alt='로그인' />
           <p>로그인</p>
         </StyledButton>
       </StyeldLi>
@@ -35,7 +35,7 @@ const MemberLinkLi = ({ showSignUp, showLogin }) => {
 
       <StyeldLi style={{ marginRight: 0 }}>
         <NavLink to='/'>
-          <StyledImg src={'/img/cartImg.svg'} alt='장바구니' />
+          <StyledImg src={'/img/header/cartImg.svg'} alt='장바구니' />
           <p>장바구니</p>
         </NavLink>
       </StyeldLi>
@@ -74,8 +74,7 @@ const StyledButton = styled.button`
   align-items: center;
   border: none;
   font-size: 1.4rem;
-  background-color: #ffffff;
-  color: #707070;
+  background-color: ${(props) => props.theme.white_color};
 `;
 
 export default MemberLinkLi;

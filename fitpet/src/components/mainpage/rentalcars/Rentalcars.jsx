@@ -170,7 +170,7 @@ const Rentalcars = () => {
             </Font>
           </OtherRentalcars>
           {/* 띠배너 부분 */}
-          <BandBanner img={'/img/linebanner.png'} />
+          <BandBanner img={'/img/main/linebanner.png'} />
         </RentalcarsMore>
       </RantalcarsBox>
     </RentalcarsBlock>

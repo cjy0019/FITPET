@@ -59,16 +59,16 @@ const StyledForm = styled.form`
   padding: 5rem 3.9rem 4.7rem;
   border-radius: 30px;
   border: 1px solid black;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.white_color};
 
   a:visited {
-    color: #979797;
+    color: ${(props) => props.theme.grey2_color};
   }
 `;
 
 // 로고부분
 const Logo = styled.img.attrs({
-  src: '/img/loginLogo.svg',
+  src: '/img/header/loginLogo.svg',
   alt: 'FitPet',
 })`
   display: block;

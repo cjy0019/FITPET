@@ -17,7 +17,7 @@ const StyledSlogan = styled.p`
   letter-spacing: -0.28px;
   text-align: center;
   line-height: 1.43;
-  color: #979797;
+  color: ${(props) => props.theme.black1_color};
 `;
 
 export default Slogan;
