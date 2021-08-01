@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import MemberLinkUl from './MemberLinkUl';
+import MemberLinkLoginUl from './MemberLinkLoginUl';
+import MemberLinkSignUpUl from './MemberLinkSignUpUl';
+
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HeaderNav from './HeaderNav';
 import Login from '../../login/Login';
@@ -9,12 +11,17 @@ import SignUp from '../../signUp/SignUp';
 import Modal from '../../modal/Modal';
 
 const Header = () => {
+  // 로그인
   const [isOpen, setIsOpen] = useState(false);
   const showLogin = useCallback(() => setIsOpen(true), []);
   const hideLogin = useCallback(() => setIsOpen(false), []);
-  const showSignUp = useCallback(() => setIsOpen(true), []);
-  const hideSignUp = useCallback(() => setIsOpen(false), []);
 
+  // 회원가입
+  const [signUpOpen, setSignUpOpen] = useState(false);
+  const showSignUp = useCallback(() => setSignUpOpen(true), []);
+  const hideSignUp = useCallback(() => setSignUpOpen(false), []);
+
+  // 로그인
   useEffect(() => {
     if (isOpen) {
       document.body.style.cssText = `
@@ -32,6 +39,24 @@ const Header = () => {
     };
   }, [isOpen]);
 
+  //회원가입 모달 창
+  useEffect(() => {
+    if (signUpOpen) {
+      document.body.style.cssText = `
+      position:fixed;
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 100%;
+    `;
+    }
+
+    return () => {
+      const scrollY = document.body.style.top;
+      document.body.style.cssText = '';
+      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
+    };
+  }, [signUpOpen]);
+
   return (
     <>
       <MainHeader>
@@ -48,14 +73,19 @@ const Header = () => {
 
         {/* 멤버 링크 부분 */}
         <nav>
-          {/* <MemberLinkUl showLogin={showLogin} /> */}
-          <MemberLinkUl showSignUp={showSignUp} />
+          <MemberLinkLoginUl showLogin={showLogin} />
+          <MemberLinkSignUpUl showSignUp={showSignUp} />
         </nav>
       </MainHeader>
       {/* 로그인 모달 */}
       {isOpen ? (
         <Modal>
-          {/* <Login hideLogin={hideLogin} /> */}
+          <Login hideLogin={hideLogin} />
+        </Modal>
+      ) : null}
+      {/* 회원가입 모달 */}
+      {signUpOpen ? (
+        <Modal>
           <SignUp hideSignUp={hideSignUp} />
         </Modal>
       ) : null}
