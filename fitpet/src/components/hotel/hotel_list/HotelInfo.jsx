@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import HotelTextInfo from './HotelTextInfo';
 import HotelDetails from './HotelDetails';
 import SmallLine from '../../../common/utility/SmallLine';

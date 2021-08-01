@@ -74,8 +74,7 @@ const StyledButton = styled.button`
   align-items: center;
   border: none;
   font-size: 1.4rem;
-  background-color: #ffffff;
-  color: #707070;
+  background-color: ${(props) => props.theme.white_color};
 `;
 
 export default MemberLinkLi;
