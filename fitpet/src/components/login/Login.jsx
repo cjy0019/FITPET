@@ -59,10 +59,10 @@ const StyledForm = styled.form`
   padding: 5rem 3.9rem 4.7rem;
   border-radius: 30px;
   border: 1px solid black;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.white_color};
 
   a:visited {
-    color: #979797;
+    color: ${(props) => props.theme.grey2_color};
   }
 `;
 

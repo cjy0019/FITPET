@@ -18,7 +18,7 @@ const StyledDiv = styled.div`
   justify-content: space-between;
   font-size: 2.2rem;
   font-weight: bold;
-  color: #979797;
+  color: ${(props) => props.theme.black1_color};
 `;
 
 const StyledX = styled.button`

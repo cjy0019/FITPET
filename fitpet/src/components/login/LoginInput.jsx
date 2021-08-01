@@ -61,7 +61,7 @@ const StyledInput = styled.input`
   display: block;
   width: 100%;
   border: none;
-  border-bottom: solid 0.5px #979797;
+  border-bottom: 1px solid ${(props) => props.theme.grey3_color};
   padding-bottom: 1.4rem;
   background-color: transparent;
   font-size: 1.6rem;
@@ -69,14 +69,15 @@ const StyledInput = styled.input`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.19;
-  color: #707070;
+  color: ${(props) => props.theme.black1_color};
   letter-spacing: -0.32px;
   text-align: left;
   outline: none;
   margin-top: 0.4rem;
 
   &:focus {
-    border-bottom: solid 0.5px red;
+    border-bottom: 1px solid ${(props) => props.theme.grey2_color};
+    color: ${(props) => props.theme.black1_color};
   }
 `;
 
@@ -88,7 +89,7 @@ const StyledText = styled.p`
   line-height: 1.14;
   letter-spacing: -0.28px;
   text-align: left;
-  color: #707070;
+  color: ${(props) => props.theme.black1_color};
   margin-top: 1.6rem;
 `;
 
