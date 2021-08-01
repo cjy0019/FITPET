@@ -28,7 +28,7 @@ const AboutId = styled.div`
   text-align: left;
   margin: 0.6rem 0 3.6rem;
   line-height: 1.17;
-  color: #979797;
+  color: ${(props) => props.theme.black1_color};
 
   span {
     vertical-align: bottom;
@@ -40,6 +40,7 @@ const AboutId = styled.div`
   }
   a {
     transform: translateY(0.5rem);
+    color: ${(props) => props.theme.black1_color};
   }
 `;
 
