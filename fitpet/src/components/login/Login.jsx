@@ -7,19 +7,23 @@ import Slogan from './Slogan';
 const Login = ({ hideLogin }) => {
   return (
     <>
-      <StyledForm onSubmit={handleSubmit}>
-        <div>
-          <LoginHeader hideLogin={hideLogin} />
-          {/* 로고 */}
-          <Logo />
+      <Overlay>
+        <div className='center'>
+          <StyledForm onSubmit={handleSubmit}>
+            <div>
+              <LoginHeader hideLogin={hideLogin} />
+              {/* 로고 */}
+              <Logo />
 
-          {/* 슬로건 */}
-          <Slogan />
+              {/* 슬로건 */}
+              <Slogan />
 
-          {/* 팝업에서 아래쪽 부분 */}
-          <LoginBottom />
+              {/* 팝업에서 아래쪽 부분 */}
+              <LoginBottom />
+            </div>
+          </StyledForm>
         </div>
-      </StyledForm>
+      </Overlay>
     </>
   );
 
@@ -31,6 +35,23 @@ const Login = ({ hideLogin }) => {
 
 // style
 // login wrapper
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999999999;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  .center {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
 
 const StyledForm = styled.form`
   display: block;
@@ -47,7 +68,7 @@ const StyledForm = styled.form`
 
 // 로고부분
 const Logo = styled.img.attrs({
-  src: '/img/logo-social.png',
+  src: '/img/header/loginLogo.svg',
   alt: 'FitPet',
 })`
   display: block;

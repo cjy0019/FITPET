@@ -27,9 +27,9 @@ const Reservation = () => {
               hint="예약 문자를 받을 휴대폰 번호를 입력해주세요. ('-'없이 전체자리)">
               휴대폰 번호
             </ReservationInput>
-
-            {/* 쿠폰 / 포인트 */}
           </section>
+
+          {/* 쿠폰 / 포인트 */}
 
           <section>
             <StyledH2>쿠폰 / 포인트</StyledH2>
@@ -56,7 +56,6 @@ const StyledArticle = styled.article`
   width: 128rem;
   display: flex;
   justify-content: space-between;
-  /* background-color: #bea2bd; */
   margin: 0 auto 46rem;
   padding-top: 6rem;
 `;
@@ -78,7 +77,7 @@ const StyledH2 = styled.h2`
   color: #707070;
 `;
 
-const Line = styled.div`
+export const Line = styled.div`
   border-bottom: solid 1.5px #979797;
   margin-top: 1.4rem;
   width: 100%;

@@ -111,7 +111,7 @@ const Rentalcars = () => {
               margin='0 0.5rem 1rem 0.5rem'
             />
             <IconButton
-              text='준소형'
+              text='준중형'
               backColor='#eeeeee'
               color='#707070'
               pt='1.1rem'
@@ -170,11 +170,7 @@ const Rentalcars = () => {
             </Font>
           </OtherRentalcars>
           {/* 띠배너 부분 */}
-          <BandBanner>
-            <Font color='#fff' fontSize='4.2rem'>
-              띠배너
-            </Font>
-          </BandBanner>
+          <BandBanner img={'/img/main/linebanner.png'} />
         </RentalcarsMore>
       </RantalcarsBox>
     </RentalcarsBlock>
@@ -224,5 +220,8 @@ const BandBanner = styled.div`
   text-align: center;
   justify-content: center;
   padding-top: 6rem;
-  background-color: #979797;
+
+  background-image: url(${(props) => props.img});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;

@@ -1,7 +1,14 @@
 import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
-import styled from 'styled-components';
 import { Font } from '../../../common';
+import {
+  City,
+  CityStar,
+  HotelName,
+  InfoContainer,
+  Rect,
+  Star,
+} from '../hotel_common/filterCommon';
 
 const HotelTextInfo = () => {
   return (
@@ -39,40 +46,5 @@ const HotelTextInfo = () => {
     </InfoContainer>
   );
 };
-
-const InfoContainer = styled.div`
-  color: #979797;
-  margin-left: 2.6rem;
-  transform: translateY(5%);
-`;
-
-const HotelName = styled.div`
-  display: column;
-`;
-
-const Star = styled.div`
-  display: inline-block;
-  display: flex;
-  text-align: center;
-  align-items: center;
-`;
-
-const City = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 1.6rem;
-`;
-
-const Rect = styled.div`
-  width: 2.4rem;
-  height: 2.4rem;
-  background-color: #979797;
-  margin-right: 0.4rem;
-  display: inline-block;
-`;
-
-const CityStar = styled.div`
-  display: flex;
-`;
 
 export default HotelTextInfo;

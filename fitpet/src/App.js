@@ -11,27 +11,37 @@ import ReservationPage from './pages/ReservationPage';
 import HotelAboutPage from './pages/HotelAboutPage';
 import HotelListPage from './pages/HotelListPage';
 import RoomDetailModalPage from './pages/RoomDetailModalPage';
-import { Provider } from 'react-redux';
-import store from './redux/store';
+// import { Provider } from 'react-redux';
+// import store from './redux/store';
+import RentCarPage from './pages/RentCarPage';
+import HotelMainPage from './pages/HotelMainPage';
+import RentalcarMainPage from './pages/RentalcarMainPage';
+import DriverInfoPage from './pages/DriverInfoPage';
+
+// store = { store };
 
 function App() {
   return (
     <ErrorBoundary FallbackComponent={ErrorPage}>
-      <Provider store={store}>
-        <BrowserRouter>
-          <Switch>
-            <Route component={MainPage} exact path='/' />
-            <Route component={SignUpPage} path='/signup' />
-            <Route component={CommonPage} path='/common' />
-            <Route component={ReservationPage} path='/reservation' />
-            <Route component={HotelAboutPage} path='/hotelAbout' />
-            <Route component={RoomDetailModalPage} path='/roomDetail' />
-            <Route component={HotelListPage} path='/hotel' />
-            <Route component={NotFoundPage} />
-          </Switch>
-        </BrowserRouter>
-        <GlobalStyles />
-      </Provider>
+      {/* <Provider store={store}> */}
+      <BrowserRouter>
+        <Switch>
+          <Route component={MainPage} exact path='/' />
+          <Route component={SignUpPage} path='/signup' />
+          <Route component={CommonPage} path='/common' />
+          <Route component={ReservationPage} path='/reservation' />
+          <Route component={HotelMainPage} path='/hotel' />
+          <Route component={HotelAboutPage} path='/hotelAbout' />
+          <Route component={RoomDetailModalPage} path='/roomDetail' />
+          <Route component={HotelListPage} path='/hotelList' />
+          <Route component={RentalcarMainPage} path='/rentalcar' />
+          <Route component={RentCarPage} path='/rentcar' />
+          <Route component={DriverInfoPage} path='/driver' />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </BrowserRouter>
+      <GlobalStyles />
+      {/* </Provider> */}
     </ErrorBoundary>
   );
 }

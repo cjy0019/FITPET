@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
 import {
   DownButton,
   FilterBtn,
   FilterTitle,
   UpButton,
+  AllWrapper,
+  ButtonContainer,
+  Folder,
+  LineWrapper,
 } from '../hotel_common/filterCommon';
 
 const LevelFilter = () => {
@@ -49,25 +52,5 @@ const LevelFilter = () => {
     setisFold(!isFold);
   }
 };
-
-// 필터링 버튼 컨테이너
-const AllWrapper = styled.div`
-  margin-bottom: 4rem;
-  margin-top: 1rem;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const LineWrapper = styled.div`
-  margin-top: 1.2rem;
-`;
-
-const Folder = styled.div`
-  transition: ease 0.2s;
-  height: 9rem;
-`;
 
 export default LevelFilter;

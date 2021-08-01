@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import SmallLine from '../../../common/utility/SmallLine';
+import { SmallHeader } from '../hotel_common/filterCommon';
 
 const HotelListHeader = () => {
   return (
@@ -27,25 +28,11 @@ const HotelListHeader = () => {
             <FilteringBtn>등급순</FilteringBtn>
           </StyledLi>
         </FlexUl>
-        {/* <SmallLine /> */}
       </SmallHeader>
       <SmallLine />
     </>
   );
 };
-
-const SmallHeader = styled.header`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2.2rem;
-
-  h2 {
-    font-weight: bold;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    color: #707070;
-  }
-`;
 
 const FlexUl = styled.ul`
   display: flex;

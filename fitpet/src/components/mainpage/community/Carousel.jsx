@@ -20,11 +20,11 @@ const Carousel = ({ carouselRef, imgArr }) => {
 
       {imgArr.map((img, i) => {
         return (
-          <>
+          <div key={i}>
             <CommunityCard>
-              <ImgWrapper src={img} key={i}></ImgWrapper>
+              <ImgWrapper src={img}></ImgWrapper>
             </CommunityCard>
-          </>
+          </div>
         );
       })}
     </CardWrapper>
