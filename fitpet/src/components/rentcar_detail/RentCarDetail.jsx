@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import CarOptions from './CarOptions';
 import Insurance from './Insurance';
+import MoreOptions from './MoreOptions';
 import PickupInfo from './PickupInfo';
 import RentCarTitle from './RentCarTitle';
 
@@ -23,6 +24,9 @@ const RentCarDetail = () => {
 
         {/* 보험 선택 */}
         <Insurance />
+
+        {/* 추가 옵션 선택 */}
+        <MoreOptions />
       </section>
     </StyledArticle>
   );

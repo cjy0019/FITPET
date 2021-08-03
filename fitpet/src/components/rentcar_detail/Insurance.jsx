@@ -78,6 +78,8 @@ const Insurance = () => {
 
 const InsuranceSection = styled.section`
   margin-top: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: solid 1px #979797;
 `;
 
 const SelectContainer = styled.div`
