@@ -11,8 +11,9 @@ import ReservationPage from './pages/ReservationPage';
 import HotelAboutPage from './pages/HotelAboutPage';
 import HotelListPage from './pages/HotelListPage';
 import RoomDetailModalPage from './pages/RoomDetailModalPage';
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 // import store from './redux/store';
+import RentCarDetailPage from './pages/RentCarDetailPage';
 import RentCarPage from './pages/RentCarPage';
 import HotelMainPage from './pages/HotelMainPage';
 import RentalcarMainPage from './pages/RentalcarMainPage';
@@ -36,6 +37,7 @@ function App() {
           <Route component={HotelListPage} path='/hotelList' />
           <Route component={RentalcarMainPage} path='/rentalcar' />
           <Route component={RentCarPage} path='/rentcar' />
+          <Route component={RentCarDetailPage} path='/rentcardetail' />
           <Route component={DriverInfoPage} path='/driver' />
           <Route component={NotFoundPage} />
         </Switch>
