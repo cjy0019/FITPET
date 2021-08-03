@@ -4,6 +4,7 @@ import CarOptions from './CarOptions';
 import Insurance from './Insurance';
 import MoreOptions from './MoreOptions';
 import PickupInfo from './PickupInfo';
+import Receit from './Receit';
 import RentCarTitle from './RentCarTitle';
 import Rules from './Rules';
 
@@ -32,6 +33,8 @@ const RentCarDetail = () => {
         {/* 이용 규칙 */}
         <Rules />
       </section>
+
+      <Receit />
     </StyledArticle>
   );
 };
@@ -41,6 +44,7 @@ const StyledArticle = styled.article`
   width: 128rem;
   display: flex;
   justify-content: space-between;
+  gap: 3.2rem;
   margin: 0 auto 46rem;
   padding-top: 6rem;
   background-color: aliceblue;
