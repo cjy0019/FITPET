@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { RightButton } from '../hotel/hotel_common/filterCommon';
-import { FlexC, IconBox, StyledP } from './rentcarCommonStyle';
+import { FlexC, IconBox, StyledP, StyledTitle } from './rentcarCommonStyle';
 
 const CarOptions = () => {
   return (
@@ -58,13 +58,6 @@ const CarOptions = () => {
 
 const OptionSection = styled.section`
   margin-top: 4rem;
-`;
-
-const StyledTitle = styled.p`
-  font-size: 2.4rem;
-  font-weight: bold;
-  line-height: 1;
-  color: ${(props) => props.theme.grey1_color};
 `;
 
 const More = styled(Link)`

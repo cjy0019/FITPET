@@ -13,7 +13,7 @@ export const StyledP = styled.p`
   margin-bottom: ${(props) => props.mb};
   line-height: 1.71;
   letter-spacing: -0.28px;
-  color: #979797;
+  color: ${(props) => props.theme.grey2_color};
 `;
 
 export const FlexC = styled.div`
@@ -22,4 +22,11 @@ export const FlexC = styled.div`
   align-items: ${(props) => props.align};
   margin-top: ${(props) => props.mt};
   margin-bottom: ${(props) => props.mb};
+`;
+
+export const StyledTitle = styled.p`
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 1;
+  color: ${(props) => props.theme.grey1_color};
 `;

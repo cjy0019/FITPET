@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import CarOptions from './CarOptions';
+import Insurance from './Insurance';
+import PickupInfo from './PickupInfo';
 import RentCarTitle from './RentCarTitle';
 
 const RentCarDetail = () => {
@@ -14,6 +16,13 @@ const RentCarDetail = () => {
         {/* 차량 옵션 */}
         <CarOptions />
         <Line />
+
+        {/* 픽업 및 반납 정보 */}
+        <PickupInfo />
+        <Line />
+
+        {/* 보험 선택 */}
+        <Insurance />
       </section>
     </StyledArticle>
   );
