@@ -5,6 +5,7 @@ import Insurance from './Insurance';
 import MoreOptions from './MoreOptions';
 import PickupInfo from './PickupInfo';
 import RentCarTitle from './RentCarTitle';
+import Rules from './Rules';
 
 const RentCarDetail = () => {
   return (
@@ -27,6 +28,9 @@ const RentCarDetail = () => {
 
         {/* 추가 옵션 선택 */}
         <MoreOptions />
+
+        {/* 이용 규칙 */}
+        <Rules />
       </section>
     </StyledArticle>
   );

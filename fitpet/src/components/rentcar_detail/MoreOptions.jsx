@@ -27,7 +27,8 @@ const MoreOptions = () => {
 
 const OptionSection = styled.section`
   margin-top: 4rem;
-  height: 30rem;
+  padding-bottom: 4rem;
+  border-bottom: solid 0.5px #797979;
 `;
 
 const LabelWrapper = styled.div`
