@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import MemberLinkUl from './MemberLinkUl';
@@ -9,32 +9,14 @@ import Login from '../../login/Login';
 import SignUp from '../../signUp/SignUp';
 import Modal from '../../modal/Modal';
 
-const Header = ({ showLogin, hideLogin, loginOpen }) => {
-  // 회원가입
-  const [signUpOpen, setSignUpOpen] = useState(false);
-  const showSignUp = useCallback(() => setSignUpOpen(true), []);
-  const hideSignUp = useCallback(() => setSignUpOpen(false), []);
-
-  // 로그인
-
-  //회원가입
-  // useEffect(() => {
-  //   if (signUpOpen) {
-  //     document.body.style.cssText = `
-  //     position:fixed;
-  //     top: -${window.scrollY}px;
-  //     overflow-y: scroll;
-  //     width: 100%;
-  //   `;
-  //   }
-
-  //   return () => {
-  //     const scrollY = document.body.style.top;
-  //     document.body.style.cssText = '';
-  //     window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
-  //   };
-  // }, [signUpOpen]);
-
+const Header = ({
+  showLogin,
+  hideLogin,
+  loginOpen,
+  showSignUp,
+  hideSignUp,
+  signupOpen,
+}) => {
   return (
     <>
       <MainHeader>
@@ -62,7 +44,7 @@ const Header = ({ showLogin, hideLogin, loginOpen }) => {
       ) : null}
 
       {/* 회원가입 모달 */}
-      {signUpOpen ? (
+      {signupOpen ? (
         <Modal>
           <SignUp hideSignUp={hideSignUp} />
         </Modal>

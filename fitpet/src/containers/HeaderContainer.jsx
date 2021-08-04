@@ -1,22 +1,38 @@
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../components/common/header/Header';
-import { closeLogin, openLogin } from '../redux/modules/modal';
+import {
+  closeLogin,
+  closeSignUp,
+  openLogin,
+  openSignUp,
+} from '../redux/modules/modal';
 
 const HeaderContainer = () => {
   const dispatch = useDispatch();
   const loginOpen = useSelector((state) => state.modal.loginOpen);
+  const signupOpen = useSelector((state) => state.modal.signupOpen);
+
+  // 로그인 팝업 & 숨김
+  const showLogin = useCallback(() => {
+    dispatch(openLogin());
+  }, [dispatch]);
 
   const hideLogin = useCallback(() => {
     dispatch(closeLogin());
   }, [dispatch]);
 
-  const showLogin = useCallback(() => {
-    dispatch(openLogin());
+  // 회원가입 팝업 & 숨김
+  const showSignUp = useCallback(() => {
+    dispatch(openSignUp());
+  }, [dispatch]);
+
+  const hideSignUp = useCallback(() => {
+    dispatch(closeSignUp());
   }, [dispatch]);
 
   useEffect(() => {
-    if (loginOpen) {
+    if (loginOpen || signupOpen) {
       document.body.style.cssText = `
       position:fixed;
       top: -${window.scrollY}px;
@@ -30,10 +46,17 @@ const HeaderContainer = () => {
       document.body.style.cssText = '';
       window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
     };
-  }, [loginOpen]);
+  }, [loginOpen, signupOpen]);
 
   return (
-    <Header showLogin={showLogin} hideLogin={hideLogin} loginOpen={loginOpen} />
+    <Header
+      showLogin={showLogin}
+      hideLogin={hideLogin}
+      loginOpen={loginOpen}
+      showSignUp={showSignUp}
+      hideSignUp={hideSignUp}
+      signupOpen={signupOpen}
+    />
   );
 };
 
