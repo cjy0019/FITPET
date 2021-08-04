@@ -6,7 +6,6 @@ import SliderLeftButton from './buttons/circle/SliderLeftButton';
 import SliderRightButton from './buttons/circle/SliderRightButton';
 import IconButton from './buttons/small_size/IconButton';
 import ToggleButton from './buttons/small_size/ToggleButton';
-import MiddleSizeButton from './buttons/middle_size/MiddleSizeButton';
 import WishSmall from './contents/common/WishSmall';
 import SampleIcon from './icons/SampleIcon';
 import OpenBtn from './buttons/small_size/OpenBtn';
@@ -17,6 +16,7 @@ import SocialBtn from './buttons/middle_size/SocialBtn';
 import BasicBox from './contents/common/BasicBox';
 import FillBox from './contents/common/PillBox';
 import MagazineBox from './contents/common/MagazineBox';
+import MiddleBtn from './buttons/MiddleBtn';
 export {
   Font,
   CoursePage,
@@ -24,7 +24,6 @@ export {
   Only,
   SliderLeftButton,
   SliderRightButton,
-  MiddleSizeButton,
   ToggleButton,
   IconButton,
   WishSmall,
@@ -37,4 +36,5 @@ export {
   BasicBox,
   FillBox,
   MagazineBox,
+  MiddleBtn,
 };

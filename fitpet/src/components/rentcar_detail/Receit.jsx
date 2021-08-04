@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { MiddleSizeButton } from '../../common';
 
 const Receit = () => {
   return (
