@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Font, HoverText, IconButton, SampleIcon } from '../../../common';
 import ImgMoreBtn from '../../../common/buttons/small_size/ImgMoreBtn';
-import HotelNameBlock from '../hotelAbout/HotelNameBlock';
-import HotelOneRoom from '../hotelAbout/HotelOneRoom';
-import HotelTwoRoom from '../hotelAbout/HotelTwoRoom';
-import OtherHotelSlider from '../hotelAbout/OtherHotelSlider';
+import HotelNameBlock from '../hotel_about/HotelNameBlock';
+import HotelOneRoom from '../hotel_about/HotelOneRoom';
+import HotelTwoRoom from '../hotel_about/HotelTwoRoom';
+import OtherHotelSlider from '../hotel_about/OtherHotelSlider';
 import HotelDate from '../hotel_common/HotelDate';
 
 const HotelAbout = () => {

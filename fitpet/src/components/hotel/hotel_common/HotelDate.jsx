@@ -1,21 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MiddleSizeButton } from '../../../common';
+import { RoundSquareBtn } from '../../../common';
 
 const HotelDate = () => {
   return (
     <DateContainer>
       <DateBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
       <DateBox placeholder='성인1 | 객실1 | 소형견1' />
-      <MiddleSizeButton
-        fontSize='1.6rem'
-        width='7.4rem'
-        height='4.8rem'
-        text='재검색'
-        color='#707070'
-        border='none'
-        borderRadius='7px'
-      />
+      <RoundSquareBtn main_color>재검색</RoundSquareBtn>
     </DateContainer>
   );
 };
