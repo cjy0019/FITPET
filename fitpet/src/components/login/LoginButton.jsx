@@ -9,7 +9,8 @@ const StyledButton = styled.button`
   width: 100%;
   height: 5.2rem;
   border-radius: 26px;
-  background-color: ${(props) => props.theme.main_color};
+  background: ${(props) => props.theme.gradient_color};
+
   cursor: pointer;
   outline: none;
   border: none;
