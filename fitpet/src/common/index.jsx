@@ -6,7 +6,6 @@ import SliderLeftButton from './buttons/circle/SliderLeftButton';
 import SliderRightButton from './buttons/circle/SliderRightButton';
 import IconButton from './buttons/small_size/IconButton';
 import ToggleButton from './buttons/small_size/ToggleButton';
-import MiddleSizeButton from './buttons/middle_size/MiddleSizeButton';
 import WishSmall from './contents/common/WishSmall';
 import SampleIcon from './icons/SampleIcon';
 import OpenBtn from './buttons/small_size/OpenBtn';
@@ -25,7 +24,6 @@ export {
   Only,
   SliderLeftButton,
   SliderRightButton,
-  MiddleSizeButton,
   ToggleButton,
   IconButton,
   WishSmall,

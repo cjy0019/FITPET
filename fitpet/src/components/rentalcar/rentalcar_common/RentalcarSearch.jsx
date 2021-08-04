@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  Font,
-  MiddleSizeButton,
-  RoundSquareBtn,
-  SampleIcon,
-} from '../../../common';
+import { Font, RoundSquareBtn, SampleIcon } from '../../../common';
 
 const RentalcarSearch = ({ isScroll }) => {
   return (

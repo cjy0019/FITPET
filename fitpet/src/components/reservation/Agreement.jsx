@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import MiddleSizeButton from '../../common/buttons/middle_size/MiddleSizeButton';
 import SmallLine from '../../common/utility/SmallLine';
 import { DownButton, UpButton } from '../hotel/hotel_common/filterCommon';
 import { HiCheck } from 'react-icons/hi';
@@ -81,20 +80,6 @@ const Agreement = () => {
           [필수] 만 14세 이상 확인
         </AgreeLabel>
       </RadioWrapper>
-
-      <MiddleSizeButton
-        text='확인 및 결제'
-        width='37.4rem'
-        height='5.2rem'
-        border='none'
-        borderRadius='0.7rem'
-        pt='1.6rem'
-        pb='1.5rem'
-        color='#ffffff'
-        backColor='#979797'
-        mt='6.1rem'
-        float='right'
-      />
     </AgreeWrapper>
   );
 
