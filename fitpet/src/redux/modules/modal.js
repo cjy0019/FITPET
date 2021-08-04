@@ -12,15 +12,15 @@ export const openLogin = () => ({ type: OPEN_LOGIN });
 export const closeLogin = () => ({ type: CLOSE_LOGIN });
 
 // initial state
-const initialState = { modal: { isOpenLogin: false } };
+const initialState = { loginOpen: false };
 
 // reudcer
 export default function modal(state = initialState, action) {
   switch (action.type) {
     case OPEN_LOGIN:
-      return { modal: { isOpenLogin: true } };
+      return { loginOpen: true };
     case CLOSE_LOGIN:
-      return { modal: { isOpenLogin: false } };
+      return { loginOpen: false };
 
     default:
       return state;

@@ -9,52 +9,31 @@ import Login from '../../login/Login';
 import SignUp from '../../signUp/SignUp';
 import Modal from '../../modal/Modal';
 
-const Header = () => {
-  // 로그인
-  const [loginOpen, setloginOpen] = useState(false);
-  const showLogin = useCallback(() => setloginOpen(true), []);
-  const hideLogin = useCallback(() => setloginOpen(false), []);
-
+const Header = ({ showLogin, hideLogin, loginOpen }) => {
   // 회원가입
   const [signUpOpen, setSignUpOpen] = useState(false);
   const showSignUp = useCallback(() => setSignUpOpen(true), []);
   const hideSignUp = useCallback(() => setSignUpOpen(false), []);
 
   // 로그인
-  useEffect(() => {
-    if (loginOpen) {
-      document.body.style.cssText = `
-      position:fixed;
-      top: -${window.scrollY}px;
-      overflow-y: scroll;
-      width: 100%;
-    `;
-    }
-
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = '';
-      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
-    };
-  }, [loginOpen]);
 
   //회원가입
-  useEffect(() => {
-    if (signUpOpen) {
-      document.body.style.cssText = `
-      position:fixed;
-      top: -${window.scrollY}px;
-      overflow-y: scroll;
-      width: 100%;
-    `;
-    }
+  // useEffect(() => {
+  //   if (signUpOpen) {
+  //     document.body.style.cssText = `
+  //     position:fixed;
+  //     top: -${window.scrollY}px;
+  //     overflow-y: scroll;
+  //     width: 100%;
+  //   `;
+  //   }
 
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = '';
-      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
-    };
-  }, [signUpOpen]);
+  //   return () => {
+  //     const scrollY = document.body.style.top;
+  //     document.body.style.cssText = '';
+  //     window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
+  //   };
+  // }, [signUpOpen]);
 
   return (
     <>
@@ -81,6 +60,7 @@ const Header = () => {
           <Login hideLogin={hideLogin} />
         </Modal>
       ) : null}
+
       {/* 회원가입 모달 */}
       {signUpOpen ? (
         <Modal>
