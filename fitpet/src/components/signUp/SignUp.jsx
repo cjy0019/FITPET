@@ -156,7 +156,7 @@ const NextButton = styled.button`
   width: 37.4rem;
   height: 5.2rem;
   border-radius: 26px;
-  background-color: ${(props) => props.theme.main_color};
+  background: ${(props) => props.theme.gradient_color};
   border: none;
   color: ${(props) => props.theme.white_color};
   font-size: 1.8rem;
