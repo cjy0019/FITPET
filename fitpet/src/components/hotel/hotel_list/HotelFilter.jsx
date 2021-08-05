@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import DogFilter from './DogFilter';
 import LevelFilter from './LevelFilter';
 import RatingFilter from './RatingFilter';
+import BudgetFilter from './BudgetFilter';
 
 const HotelFilter = () => {
   return (
@@ -13,6 +14,9 @@ const HotelFilter = () => {
           <span>지도와 함께 보기</span>
         </MapButton>
       </MapContainer>
+
+      {/* 예산 필터링 */}
+      <BudgetFilter />
 
       {/* 등급 필터링 */}
       <LevelFilter />
