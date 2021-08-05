@@ -7,16 +7,16 @@ const HotelSearch = ({ isScroll }) => {
     <>
       {isScroll ? (
         <SearchContainer>
-          <SearchBox placeholder='제주도' />
-          <SearchBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
-          <SearchBox placeholder='성인1 | 객실1 | 소형견1' />
+          <SearchBox placeholder='제주도' location />
+          <SearchBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' date />
+          <SearchBox placeholder='성인1 | 객실1 | 소형견1' person />
           <RoundSquareBtn main_color>검색</RoundSquareBtn>
         </SearchContainer>
       ) : (
         <SearchContainer scroll>
-          <SearchBox placeholder='제주도' />
-          <SearchBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
-          <SearchBox placeholder='성인1 | 객실1 | 소형견1' />
+          <SearchBox placeholder='제주도' location />
+          <SearchBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' date />
+          <SearchBox placeholder='성인1 | 객실1 | 소형견1' person />
           <RoundSquareBtn main_color>검색</RoundSquareBtn>
         </SearchContainer>
       )}
@@ -51,11 +51,28 @@ const SearchBox = styled.input`
   border-radius: 7px;
   color: #707070;
   outline: none;
-  background-color: #cbcbcb;
-  background-image: url('/img/logo-social.png');
+  background-color: ${(props) => props.theme.grey5_color};
   background-size: 3.4rem 3.4rem;
   background-position: 1.5rem center;
   background-repeat: no-repeat;
+
+  ${(props) =>
+    props.location &&
+    css`
+      background-image: url('/img/hotel/hotel_list/locationicon.svg');
+    `}
+
+  ${(props) =>
+    props.date &&
+    css`
+      background-image: url('/img/hotel/hotel_list/dateicon.svg');
+    `}
+
+  ${(props) =>
+    props.person &&
+    css`
+      background-image: url('/img/hotel/hotel_list/personicon.svg');
+    `}
 `;
 
 export default HotelSearch;

@@ -8,6 +8,8 @@ import { IconButton } from '../../../common';
 export const AllWrapper = styled.div`
   margin-bottom: 4rem;
   margin-top: 1rem;
+  border-bottom: solid 1px #eee;
+  padding-bottom: 4rem;
 `;
 
 export const ButtonContainer = styled.div`
@@ -59,9 +61,9 @@ export const UpButton = (props) => {
         Icon={IoIosArrowUp}
         width='2.8rem'
         height='2.8rem'
+        backColor='#fff'
         border='none'
         borderRadius='0'
-        backColor='#cbcbcb'
         color='black'
         handleClick={props.handleClick}
       />
@@ -78,8 +80,8 @@ export const DownButton = (props) => {
         width='2.8rem'
         height='2.8rem'
         border='none'
+        backColor='#fff'
         borderRadius='0'
-        backColor='#cbcbcb'
         color='black'
         handleClick={props.handleClick}
       />
@@ -136,6 +138,7 @@ export const SmallHeader = styled.header`
 export const Info = styled.div`
   padding: 4rem 0;
   display: flex;
+  border-bottom: solid 1px #eee;
 `;
 
 export const ImgBox = styled.div`
@@ -151,12 +154,13 @@ export const ImgBox = styled.div`
 
 export const LikeBtn = styled.div`
   position: absolute;
-  top: 1.8rem;
-  right: 1.8rem;
+  top: 1.4rem;
+  right: 1.4rem;
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
-  background-color: #cbcbcb;
+  cursor: pointer;
+  background-image: url('/img/hotel/hotel_list/likeicon.png');
 `;
 
 export const TextDetailWrapper = styled.div`
@@ -192,7 +196,7 @@ export const Star = styled.div`
 export const City = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 1.6rem;
+  font-size: 1.4rem;
 `;
 
 export const Rect = styled.div`

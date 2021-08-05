@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import SmallLine from '../../common/utility/SmallLine';
 import { DownButton, UpButton } from '../hotel/hotel_common/filterCommon';
 import { HiCheck } from 'react-icons/hi';
 
@@ -37,7 +36,6 @@ const Agreement = () => {
         )}
       </RadioWrapper>
 
-      <SmallLine />
       {/* 숨겨지는 부분 */}
       <RadioWrapper flex ref={showRef}>
         <AgreeLabel htmlFor='agreeFirst'>

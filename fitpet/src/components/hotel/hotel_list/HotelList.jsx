@@ -6,7 +6,7 @@ import HotelListHeader from './HotelListHeader';
 import GoUpBtn from '../../../common/buttons/small_size/GoUpBtn';
 import HotelBanner from './HotelBanner';
 import HotelFilter from './HotelFilter';
-import Header from '../../common/header/Header';
+import HeaderContainer from '../../../containers/HeaderContainer';
 
 const HotelList = () => {
   const hotels = [
@@ -20,7 +20,7 @@ const HotelList = () => {
 
   return (
     <Container>
-      <Header />
+      <HeaderContainer />
       <HotelBanner />
       <HotelMain>
         <h1>

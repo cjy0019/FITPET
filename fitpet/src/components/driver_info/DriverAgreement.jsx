@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import SmallLine from '../../common/utility/SmallLine';
 import { DownButton, Rect, UpButton } from '../hotel/hotel_common/filterCommon';
 import { HiCheck } from 'react-icons/hi';
 import { Line } from '../reservation/Reservation';
@@ -47,8 +46,6 @@ const DriverAgreement = () => {
           <DownButton handleClick={handleClick} />
         )}
       </RadioWrapper>
-
-      <SmallLine />
 
       {/* 숨겨지는 부분 */}
       <RadioWrapper flex ref={showRef}>

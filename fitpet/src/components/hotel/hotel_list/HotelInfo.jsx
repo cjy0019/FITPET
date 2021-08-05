@@ -1,7 +1,6 @@
 import React from 'react';
 import HotelTextInfo from './HotelTextInfo';
 import HotelDetails from './HotelDetails';
-import SmallLine from '../../../common/utility/SmallLine';
 import {
   ImgBox,
   Info,
@@ -28,7 +27,6 @@ const HotelInfo = () => {
           <HotelDetails />
         </TextDetailWrapper>
       </Info>
-      <SmallLine />
     </>
   );
 };

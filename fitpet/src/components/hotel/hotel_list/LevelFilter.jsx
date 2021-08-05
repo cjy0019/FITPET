@@ -4,10 +4,10 @@ import {
   FilterBtn,
   FilterTitle,
   UpButton,
-  AllWrapper,
   ButtonContainer,
   Folder,
   LineWrapper,
+  AllWrapper,
 } from '../hotel_common/filterCommon';
 
 const LevelFilter = () => {

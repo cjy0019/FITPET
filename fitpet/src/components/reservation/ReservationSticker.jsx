@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { MiddleBtn } from '../../common';
 import { A11yHidden } from '../../common/accessibility/Hidden';
-import SmallLine from '../../common/utility/SmallLine';
 
 const ReservationSticker = () => {
   return (
@@ -13,7 +12,6 @@ const ReservationSticker = () => {
         <A11yHidden>예약 정보 확인</A11yHidden>
       </h2>
       <HotelName>롯데호텔 제주</HotelName>
-      <SmallLine />
 
       <SmallTitle>객실타입</SmallTitle>
       <Detail>스탠다드 더블룸 / 더블침대 1개</Detail>
@@ -23,8 +21,6 @@ const ReservationSticker = () => {
 
       <SmallTitle>체크인-체크아웃 날짜</SmallTitle>
       <Detail>8월 6일 (금) - 8월 7일 (토) 1박</Detail>
-
-      <SmallLine margin />
 
       {/* 결제 금액 부분 */}
       <SmallTitle>결제 금액</SmallTitle>

@@ -39,7 +39,8 @@ const Banner = styled.div`
   align-items: center;
   padding-top: 2.6rem;
   padding-bottom: 2.3rem;
-  background-color: #cbcbcb;
+  background-image: url('/img/hotel/hotel_list/hotelbanner.png');
+  background-size: cover;
 
   ${(props) =>
     props.scroll &&

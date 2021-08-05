@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import SmallLine from '../../../common/utility/SmallLine';
 import DogFilter from './DogFilter';
 import LevelFilter from './LevelFilter';
 import RatingFilter from './RatingFilter';
@@ -9,20 +8,20 @@ const HotelFilter = () => {
   return (
     <FilterSection>
       <MapContainer>
-        <MapButton>지도와 함께 보기</MapButton>
+        <MapButton>
+          <img src='/img/hotel/hotel_list/mapicon.svg' alt='지도와 함께 보기' />
+          <span>지도와 함께 보기</span>
+        </MapButton>
       </MapContainer>
 
       {/* 등급 필터링 */}
       <LevelFilter />
-      <SmallLine />
 
       {/* 평점 필터링 */}
       <RatingFilter />
-      <SmallLine />
 
       {/* 반려동물 필터링 */}
       <DogFilter />
-      <SmallLine />
     </FilterSection>
   );
 };
@@ -40,6 +39,9 @@ const MapContainer = styled.div`
 `;
 
 const MapButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 16.9rem;
   height: 4rem;
   font-size: 1.6rem;
@@ -48,8 +50,14 @@ const MapButton = styled.button`
   border: none;
   border-radius: 26px;
   outline: none;
-  background-color: #979797;
-  color: #ffffff;
+  background-color: #fff;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+  span {
+    transform: translateY(0.25rem);
+  }
+
+  color: ${(props) => props.theme.main_color};
 `;
 
 export default HotelFilter;

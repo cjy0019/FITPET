@@ -1,12 +1,11 @@
 import React from 'react';
-import { AiFillStar } from 'react-icons/ai';
+import styled from 'styled-components';
 import { Font } from '../../../common';
 import {
   City,
   CityStar,
   HotelName,
   InfoContainer,
-  Rect,
   Star,
 } from '../hotel_common/filterCommon';
 
@@ -27,14 +26,14 @@ const HotelTextInfo = () => {
 
       <CityStar>
         <Star>
-          <AiFillStar size='2rem' />
-          <Font fontSize='1.4rem' ml='0.73rem'>
+          <StarIcon src='/img/hotel/hotel_list/staricon.svg' />
+          <Font fontSize='1.4rem' ml='0.2rem'>
             4.5
           </Font>
         </Star>
         <City>
-          <Rect />
-          <span>서귀포시</span>
+          <SmallIcon src='/img/hotel/hotel_list/smalllocationicon.svg' />
+          <span style={{ marginLeft: '0.4rem' }}>서귀포시</span>
         </City>
       </CityStar>
 
@@ -46,5 +45,12 @@ const HotelTextInfo = () => {
     </InfoContainer>
   );
 };
+
+const StarIcon = styled.img``;
+
+const SmallIcon = styled.img`
+  width: 2.4rem;
+  height: 2.4rem;
+`;
 
 export default HotelTextInfo;

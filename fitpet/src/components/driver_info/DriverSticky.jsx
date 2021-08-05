@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { MiddleBtn } from '../../common';
 import { A11yHidden } from '../../common/accessibility/Hidden';
-import SmallLine from '../../common/utility/SmallLine';
 
 const DriverSticky = () => {
   return (
@@ -18,15 +17,12 @@ const DriverSticky = () => {
             <SmallDetail>일반자차보험</SmallDetail>
           </div>
         </FlexContainer>
-        <SmallLine />
 
         <SmallTitle>인수</SmallTitle>
         <Detail>서울 강서구 / 8월 6일 (금) 10:00</Detail>
 
         <SmallTitle>반납</SmallTitle>
         <Detail>서울 강서구 / 8월 7일 (토) 10:00</Detail>
-
-        <SmallLine margin />
 
         {/* 결제 금액 부분 */}
         <SmallTitle>결제 금액</SmallTitle>
