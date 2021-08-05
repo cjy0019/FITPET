@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MiddleSizeButton } from '../../common';
+import { MiddleBtn } from '../../common';
 import { A11yHidden } from '../../common/accessibility/Hidden';
 import SmallLine from '../../common/utility/SmallLine';
 
@@ -62,20 +62,9 @@ const DriverSticky = () => {
           156,000 <span>원</span>
         </Price>
 
-        <MiddleSizeButton
-          text='확인 및 결제'
-          width='32.6rem'
-          height='5.2rem'
-          border='none'
-          borderRadius='7px'
-          fontSize='1.8rem'
-          pt='1.6rem'
-          pb='1.5rem'
-          color='#ffffff'
-          backColor='#979797'
-          mt='3.4rem'
-          float='right'
-        />
+        <MiddleBtn fit_course style={{ marginTop: '3.4rem' }}>
+          확인 및 결제
+        </MiddleBtn>
       </RightSection>
     </>
   );

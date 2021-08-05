@@ -5,7 +5,7 @@ import {
   FillBox,
   Font,
   IconButton,
-  MiddleSizeButton,
+  MiddleBtn,
   WishSmall,
 } from '../../../common';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
@@ -24,15 +24,9 @@ const HotelMain = () => {
             <HotelTypeSearch />
           </div>
           <div className='MoreHotelBtn'>
-            <MiddleSizeButton
-              text='다양한 숙소 둘러보기'
-              border='none'
-              backColor='#636363'
-              color='#fff'
-              p='1.4rem 4.2rem'
-              borderRadius='26px'
-              mt='4.4rem'
-            />
+            <MiddleBtn style={{ marginTop: '4.4rem' }}>
+              다양한 숙소 둘러보기
+            </MiddleBtn>
           </div>
         </div>
       </HotelSearchBlock>

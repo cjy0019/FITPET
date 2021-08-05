@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, MiddleSizeButton } from '../../../common';
+import { Font, RoundSquareBtn } from '../../../common';
 
 const HotelTypeSearch = ({ isScroll }) => {
   return (
@@ -31,16 +31,7 @@ const HotelTypeSearch = ({ isScroll }) => {
           />
           <SearchDateBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
           <SearchBox placeholder='성인1 | 객실1 | 소형견1' />
-          <MiddleSizeButton
-            fontSize='1.6rem'
-            width='7.4rem'
-            text='검색'
-            border='none'
-            borderRadius='7px'
-            pt='1.5rem'
-            pb='1.4rem'
-            ml='1rem'
-          />
+          <RoundSquareBtn main_color>검색</RoundSquareBtn>
         </div>
       </SearchContainer>
     </>
@@ -102,7 +93,7 @@ const SearchDateBox = styled.input`
 
 const SearchBox = styled.input`
   border: none;
-  width: 27.6rem;
+  width: 26.6rem;
   height: 4.8rem;
   padding: 0.7rem 0 0.7rem 5.6rem;
   font-size: 1.6rem;
@@ -111,6 +102,7 @@ const SearchBox = styled.input`
   outline: none;
   background-color: #cbcbcb;
   // background-image: url('/img/logo-social.png');
+  margin-right: 1rem;
   background-size: 3.4rem 3.4rem;
   background-position: 1.5rem center;
   background-repeat: no-repeat;

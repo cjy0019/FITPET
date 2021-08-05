@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MiddleSizeButton } from '../../../common';
+import { RoundSquareBtn } from '../../../common';
 
 const HotelDetails = () => {
   return (
@@ -9,18 +9,9 @@ const HotelDetails = () => {
       <Price>
         446,590 ~ <span>원</span>
       </Price>
-      <MiddleSizeButton
-        text='상세보기'
-        width='11.6rem'
-        border='none'
-        pt='1.5rem'
-        pb='1.4rem'
-        mt='1.4rem'
-        color='#ffffff'
-        borderRadius='0.7rem'
-        fontSize='1.6rem'
-        backColor='#979797'
-      />
+      <RoundSquareBtn main_color style={{ marginTop: '1.4rem' }}>
+        상세보기
+      </RoundSquareBtn>
     </DetailWrapper>
   );
 };
