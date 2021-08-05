@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import MemberLinkUl from './MemberLinkUl';
@@ -9,53 +9,14 @@ import Login from '../../login/Login';
 import SignUp from '../../signUp/SignUp';
 import Modal from '../../modal/Modal';
 
-const Header = () => {
-  // 로그인
-  const [loginOpen, setloginOpen] = useState(false);
-  const showLogin = useCallback(() => setloginOpen(true), []);
-  const hideLogin = useCallback(() => setloginOpen(false), []);
-
-  // 회원가입
-  const [signUpOpen, setSignUpOpen] = useState(false);
-  const showSignUp = useCallback(() => setSignUpOpen(true), []);
-  const hideSignUp = useCallback(() => setSignUpOpen(false), []);
-
-  // 로그인
-  useEffect(() => {
-    if (loginOpen) {
-      document.body.style.cssText = `
-      position:fixed;
-      top: -${window.scrollY}px;
-      overflow-y: scroll;
-      width: 100%;
-    `;
-    }
-
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = '';
-      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
-    };
-  }, [loginOpen]);
-
-  //회원가입
-  useEffect(() => {
-    if (signUpOpen) {
-      document.body.style.cssText = `
-      position:fixed;
-      top: -${window.scrollY}px;
-      overflow-y: scroll;
-      width: 100%;
-    `;
-    }
-
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = '';
-      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
-    };
-  }, [signUpOpen]);
-
+const Header = ({
+  showLogin,
+  hideLogin,
+  loginOpen,
+  showSignUp,
+  hideSignUp,
+  signupOpen,
+}) => {
   return (
     <>
       <MainHeader>
@@ -81,8 +42,9 @@ const Header = () => {
           <Login hideLogin={hideLogin} />
         </Modal>
       ) : null}
+
       {/* 회원가입 모달 */}
-      {signUpOpen ? (
+      {signupOpen ? (
         <Modal>
           <SignUp hideSignUp={hideSignUp} />
         </Modal>

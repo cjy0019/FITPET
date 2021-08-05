@@ -41,7 +41,7 @@ const HeaderNav = () => {
 
 const StyledNav = styled.nav`
   transform: translateY(0.5rem);
-  min-height: 3;
+  min-height: 4rem;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
