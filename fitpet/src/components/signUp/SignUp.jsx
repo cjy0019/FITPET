@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { CloseOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
 import { SocialBtn } from '../../common';
+import { useDispatch } from 'react-redux';
+import { closeSignUp, openLogin } from '../../redux/modules/modal';
 
 const SignUp = ({ hideSignUp }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [CheckPassword, setCheckPassword] = useState('');
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -42,7 +44,7 @@ const SignUp = ({ hideSignUp }) => {
                 placeholder='비밀번호 확인'
                 type='password'
               />
-              <NextButton>다음으로</NextButton>
+              <NextButton>회원가입</NextButton>
               {/* sns계정으로 가입 */}
               <SocialBlock>
                 <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>
@@ -52,9 +54,9 @@ const SignUp = ({ hideSignUp }) => {
               {/* 라인 아래 부분 */}
               <BottomBlock>
                 <BottomText>이미 핏펫 회원이신가요?</BottomText>
-                <Link to='/login' className='login'>
+                <button className='login' onClick={goLogin}>
                   로그인
-                </Link>
+                </button>
               </BottomBlock>
             </SignUpContent>
           </SignUpWrapper>
@@ -72,6 +74,11 @@ const SignUp = ({ hideSignUp }) => {
   }
   function changeCheckPassword(e) {
     setCheckPassword(e.target.value);
+  }
+
+  function goLogin() {
+    dispatch(closeSignUp());
+    dispatch(openLogin());
   }
 };
 
@@ -190,6 +197,7 @@ const BottomBlock = styled.div`
     display: inline-block;
     height: 1.6rem;
     margin: 0 0.3rem 0.2rem 1.5rem;
+    border: none;
     font-size: 1.4rem;
     font-weight: 500;
     font-stretch: normal;
@@ -198,8 +206,14 @@ const BottomBlock = styled.div`
     letter-spacing: -0.28px;
     padding-bottom: 2rem;
     text-align: center;
+    background-color: transparent;
     border-bottom: 1px solid ${(props) => props.theme.black1_color};
     color: ${(props) => props.theme.black1_color};
+
+    &:hover {
+      color: ${(props) => props.theme.main_color};
+      border-bottom: 1px solid ${(props) => props.theme.main_color};
+    }
   }
 `;
 const BottomText = styled.p`
