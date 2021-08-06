@@ -4,10 +4,11 @@ import { CloseOutlined } from '@ant-design/icons';
 import { SocialBtn } from '../../common';
 import { useDispatch } from 'react-redux';
 import { closeSignUp, openLogin } from '../../redux/modules/modal';
+import axios from 'axios';
 
-const SignUp = ({ hideSignUp }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const SignUp = ({ hideSignUp, signup }) => {
+  const [userId, setUserId] = useState('');
+  const [userPW, setUserPW] = useState('');
   const [CheckPassword, setCheckPassword] = useState('');
   const dispatch = useDispatch();
 
@@ -28,13 +29,13 @@ const SignUp = ({ hideSignUp }) => {
               {/* 회원 정보 입력 칸, 다음으로 버튼 */}
               <Input
                 onChange={changeId}
-                value={email}
+                value={userId}
                 placeholder='이메일 아이디'
                 type='email'
               />
               <Input
                 onChange={changePassword}
-                value={password}
+                value={userPW}
                 placeholder='비밀번호'
                 type='password'
               />
@@ -44,7 +45,7 @@ const SignUp = ({ hideSignUp }) => {
                 placeholder='비밀번호 확인'
                 type='password'
               />
-              <NextButton>회원가입</NextButton>
+              <NextButton onClick={clickSignup}>회원가입</NextButton>
               {/* sns계정으로 가입 */}
               <SocialBlock>
                 <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>
@@ -64,13 +65,27 @@ const SignUp = ({ hideSignUp }) => {
       </Overlay>
     </>
   );
+  // "proxy": "https://jsonplaceholder.typicode.com/",
+
+  async function clickSignup(e) {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/join', {
+        userId: '123456',
+        userPW: '1234',
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   function changeId(e) {
-    setEmail(e.target.value);
+    setUserId(e.target.value);
   }
 
   function changePassword(e) {
-    setPassword(e.target.value);
+    setUserPW(e.target.value);
   }
   function changeCheckPassword(e) {
     setCheckPassword(e.target.value);

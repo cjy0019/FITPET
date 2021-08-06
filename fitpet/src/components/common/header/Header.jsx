@@ -8,6 +8,7 @@ import HeaderNav from './HeaderNav';
 import Login from '../../login/Login';
 import SignUp from '../../signUp/SignUp';
 import Modal from '../../modal/Modal';
+import SignupContainer from '../../../containers/SignupContainer';
 
 const Header = ({
   showLogin,
@@ -46,7 +47,7 @@ const Header = ({
       {/* 회원가입 모달 */}
       {signupOpen ? (
         <Modal>
-          <SignUp hideSignUp={hideSignUp} />
+          <SignupContainer hideSignUp={hideSignUp} />
         </Modal>
       ) : null}
     </>
