@@ -2,6 +2,7 @@ import React from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { MiddleBtn } from '../../common';
 import { A11yHidden } from '../../common/accessibility/Hidden';
 import SmallLine from '../../common/utility/SmallLine';
 
@@ -50,6 +51,9 @@ const ReservationSticker = () => {
           style={{ display: 'inline', verticalAlign: 'bottom' }}
         />
       </NavLink>
+      <MiddleBtn fit_course style={{ marginTop: '3.4rem' }}>
+        확인 및 결제
+      </MiddleBtn>
     </RightSection>
   );
 };
@@ -64,10 +68,10 @@ const navStyle = {
 const RightSection = styled.section`
   position: sticky;
   top: 0;
-  background-color: #ffedd1;
+  background-color: ${(props) => props.theme.grey5_color};
   padding: 4.2rem 3.55rem 4.2rem 3.6rem;
   min-width: 39.8rem;
-  max-height: 57.4rem;
+  max-height: 66rem;
   margin-left: 4.2rem;
 `;
 

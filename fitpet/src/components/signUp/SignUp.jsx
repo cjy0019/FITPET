@@ -49,7 +49,6 @@ const SignUp = ({ hideSignUp }) => {
                 {/* sns로 가입하기 버튼 */}
                 <SocialBtn />
               </SocialBlock>
-              <Line />
               {/* 라인 아래 부분 */}
               <BottomBlock>
                 <BottomText>이미 핏펫 회원이신가요?</BottomText>
@@ -94,11 +93,11 @@ const Overlay = styled.div`
 `;
 const SignUpWrapper = styled.div`
   width: 55.4rem;
-  height: 68.7rem;
+  height: 62.7rem;
   padding: 5rem 3.9rem 4.7rem;
   border-radius: 30px;
   border: solid 1px #707070;
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.white_color};
 `;
 
 // 회원가입 헤더 부분
@@ -111,7 +110,7 @@ const HeaderText = styled.div`
   font-weight: bold;
   letter-spacing: -0.44px;
   line-height: 1.18;
-  color: #979797;
+  color: ${(props) => props.theme.black1_color};
   text-align: left;
 `;
 const CloseBtn = styled.div`
@@ -120,8 +119,8 @@ const CloseBtn = styled.div`
   font-size: 2.2rem;
   width: 1.52rem;
   height: 1.52rem;
-  color: #707070;
-  background-color: #ffffff;
+  color: ${(props) => props.theme.grey2_color};
+  background-color: ${(props) => props.theme.white_color};
 `;
 
 // 회원가입 내용
@@ -140,15 +139,16 @@ const Input = styled.input`
   line-height: 1.19;
   letter-spacing: 0em;
   text-align: left;
-  color: #707070;
+  color: ${(props) => props.theme.black1_color};
   border: none;
-  border-bottom: 0.5px solid #979797;
+  border-bottom: 1px solid ${(props) => props.theme.grey3_color};
   outline: none;
   :not(:first-child) {
     margin-top: 3.6rem;
   }
   &:focus {
-    border-bottom: 0.5px solid #707070;
+    border-bottom: 1px solid ${(props) => props.theme.grey2_color};
+    color: ${(props) => props.theme.black1_color};
   }
 `;
 const NextButton = styled.button`
@@ -156,9 +156,9 @@ const NextButton = styled.button`
   width: 37.4rem;
   height: 5.2rem;
   border-radius: 26px;
-  background-color: #979797;
+  background: ${(props) => props.theme.gradient_color};
   border: none;
-  color: #ffffff;
+  color: ${(props) => props.theme.white_color};
   font-size: 1.8rem;
   margin-top: 3.6rem;
 `;
@@ -167,9 +167,10 @@ const NextButton = styled.button`
 const SocialBlock = styled.div`
   display: block;
   padding: 3.6rem 3.3rem;
+  border-bottom: solid 1px ${(props) => props.theme.grey4_color};
 `;
 const SocialText = styled.p`
-  width: 17.8rem;
+  // width: 17.8rem;
   height: 1.6rem;
   margin: 0 6.5rem 2rem;
   font-size: 1.4rem;
@@ -179,23 +180,14 @@ const SocialText = styled.p`
   line-height: 1.43;
   letter-spacing: -0.28px;
   text-align: center;
-  color: #979797;
+  color: ${(props) => props.theme.black1_color};
 `;
 
-const Line = styled.hr`
-  color: #979797; /* IE */
-  border-color: #979797; /* 사파리 */
-  background-color: #979797; /* 크롬, 모질라 등, 기타 브라우저 */
-  height: 0.5px;
-  border: none;
-`;
 // 회원가입 하단 부분
-
 const BottomBlock = styled.div`
   text-align: center;
   .login {
     display: inline-block;
-    width: 3.6rem;
     height: 1.6rem;
     margin: 0 0.3rem 0.2rem 1.5rem;
     font-size: 1.4rem;
@@ -204,14 +196,14 @@ const BottomBlock = styled.div`
     font-style: normal;
     line-height: 1;
     letter-spacing: -0.28px;
+    padding-bottom: 2rem;
     text-align: center;
-    border-bottom: 1px solid #979797;
-    color: #979797;
+    border-bottom: 1px solid ${(props) => props.theme.black1_color};
+    color: ${(props) => props.theme.black1_color};
   }
 `;
 const BottomText = styled.p`
   display: inline-block;
-  width: 13.2rem;
   height: 1.6rem;
   margin-top: 2.1rem;
   font-size: 1.4rem;
@@ -221,6 +213,6 @@ const BottomText = styled.p`
   line-height: 1.43;
   letter-spacing: -0.28px;
   text-align: center;
-  color: #979797;
+  color: ${(props) => props.theme.black1_color};
 `;
 export default SignUp;

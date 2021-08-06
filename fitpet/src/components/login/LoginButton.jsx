@@ -9,10 +9,11 @@ const StyledButton = styled.button`
   width: 100%;
   height: 5.2rem;
   border-radius: 26px;
-  background-color: #979797;
+  background: ${(props) => props.theme.gradient_color};
+
   cursor: pointer;
   outline: none;
   border: none;
-  color: #ffffff;
+  color: ${(props) => props.theme.white_color};
 `;
 export default LoginButton;

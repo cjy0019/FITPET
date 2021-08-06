@@ -13,7 +13,7 @@ const MemberLinkLi = ({ showSignUp, showLogin }) => {
       </StyeldLi>
 
       <StyeldLi>
-        <StyledButton onClick={showSignUp} img='/img/header/signInImg.svg'>
+        <StyledButton onClick={showSignUp}>
           <StyledImg src={'/img/header/signInImg.svg'} alt='회원가입' />
           <p>회원가입</p>
         </StyledButton>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, MiddleSizeButton, SampleIcon } from '../../../common';
+import { Font, RoundSquareBtn, SampleIcon } from '../../../common';
 
 const RentalcarSearch = ({ isScroll }) => {
   return (
@@ -24,16 +24,7 @@ const RentalcarSearch = ({ isScroll }) => {
           />
           <SearchDateBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
           <SearchBox placeholder='차종' />
-          <MiddleSizeButton
-            fontSize='1.6rem'
-            width='7.4rem'
-            text='검색'
-            border='none'
-            borderRadius='7px'
-            pt='1.5rem'
-            pb='1.4rem'
-            ml='1rem'
-          />
+          <RoundSquareBtn>재검색</RoundSquareBtn>
         </div>
         <div className='ageCheckBox'>
           <Font

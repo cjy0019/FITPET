@@ -1,107 +1,58 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const RoundSquareBtn = (props) => {
-  const {
-    text,
-    children,
-    fontSize,
-    backColor,
-    hoverColor,
-    textHover,
-    border,
-    margin,
-    borderRadius,
-    handleClick,
-    color,
-    pt,
-    pb,
-    pr,
-    pl,
-    mt,
-    mb,
-    mr,
-    ml,
-    width,
-    height,
-    position,
-    top,
-    right,
-  } = props;
-
-  const styles = {
-    position: position,
-    top: top,
-    right: right,
-    backColor: backColor,
-    hoverColor: hoverColor,
-    border: border,
-    color: color,
-    fontSize: fontSize,
-    margin: margin,
-    borderRadius: borderRadius,
-    width: width,
-    height: height,
-    textHover: textHover,
-    pt: pt,
-    pb: pb,
-    pl: pl,
-    pr: pr,
-    mt: mt,
-    mb: mb,
-    ml: ml,
-    mr: mr,
-  };
-  return (
-    <RoundSquareBtnWrapper {...styles} onClick={handleClick}>
-      {text ? text : children}
-    </RoundSquareBtnWrapper>
-  );
+  const { text, children } = props;
+  return <StyledButton {...props}>{text ? text : children}</StyledButton>;
 };
 
-RoundSquareBtn.defaultProps = {
-  backColor: '#cbcbcb',
-  height: '4.8rem',
-  border: 'none',
-  borderRadius: '7px',
-  pr: '2.8rem',
-  pl: '2.8rem',
-  fontSize: '1.6rem',
-  text: '버튼 이름',
-  handleClick: () => {},
-};
+// 기본 : 장바구니 버튼
+const buttonStyle = css`
+  height: 4.8rem;
+  padding: 1.6rem 2.8rem 1.3rem;
+  border-radius: 7px;
+  font-size: 1.6rem;
+  font-weight: normal;
+  border: none;
+  background-color: ${(props) => props.theme.grey4_color};
+  color: ${(props) => props.theme.main_color};
 
-const RoundSquareBtnWrapper = styled.button`
-  outline: none;
-  cursor: pointer;
-  transition: 0.4s;
-  right: ${({ right }) => right};
-  top: ${({ top }) => top};
-  position: ${({ position }) => position};
-  font-size: ${(props) => props.fontSize};
-  background-color: ${(props) => props.backColor};
-  border: ${(props) => props.border};
-  border-radius: ${(props) => props.borderRadius};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: ${(props) => props.color};
-  ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
-  padding-top: ${(props) => props.pt};
-  padding-bottom: ${(props) => props.pb};
-  padding-left: ${(props) => props.pl};
-  padding-right: ${(props) => props.pr};
-  margin-top: ${(props) => props.mt};
-  margin-right: ${(props) => props.mr};
-  margin-bottom: ${(props) => props.mb};
-  margin-left: ${(props) => props.ml};
-  border: ${(props) => props.border};
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+  // 검색, 재검색, 상세보기 버튼
+  ${(props) =>
+    props.main_color &&
+    css`
+      background-color: ${(props) => props.theme.main_color};
+      color: ${(props) => props.theme.white_color};
+    `}
 
-  &:hover {
-    background-color: ${(props) => props.hoverColor};
-    color: ${(props) => props.textHover};
-  }
+  // 모두사용, 인증하기 버튼
+  ${(props) =>
+    props.grey_color &&
+    css`
+      background-color: ${(props) => props.theme.grey3_color};
+      color: ${(props) => props.theme.white_color};
+    `}
+
+    // 검색창 버튼 (제주도, 서울, 전주) 
+    ${(props) =>
+    props.search_btn &&
+    css`
+      padding: 1rem;
+      height: 4rem;
+      margin: 1.6rem 1.6rem 0 0;
+      background-color: ${(props) => props.theme.white_color};
+      border: solid 1px ${(props) => props.theme.grey2_color};
+      color: ${(props) => props.theme.black1_color};
+
+      :focus {
+        color: ${(props) => props.theme.main_color};
+        border: solid 1px ${(props) => props.theme.main_color};
+      }
+    `}
 `;
+
+const StyledButton = styled.button`
+  ${buttonStyle}
+`;
+
 export default RoundSquareBtn;

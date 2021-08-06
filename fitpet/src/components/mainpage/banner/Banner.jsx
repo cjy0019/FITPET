@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MiddleSizeButton } from '../../../common';
+import { MiddleBtn } from '../../../common';
 import MainNav from './MainNav';
 
 const banner = () => {
@@ -15,20 +15,9 @@ const banner = () => {
       {/* 검색창 */}
       <SearchInput placeholder='어디로 떠날까요? 여행지 또는 상품을 검색해주세요:)'></SearchInput>
 
-      <MiddleSizeButton
-        text='다양한 숙소 둘러보기'
-        fontSize='1.9rem'
-        width='24.6rem'
-        borderRadius='2.6rem'
-        pt='1.4rem'
-        pb='1.4rem'
-        pr='4.2rem'
-        pl='4.2rem'
-        mt='6.2rem'
-        backColor='#4765ff'
-        border='none'
-        height='5.2rem'
-        color='#ffffff'></MiddleSizeButton>
+      <MiddleBtn style={{ marginTop: '4.4rem' }}>
+        다양한 숙소 둘러보기
+      </MiddleBtn>
     </BannerWrappr>
   );
 };

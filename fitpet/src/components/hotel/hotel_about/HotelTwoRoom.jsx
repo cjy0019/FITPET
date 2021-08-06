@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import {
   Font,
-  SampleIcon,
+  ImgMoreBtn,
   OpenBtn,
   RoundSquareBtn,
-  ImgMoreBtn,
+  SampleIcon,
 } from '../../../common';
 
-const HotelOneRoom = () => {
+const HotelTwoRoom = () => {
   return (
-    <HotelOneRoomWrapper>
+    <HotelTwoRoomWrapper>
       <div className='roomNameBox'>
         <Font fontSize='2rem' color='#707070' fontWeight='bold' mr='2.4rem'>
           스탠다드 트윈룸
@@ -90,56 +90,112 @@ const HotelOneRoom = () => {
                 mb='0.6rem'>
                 1박당
               </Font>
-              {/* 할인 가격 */}
-              <div className='salePrice'>
+              <div className='price'>
                 <Font
-                  fontSize='1.6rem'
-                  color='#cbcbcb'
-                  fontWeight='normal'
-                  textDecoration='line-through'
-                  mb='0.4rem'>
+                  fontSize='2.4rem'
+                  color='#707070'
+                  fontWeight='bold'
+                  mr='0.8rem'>
                   579,689
                 </Font>
-                <div className='price'>
-                  <Font
-                    fontSize='2.4rem'
-                    color='#707070'
-                    fontWeight='bold'
-                    mr='0.8rem'>
-                    12% 466,790
-                  </Font>
-                  <span className='one'> 원</span>
-                </div>
+                <span className='one'> 원</span>
               </div>
               <div className='buttons'>
-                <RoundSquareBtn
-                  fontSize='1.6rem'
-                  color='#707070'
-                  text='장바구니'
-                />
-                <RoundSquareBtn
-                  text='예약하기'
-                  backColor='#979797'
-                  color='#fff'
-                  fontSize='1.6rem'
-                  ml='1.4rem'
-                />
+                <RoundSquareBtn>장바구니</RoundSquareBtn>
+                <RoundSquareBtn main_color style={{ marginLeft: '1.4rem' }}>
+                  예약하기
+                </RoundSquareBtn>
               </div>
+            </div>
+          </div>
+          <div className='bedroom'>
+            <div className='bedroomInfo'>
+              <Font fontSize='2rem' color='#707070' fontWeight='bold' mb='2rem'>
+                싱글침대 2개
+              </Font>
+              <div className='aboutBox'>
+                <SampleIcon />
+                <Font
+                  fontSize='1.6rem'
+                  fontWeight='normal'
+                  color='#979797'
+                  ml='0.6rem'>
+                  조식 포함
+                </Font>
+              </div>
+              <div className='aboutBox'>
+                <SampleIcon />
+                <Font
+                  fontSize='1.6rem'
+                  fontWeight='normal'
+                  color='#979797'
+                  ml='0.6rem'>
+                  무료 예약 취소 (기간 한정)
+                </Font>
+              </div>
+              <div className='aboutBox'>
+                <SampleIcon />
+                <Font
+                  fontSize='1.6rem'
+                  fontWeight='normal'
+                  color='#979797'
+                  ml='0.6rem'>
+                  최대 2인 | 소형견 1마리
+                </Font>
+              </div>
+              <div className='aboutBox'>
+                <SampleIcon />
+                <Font
+                  fontSize='1.6rem'
+                  fontWeight='normal'
+                  color='#979797'
+                  ml='0.6rem'>
+                  체크인 15:00 - 체크아웃 11:00
+                </Font>
+              </div>
+              <div className='roomInfomation'>
+                <Font
+                  fontSize='1.4rem'
+                  color='#707070'
+                  fontWeight='normal'
+                  mr='0.6rem'>
+                  객실 이용 안내
+                </Font>
+                <OpenBtn />
+              </div>
+            </div>
+            <div className='bedroomPrice'>
               <Font
-                fontSize='1.4rem'
+                fontSize='1.6rem'
                 color='#707070'
                 fontWeight='normal'
-                mt='1.2rem'>
-                남은 객실 2개
+                mb='0.6rem'>
+                1박당
               </Font>
+              <div className='price'>
+                <Font
+                  fontSize='2.4rem'
+                  color='#707070'
+                  fontWeight='bold'
+                  mr='0.8rem'>
+                  579,689
+                </Font>
+                <span className='one'> 원</span>
+              </div>
+              <div className='buttons'>
+                <RoundSquareBtn>장바구니</RoundSquareBtn>
+                <RoundSquareBtn main_color style={{ marginLeft: '1.4rem' }}>
+                  예약하기
+                </RoundSquareBtn>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </HotelOneRoomWrapper>
+    </HotelTwoRoomWrapper>
   );
 };
-const HotelOneRoomWrapper = styled.div`
+const HotelTwoRoomWrapper = styled.div`
   display: block;
   width: 128rem;
   margin: 0 auto;
@@ -158,13 +214,19 @@ const HotelOneRoomWrapper = styled.div`
     }
     .bedroomsBox {
       display: block;
-      margin: 1.8rem 0 5.1rem 2rem;
+      margin: 1.8rem 0 0 2rem;
       .bedroom {
+        padding-bottom: 4.1rem;
         display: flex;
         width: 87rem;
+        :first-child {
+          border-bottom: 0.5px solid #979797;
+          margin-bottom: 4rem;
+        }
         .bedroomInfo {
           margin-left: 2rem;
           margin-right: auto;
+
           .aboutBox {
             display: flex;
             margin-bottom: 1rem;
@@ -183,17 +245,17 @@ const HotelOneRoomWrapper = styled.div`
           text-align: right;
           margin-top: 5rem;
           margin-left: auto;
-          .salePrice {
-            .price {
-              display: flex;
-              align-items: center;
-              margin-bottom: 1.4rem;
-              justify-content: flex-end;
-              span {
-                font-size: 1.8rem;
-                color: #707070;
-                font-weight: 500;
-              }
+
+          .price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.4rem;
+            justify-content: flex-end;
+
+            span {
+              font-size: 1.8rem;
+              color: #707070;
+              font-weight: 500;
             }
           }
           .buttons {
@@ -204,4 +266,4 @@ const HotelOneRoomWrapper = styled.div`
     }
   }
 `;
-export default HotelOneRoom;
+export default HotelTwoRoom;

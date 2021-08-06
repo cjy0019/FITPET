@@ -1,28 +1,23 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { MiddleSizeButton } from '../../common';
+import { RoundSquareBtn } from '../../common';
 
 const DriverInput = ({ ...props }) => {
   const { children, hint, value, text, btn, point } = props;
   return (
     <StyledDiv m4>
       <StyledP>{children}</StyledP>
-      <StyledInput readOnly type='text' placeholder={hint} value={value} />
+      <StyledInput
+        readOnly
+        type='text'
+        placeholder={hint}
+        value={value}></StyledInput>
       {point && <StyledPoint>사용가능한 포인트 : 0</StyledPoint>}
       {btn && (
-        <MiddleSizeButton
+        <RoundSquareBtn
+          grey_color
           text={text}
-          width='11.6rem'
-          color='#ffffff'
-          backColor='#cbcbcb'
-          border='none'
-          pt='1.5rem'
-          pb='1.4rem'
-          borderRadius='7px'
-          fontSize='1.6rem'
-          position='absolute'
-          top='0'
-          right='0'
+          style={{ position: 'absolute', top: '0', right: '0' }}
         />
       )}
     </StyledDiv>

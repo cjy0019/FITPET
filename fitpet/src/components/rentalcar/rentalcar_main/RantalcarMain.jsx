@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BasicBox, Font, MagazineBox, MiddleSizeButton } from '../../../common';
+import { BasicBox, Font, MagazineBox, MiddleBtn } from '../../../common';
 import RentalcarSearch from '../rentalcar_common/RentalcarSearch';
 import SliderDrive from './SliderDrive';
 
@@ -18,15 +18,9 @@ const RantalcarMain = () => {
             <RentalcarSearch />
           </div>
           <div className='MoreRentalcarBtn'>
-            <MiddleSizeButton
-              text='다양한 차량 둘러보기'
-              border='none'
-              backColor='#636363'
-              color='#fff'
-              p='1.4rem 4.2rem'
-              borderRadius='26px'
-              mt='4.4rem'
-            />
+            <MiddleBtn style={{ marginTop: '4.4rem' }}>
+              다양한 차량 둘러보기
+            </MiddleBtn>
           </div>
         </div>
       </RentalcarSearchBlock>
