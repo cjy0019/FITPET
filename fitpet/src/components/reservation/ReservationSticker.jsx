@@ -1,10 +1,9 @@
 import React from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { MiddleBtn } from '../../common';
 import { A11yHidden } from '../../common/accessibility/Hidden';
-import SmallLine from '../../common/utility/SmallLine';
 
 const ReservationSticker = () => {
   return (
@@ -13,7 +12,6 @@ const ReservationSticker = () => {
         <A11yHidden>예약 정보 확인</A11yHidden>
       </h2>
       <HotelName>롯데호텔 제주</HotelName>
-      <SmallLine />
 
       <SmallTitle>객실타입</SmallTitle>
       <Detail>스탠다드 더블룸 / 더블침대 1개</Detail>
@@ -22,9 +20,7 @@ const ReservationSticker = () => {
       <Detail>성인 2인 / 소형견 1마리</Detail>
 
       <SmallTitle>체크인-체크아웃 날짜</SmallTitle>
-      <Detail>8월 6일 (금) - 8월 7일 (토) 1박</Detail>
-
-      <SmallLine margin />
+      <Detail line>8월 6일 (금) - 8월 7일 (토) 1박</Detail>
 
       {/* 결제 금액 부분 */}
       <SmallTitle>결제 금액</SmallTitle>
@@ -51,7 +47,7 @@ const ReservationSticker = () => {
           style={{ display: 'inline', verticalAlign: 'bottom' }}
         />
       </NavLink>
-      <MiddleBtn fit_course style={{ marginTop: '3.4rem' }}>
+      <MiddleBtn fit_course style={{ marginTop: '3.4rem', width: '100%' }}>
         확인 및 결제
       </MiddleBtn>
     </RightSection>
@@ -79,8 +75,9 @@ const HotelName = styled.p`
   font-size: 2.4rem;
   font-weight: bold;
   line-height: 1.21;
-  margin-bottom: 1.3rem;
-  color: #707070;
+  padding-bottom: 1.3rem;
+  border-bottom: solid 1px ${(props) => props.theme.grey3_color};
+  color: ${(props) => props.theme.black1_color};
 `;
 
 // 결제 금액 아래 part
@@ -95,25 +92,32 @@ const SmallTitle = styled.p`
   line-height: 1.14;
   letter-spacing: -0.28px;
   margin-top: 2.8rem;
-  color: #707070;
+  color: ${(props) => props.theme.grey2_color};
 `;
 
 const Detail = styled.p`
   font-size: 1.8rem;
   font-weight: 500;
-  margin-top: 0.6rem;
+  margin-top: 0.7rem;
   line-height: 1.17;
   letter-spacing: -0.36px;
-  color: #707070;
+  color: ${(props) => props.theme.black1_color};
+
+  ${(props) =>
+    props.line &&
+    css`
+      border-bottom: solid 1px ${(props) => props.theme.grey3_color};
+      padding-bottom: 2.8rem;
+    `}
 `;
 
 const Price = styled.p`
   font-size: 2.8rem;
-  margin-top: 0.6rem;
+  margin-top: 1.3rem;
   font-weight: bold;
   line-height: 0.86;
   letter-spacing: -0.56px;
-  color: #707070;
+  color: ${(props) => props.theme.main_color};
 
   span {
     font-size: 1.8rem;
