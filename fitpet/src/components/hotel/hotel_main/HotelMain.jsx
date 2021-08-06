@@ -328,6 +328,9 @@ const HotelSearchBlock = styled.div`
   justify-content: center;
   height: 74.4rem;
   background-color: ${(props) => props.theme.grey3_color};
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/img/hotel/hotel_main/mainImg.png');
   .searchBox {
     width: 108rem;
   }
