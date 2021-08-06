@@ -62,7 +62,6 @@ const MenuContainer = styled.div`
     transform: translateY(-20px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
   }
-
   .menu.active {
     opacity: 1;
     visibility: visible;
@@ -73,7 +72,6 @@ const MenuContainer = styled.div`
     padding: 0;
     margin: 0;
   }
-
   .menu li {
     display: block;
     // padding: 2.6rem 0;
@@ -100,6 +98,7 @@ const SearchLocationWrapper = styled.button`
   background-repeat: no-repeat;
   border: solid 1px ${(props) => props.theme.grey5_color};
   color: ${(props) => props.theme.black1_color};
+  &:focus,
   &:hover {
     border: solid 1px ${(props) => props.theme.main_color};
   }

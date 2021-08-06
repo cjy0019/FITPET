@@ -43,7 +43,8 @@ const buttonStyle = css`
       background-color: ${(props) => props.theme.white_color};
       border: solid 1px ${(props) => props.theme.grey2_color};
       color: ${(props) => props.theme.black1_color};
-      :hover {
+
+      :focus {
         color: ${(props) => props.theme.main_color};
         border: solid 1px ${(props) => props.theme.main_color};
       }
