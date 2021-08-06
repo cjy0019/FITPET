@@ -50,21 +50,6 @@ const buttonStyle = css`
       font-size: 1.8rem;
       font-weight: normal;
     `}
-
-  ${(props) =>
-    props.navy &&
-    css`
-      background: #636363;
-      &:hover {
-        background: #636363;
-      }
-    `}
-
-    &:disabled {
-    background: #636363;
-    color: #636363;
-    cursor: not-allowed;
-  }
 `;
 
 const StyledButton = styled.button`

@@ -25,10 +25,8 @@ const HotelMain = () => {
             <HotelTypeSearch />
           </div>
           <div className='MoreHotelBtn'>
-            <NavLink to='/hotellist'>
-              <MiddleBtn style={{ marginTop: '4.4rem' }}>
-                다양한 숙소 둘러보기
-              </MiddleBtn>
+            <NavLink to='/hotellist' style={{ marginTop: '4.4rem' }}>
+              <MiddleBtn>다양한 숙소 둘러보기</MiddleBtn>
             </NavLink>
           </div>
         </div>
@@ -47,41 +45,16 @@ const HotelMain = () => {
           {/* 핏펫에서 지금 뜨는 혜택! 이미지 블럭 */}
           <EventBlock>
             <div className='line'>
-              <BasicBox
-                width='40rem'
-                height='40rem'
-                margin='0 4rem 6rem 0'
-                borderRadius='30px'
-                text='올 여름은 애견 수영장에서'></BasicBox>
-              <BasicBox
-                width='40rem'
-                height='52rem'
-                margin='0 4rem 0 0'
-                borderRadius='30px'></BasicBox>
+              <BasicBox hotel_box1 />
+              <BasicBox hotel_box2 />
             </div>
             <div className='line'>
-              <BasicBox
-                width='40rem'
-                height='52rem'
-                margin='0 4rem 6rem 0'
-                borderRadius='30px'></BasicBox>
-              <BasicBox
-                width='40rem'
-                height='40rem'
-                margin='0 4rem 0 0'
-                borderRadius='30px'></BasicBox>
+              <BasicBox hotel_box2></BasicBox>
+              <BasicBox hotel_box1></BasicBox>
             </div>
             <div className='line'>
-              <BasicBox
-                width='40rem'
-                height='40rem'
-                margin='0 4rem 6rem 0'
-                borderRadius='30px'></BasicBox>
-              <BasicBox
-                width='40rem'
-                height='52rem'
-                margin='0 4rem 0 0'
-                borderRadius='30px'></BasicBox>
+              <BasicBox hotel_box1 />
+              <BasicBox hotel_box2 />
             </div>
           </EventBlock>
         </div>

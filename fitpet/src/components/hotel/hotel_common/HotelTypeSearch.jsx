@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, RoundSquareBtn } from '../../../common';
+import { RoundSquareBtn } from '../../../common';
 import SearchDateBox from './search_box/SearchDateBox';
 import SearchLocationBox from './search_box/SearchLocationBox';
 import SearchPeopleBox from './search_box/SearchPeopleBox';
