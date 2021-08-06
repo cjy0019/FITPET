@@ -125,7 +125,7 @@ const MenuContainer = styled.div`
 
 const NumberBlock = styled.div`
   display: flex;
-  width: 28.6rem;
+  width: 30rem;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -148,8 +148,6 @@ const ButtonBlock = styled.div`
   button {
     width: 28px;
     height: 28px;
-    //margin: 0 4px 20px 60px;
-    // padding: 14px 9px;
     border-radius: 14px;
     border: solid 1.6px ${(props) => props.theme.grey2_color};
     color: ${(props) => props.theme.grey2_color};

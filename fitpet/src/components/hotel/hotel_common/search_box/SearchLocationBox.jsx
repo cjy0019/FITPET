@@ -74,8 +74,7 @@ const MenuContainer = styled.div`
   }
   .menu li {
     display: block;
-    // padding: 2.6rem 0;
-    align-items: center; /* 가로 중앙 css*/
+    align-items: center;
   }
 `;
 
