@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import {
   BasicBox,
@@ -24,9 +25,11 @@ const HotelMain = () => {
             <HotelTypeSearch />
           </div>
           <div className='MoreHotelBtn'>
-            <MiddleBtn style={{ marginTop: '4.4rem' }}>
-              다양한 숙소 둘러보기
-            </MiddleBtn>
+            <NavLink to='/hotellist'>
+              <MiddleBtn style={{ marginTop: '4.4rem' }}>
+                다양한 숙소 둘러보기
+              </MiddleBtn>
+            </NavLink>
           </div>
         </div>
       </HotelSearchBlock>

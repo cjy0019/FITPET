@@ -108,7 +108,7 @@ const HotelAbout = () => {
           color='#707070'
           mt='4rem'
           mb='1.4rem'>
-          숙소 정보
+          숙소정보
         </Font>
         <div className='aboutBox'>
           <SampleIcon />
@@ -171,7 +171,7 @@ const HotelAbout = () => {
             color='#707070'
             mt='1rem'
             mb='3.3rem'>
-            객실 선택
+            객실선택
           </Font>
           <HotelDate mt='5.6rem' />
         </div>

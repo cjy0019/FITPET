@@ -121,10 +121,10 @@ const Calendar = (showCalendar) => {
 };
 
 const CalendarWrapper = styled.div`
-  display: flex; /* display 설정해줘야 아래 flex로 해주면 direction 선택가능*/
-  flex-direction: column; /* 이건 세로순으로  태그들을 표시함 css*/
-  align-items: center; /* 가로 중앙 css*/
-  justify-content: center; /* 세로 중앙 css*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   .control {
     display: flex;
     flex-direction: row;
