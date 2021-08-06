@@ -37,7 +37,7 @@ const buttonStyle = css`
     ${(props) =>
     props.search_btn &&
     css`
-      padding: 1.1rem;
+      padding: 1rem;
       height: 4rem;
       margin: 1.6rem 1.6rem 0 0;
       background-color: ${(props) => props.theme.white_color};
