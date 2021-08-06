@@ -108,6 +108,8 @@ const RadioWrapper = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: solid 1px #eee;
+      padding-bottom: 1.3rem;
     `}
 
   ${(props) =>
@@ -134,7 +136,7 @@ const AgreeLabel = styled.label`
   line-height: 1.19;
   margin-top: 1.1rem;
   cursor: pointer;
-  color: #979797;
+  color: ${(props) => props.theme.grey2_color};
 
   ${(props) =>
     props.margin &&
@@ -145,9 +147,10 @@ const AgreeLabel = styled.label`
 
 const AgreeCheck = styled.div`
   position: relative;
+  top: -2px;
   width: 2.4rem;
   height: 2.4rem;
-  border: solid 2px #979797;
+  border: solid 1px ${(props) => props.theme.grey2_color};
   border-radius: 50%;
   margin-right: 1rem;
 
@@ -159,15 +162,15 @@ const AgreeCheck = styled.div`
     border-radius: 50%;
     transform: scale(0);
   }
-  /* size='1.6rem' color='blue' stroke-width='1.4' */
   input:checked + &::after {
-    background-color: #0186df;
-    transform: scale(1);
-    transition: transform 0.3s;
+    background-color: ${(props) => props.theme.main_color};
+    border: none;
+    transform: scale(1.1);
+    transition: transform 0.1s;
   }
 
   input:checked + & div {
-    color: yellow;
+    color: #fff;
   }
 `;
 
@@ -176,7 +179,7 @@ const IconWrapper = styled.div`
   top: 60%;
   left: 50%;
   z-index: 10;
-  color: #000000;
+  color: ${(props) => props.theme.grey2_color};
   transform: translate(-50%, -50%);
 `;
 

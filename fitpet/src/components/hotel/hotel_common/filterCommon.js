@@ -61,8 +61,8 @@ export const UpButton = (props) => {
         height='2.8rem'
         border='none'
         borderRadius='0'
-        backColor='#cbcbcb'
         color='black'
+        backColor='#fff'
         handleClick={props.handleClick}
       />
     </>
@@ -79,7 +79,7 @@ export const DownButton = (props) => {
         height='2.8rem'
         border='none'
         borderRadius='0'
-        backColor='#cbcbcb'
+        backColor='#fff'
         color='black'
         handleClick={props.handleClick}
       />

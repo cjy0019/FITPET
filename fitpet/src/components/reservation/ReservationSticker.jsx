@@ -36,29 +36,19 @@ const ReservationSticker = () => {
         <Detail inline>0 원</Detail>
       </SimpleFlex>
 
-      <SmallTitle>최종 결제 금액</SmallTitle>
+      <SmallTitle price>최종 결제 금액</SmallTitle>
       <Price>
         466,790 <span>원</span>
       </Price>
 
-      <NavLink to='/' activeStyle={navStyle}>
+      <IconNavLink to='/'>
         <span>세금 서비스 및 요금 포함</span>
-        <MdKeyboardArrowRight
-          style={{ display: 'inline', verticalAlign: 'bottom' }}
-        />
-      </NavLink>
+      </IconNavLink>
       <MiddleBtn fit_course style={{ marginTop: '3.4rem', width: '100%' }}>
         확인 및 결제
       </MiddleBtn>
     </RightSection>
   );
-};
-
-const navStyle = {
-  display: 'inline-block',
-  marginTop: '1rem',
-  fontSize: '1.4rem',
-  color: '#707070',
 };
 
 const RightSection = styled.section`
@@ -93,6 +83,12 @@ const SmallTitle = styled.p`
   letter-spacing: -0.28px;
   margin-top: 2.8rem;
   color: ${(props) => props.theme.grey2_color};
+
+  ${(props) =>
+    props.price &&
+    css`
+      color: ${(props) => props.theme.black1_color};
+    `}
 `;
 
 const Detail = styled.p`
@@ -124,7 +120,29 @@ const Price = styled.p`
     font-weight: 500;
     line-height: 1.33;
     letter-spacing: -0.36px;
-    color: #707070;
+    color: ${(props) => props.theme.main_color};
+  }
+`;
+
+const IconNavLink = styled(NavLink)`
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  padding-right: 2.4rem;
+  position: relative;
+  color: ${(props) => props.theme.grey2_color};
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -0.13rem;
+    right: 0rem;
+    width: 18px;
+    height: 18px;
+    background-image: url(/img/icon/moreicon.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
   }
 `;
 
