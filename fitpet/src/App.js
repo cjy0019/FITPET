@@ -34,7 +34,7 @@ function App() {
             <Route component={MainPage} exact path='/' />
             <Route component={SignUpPage} path='/signup' />
             <Route component={CommonPage} path='/common' />
-            <Route component={ReservationPage} path='/reservation' />
+            <Route component={ReservationPage} path='/hotel/reservation' />
             <Route component={HotelMainPage} path='/hotel' />
             <Route component={HotelAboutPage} path='/hotelAbout' />
             <Route component={RoomDetailModalPage} path='/roomDetail' />

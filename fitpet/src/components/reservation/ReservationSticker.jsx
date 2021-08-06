@@ -67,7 +67,7 @@ const navStyle = {
 
 const RightSection = styled.section`
   position: sticky;
-  top: 0;
+  top: 22rem;
   background-color: ${(props) => props.theme.grey5_color};
   padding: 4.2rem 3.55rem 4.2rem 3.6rem;
   min-width: 39.8rem;

@@ -60,10 +60,10 @@ const MainHeader = styled.header`
   grid-template-columns: 1.17fr 1.15fr 0.7fr;
   position: fixed;
   width: 100%;
-  height: 8rem;
+  min-height: 80px;
   top: 0;
   padding: 0rem 6rem 0rem 6rem;
-  z-index: 10;
+  z-index: 30;
 `;
 
 const FitPetLogo = styled.img.attrs({

@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ReservSection, StyledH2 } from './Reservation';
 
 const Payment = () => {
   return (
-    <PaySection>
-      <h2>결제 수단 선택</h2>
+    <ReservSection>
+      <StyledH2>결제 수단 선택</StyledH2>
       <SelectWrapper>
         <RadioWrapper>
           <RadioLabel htmlFor='kakaopay'>
@@ -42,20 +43,9 @@ const Payment = () => {
           </RadioLabel>
         </RadioWrapperUnder>
       </SelectWrapper>
-    </PaySection>
+    </ReservSection>
   );
 };
-
-const PaySection = styled.section`
-  margin-top: 6rem;
-
-  h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 1.2;
-    color: #707070;
-  }
-`;
 
 const SelectWrapper = styled.div`
   margin-top: 3.1rem;

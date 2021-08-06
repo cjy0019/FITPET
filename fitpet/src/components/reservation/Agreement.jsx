@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import SmallLine from '../../common/utility/SmallLine';
 import { DownButton, UpButton } from '../hotel/hotel_common/filterCommon';
 import { HiCheck } from 'react-icons/hi';
+import { StyledH2 } from './Reservation';
 
 const Agreement = () => {
   const [showAll, setShowAll] = useState(true);
@@ -18,7 +19,7 @@ const Agreement = () => {
 
   return (
     <AgreeWrapper>
-      <StyledP>이용 약관 동의</StyledP>
+      <StyledH2>이용 약관 동의</StyledH2>
 
       <RadioWrapper firstline>
         <AgreeLabel htmlFor='agreeAll'>
@@ -37,7 +38,6 @@ const Agreement = () => {
         )}
       </RadioWrapper>
 
-      <SmallLine />
       {/* 숨겨지는 부분 */}
       <RadioWrapper flex ref={showRef}>
         <AgreeLabel htmlFor='agreeFirst'>
@@ -96,13 +96,6 @@ const AgreeWrapper = styled.div`
     display: block;
     clear: both;
   }
-`;
-
-const StyledP = styled.p`
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 1.2;
-  color: #707070;
 `;
 
 const RadioWrapper = styled.div`
