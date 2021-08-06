@@ -13,7 +13,7 @@ const GoUpBtn = () => {
     return () => {
       window.removeEventListener('scroll', btnAppear);
     };
-  }, []);
+  }, [btnRender]);
 
   return (
     btnRender && (
