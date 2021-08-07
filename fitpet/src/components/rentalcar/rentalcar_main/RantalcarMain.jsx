@@ -25,24 +25,9 @@ const RantalcarMain = () => {
         </div>
       </RentalcarSearchBlock>
       <ContentsWrapper>
-        <BasicBox
-          width='40rem'
-          height='25.1rem'
-          borderRadius='15px'
-          text='검증된 렌트카 파트너사'
-          margin='0 4rem 0 0'></BasicBox>
-        <BasicBox
-          width='40rem'
-          height='25.1rem'
-          borderRadius='15px'
-          text='검증된 렌트카 파트너사'
-          margin='0 4rem 0 0'></BasicBox>
-        <BasicBox
-          width='40rem'
-          height='25.1rem'
-          borderRadius='15px'
-          text='검증된 렌트카 파트너사'
-          margin='0 4rem 0 0'></BasicBox>
+        <BasicBox rentalcar_box1 />
+        <BasicBox rentalcar_box1 />
+        <BasicBox rentalcar_box1 />
       </ContentsWrapper>
       {/* 띠배너 부분 */}
       <BandBanner img={'/img/linebanner.png'} />

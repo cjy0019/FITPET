@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, RoundSquareBtn } from '../../../common';
+import { RoundSquareBtn } from '../../../common';
 import SearchDateBox from './search_box/SearchDateBox';
 import SearchLocationBox from './search_box/SearchLocationBox';
 import SearchPeopleBox from './search_box/SearchPeopleBox';
@@ -10,22 +10,9 @@ const HotelTypeSearch = ({ isScroll }) => {
     <>
       <SearchContainer>
         <div className='typeBox'>
-          <Font
-            fontSize='1.8rem'
-            fontWeight='normal'
-            color='#707070'
-            mr='3.5rem'
-            mb='0.6rem'>
-            호텔/리조트
-          </Font>
-          <Font
-            fontSize='1.8rem'
-            fontWeight='normal'
-            color='#707070'
-            mr='3.5rem'
-            mb='0.6rem'>
-            펜션/캠핑/글램핑
-          </Font>
+          <HotelTypeBtn>호텔/리조트</HotelTypeBtn>
+          <HotelTypeBtn>펜션/풀빌라</HotelTypeBtn>
+          <HotelTypeBtn>캠핑/글램핑</HotelTypeBtn>
         </div>
         <div className='inputBox'>
           {/* 어디로 떠날까요? */}
@@ -45,7 +32,7 @@ const SearchContainer = styled.div`
   display: block;
   justify-content: space-evenly;
   width: 108rem;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.white_color};
   border-radius: 15px;
   padding: 2.6rem 2.8rem;
   margin: 0 auto;
@@ -53,11 +40,25 @@ const SearchContainer = styled.div`
   animation-timing-function: ease-in-out;
   .typeBox {
     display: flex;
-    border-bottom: 1px solid ${(props) => props.theme.grey3_color};
+    border-bottom: 1px solid ${(props) => props.theme.main_color};
     margin-bottom: 2.3rem;
   }
   .inputBox {
     display: flex;
+  }
+`;
+const HotelTypeBtn = styled.button`
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: ${(props) => props.theme.black1_color};
+  margin-right: 3.5rem;
+  border: 1px solid ${(props) => props.theme.white_color};
+  background-color: ${(props) => props.theme.white_color};
+  padding-bottom: 1rem;
+  &:focus {
+    border-bottom: 1px solid ${(props) => props.theme.main_color};
+
+    color: ${(props) => props.theme.main_color};
   }
 `;
 
