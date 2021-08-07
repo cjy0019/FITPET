@@ -7,30 +7,35 @@ import {
   TrackContainer,
 } from '../../common';
 
-const ReservationHeader = () => {
+const DriverInfoHeader = () => {
   return (
     <SectionHeader>
       <TrackContainer>
-        <Track />
-        <Track second />
+        <Track long />
+        <Track short />
 
         <CircleText blue>
           <Circle className='circle' />
-          <span>숙소선택</span>
+          <span>차량선택</span>
         </CircleText>
 
-        <CircleText mint>
+        <CircleText blue middle>
           <Circle className='circle' />
-          <span>예약자 정보 입력 및 결제</span>
+          <span>추가 옵션 선택</span>
+        </CircleText>
+
+        <CircleText mint middle>
+          <Circle className='circle' />
+          <span>운전자 정보 입력</span>
         </CircleText>
 
         <CircleText grey>
           <Circle className='circle' />
-          <span>예약완료</span>
+          <span>예약 완료</span>
         </CircleText>
       </TrackContainer>
     </SectionHeader>
   );
 };
 
-export default ReservationHeader;
+export default DriverInfoHeader;

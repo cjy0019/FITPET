@@ -1,7 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { StyledArticle } from '../../common';
+import HeaderContainer from '../../containers/HeaderContainer';
 import { Line } from '../reservation/Reservation';
 import DriverAgreement from './DriverAgreement';
+import DriverInfoHeader from './DriverInfoHeader';
 import DriverInput from './DriverInput';
 import DriverPayment from './DriverPayment';
 import DriverSticky from './DriverSticky';
@@ -10,6 +13,9 @@ import LicenseButton from './LicenseButton';
 const DriverInfo = () => {
   return (
     <div>
+      <HeaderContainer />
+      <DriverInfoHeader />
+
       <StyledArticle>
         {/* 운전자 정보 입력 왼쪽 part */}
         <section style={{ width: '100%' }}>
@@ -74,20 +80,12 @@ const DriverInfo = () => {
   );
 };
 
-const StyledArticle = styled.article`
-  width: 128rem;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto 46rem;
-  padding-top: 6rem;
-`;
-
 const StyledH1 = styled.h1`
   font-size: 2.4rem;
   font-weight: bold;
   line-height: 1.21;
   letter-spacing: normal;
-  color: #707070;
+  color: ${(props) => props.theme.black1_color};
 `;
 
 const AddDriverLabel = styled.label`
@@ -96,7 +94,7 @@ const AddDriverLabel = styled.label`
   font-size: 1.4rem;
   cursor: pointer;
   align-items: center;
-  color: ${({ theme }) => theme.grey3_color};
+  color: ${(props) => props.theme.black1_color};
 
   ${(props) =>
     props.color &&

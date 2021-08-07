@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { StyledArticle } from '../../common';
 import { A11yHidden } from '../../common/accessibility/Hidden';
 import HeaderContainer from '../../containers/HeaderContainer';
 import Footer from '../common/Footer';
@@ -65,14 +66,6 @@ const Reservation = () => {
 const Wrapper = styled.div`
   border-bottom: solid 1px #cbcbcb;
   padding-bottom: 14.9rem;
-`;
-
-const StyledArticle = styled.article`
-  width: 128rem;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding-top: 220px;
 `;
 
 export const ReservSection = styled.section`
