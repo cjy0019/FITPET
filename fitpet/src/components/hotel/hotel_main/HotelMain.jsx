@@ -5,9 +5,9 @@ import {
   BasicBox,
   FillBox,
   Font,
-  IconButton,
   MiddleBtn,
   WishSmall,
+  SmallBtn,
 } from '../../../common';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 
@@ -73,66 +73,18 @@ const HotelMain = () => {
                 펫캉스 즐기자!
               </Font>
               <div className='tagBox'>
-                <IconButton
-                  text='제주도'
-                  backColor='#eeeeee'
-                  color='#979797'
-                  pt='1.1rem'
-                  pr='1.9rem'
-                  pl='1.9rem'
-                  pb='1rem'
-                  fontSize='1.6rem'
-                  borderRadius='2.6rem'
-                  textHover='#ffffff'
-                  hoverColor='#2A2A2A'
-                  border='none'
-                  mb='1rem'
-                />
-                <IconButton
-                  text='속초'
-                  backColor='#eeeeee'
-                  color='#979797'
-                  pt='1.1rem'
-                  pr='1.9rem'
-                  pl='1.9rem'
-                  pb='1rem'
-                  fontSize='1.6rem'
-                  borderRadius='2.6rem'
-                  textHover='#ffffff'
-                  hoverColor='#2A2A2A'
-                  border='none'
-                  mb='1rem'
-                />
-                <IconButton
-                  text='전주'
-                  backColor='#eeeeee'
-                  color='#979797'
-                  pt='1.1rem'
-                  pr='1.9rem'
-                  pl='1.9rem'
-                  pb='1rem'
-                  fontSize='1.6rem'
-                  borderRadius='2.6rem'
-                  textHover='#ffffff'
-                  hoverColor='#2A2A2A'
-                  border='none'
-                  mb='1rem'
-                />
-                <IconButton
-                  text='부산'
-                  backColor='#eeeeee'
-                  color='#979797'
-                  pt='1.1rem'
-                  pr='1.9rem'
-                  pl='1.9rem'
-                  pb='1rem'
-                  fontSize='1.6rem'
-                  borderRadius='2.6rem'
-                  textHover='#ffffff'
-                  hoverColor='#2A2A2A'
-                  border='none'
-                  mb='1rem'
-                />
+                <div>
+                  <SmallBtn style={{ marginBottom: '1rem' }}>제주도</SmallBtn>
+                </div>
+                <div>
+                  <SmallBtn style={{ marginBottom: '1rem' }}>속초</SmallBtn>
+                </div>
+                <div>
+                  <SmallBtn style={{ marginBottom: '1rem' }}>전주</SmallBtn>
+                </div>
+                <div>
+                  <SmallBtn style={{ marginBottom: '1rem' }}>부산</SmallBtn>
+                </div>
               </div>
             </HotelLocationWrapper>
           </div>
@@ -145,7 +97,7 @@ const HotelMain = () => {
       </HotelListBlock>
 
       {/* 띠배너 부분 */}
-      <BandBanner img={'/img/linebanner.png'} />
+      <BandBanner img={'/img/hotel/hotel_main/banner.png'} />
       {/* 지금 이 숙소가 인기있어요 */}
       <PopularHotels>
         <TextBlock>
@@ -354,9 +306,15 @@ const HotelLocationWrapper = styled.div`
   padding: 5rem 0 0 5rem;
   position: absolute;
   display: block;
-  background-color: ${(props) => props.theme.grey2_color};
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/img/hotel/hotel_main/locationBox.png');
   line-height: 1.3; // 줄 간격
+  .tagBox {
+    display: block;
+  }
 `;
+
 const BandBanner = styled.div`
   margin: 0 auto;
   width: 128rem;

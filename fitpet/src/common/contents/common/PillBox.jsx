@@ -21,9 +21,6 @@ const PillBox = (props) => {
 
 const PillBoxWrapper = styled.div`
   cursor: pointer;
-  &:hover {
-    margin-top: -1rem;
-  }
   ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0')}
 `;
 const PillImageBox = styled.div`
