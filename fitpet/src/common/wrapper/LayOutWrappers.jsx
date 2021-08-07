@@ -22,5 +22,5 @@ export const StyledArticle = styled.article`
   justify-content: space-between;
   margin: 0 auto 46rem;
   padding-top: 6rem;
-  padding-top: 220px;
+  padding-top: 26rem;
 `;

@@ -29,7 +29,7 @@ const RadioStyled = styled.input`
 const RadioCircle = styled.div`
   width: 2.4rem;
   height: 2.4rem;
-  padding: 0.5rem;
+  padding: 0.4rem;
   border: 2px solid #d8e4e2;
   border-radius: 50%;
   margin-right: 1rem;
@@ -40,13 +40,12 @@ const RadioCircle = styled.div`
     width: 100%;
     height: 100%;
     display: block;
-    background-color: #009879;
+    background-color: ${(props) => props.theme.main_color};
     border-radius: 50%;
-
     transform: scale(0);
   }
   input:checked + &::after {
-    transform: scale(1.1);
+    transform: scale(1);
     transition: transform 0.3s;
   }
 `;

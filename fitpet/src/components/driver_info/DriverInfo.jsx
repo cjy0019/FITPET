@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { StyledArticle } from '../../common';
 import HeaderContainer from '../../containers/HeaderContainer';
-import { Line } from '../reservation/Reservation';
 import DriverAgreement from './DriverAgreement';
 import DriverInfoHeader from './DriverInfoHeader';
 import DriverInput from './DriverInput';
@@ -11,6 +10,8 @@ import DriverSticky from './DriverSticky';
 import LicenseButton from './LicenseButton';
 
 const DriverInfo = () => {
+  const [speechBox, setSpeechBox] = useState(false);
+
   return (
     <div>
       <HeaderContainer />
@@ -19,15 +20,24 @@ const DriverInfo = () => {
       <StyledArticle>
         {/* 운전자 정보 입력 왼쪽 part */}
         <section style={{ width: '100%' }}>
-          <FlexContainer space='space-between'>
+          <FlexContainer space='space-between' top>
             <FlexContainer>
-              <StyledH1>운전자 정보 입력</StyledH1>
-              <AddDriverLabel htmlFor='info'>
-                <Circle></Circle>
-                운전자 추가등록이 필요하신가요?
-                <input type='checkbox' id='info' />
-              </AddDriverLabel>
+              <StyledH2>운전자 정보 입력</StyledH2>
+              <InfoBlock
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}>
+                <IconImg src='/img/icon/infoicon.svg' alt='icon' /> 운전자
+                추가등록이 필요하신가요?
+              </InfoBlock>
             </FlexContainer>
+            {speechBox && (
+              <SpeechBox>
+                <p>
+                  예약시에는 운전자 1인의 정보만 입력하시면 됩니다. 나머지
+                  운전자 정보는 매장에서 등록이 가능합니다.
+                </p>
+              </SpeechBox>
+            )}
 
             <AddDriverLabel htmlFor='driverDiff' color='true'>
               <Rect></Rect>
@@ -35,7 +45,6 @@ const DriverInfo = () => {
               <input type='checkbox' id='driverDiff' />
             </AddDriverLabel>
           </FlexContainer>
-          <Line />
 
           {/* 예약자 정보 */}
 
@@ -56,8 +65,7 @@ const DriverInfo = () => {
 
           {/* 쿠폰 포인트 */}
           <section>
-            <StyledH2>쿠폰 / 포인트</StyledH2>
-            <Line />
+            <StyledH2 line>쿠폰 / 포인트</StyledH2>
             <DriverInput hint='사용가능한 쿠폰 0개 / 전체 0개'>
               쿠폰 적용
             </DriverInput>
@@ -78,14 +86,30 @@ const DriverInfo = () => {
       </StyledArticle>
     </div>
   );
+
+  function handleMouseOver() {
+    setSpeechBox(() => true);
+  }
+
+  function handleMouseOut() {
+    setSpeechBox(() => false);
+  }
 };
 
-const StyledH1 = styled.h1`
+const StyledH2 = styled.h2`
   font-size: 2.4rem;
   font-weight: bold;
   line-height: 1.21;
   letter-spacing: normal;
   color: ${(props) => props.theme.black1_color};
+
+  ${(props) =>
+    props.line &&
+    css`
+      margin-top: 6.2rem;
+      padding-bottom: 1.4rem;
+      border-bottom: solid 1.5px ${props.theme.main_color};
+    `}
 `;
 
 const AddDriverLabel = styled.label`
@@ -107,12 +131,67 @@ const AddDriverLabel = styled.label`
   }
 `;
 
-const Circle = styled.div`
+const FlexContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: ${(props) => props.space};
+
+  ${(props) =>
+    props.top &&
+    css`
+      padding-bottom: 1.4rem;
+      border-bottom: solid 1.5px ${props.theme.main_color};
+    `}
+`;
+
+const InfoBlock = styled.div`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-left: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 1.14;
+  letter-spacing: -0.28px;
+  color: ${(props) => props.theme.black1_color};
+`;
+
+const IconImg = styled.img`
   width: 2rem;
   height: 2rem;
-  border-radius: 50%;
-  margin-right: 0.6rem;
-  background-color: ${({ theme }) => theme.grey3_color};
+  object-fit: contain;
+  margin-right: 0.4rem;
+`;
+
+const SpeechBox = styled.div`
+  z-index: 50;
+  position: absolute;
+  top: -8rem;
+  left: 14.7rem;
+  width: 21.7rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background-color: #eee;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: -0.24px;
+  text-align: left;
+  color: #2a2a2a;
+
+  &::after {
+    z-index: -1;
+    position: absolute;
+    left: 2.4rem;
+    bottom: -1.2rem;
+    content: '';
+    display: block;
+    background: url('/img/icon/speechicon.svg') no-repeat;
+    width: 1.78rem;
+    height: 3.79rem;
+  }
 `;
 
 const Rect = styled.div`
@@ -120,12 +199,6 @@ const Rect = styled.div`
   height: 2.4rem;
   margin-right: 0.6rem;
   background-color: ${({ theme }) => theme.grey3_color};
-`;
-
-const FlexContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: ${(props) => props.space};
 `;
 
 // 운전자 이름 ~ 생년월일
@@ -140,15 +213,6 @@ const LicenseTitle = styled.p`
 const LicenseWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-
-const StyledH2 = styled.h2`
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 2.8rem;
-  margin-top: 6.2rem;
-  color: ${(props) => props.theme.grey1_color};
 `;
 
 export default DriverInfo;
