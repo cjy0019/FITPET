@@ -11,7 +11,7 @@ const theme = {
   sub_color: '#32d8b8', // 서브 컬러
   gradient_color:
     '-webkit-linear-gradient(130deg,rgba(50, 216, 184, 1) 20%,rgba(71, 101, 255, 1) 100%)', // 그라데이션 컬러
-  black1_color: '#2A2A2A', // 일반 글
+  black1_color: '#2a2a2a', // 일반 글
   grey1_color: '#707070', // 버블 미선택 글자 색상
   grey2_color: '#979797', // 두거운 라인
   grey3_color: '#cbcbcb', // 텍스트 박스 / 기본 라인 / 플레이스 홀더
