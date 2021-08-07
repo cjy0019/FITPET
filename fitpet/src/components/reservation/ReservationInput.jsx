@@ -34,7 +34,7 @@ const StyledP = styled.p`
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: -0.28px;
-  color: #707070;
+  color: ${(props) => props.black1_color};
 `;
 
 const StyledPoint = styled.p`
@@ -47,16 +47,18 @@ const StyledPoint = styled.p`
 
 const StyledInput = styled.input`
   border: none;
-  border-bottom: solid 0.05rem #979797;
+  border-bottom: solid 1px ${(props) => props.theme.grey3_color};
+  color: ${(props) => props.grey1_color};
   padding-bottom: 1.4rem;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   outline: none;
+  font-size: 1.6rem;
+  line-height: 1.19;
+
   width: 100%;
 
   &::placeholder {
-    font-size: 1.6rem;
-    color: #cbcbcb;
-    line-height: 1.19;
+    color: ${(props) => props.theme.grey3_color};
   }
 `;
 

@@ -37,13 +37,13 @@ const GlobalStyles = createGlobalStyle`
 
     @media ${(props) => props.theme.tablet}{
       html {
-        font-size: 5px;
+        font-size: 6px;
       }
     }
 
     @media ${(props) => props.theme.mobile}{
       html {
-        font-size: 3px;
+        font-size: 4px;
       }
     }
 `;

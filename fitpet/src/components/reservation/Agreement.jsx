@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import SmallLine from '../../common/utility/SmallLine';
 import { DownButton, UpButton } from '../hotel/hotel_common/filterCommon';
 import { HiCheck } from 'react-icons/hi';
+import { StyledH2 } from './Reservation';
 
 const Agreement = () => {
   const [showAll, setShowAll] = useState(true);
@@ -10,7 +10,8 @@ const Agreement = () => {
 
   useEffect(() => {
     if (showAll) {
-      showRef.current.style = 'visibility : visible; opacity : 1;';
+      showRef.current.style =
+        'visibility : visible; opacity : 1; height:14.3rem;';
     } else {
       showRef.current.style = 'height:0rem; visibility : hidden; opacity:0';
     }
@@ -18,7 +19,7 @@ const Agreement = () => {
 
   return (
     <AgreeWrapper>
-      <StyledP>이용 약관 동의</StyledP>
+      <StyledH2>이용 약관 동의</StyledH2>
 
       <RadioWrapper firstline>
         <AgreeLabel htmlFor='agreeAll'>
@@ -37,7 +38,6 @@ const Agreement = () => {
         )}
       </RadioWrapper>
 
-      <SmallLine />
       {/* 숨겨지는 부분 */}
       <RadioWrapper flex ref={showRef}>
         <AgreeLabel htmlFor='agreeFirst'>
@@ -98,15 +98,8 @@ const AgreeWrapper = styled.div`
   }
 `;
 
-const StyledP = styled.p`
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 1.2;
-  color: #707070;
-`;
-
 const RadioWrapper = styled.div`
-  margin-top: 2.8rem;
+  margin-top: 1.2rem;
   margin-bottom: 1.3rem;
 
   ${(props) =>
@@ -115,6 +108,8 @@ const RadioWrapper = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: solid 1px #eee;
+      padding-bottom: 1.3rem;
     `}
 
   ${(props) =>
@@ -141,7 +136,7 @@ const AgreeLabel = styled.label`
   line-height: 1.19;
   margin-top: 1.1rem;
   cursor: pointer;
-  color: #979797;
+  color: ${(props) => props.theme.grey2_color};
 
   ${(props) =>
     props.margin &&
@@ -152,29 +147,31 @@ const AgreeLabel = styled.label`
 
 const AgreeCheck = styled.div`
   position: relative;
+  top: -2px;
   width: 2.4rem;
   height: 2.4rem;
-  border: solid 2px #979797;
+  border: solid 1px ${(props) => props.theme.grey2_color};
   border-radius: 50%;
   margin-right: 1rem;
 
   &::after {
     content: '';
+    display: block;
     width: 100%;
     height: 100%;
     display: block;
     border-radius: 50%;
     transform: scale(0);
   }
-  /* size='1.6rem' color='blue' stroke-width='1.4' */
   input:checked + &::after {
-    background-color: #0186df;
-    transform: scale(1);
-    transition: transform 0.3s;
+    background-color: ${(props) => props.theme.main_color};
+    border: none;
+    transform: scale(1.1);
+    transition: transform 0.1s;
   }
 
   input:checked + & div {
-    color: yellow;
+    color: #fff;
   }
 `;
 
@@ -183,7 +180,7 @@ const IconWrapper = styled.div`
   top: 60%;
   left: 50%;
   z-index: 10;
-  color: #000000;
+  color: ${(props) => props.theme.grey2_color};
   transform: translate(-50%, -50%);
 `;
 
