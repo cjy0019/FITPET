@@ -31,10 +31,10 @@ const ReserHeader = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: 80px;
+  height: 10rem;
   position: fixed;
   padding-bottom: 2rem;
-  top: 80px;
+  top: 10rem;
   z-index: 30;
   background-color: aliceblue;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16);

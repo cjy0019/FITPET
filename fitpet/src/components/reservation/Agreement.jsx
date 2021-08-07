@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import SmallLine from '../../common/utility/SmallLine';
 import { DownButton, UpButton } from '../hotel/hotel_common/filterCommon';
 import { HiCheck } from 'react-icons/hi';
 import { StyledH2 } from './Reservation';
@@ -11,7 +10,8 @@ const Agreement = () => {
 
   useEffect(() => {
     if (showAll) {
-      showRef.current.style = 'visibility : visible; opacity : 1;';
+      showRef.current.style =
+        'visibility : visible; opacity : 1; height:14.3rem;';
     } else {
       showRef.current.style = 'height:0rem; visibility : hidden; opacity:0';
     }
@@ -99,7 +99,7 @@ const AgreeWrapper = styled.div`
 `;
 
 const RadioWrapper = styled.div`
-  margin-top: 2.8rem;
+  margin-top: 1.2rem;
   margin-bottom: 1.3rem;
 
   ${(props) =>
@@ -156,6 +156,7 @@ const AgreeCheck = styled.div`
 
   &::after {
     content: '';
+    display: block;
     width: 100%;
     height: 100%;
     display: block;

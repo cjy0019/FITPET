@@ -1,5 +1,4 @@
 import React from 'react';
-import { MdKeyboardArrowRight } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { MiddleBtn } from '../../common';
@@ -8,9 +7,7 @@ import { A11yHidden } from '../../common/accessibility/Hidden';
 const ReservationSticker = () => {
   return (
     <RightSection>
-      <h2>
-        <A11yHidden>예약 정보 확인</A11yHidden>
-      </h2>
+      <A11yHidden>예약 정보 확인</A11yHidden>
       <HotelName>롯데호텔 제주</HotelName>
 
       <SmallTitle>객실타입</SmallTitle>

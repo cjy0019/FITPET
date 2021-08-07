@@ -60,7 +60,7 @@ const MainHeader = styled.header`
   grid-template-columns: 1.17fr 1.15fr 0.7fr;
   position: fixed;
   width: 100%;
-  min-height: 80px;
+  min-height: 10rem;
   top: 0;
   padding: 0rem 6rem 0rem 6rem;
   z-index: 30;
