@@ -17,6 +17,13 @@ import BasicBox from './contents/common/BasicBox';
 import FillBox from './contents/common/PillBox';
 import MagazineBox from './contents/common/MagazineBox';
 import MiddleBtn from './buttons/MiddleBtn';
+import { SectionHeader, StyledArticle } from './wrapper/LayOutWrappers';
+import {
+  Circle,
+  CircleText,
+  Track,
+  TrackContainer,
+} from './utility/HeaderProcess';
 import SmallBtn from './buttons/SmallBtn';
 export {
   Font,
@@ -38,5 +45,11 @@ export {
   FillBox,
   MagazineBox,
   MiddleBtn,
+  SectionHeader,
+  StyledArticle,
+  Circle,
+  CircleText,
+  Track,
+  TrackContainer,
   SmallBtn,
 };
