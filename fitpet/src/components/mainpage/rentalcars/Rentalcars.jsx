@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, IconButton } from '../../../common';
+import { Font, SmallBtn } from '../../../common';
 import SliderRentalcar from '../slider/SliderRentalcar';
 
 const Rentalcars = () => {
@@ -17,144 +17,36 @@ const Rentalcars = () => {
         <TagBlock>
           {/* 태그 첫 번째 줄 */}
           <TagOne>
-            <IconButton
-              text='신차'
-              backColor='#eeeeee'
-              color='#707070'
-              pt='1.1rem'
-              pr='1.9rem'
-              pl='1.9rem'
-              pb='1rem'
-              fontSize='1.6rem'
-              borderRadius='2.6rem'
-              textHover='#ffffff'
-              hoverColor='#4765ff'
-              border='none'
-              margin='0 0.5rem 1rem 0.5rem'
-            />
-            <IconButton
-              text='오픈카'
-              backColor='#eeeeee'
-              color='#707070'
-              pt='1.1rem'
-              pr='1.9rem'
-              pl='1.9rem'
-              pb='1rem'
-              fontSize='1.6rem'
-              borderRadius='2.6rem'
-              textHover='#ffffff'
-              hoverColor='#4765ff'
-              border='none'
-              margin='0 0.5rem 1rem 0.5rem'
-            />
-            <IconButton
-              text='전기차'
-              backColor='#eeeeee'
-              color='#707070'
-              pt='1.1rem'
-              pr='1.9rem'
-              pl='1.9rem'
-              pb='1rem'
-              fontSize='1.6rem'
-              textHover='#ffffff'
-              borderRadius='2.6rem'
-              hoverColor='#4765ff'
-              border='none'
-              margin='0 0.5rem 1rem 0.5rem'
-            />
-            <IconButton
-              text='수입'
-              backColor='#eeeeeeㄷ'
-              color='#707070'
-              pt='1.1rem'
-              pr='1.9rem'
-              pl='1.9rem'
-              pb='1rem'
-              fontSize='1.6rem'
-              borderRadius='2.6rem'
-              textHover='#ffffff'
-              hoverColor='#4765ff'
-              border='none'
-              margin='0 0.5rem 1rem 0.5rem'
-            />
+            <SmallBtn style={{ marginBottom: '1rem', marginRight: '1rem' }}>
+              신차
+            </SmallBtn>
+            <SmallBtn style={{ marginBottom: '1rem', marginRight: '1rem' }}>
+              오픈카
+            </SmallBtn>
+            <SmallBtn style={{ marginBottom: '1rem', marginRight: '1rem' }}>
+              전기차
+            </SmallBtn>
+            <SmallBtn style={{ marginBottom: '1rem', marginRight: '1rem' }}>
+              수입
+            </SmallBtn>
           </TagOne>
           {/* 태그 두 번째 줄 */}
           <TagTwo>
-            <IconButton
-              text='SUV'
-              backColor='#eeeeee'
-              color='#707070'
-              pt='1.1rem'
-              pr='1.9rem'
-              pl='1.9rem'
-              pb='1rem'
-              fontSize='1.6rem'
-              borderRadius='2.6rem'
-              textHover='#ffffff'
-              hoverColor='#4765ff'
-              border='none'
-              margin='0 0.5rem 1rem 0.5rem'
-            />
-            <IconButton
-              text='경소형'
-              backColor='#eeeeee'
-              color='#707070'
-              pt='1.1rem'
-              pr='1.9rem'
-              pl='1.9rem'
-              pb='1rem'
-              fontSize='1.6rem'
-              borderRadius='2.6rem'
-              textHover='#ffffff'
-              hoverColor='#4765ff'
-              border='none'
-              margin='0 0.5rem 1rem 0.5rem'
-            />
-            <IconButton
-              text='준중형'
-              backColor='#eeeeee'
-              color='#707070'
-              pt='1.1rem'
-              pr='1.9rem'
-              pl='1.9rem'
-              pb='1rem'
-              fontSize='1.6rem'
-              borderRadius='2.6rem'
-              textHover='#ffffff'
-              hoverColor='#4765ff'
-              border='none'
-              margin='0 0.5rem 1rem 0.5rem'
-            />
-            <IconButton
-              text='중대형'
-              backColor='#eeeeee'
-              color='#707070'
-              pt='1.1rem'
-              pr='1.9rem'
-              pl='1.9rem'
-              pb='1rem'
-              fontSize='1.6rem'
-              borderRadius='2.6rem'
-              textHover='#ffffff'
-              hoverColor='#4765ff'
-              border='none'
-              margin='0 0.5rem 1rem 0.5rem'
-            />
-            <IconButton
-              text='승합차'
-              backColor='#eeeeee'
-              color='#707070'
-              pt='1.1rem'
-              pr='1.9rem'
-              pl='1.9rem'
-              pb='1rem'
-              fontSize='1.6rem'
-              borderRadius='2.6rem'
-              textHover='#ffffff'
-              hoverColor='#4765ff'
-              border='none'
-              margin='0 0.5rem 1rem 0.5rem'
-            />
+            <SmallBtn style={{ marginBottom: '1rem', marginRight: '1rem' }}>
+              SUV
+            </SmallBtn>
+            <SmallBtn style={{ marginBottom: '1rem', marginRight: '1rem' }}>
+              경소형
+            </SmallBtn>
+            <SmallBtn style={{ marginBottom: '1rem', marginRight: '1rem' }}>
+              준중형
+            </SmallBtn>
+            <SmallBtn style={{ marginBottom: '1rem', marginRight: '1rem' }}>
+              중대형
+            </SmallBtn>
+            <SmallBtn style={{ marginBottom: '1rem', marginRight: '1rem' }}>
+              승합차
+            </SmallBtn>
           </TagTwo>
         </TagBlock>
         {/* 렌트카 슬라이드 + 띠배너 */}

@@ -36,12 +36,7 @@ const SliderDrive = () => {
         <Content>
           <RentalcarWrapper ref={slideRef}>
             <Rentalcar>
-              <BasicBox
-                width='29rem'
-                height='29rem'
-                borderRadius='15px'
-                text=''
-                margin='0 4rem 0 0'></BasicBox>
+              <BasicBox rentalcar_box2 />
               <Font
                 color='#2A2A2A'
                 fontSize='1.6rem'
@@ -54,12 +49,7 @@ const SliderDrive = () => {
               </Font>
             </Rentalcar>
             <Rentalcar>
-              <BasicBox
-                width='29rem'
-                height='29rem'
-                borderRadius='15px'
-                text=''
-                margin='0 4rem 0 0'></BasicBox>
+              <BasicBox rentalcar_box2 />
               <Font
                 color='#2A2A2A'
                 fontSize='1.6rem'
@@ -72,12 +62,7 @@ const SliderDrive = () => {
               </Font>
             </Rentalcar>
             <Rentalcar>
-              <BasicBox
-                width='29rem'
-                height='29rem'
-                borderRadius='15px'
-                text=''
-                margin='0 4rem 0 0'></BasicBox>
+              <BasicBox rentalcar_box2 />
               <Font
                 color='#2A2A2A'
                 fontSize='1.6rem'
@@ -90,12 +75,7 @@ const SliderDrive = () => {
               </Font>
             </Rentalcar>
             <Rentalcar>
-              <BasicBox
-                width='29rem'
-                height='29rem'
-                borderRadius='15px'
-                text=''
-                margin='0 4rem 0 0'></BasicBox>
+              <BasicBox rentalcar_box2 />
               <Font
                 color='#2A2A2A'
                 fontSize='1.6rem'
@@ -108,12 +88,7 @@ const SliderDrive = () => {
               </Font>
             </Rentalcar>
             <Rentalcar>
-              <BasicBox
-                width='29rem'
-                height='29rem'
-                borderRadius='15px'
-                text=''
-                margin='0 4rem 0 0'></BasicBox>
+              <BasicBox rentalcar_box2 />
               <Font
                 color='#2A2A2A'
                 fontSize='1.6rem'
@@ -126,12 +101,7 @@ const SliderDrive = () => {
               </Font>
             </Rentalcar>
             <Rentalcar>
-              <BasicBox
-                width='29rem'
-                height='29rem'
-                borderRadius='15px'
-                text=''
-                margin='0 4rem 0 0'></BasicBox>
+              <BasicBox rentalcar_box2 />
               <Font
                 color='#2A2A2A'
                 fontSize='1.6rem'

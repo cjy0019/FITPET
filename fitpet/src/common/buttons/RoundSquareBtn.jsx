@@ -32,6 +32,22 @@ const buttonStyle = css`
       background-color: ${(props) => props.theme.grey3_color};
       color: ${(props) => props.theme.white_color};
     `}
+
+    // 검색창 버튼 (제주도, 서울, 전주) 
+    ${(props) =>
+    props.search_btn &&
+    css`
+      padding: 1rem;
+      height: 4rem;
+      margin: 1.6rem 1.6rem 0 0;
+      background-color: ${(props) => props.theme.white_color};
+      border: solid 1px ${(props) => props.theme.grey2_color};
+      color: ${(props) => props.theme.black1_color};
+      :focus {
+        color: ${(props) => props.theme.main_color};
+        border: solid 1px ${(props) => props.theme.main_color};
+      }
+    `}
 `;
 
 const StyledButton = styled.button`

@@ -1,6 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { RoundSquareBtn } from '../../../common';
+import SearchDateBox from './search_box/SearchDateBox';
+import SearchLocationBox from './search_box/SearchLocationBox';
+import SearchPeopleBox from './search_box/SearchPeopleBox';
 
 const HotelSearch = ({ isScroll }) => {
   return (
@@ -10,6 +13,12 @@ const HotelSearch = ({ isScroll }) => {
           <SearchBox placeholder='제주도' location />
           <SearchBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' date />
           <SearchBox placeholder='성인1 | 객실1 | 소형견1' person />
+          {/* 어디로 떠날까요? */}
+          <SearchLocationBox className='location' />
+          {/* 8월 6일 (금) - 8월 7일(토) | 1박' */}
+          <SearchDateBox />
+          {/* 성인2 | 객실1 | 소형견2 */}
+          <SearchPeopleBox />
           <RoundSquareBtn main_color>검색</RoundSquareBtn>
         </SearchContainer>
       ) : (
@@ -17,6 +26,12 @@ const HotelSearch = ({ isScroll }) => {
           <SearchBox placeholder='제주도' location />
           <SearchBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' date />
           <SearchBox placeholder='성인1 | 객실1 | 소형견1' person />
+          {/* 어디로 떠날까요? */}
+          <SearchLocationBox className='location' />
+          {/* 8월 6일 (금) - 8월 7일(토) | 1박' */}
+          <SearchDateBox />
+          {/* 성인2 | 객실1 | 소형견2 */}
+          <SearchPeopleBox />
           <RoundSquareBtn main_color>검색</RoundSquareBtn>
         </SearchContainer>
       )}

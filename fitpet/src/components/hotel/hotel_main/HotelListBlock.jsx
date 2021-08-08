@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { BasicBox } from '../../../common';
 
-const HotelLiskBlock = () => {
+const HotelListBlock = () => {
   return (
     <HotelListWrapper>
       <div className='hotelListBox'>
         dd
         <div className='locationBox'>
-          <BasicBox width='44rem' height='57.2rem'></BasicBox>
+          <BasicBox style={{ width: '44rem', height: '57.2rem' }} />
         </div>
       </div>
     </HotelListWrapper>
@@ -38,4 +38,4 @@ const HotelListWrapper = styled.div`
     }
   }
 `;
-export default HotelLiskBlock;
+export default HotelListBlock;

@@ -1,36 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, RoundSquareBtn } from '../../../common';
+import { RoundSquareBtn } from '../../../common';
+import SearchDateBox from './search_box/SearchDateBox';
+import SearchLocationBox from './search_box/SearchLocationBox';
+import SearchPeopleBox from './search_box/SearchPeopleBox';
 
 const HotelTypeSearch = ({ isScroll }) => {
   return (
     <>
       <SearchContainer>
         <div className='typeBox'>
-          <Font
-            fontSize='1.8rem'
-            fontWeight='normal'
-            color='#707070'
-            mr='3.5rem'
-            mb='0.6rem'>
-            호텔/리조트
-          </Font>
-          <Font
-            fontSize='1.8rem'
-            fontWeight='normal'
-            color='#707070'
-            mr='3.5rem'
-            mb='0.6rem'>
-            펜션/캠핑/글램핑
-          </Font>
+          <HotelTypeBtn>호텔/리조트</HotelTypeBtn>
+          <HotelTypeBtn>펜션/풀빌라</HotelTypeBtn>
+          <HotelTypeBtn>캠핑/글램핑</HotelTypeBtn>
         </div>
         <div className='inputBox'>
-          <SearchLocationBox
-            className='location'
-            placeholder='어디로 떠날까요?'
-          />
-          <SearchDateBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
-          <SearchBox placeholder='성인1 | 객실1 | 소형견1' />
+          {/* 어디로 떠날까요? */}
+          <SearchLocationBox className='location' />
+          {/* 8월 6일 (금) - 8월 7일(토) | 1박' */}
+          <SearchDateBox />
+          {/* 성인2 | 객실1 | 소형견2 */}
+          <SearchPeopleBox />
           <RoundSquareBtn main_color>검색</RoundSquareBtn>
         </div>
       </SearchContainer>
@@ -42,7 +32,7 @@ const SearchContainer = styled.div`
   display: block;
   justify-content: space-evenly;
   width: 108rem;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.white_color};
   border-radius: 15px;
   padding: 2.6rem 2.8rem;
   margin: 0 auto;
@@ -50,62 +40,26 @@ const SearchContainer = styled.div`
   animation-timing-function: ease-in-out;
   .typeBox {
     display: flex;
-    border-bottom: 1px solid ${(props) => props.theme.grey3_color};
+    border-bottom: 1px solid ${(props) => props.theme.main_color};
     margin-bottom: 2.3rem;
   }
   .inputBox {
     display: flex;
   }
 `;
+const HotelTypeBtn = styled.button`
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: ${(props) => props.theme.black1_color};
+  margin-right: 3.5rem;
+  border: 1px solid ${(props) => props.theme.white_color};
+  background-color: ${(props) => props.theme.white_color};
+  padding-bottom: 1rem;
+  &:focus {
+    border-bottom: 1px solid ${(props) => props.theme.main_color};
 
-const SearchLocationBox = styled.input`
-  border: none;
-  width: 30rem;
-  height: 4.8rem;
-  padding: 0.7rem 0 0.7rem 5.6rem;
-  font-size: 1.6rem;
-  border-radius: 7px;
-  color: #707070;
-  outline: none;
-  background-color: #cbcbcb;
-  // background-image: url('/img/logo-social.png');
-  background-size: 3.4rem 3.4rem;
-  background-position: 1.5rem center;
-  background-repeat: no-repeat;
-`;
-
-const SearchDateBox = styled.input`
-  border: none;
-  width: 34.4rem;
-  height: 4.8rem;
-  padding: 0.7rem 0 0.7rem 5.6rem;
-  font-size: 1.6rem;
-  margin: 0 1rem 0 1rem;
-  border-radius: 7px;
-  color: #707070;
-  outline: none;
-  background-color: #cbcbcb;
-  //  background-image: url('/img/logo-social.png');
-  background-size: 3.4rem 3.4rem;
-  background-position: 1.5rem center;
-  background-repeat: no-repeat;
-`;
-
-const SearchBox = styled.input`
-  border: none;
-  width: 26.6rem;
-  height: 4.8rem;
-  padding: 0.7rem 0 0.7rem 5.6rem;
-  font-size: 1.6rem;
-  border-radius: 7px;
-  color: #707070;
-  outline: none;
-  background-color: #cbcbcb;
-  // background-image: url('/img/logo-social.png');
-  margin-right: 1rem;
-  background-size: 3.4rem 3.4rem;
-  background-position: 1.5rem center;
-  background-repeat: no-repeat;
+    color: ${(props) => props.theme.main_color};
+  }
 `;
 
 export default HotelTypeSearch;
