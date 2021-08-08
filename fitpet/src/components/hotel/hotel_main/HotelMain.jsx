@@ -3,13 +3,13 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import {
   BasicBox,
-  FillBox,
   Font,
   MiddleBtn,
   WishSmall,
   SmallBtn,
 } from '../../../common';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
+import HotelSlider from './HotelSlider';
 
 const HotelMain = () => {
   return (
@@ -88,11 +88,8 @@ const HotelMain = () => {
               </div>
             </HotelLocationWrapper>
           </div>
-          <div className='hotelSlider'>
-            <FillBox />
-            <FillBox margin='0 3rem 0 3rem' />
-            <FillBox />
-          </div>
+          {/* 호텔 슬라이드 부분 */}
+          <HotelSlider />
         </div>
       </HotelListBlock>
 
@@ -290,12 +287,6 @@ const HotelListBlock = styled.div`
     .locationBox {
       margin-top: 10rem;
       position: absolute;
-    }
-    .hotelSlider {
-      margin-top: 15rem;
-      margin-left: 37rem;
-      position: absolute;
-      display: flex;
     }
   }
 `;

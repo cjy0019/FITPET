@@ -383,7 +383,7 @@ const HotelsAboutWrapper = styled.div`
   margin-top: 12rem;
 `;
 const HotelImages = styled.div`
-  background-color: aliceblue;
+  // background-color: aliceblue;
   margin: 2.6rem auto 4rem;
   width: 128rem;
   display: flex;
