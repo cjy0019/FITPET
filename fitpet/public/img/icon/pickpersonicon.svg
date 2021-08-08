@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="구성_요소_19_7" width="34" height="34" viewBox="0 0 34 34">
+    <defs>
+        <style>
+            .cls-2{fill:#707070}
+        </style>
+    </defs>
+    <path id="사각형_82" fill="none" d="M0 0H34V34H0z"/>
+    <g id="그룹_744" transform="translate(-205.925 -88.967)">
+        <path id="패스_358" d="M226.79 106.868a5.451 5.451 0 1 0-5.452-5.451 5.457 5.457 0 0 0 5.452 5.451z" class="cls-2" transform="translate(-3.867 0)"/>
+        <path id="패스_359" d="M231.919 129.125a9 9 0 0 0-17.993 0v.46h18v-.46z" class="cls-2" transform="translate(0 -12.618)"/>
+    </g>
+</svg>

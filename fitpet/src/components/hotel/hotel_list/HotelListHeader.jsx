@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import SmallLine from '../../../common/utility/SmallLine';
 import { SmallHeader } from '../hotel_common/filterCommon';
 
 const HotelListHeader = () => {
@@ -29,7 +28,6 @@ const HotelListHeader = () => {
           </StyledLi>
         </FlexUl>
       </SmallHeader>
-      <SmallLine />
     </>
   );
 };

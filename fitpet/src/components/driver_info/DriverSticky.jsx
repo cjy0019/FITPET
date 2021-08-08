@@ -72,8 +72,8 @@ const DriverSticky = () => {
 
 const RightSection = styled.section`
   position: sticky;
-  top: 0;
-  background-color: #cbcbcb;
+  top: 22rem;
+  background-color: ${(props) => props.grey5_color};
   padding: 4.2rem 3.55rem 4.2rem 3.6rem;
   min-width: 39.8rem;
   max-height: 75rem;
@@ -136,14 +136,13 @@ const Price = styled.p`
   font-weight: bold;
   line-height: 0.86;
   letter-spacing: -0.56px;
-  color: #707070;
+  color: ${(props) => props.theme.main_color};
 
   span {
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 1.33;
     letter-spacing: -0.36px;
-    color: #707070;
   }
 `;
 
