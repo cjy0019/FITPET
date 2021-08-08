@@ -58,6 +58,7 @@ const BoxStyle = css`
       color: ${(props) => props.theme.black1_color};
       font-size: 1.8rem;
       font-weight: normal;
+      padding: 4.6rem 3rem;
     `}
 
   // [렌트카 메인] 드라이브 추천 여행지 박스
