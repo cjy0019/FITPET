@@ -26,7 +26,7 @@ const GoUpBtn = () => {
           color='#979797'
           fontSize='4rem'
           backColor='#ffffff'
-          hoverColor='#979797'
+          hoverColor='#4765ff'
           textHover='#ffffff'
           position='fixed'
           top='90vh'

@@ -1,12 +1,11 @@
 import React from 'react';
-import { AiFillStar } from 'react-icons/ai';
+import styled, { css } from 'styled-components';
 import { Font } from '../../../common';
 import {
   City,
   CityStar,
   HotelName,
   InfoContainer,
-  Rect,
   Star,
 } from '../hotel_common/filterCommon';
 
@@ -14,37 +13,60 @@ const HotelTextInfo = () => {
   return (
     <InfoContainer>
       <HotelName>
-        <Font fontSize='1.4rem' fontWeight='bold' mb='1.4rem'>
-          호텔 | 5성급
-        </Font>
-        <Font fontSize='1.8rem' color='#707070' fontWeight='bold'>
+        <Text mb='1.2rem'>호텔 | 5성급</Text>
+        <Text mb='0.6rem' maintext>
           롯데호텔 제주
-        </Font>
-        <Font fontSize='1.4rem' mt='1rem' mb='1.1rem'>
+        </Text>
+        <Font fontSize='1.4rem' mb='1.1rem'>
           Lotte Hotel JEJU
         </Font>
       </HotelName>
 
       <CityStar>
         <Star>
-          <AiFillStar size='2rem' />
-          <Font fontSize='1.4rem' ml='0.73rem'>
+          <img src='/img/icon/bluestaricon.svg' alt='평점' />
+          <Font fontSize='1.4rem' ml='0.2rem' color='#2a2a2a'>
             4.5
           </Font>
         </Star>
         <City>
-          <Rect />
-          <span>서귀포시</span>
+          <img src='/img/icon/bluelocationicon.svg' alt='위치' />
+          <span style={{ marginLeft: '0.4rem' }}>서귀포시</span>
         </City>
       </CityStar>
 
       <div>
-        <Font fontSize='1.4rem' color='#707070' mt='2rem'>
+        <Text mt='2rem' normal>
           소형견 | 중형견 | 애견동반
-        </Font>
+        </Text>
       </div>
     </InfoContainer>
   );
 };
+
+const Text = styled.p`
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: -0.28px;
+  text-align: left;
+  color: ${(props) => props.theme.black1_color};
+  margin-bottom: ${(props) => props.mb};
+  margin-top: ${(props) => props.mt};
+
+  ${(props) =>
+    props.maintext &&
+    css`
+      font-size: 1.8rem;
+    `}
+
+  ${(props) =>
+    props.normal &&
+    css`
+      font-weight: normal;
+    `}
+`;
 
 export default HotelTextInfo;

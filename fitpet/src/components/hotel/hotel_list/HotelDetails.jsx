@@ -33,13 +33,12 @@ const Price = styled.p`
   font-weight: bold;
   line-height: 1.2;
   letter-spacing: -0.4px;
-  color: #707070;
+  color: ${(props) => props.theme.black1_color};
 
   span {
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.71;
-    color: #707070;
   }
 `;
 
