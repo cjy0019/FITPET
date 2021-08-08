@@ -89,7 +89,7 @@ const HotelMain = () => {
             </HotelLocationWrapper>
           </div>
           {/* 호텔 슬라이드 부분 */}
-          <HotelSlider />
+          {/* <HotelSlider /> */}
         </div>
       </HotelListBlock>
 
