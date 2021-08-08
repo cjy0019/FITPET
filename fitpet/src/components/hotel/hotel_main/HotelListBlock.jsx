@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { BasicBox } from '../../../common';
 
-const HotelLiskBlock = () => {
+const HotelListBlock = () => {
   return (
     <HotelListWrapper>
       <div className='hotelListBox'>
@@ -38,4 +38,4 @@ const HotelListWrapper = styled.div`
     }
   }
 `;
-export default HotelLiskBlock;
+export default HotelListBlock;
