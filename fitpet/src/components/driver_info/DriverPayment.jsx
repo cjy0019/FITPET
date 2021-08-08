@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Line } from '../reservation/Reservation';
 
 const DriverPayment = () => {
   return (
     <PaySection>
       <h2>결제 수단 선택</h2>
-      <Line />
       <SelectWrapper>
         <RadioWrapper>
           <RadioLabel htmlFor='kakaopay'>
@@ -49,13 +47,15 @@ const DriverPayment = () => {
 };
 
 const PaySection = styled.section`
-  margin-top: 6rem;
+  margin-top: 6.2rem;
 
   h2 {
     font-size: 2.4rem;
     font-weight: bold;
     line-height: 1.2;
-    color: #707070;
+    padding-bottom: 1.4rem;
+    color: ${(props) => props.theme.black1_color};
+    border-bottom: solid 1.5px ${(props) => props.theme.main_color};
   }
 `;
 
@@ -98,9 +98,8 @@ const RadioCircle = styled.div`
     width: 100%;
     height: 100%;
     display: block;
-    background-color: #009879;
+    background-color: ${(props) => props.theme.main_color};
     border-radius: 50%;
-
     transform: scale(0);
   }
   input:checked + &::after {

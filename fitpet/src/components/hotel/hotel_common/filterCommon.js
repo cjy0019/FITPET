@@ -6,8 +6,9 @@ import { IconButton } from '../../../common';
 
 // 필터링 버튼 컨테이너
 export const AllWrapper = styled.div`
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
   margin-top: 1rem;
+  border-bottom: solid 1px #eee;
 `;
 
 export const ButtonContainer = styled.div`
@@ -48,7 +49,34 @@ export const FilterTitle = styled.p`
   font-size: 2rem;
   font-weight: bold;
   line-height: 1.2;
-  color: #707070;
+  color: ${(props) => props.theme.black1_color};
+
+  ${(props) =>
+    props.subtitle &&
+    css`
+      margin-top: 1.2rem;
+      font-size: 1.8rem;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: -0.36px;
+      text-align: left;
+    `}
+
+  ${(props) =>
+    props.subtitle &&
+    props.mt &&
+    css`
+      margin-top: 4rem;
+      font-size: 1.8rem;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: -0.36px;
+      text-align: left;
+    `}
 `;
 
 // '>' 위쪽 화살표 버튼
@@ -122,13 +150,14 @@ export const LeftButton = () => {
 export const SmallHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2.2rem;
+  padding-bottom: 2.2rem;
+  border-bottom: solid 1.5px #eee;
 
   h2 {
     font-weight: bold;
     font-size: 1.6rem;
     line-height: 1.5;
-    color: #707070;
+    color: ${(props) => props.theme.black1_color};
   }
 `;
 
@@ -136,6 +165,7 @@ export const SmallHeader = styled.header`
 export const Info = styled.div`
   padding: 4rem 0;
   display: flex;
+  border-bottom: solid 1.5px #eee;
 `;
 
 export const ImgBox = styled.div`
@@ -151,12 +181,12 @@ export const ImgBox = styled.div`
 
 export const LikeBtn = styled.div`
   position: absolute;
-  top: 1.8rem;
-  right: 1.8rem;
+  top: 1.4rem;
+  right: 2.4rem;
+  cursor: pointer;
   width: 3.2rem;
   height: 3.2rem;
-  border-radius: 50%;
-  background-color: #cbcbcb;
+  background: url('/img/icon/likeicon.png') no-repeat;
 `;
 
 export const TextDetailWrapper = styled.div`
@@ -183,7 +213,6 @@ export const HotelName = styled.div`
 `;
 
 export const Star = styled.div`
-  display: inline-block;
   display: flex;
   text-align: center;
   align-items: center;
@@ -192,7 +221,12 @@ export const Star = styled.div`
 export const City = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 1.6rem;
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 1.71;
+  letter-spacing: -0.28px;
+  text-align: left;
+  color: ${(props) => props.theme.black1_color};
 `;
 
 export const Rect = styled.div`
