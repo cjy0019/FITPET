@@ -39,7 +39,7 @@ const RentalcarBox = styled.div`
   width: 40rem;
   height: 25.1rem;
   border-radius: 15px;
-  margin: 0 4rem 0 0;
+  // margin: 0 4rem 0 0;
   padding: 4.6rem 0 0 3rem;
   color: ${(props) => props.theme.black1_color};
   font-size: 1.8rem;
@@ -52,6 +52,9 @@ const RentalcarBox = styled.div`
     font-size: 1.4rem;
     letter-spacing: -0.28px;
     line-height: 1.43;
+  }
+  &:nth-child(2) {
+    margin: 0 4rem;
   }
 `;
 const ContentLeftImg = styled.div`

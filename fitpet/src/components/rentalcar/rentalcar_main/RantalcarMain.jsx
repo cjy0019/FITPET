@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BasicBox, Font, MagazineBox, MiddleBtn } from '../../../common';
+import { Font, MagazineBox, MiddleBtn } from '../../../common';
 import RentalcarSearch from '../rentalcar_common/RentalcarSearch';
 import SliderDrive from './SliderDrive';
-import { mainBlock } from './RentalcarMainData';
-import RentalcarBox from './RantalcarBox';
 import ContentsBlock from './ContentsBlock';
 
 const RantalcarMain = () => {
