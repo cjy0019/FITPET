@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BasicBox, Font, MagazineBox, MiddleBtn } from '../../../common';
+import { Font, MagazineBox, MiddleBtn } from '../../../common';
 import RentalcarSearch from '../rentalcar_common/RentalcarSearch';
 import SliderDrive from './SliderDrive';
+import ContentsBlock from './ContentsBlock';
 
 const RantalcarMain = () => {
   return (
@@ -25,12 +26,17 @@ const RantalcarMain = () => {
         </div>
       </RentalcarSearchBlock>
       <ContentsWrapper>
-        <BasicBox rentalcar_box1 />
-        <BasicBox rentalcar_box1 />
-        <BasicBox rentalcar_box1 />
+        {/* {mainBlock.map((info, idx) => {
+          return (
+            <div className='ContentsBlock' key={idx}>
+              <RentalcarBox key={info.id} />
+            </div>
+          );
+        })} */}
+        <ContentsBlock />
       </ContentsWrapper>
       {/* 띠배너 부분 */}
-      <BandBanner img={'/img/linebanner.png'} />
+      <BandBanner img={'/img/rentalcar/rentalcar_main/banner.png'} />
       {/* 드라이브 추천 여행지 부분 */}
       <RantalcarsBox>
         <TextBlock>
@@ -62,7 +68,9 @@ const RentalcarSearchBlock = styled.div`
   align-items: center;
   justify-content: center;
   height: 74.4rem;
-  background-color: ${(props) => props.theme.grey3_color};
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/img/rentalcar/rentalcar_main/mainImg.png');
   .searchBox {
     width: 108rem;
   }
@@ -74,8 +82,20 @@ const RentalcarSearchBlock = styled.div`
 const ContentsWrapper = styled.div`
   margin: 12rem auto;
   width: 128rem;
-  display: flex;
   justify-content: center;
+  display: flex;
+  .ContentsBlock {
+    background-color: aliceblue;
+    .title {
+      color: ${(props) => props.theme.black1_color};
+      font-size: 2.8rem;
+      margin-bottom: 1.6rem;
+    }
+    .sub {
+      color: ${(props) => props.theme.black1_color};
+      font-size: 1.4rem;
+    }
+  }
 `;
 const BandBanner = styled.div`
   margin: 0 auto;
