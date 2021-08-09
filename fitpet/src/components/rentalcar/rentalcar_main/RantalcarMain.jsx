@@ -5,6 +5,7 @@ import RentalcarSearch from '../rentalcar_common/RentalcarSearch';
 import SliderDrive from './SliderDrive';
 import { mainBlock } from './RentalcarMainData';
 import RentalcarBox from './RantalcarBox';
+import ContentsBlock from './ContentsBlock';
 
 const RantalcarMain = () => {
   return (
@@ -27,13 +28,14 @@ const RantalcarMain = () => {
         </div>
       </RentalcarSearchBlock>
       <ContentsWrapper>
-        {mainBlock.map((info, idx) => {
+        {/* {mainBlock.map((info, idx) => {
           return (
             <div className='ContentsBlock' key={idx}>
               <RentalcarBox key={info.id} />
             </div>
           );
-        })}
+        })} */}
+        <ContentsBlock />
       </ContentsWrapper>
       {/* 띠배너 부분 */}
       <BandBanner img={'/img/rentalcar/rentalcar_main/banner.png'} />
