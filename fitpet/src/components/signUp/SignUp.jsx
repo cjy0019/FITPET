@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { CloseOutlined } from '@ant-design/icons';
 import { SocialBtn } from '../../common';
-import { useDispatch } from 'react-redux';
-import { closeSignUp, openLogin } from '../../redux/modules/modal';
-import axios from 'axios';
 
-const SignUp = ({ hideSignUp, signup }) => {
+const SignUp = ({ hideSignUp, signup, showSignupSuccess, goLogin }) => {
   const [userId, setUserId] = useState('');
   const [userPW, setUserPW] = useState('');
   const [CheckPassword, setCheckPassword] = useState('');
-  const dispatch = useDispatch();
 
   return (
     <>
@@ -20,9 +15,7 @@ const SignUp = ({ hideSignUp, signup }) => {
             {/* 회원가입 헤더 부분 */}
             <SignUpHeader>
               <HeaderText>회원가입</HeaderText>
-              <CloseBtn onClick={hideSignUp}>
-                <CloseOutlined styled={{ color: '#979797' }} />
-              </CloseBtn>
+              <CloseBtn onClick={hideSignUp}></CloseBtn>
             </SignUpHeader>
             {/* 회원가입 내용 */}
             <SignUpContent>
@@ -65,19 +58,9 @@ const SignUp = ({ hideSignUp, signup }) => {
       </Overlay>
     </>
   );
-  // "proxy": "https://jsonplaceholder.typicode.com/",
 
-  async function clickSignup(e) {
-    e.preventDefault();
-    try {
-      const response = await axios.post('/join', {
-        userId: '123456',
-        userPW: '1234',
-      });
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
+  function clickSignup() {
+    signup(userId, userPW);
   }
 
   function changeId(e) {
@@ -89,11 +72,6 @@ const SignUp = ({ hideSignUp, signup }) => {
   }
   function changeCheckPassword(e) {
     setCheckPassword(e.target.value);
-  }
-
-  function goLogin() {
-    dispatch(closeSignUp());
-    dispatch(openLogin());
   }
 };
 
@@ -137,12 +115,12 @@ const HeaderText = styled.div`
 `;
 const CloseBtn = styled.div`
   cursor: pointer;
-  margin: 0 0 0 33.7rem;
-  font-size: 2.2rem;
-  width: 1.52rem;
-  height: 1.52rem;
-  color: ${(props) => props.theme.grey2_color};
-  background-color: ${(props) => props.theme.white_color};
+  width: 3.4rem;
+  height: 3.4rem;
+  object-fit: contain;
+  background-image: url('/img/auth/closebutton.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 `;
 
 // 회원가입 내용
@@ -210,8 +188,7 @@ const BottomBlock = styled.div`
   text-align: center;
   .login {
     display: inline-block;
-    height: 1.6rem;
-    margin: 0 0.3rem 0.2rem 1.5rem;
+    margin: 0 0 0 1.2rem;
     border: none;
     font-size: 1.4rem;
     font-weight: 500;
@@ -219,10 +196,10 @@ const BottomBlock = styled.div`
     font-style: normal;
     line-height: 1;
     letter-spacing: -0.28px;
-    padding-bottom: 2rem;
+    padding-bottom: 0.2rem;
     text-align: center;
     background-color: transparent;
-    border-bottom: 1px solid ${(props) => props.theme.black1_color};
+    border-bottom: 1px solid ${(props) => props.theme.grey1_color};
     color: ${(props) => props.theme.black1_color};
 
     &:hover {

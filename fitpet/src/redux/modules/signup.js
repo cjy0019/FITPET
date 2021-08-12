@@ -1,5 +1,6 @@
-import { call, delay, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import AuthService from '../../services/AuthService';
+import { closeSignUp, signupSuccessOpen } from './modal';
 
 // namespace
 const namespace = 'fitpet/signup/';
@@ -10,21 +11,21 @@ const SUCCESS = namespace + 'SUCCESS';
 const FAIL = namespace + 'FAIL';
 
 // initial state
-const initialState = { error: null };
+const initialState = { error: null, status: null };
 
 // action creators
-export const signupStart = () => ({ type: START });
-export const signupSuccess = () => ({ type: SUCCESS });
+export const signupStart = () => ({ type: START, status: null });
+export const signupSuccess = (status) => ({ type: SUCCESS, status });
 export const signupFail = (error) => ({ type: FAIL, error });
 
 // reducer
 export default function signup(state = initialState, action) {
   switch (action.type) {
     case START:
-      return { error: null };
+      return { ...state };
 
     case SUCCESS:
-      return { error: null };
+      return { ...state, status: action.status };
 
     case FAIL:
       return { error: action.error };
@@ -47,19 +48,19 @@ export function* signupSaga(action) {
 
     const { userId, userPW } = action.payload;
 
-    const resultCode = yield call(AuthService.signup(userId, userPW));
-    console.log(resultCode);
-    // yield delay(1000);
+    const response = yield call(AuthService.signup, userId, userPW);
 
-    // if (resultCode === 0) console.log('성공');
-    // else if (resultCode === 1) console.log('중복');
+    yield put(signupSuccess(response.data));
 
-    yield put(signupSuccess());
+    if (response.data === 'OK') {
+      yield put(closeSignUp());
+      yield put(signupSuccessOpen());
+    }
   } catch (error) {
-    yield put(signupFail(error));
+    yield put(signupFail(error.message));
   }
 }
 
-export function* signUpSaga() {
+export function* authSaga() {
   yield takeEvery(SIGNUP_SAGA, signupSaga);
 }
