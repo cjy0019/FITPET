@@ -41,15 +41,15 @@ const MenuLi = styled.li`
   padding-bottom: 0.4rem;
 
   &:hover {
-    border-bottom: solid 4px #4765ff;
+    border-bottom: solid 0.4rem #4765ff;
   }
 
   a {
-    color: ${(props) => props.theme.white_color};
+    color: ${(props) => props.theme.black1_color};
     padding: 0 0.4rem;
   }
   a:visited {
-    color: ${(props) => props.theme.white_color};
+    color: ${(props) => props.theme.black1_color};
   }
 `;
 
