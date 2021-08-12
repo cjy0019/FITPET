@@ -1,4 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
+import { useRef } from 'react';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import { FillBox, SliderLeftButton, SliderRightButton } from '../../../common';
@@ -12,9 +14,10 @@ const HotelSlider = () => {
 
   // 6개 슬라이드 효과 주기
   useEffect(() => {
-    let slideValue = currentSlide * 4 * 10;
+    let slideValue = currentSlide * 6 * 10;
     console.log(currentSlide);
     if (currentSlide > 0) {
+      slideValue += 8.7;
       nextBtnRef.current.style = 'visibility:hidden';
       prevBtnRef.current.style = 'visibility:visible';
     } else {
@@ -26,13 +29,16 @@ const HotelSlider = () => {
   }, [currentSlide]);
   return (
     <SliderWrapper>
-      <FillWrapper ref={slideRef}>
-        <FillBox margin='0 3rem 0 0' />
-        <FillBox margin='0 3rem 0 0' />
-        <FillBox margin='0 3rem 0 0' />
-        <FillBox margin='0 3rem 0 0' />
-        <FillBox margin='0 3rem 0 0' />
-      </FillWrapper>
+      <Content>
+        <FillWrapper ref={slideRef}>
+          <FillBox margin='0 3rem 0 0' />
+          <FillBox margin='0 3rem 0 0' />
+          <FillBox margin='0 3rem 0 0' />
+          <FillBox margin='0 3rem 0 0' />
+          <FillBox margin='0 3rem 0 0' />
+          <FillBox margin='0 3rem 0 0' />
+        </FillWrapper>
+      </Content>
       <ControlsBtn>
         <PrevBtn ref={prevBtnRef}>
           <SliderLeftButton handleClick={prevSlide}></SliderLeftButton>
@@ -49,7 +55,6 @@ const HotelSlider = () => {
       // 더 이상 넘어갈 슬라이드가 없으면
       return; // 클릭이 작동하지 않습니다.
     } else {
-      console.log('nextt');
       setCurrentSlide(currentSlide + 1);
     }
   }
@@ -58,8 +63,6 @@ const HotelSlider = () => {
     if (currentSlide === 0) {
       return; // 클릭이 작동하지 않습니다.
     } else {
-      console.log('prev');
-
       setCurrentSlide(currentSlide - 1);
     }
   }
@@ -69,14 +72,22 @@ const SliderWrapper = styled.div`
   margin-top: 15rem;
   margin-left: 37rem;
   position: absolute;
+  width: 91.5rem;
 `;
 const FillWrapper = styled.div`
   /* width: 91.5rem;
   overflow: hidden;
-  //  position: relative; */
+  position: relative;
+  display: flex; */
+  margin: 0;
+  padding: 0;
   display: flex;
 `;
-
+const Content = styled.div`
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+`;
 const ControlsBtn = styled.div`
   position: relative;
   width: 91.5rem;

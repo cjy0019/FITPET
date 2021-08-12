@@ -40,6 +40,10 @@ const HotelTextInfo = () => {
           소형견 | 중형견 | 애견동반
         </Text>
       </div>
+
+      <div>
+        <Price mt='2.4rem'>446,490 ~</Price>
+      </div>
     </InfoContainer>
   );
 };
@@ -69,4 +73,11 @@ const Text = styled.p`
     `}
 `;
 
+const Price = styled.p`
+  font-size: 2rem;
+  color: ${(props) => props.theme.black1_color};
+  font-weight: bold;
+  margin-bottom: ${(props) => props.mb};
+  margin-top: ${(props) => props.mt};
+`;
 export default HotelTextInfo;
