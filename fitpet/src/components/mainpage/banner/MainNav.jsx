@@ -27,8 +27,8 @@ const MainNav = () => {
 };
 
 const StyledNav = styled.nav`
-  min-height: 2.8rem;
   white-space: nowrap;
+  margin-top: 2.6rem;
 `;
 
 const ListWrapper = styled.ul`
@@ -39,6 +39,7 @@ const MenuLi = styled.li`
   font-size: 1.8rem;
   margin-right: 3.6rem;
   padding-bottom: 0.4rem;
+  border-bottom: solid 0.4rem transparent;
 
   &:hover {
     border-bottom: solid 0.4rem #4765ff;

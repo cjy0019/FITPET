@@ -27,6 +27,7 @@ const MainPage = () => {
 
 const MainWrapper = styled.div`
   max-width: 100%;
+  padding-top: 10rem;
 `;
 
 export default MainPage;
