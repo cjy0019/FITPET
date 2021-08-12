@@ -1,69 +1,96 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const SignUpEnd = () => {
   return (
-    <SignUpEndWrapper>
-      <Logo />
-      <EndText>
-        회원가입이 완료되었습니다!
-        <br />
-        반려동물과 함께 맞춤 여행을 떠나보세요:)
-      </EndText>
-      <BtnBlock>
-        <GotoBtn color='#cbcbcb'>홈으로</GotoBtn>
-        <GotoBtn color='#979797'>로그인</GotoBtn>
-      </BtnBlock>
-    </SignUpEndWrapper>
+    <Overlay>
+      <div className='center'>
+        <SignUpEndWrapper>
+          <Logo />
+          <EndText>
+            회원가입이 완료되었습니다!
+            <br />
+            반려동물과 함께 맞춤 여행을 떠나보세요 &#58;&#41;
+          </EndText>
+
+          <BtnBlock>
+            <GotoBtn>홈으로</GotoBtn>
+            <GotoBtn primary>로그인</GotoBtn>
+          </BtnBlock>
+        </SignUpEndWrapper>
+      </div>
+    </Overlay>
   );
 };
 
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  .center {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
 const SignUpEndWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 52.4rem;
   height: 47.6rem;
   border-radius: 30px;
   border: solid 1px #707070;
   background-color: #ffffff;
-  padding: 6.6rem 7.5rem;
 `;
 const Logo = styled.img.attrs({
-  src: '/img/logo-social.png',
+  src: '/img/auth/signuplogo.svg',
   alt: 'FitPet',
 })`
-  border: 1px solid #707070;
   display: block;
   width: 14.8rem;
   height: 16.6rem;
-  margin: 0 auto;
 `;
 
 const EndText = styled.p`
-  width: 35.4rem;
-  height: 5.6rem;
   margin: 2rem 0 5rem 0;
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.36;
   letter-spacing: -0.44px;
   text-align: center;
-  color: #979797;
+  color: ${(props) => props.black1_color};
 `;
 
 const BtnBlock = styled.div`
   display: flex;
+  gap: 3rem;
 `;
 
 const GotoBtn = styled.button`
-  width: 172px;
-  height: 52px;
-  margin: 0 30px 0 0;
+  width: 17.2rem;
+  height: 5.2rem;
   font-size: 1.8rem;
-  color: #fff;
+  color: ${(props) => props.theme.main_color};
   border-radius: 26px;
   border: none;
-  background: ${(props) => props.color || 'white'};
+
+  ${(props) =>
+    props.primary &&
+    css`
+      background-color: ${props.theme.main_color};
+      color: #fff;
+    `}
 `;
 
 export default SignUpEnd;
