@@ -4,12 +4,12 @@ import LoginBottom from './LoginBottom';
 import LoginHeader from './LoginHeader';
 import Slogan from './Slogan';
 
-const Login = ({ hideLogin }) => {
+const Login = ({ hideLogin, login }) => {
   return (
     <>
       <Overlay>
         <div className='center'>
-          <StyledForm onSubmit={handleSubmit}>
+          <StyledForm onSubmit={handleLogin}>
             <div>
               <LoginHeader hideLogin={hideLogin} />
               {/* 로고 */}
@@ -19,7 +19,7 @@ const Login = ({ hideLogin }) => {
               <Slogan />
 
               {/* 팝업에서 아래쪽 부분 */}
-              <LoginBottom />
+              <LoginBottom login={login} />
             </div>
           </StyledForm>
         </div>
@@ -27,8 +27,7 @@ const Login = ({ hideLogin }) => {
     </>
   );
 
-  // form 기본동작 방지
-  function handleSubmit(e) {
+  function handleLogin(e) {
     e.preventDefault();
   }
 };

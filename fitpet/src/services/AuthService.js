@@ -8,4 +8,12 @@ export default class AuthService {
     });
     return response;
   }
+
+  static async login(userId, userPW) {
+    const response = axios.post('/api/auth/login', {
+      userId,
+      userPW,
+    });
+    return response;
+  }
 }

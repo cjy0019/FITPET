@@ -15,7 +15,7 @@ const SignUp = ({ hideSignUp, signup, showSignupSuccess, goLogin }) => {
             {/* 회원가입 헤더 부분 */}
             <SignUpHeader>
               <HeaderText>회원가입</HeaderText>
-              <CloseBtn onClick={hideSignUp}></CloseBtn>
+              <CloseBtn onClick={hideSignUp} />
             </SignUpHeader>
             {/* 회원가입 내용 */}
             <SignUpContent>
