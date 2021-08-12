@@ -19,8 +19,8 @@ const MainPage = () => {
         <Rentalcars />
         <Community />
         <GoUpBtn />
-        <Footer />
       </MainWrapper>
+      <Footer />
     </>
   );
 };
@@ -28,6 +28,8 @@ const MainPage = () => {
 const MainWrapper = styled.div`
   max-width: 100%;
   padding-top: 10rem;
+  padding-bottom: 14.1rem;
+  border-bottom: solid 1px ${(props) => props.theme.grey3_color};
 `;
 
 export default MainPage;
