@@ -1,14 +1,11 @@
 import React from 'react';
-import { CloseOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 
 const LoginHeader = ({ hideLogin }) => {
   return (
     <StyledDiv>
       <h1>로그인</h1>
-      <StyledX onClick={hideLogin}>
-        <CloseOutlined style={{ fontSize: '2.2rem', color: '#979797' }} />
-      </StyledX>
+      <StyledX onClick={hideLogin} />
     </StyledDiv>
   );
 };
@@ -26,6 +23,13 @@ const StyledX = styled.button`
   outline: none;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+  width: 3.4rem;
+  height: 3.4rem;
+  object-fit: contain;
+  background-image: url('/img/auth/closebutton.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 `;
 
 export default LoginHeader;

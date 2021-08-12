@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../components/common/header/Header';
-import { closeLogin, openLogin, openSignUp } from '../redux/modules/modal';
+import { openLogin, openSignUp } from '../redux/modules/modal';
 
 const HeaderContainer = () => {
   const dispatch = useDispatch();
@@ -11,16 +11,12 @@ const HeaderContainer = () => {
     (state) => state.modal.signupSuccessOpen,
   );
 
-  // 로그인 팝업 & 숨김
+  // 로그인 팝업
   const showLogin = useCallback(() => {
     dispatch(openLogin());
   }, [dispatch]);
 
-  const hideLogin = useCallback(() => {
-    dispatch(closeLogin());
-  }, [dispatch]);
-
-  // 회원가입 팝업 & 숨김
+  // 회원가입 팝업
   const showSignUp = useCallback(() => {
     dispatch(openSignUp());
   }, [dispatch]);
@@ -45,7 +41,6 @@ const HeaderContainer = () => {
   return (
     <Header
       showLogin={showLogin}
-      hideLogin={hideLogin}
       loginOpen={loginOpen}
       signupOpen={signupOpen}
       signupSuccessOpen={signupSuccessOpen}
