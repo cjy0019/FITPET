@@ -1,7 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import styled, { css } from 'styled-components';
+import { signupSuccessClose } from '../../redux/modules/modal';
 
-const SignUpEnd = () => {
+const SignUpEnd = ({ goLogin }) => {
+  const dispatch = useDispatch();
+
   return (
     <Overlay>
       <div className='center'>
@@ -14,13 +18,19 @@ const SignUpEnd = () => {
           </EndText>
 
           <BtnBlock>
-            <GotoBtn>홈으로</GotoBtn>
-            <GotoBtn primary>로그인</GotoBtn>
+            <GotoBtn onClick={goHome}>홈으로</GotoBtn>
+            <GotoBtn primary onClick={goLogin}>
+              로그인
+            </GotoBtn>
           </BtnBlock>
         </SignUpEndWrapper>
       </div>
     </Overlay>
   );
+
+  function goHome() {
+    dispatch(signupSuccessClose());
+  }
 };
 
 const Overlay = styled.div`

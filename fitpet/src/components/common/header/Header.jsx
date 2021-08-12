@@ -2,13 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import MemberLinkUl from './MemberLinkUl';
-
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HeaderNav from './HeaderNav';
 import Login from '../../login/Login';
-import SignUp from '../../signUp/SignUp';
 import Modal from '../../modal/Modal';
 import SignupContainer from '../../../containers/SignupContainer';
+import SignupSuccessContainer from '../../../containers/SignupSuccessContainer';
 
 const Header = ({
   showLogin,
@@ -17,6 +16,10 @@ const Header = ({
   showSignUp,
   hideSignUp,
   signupOpen,
+  signupSuccessOpen,
+  showSignupSuccess,
+  hideSignupSuccess,
+  signupStatus,
 }) => {
   return (
     <>
@@ -47,7 +50,17 @@ const Header = ({
       {/* 회원가입 모달 */}
       {signupOpen ? (
         <Modal>
-          <SignupContainer hideSignUp={hideSignUp} />
+          <SignupContainer
+            hideSignUp={hideSignUp}
+            showSignupSuccess={showSignupSuccess}
+          />
+        </Modal>
+      ) : null}
+
+      {/* 회원가입 성공 모달 */}
+      {signupSuccessOpen ? (
+        <Modal>
+          <SignupSuccessContainer showLogin={showLogin} />
         </Modal>
       ) : null}
     </>
