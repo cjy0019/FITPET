@@ -1,6 +1,5 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import SignUpPage from './pages/SignUpPage';
 import NotFoundPage from './pages/NotFoundPage';
 import MainPage from './pages/MainPage';
 import { ErrorBoundary } from 'react-error-boundary';
@@ -32,7 +31,6 @@ function App() {
         <ConnectedRouter history={history}>
           <Switch>
             <Route component={MainPage} exact path='/' />
-            <Route component={SignUpPage} path='/signup' />
             <Route component={CommonPage} path='/common' />
             <Route component={ReservationPage} path='/hotel/reservation' />
             <Route component={HotelMainPage} path='/hotel' />

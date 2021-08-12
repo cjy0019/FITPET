@@ -1,16 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { closeLogin, openSignUp } from '../../redux/modules/modal';
 
 const GotoSignUp = () => {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <StyledP>아직 핏펫 회원이 아니신가요?</StyledP>
-      <Link to='/signup' className='signUp'>
+
+      <button className='signUp' onClick={goSignUp}>
         회원가입
-      </Link>
+      </button>
     </Container>
   );
+
+  function goSignUp() {
+    dispatch(closeLogin());
+    dispatch(openSignUp());
+  }
 };
 
 const Container = styled.div`
@@ -30,8 +39,15 @@ const Container = styled.div`
     letter-spacing: -0.28px;
     padding-bottom: 2rem;
     text-align: center;
+    border: none;
     border-bottom: 1px solid ${(props) => props.theme.black1_color};
     color: ${(props) => props.theme.black1_color};
+
+    background-color: transparent;
+    &:hover {
+      color: ${(props) => props.theme.main_color};
+      border-bottom: 1px solid ${(props) => props.theme.main_color};
+    }
   }
 `;
 
