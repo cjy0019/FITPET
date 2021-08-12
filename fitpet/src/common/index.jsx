@@ -14,7 +14,7 @@ import HoverText from './contents/common/HoverText';
 import ImgMoreBtn from './buttons/small_size/ImgMoreBtn';
 import SocialBtn from './buttons/middle_size/SocialBtn';
 import BasicBox from './contents/common/BasicBox';
-import FillBox from './contents/common/PillBox';
+import FillBox from '../components/hotel/hotel_main/PillBox';
 import MagazineBox from './contents/common/MagazineBox';
 import MiddleBtn from './buttons/MiddleBtn';
 import { SectionHeader, StyledArticle } from './wrapper/LayOutWrappers';
