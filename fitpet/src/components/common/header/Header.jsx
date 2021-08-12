@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 import MemberLinkUl from './MemberLinkUl';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HeaderNav from './HeaderNav';
-import Login from '../../login/Login';
 import Modal from '../../modal/Modal';
 import SignupContainer from '../../../containers/SignupContainer';
 import SignupSuccessContainer from '../../../containers/SignupSuccessContainer';
+import LoginContainer from '../../../containers/LoginContainer';
 
 const Header = ({
   showLogin,
@@ -43,7 +43,7 @@ const Header = ({
       {/* 로그인 모달 */}
       {loginOpen ? (
         <Modal>
-          <Login hideLogin={hideLogin} />
+          <LoginContainer hideLogin={hideLogin} />
         </Modal>
       ) : null}
 
