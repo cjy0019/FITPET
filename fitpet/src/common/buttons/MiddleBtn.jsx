@@ -16,7 +16,7 @@ const buttonStyle = css`
   font-size: 2rem;
   font-weight: normal;
   height: 5.4rem;
-  padding: 14px 41px 14px 42px;
+  padding: 1.4rem 4.1rem 1.4rem 4.2rem;
   border-radius: 26px;
   background-color: ${(props) => props.theme.main_color};
 
@@ -35,6 +35,10 @@ const buttonStyle = css`
       font-size: 2.1rem;
       font-weight: bold;
       text-align: left;
+
+      background-repeat: no-repeat;
+      background-size: 3.4rem 3.4rem;
+      background-position: 2.1rem;
     `}
 
   // fit한 코스짜기, 확인 및 결제 버튼
