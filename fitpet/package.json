@@ -2,6 +2,7 @@
   "name": "fitpet",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://www.ongyeol.com:61010",
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@testing-library/jest-dom": "^5.14.1",
@@ -40,7 +41,6 @@
       "react-app/jest"
     ]
   },
-  "proxy": "http://211.219.114.239:4700/",
   "browserslist": {
     "production": [
       ">0.2%",

@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import MemberLinkUl from './MemberLinkUl';
-
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HeaderNav from './HeaderNav';
-import Login from '../../login/Login';
-import SignUp from '../../signUp/SignUp';
 import Modal from '../../modal/Modal';
+import SignupContainer from '../../../containers/SignupContainer';
+import SignupSuccessContainer from '../../../containers/SignupSuccessContainer';
+import LoginContainer from '../../../containers/LoginContainer';
+import MemberLinkLoginUl from './MemberLinkLoginUl';
 
 const Header = ({
   showLogin,
@@ -16,6 +17,10 @@ const Header = ({
   showSignUp,
   hideSignUp,
   signupOpen,
+  signupSuccessOpen,
+  showSignupSuccess,
+  hideSignupSuccess,
+  signupStatus,
 }) => {
   return (
     <>
@@ -33,20 +38,31 @@ const Header = ({
 
         {/* 멤버 링크 부분 */}
         <nav>
-          <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} />
+          {/* <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} /> */}
+          <MemberLinkLoginUl />
         </nav>
       </MainHeader>
       {/* 로그인 모달 */}
       {loginOpen ? (
         <Modal>
-          <Login hideLogin={hideLogin} />
+          <LoginContainer hideLogin={hideLogin} />
         </Modal>
       ) : null}
 
       {/* 회원가입 모달 */}
       {signupOpen ? (
         <Modal>
-          <SignUp hideSignUp={hideSignUp} />
+          <SignupContainer
+            hideSignUp={hideSignUp}
+            showSignupSuccess={showSignupSuccess}
+          />
+        </Modal>
+      ) : null}
+
+      {/* 회원가입 성공 모달 */}
+      {signupSuccessOpen ? (
+        <Modal>
+          <SignupSuccessContainer showLogin={showLogin} />
         </Modal>
       ) : null}
     </>
@@ -57,7 +73,7 @@ const MainHeader = styled.header`
   display: grid;
   align-items: center;
   background-color: #ffffff;
-  grid-template-columns: 1.17fr 1.15fr 0.7fr;
+  grid-template-columns: 1.17fr 1.15fr 0.3fr;
   position: fixed;
   width: 100%;
   min-height: 10rem;

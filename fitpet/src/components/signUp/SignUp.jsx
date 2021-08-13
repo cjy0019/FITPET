@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { CloseOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
 import { SocialBtn } from '../../common';
 
-const SignUp = ({ hideSignUp }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const SignUp = ({ hideSignUp, signup, showSignupSuccess, goLogin }) => {
+  const [userId, setUserId] = useState('');
+  const [userPW, setUserPW] = useState('');
   const [CheckPassword, setCheckPassword] = useState('');
 
   return (
@@ -17,22 +15,20 @@ const SignUp = ({ hideSignUp }) => {
             {/* 회원가입 헤더 부분 */}
             <SignUpHeader>
               <HeaderText>회원가입</HeaderText>
-              <CloseBtn onClick={hideSignUp}>
-                <CloseOutlined styled={{ color: '#979797' }} />
-              </CloseBtn>
+              <CloseBtn onClick={hideSignUp} />
             </SignUpHeader>
             {/* 회원가입 내용 */}
             <SignUpContent>
               {/* 회원 정보 입력 칸, 다음으로 버튼 */}
               <Input
                 onChange={changeId}
-                value={email}
+                value={userId}
                 placeholder='이메일 아이디'
                 type='email'
               />
               <Input
                 onChange={changePassword}
-                value={password}
+                value={userPW}
                 placeholder='비밀번호'
                 type='password'
               />
@@ -42,7 +38,7 @@ const SignUp = ({ hideSignUp }) => {
                 placeholder='비밀번호 확인'
                 type='password'
               />
-              <NextButton>다음으로</NextButton>
+              <NextButton onClick={clickSignup}>회원가입</NextButton>
               {/* sns계정으로 가입 */}
               <SocialBlock>
                 <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>
@@ -52,9 +48,9 @@ const SignUp = ({ hideSignUp }) => {
               {/* 라인 아래 부분 */}
               <BottomBlock>
                 <BottomText>이미 핏펫 회원이신가요?</BottomText>
-                <Link to='/login' className='login'>
+                <button className='login' onClick={goLogin}>
                   로그인
-                </Link>
+                </button>
               </BottomBlock>
             </SignUpContent>
           </SignUpWrapper>
@@ -63,12 +59,16 @@ const SignUp = ({ hideSignUp }) => {
     </>
   );
 
+  function clickSignup() {
+    signup(userId, userPW);
+  }
+
   function changeId(e) {
-    setEmail(e.target.value);
+    setUserId(e.target.value);
   }
 
   function changePassword(e) {
-    setPassword(e.target.value);
+    setUserPW(e.target.value);
   }
   function changeCheckPassword(e) {
     setCheckPassword(e.target.value);
@@ -115,12 +115,12 @@ const HeaderText = styled.div`
 `;
 const CloseBtn = styled.div`
   cursor: pointer;
-  margin: 0 0 0 33.7rem;
-  font-size: 2.2rem;
-  width: 1.52rem;
-  height: 1.52rem;
-  color: ${(props) => props.theme.grey2_color};
-  background-color: ${(props) => props.theme.white_color};
+  width: 3.4rem;
+  height: 3.4rem;
+  object-fit: contain;
+  background-image: url('/img/auth/closebutton.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 `;
 
 // 회원가입 내용
@@ -188,18 +188,24 @@ const BottomBlock = styled.div`
   text-align: center;
   .login {
     display: inline-block;
-    height: 1.6rem;
-    margin: 0 0.3rem 0.2rem 1.5rem;
+    margin: 0 0 0 1.2rem;
+    border: none;
     font-size: 1.4rem;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1;
     letter-spacing: -0.28px;
-    padding-bottom: 2rem;
+    padding-bottom: 0.2rem;
     text-align: center;
-    border-bottom: 1px solid ${(props) => props.theme.black1_color};
+    background-color: transparent;
+    border-bottom: 1px solid ${(props) => props.theme.grey1_color};
     color: ${(props) => props.theme.black1_color};
+
+    &:hover {
+      color: ${(props) => props.theme.main_color};
+      border-bottom: 1px solid ${(props) => props.theme.main_color};
+    }
   }
 `;
 const BottomText = styled.p`
