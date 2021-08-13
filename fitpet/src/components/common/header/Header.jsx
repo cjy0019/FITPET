@@ -8,6 +8,7 @@ import Modal from '../../modal/Modal';
 import SignupContainer from '../../../containers/SignupContainer';
 import SignupSuccessContainer from '../../../containers/SignupSuccessContainer';
 import LoginContainer from '../../../containers/LoginContainer';
+import MemberLinkLoginUl from './MemberLinkLoginUl';
 
 const Header = ({
   showLogin,
@@ -37,7 +38,8 @@ const Header = ({
 
         {/* 멤버 링크 부분 */}
         <nav>
-          <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} />
+          {/* <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} /> */}
+          <MemberLinkLoginUl />
         </nav>
       </MainHeader>
       {/* 로그인 모달 */}
@@ -71,7 +73,7 @@ const MainHeader = styled.header`
   display: grid;
   align-items: center;
   background-color: #ffffff;
-  grid-template-columns: 1.17fr 1.15fr 0.7fr;
+  grid-template-columns: 1.17fr 1.15fr 0.3fr;
   position: fixed;
   width: 100%;
   min-height: 10rem;
