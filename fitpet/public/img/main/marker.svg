@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
     <defs>
-        <linearGradient id="da0u3507ma" x2="1" y1=".5" y2=".5" gradientUnits="objectBoundingBox">
+        <linearGradient id="piiyezozsa" x2="1" y1=".5" y2=".5" gradientUnits="objectBoundingBox">
             <stop offset="0" stop-color="#4765ff"/>
             <stop offset=".177" stop-color="#4184eb"/>
             <stop offset=".416" stop-color="#3aa8d5"/>
@@ -9,6 +9,6 @@
             <stop offset="1" stop-color="#32d8b8"/>
         </linearGradient>
     </defs>
-    <path fill="#fff" d="M0 0H50V50H0z"/>
-    <path fill="url(#da0u3507ma)" d="M55.3 28.566a14.883 14.883 0 0 0-14.86 14.868c0 3.347 2.408 9.519 6.444 16.508 3.545 6.141 7.165 10.771 8.421 10.771s4.877-4.63 8.422-10.771c4.036-6.989 6.444-13.16 6.444-16.508A14.884 14.884 0 0 0 55.3 28.566zm0 23.85a8.776 8.776 0 1 1 8.776-8.778 8.776 8.776 0 0 1-8.77 8.778z" transform="translate(-30.44 -24.566)"/>
+    <path fill="none" d="M0 0H50V50H0z"/>
+    <path fill="url(#piiyezozsa)" d="M55.3 28.566a14.883 14.883 0 0 0-14.86 14.868c0 3.347 2.408 9.519 6.444 16.508 3.545 6.141 7.165 10.771 8.421 10.771s4.877-4.63 8.422-10.771c4.036-6.989 6.444-13.16 6.444-16.508A14.884 14.884 0 0 0 55.3 28.566zm0 23.85a8.776 8.776 0 1 1 8.776-8.778 8.776 8.776 0 0 1-8.77 8.778z" transform="translate(-30.44 -24.566)"/>
 </svg>

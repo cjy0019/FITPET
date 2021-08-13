@@ -40,16 +40,16 @@ const Footer = () => {
             <StyledP desc>채용문의 : welcome@FitPet.com</StyledP>
             <Flex img>
               <Link to='/'>
-                <IconImg src='/img/icon/instaicon.png' alt='인스타그램' />
+                <IconImg src='/img/icon/instaicon.svg' alt='인스타그램' />
               </Link>
               <Link to='/'>
-                <IconImg src='/img/icon/facebookicon.png' alt='페이스북' />
+                <IconImg src='/img/icon/facebookicon.svg' alt='페이스북' />
               </Link>
               <Link to='/'>
-                <IconImg src='/img/icon/youtubeicon.png' alt='유튜브' />
+                <IconImg src='/img/icon/youtubeicon.svg' alt='유튜브' />
               </Link>
               <Link to='/'>
-                <IconImg src='/img/icon/twittericon.png' alt='트위터' />
+                <IconImg src='/img/icon/twittericon.svg' alt='트위터' />
               </Link>
             </Flex>
           </address>
