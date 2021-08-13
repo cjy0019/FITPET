@@ -8,6 +8,7 @@ import {
   WishSmall,
   SmallBtn,
 } from '../../../common';
+import ImageBox from '../../../common/contents/common/ImageBox';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelSlider from './HotelSlider';
 
@@ -45,16 +46,32 @@ const HotelMain = () => {
           {/* 핏펫에서 지금 뜨는 혜택! 이미지 블럭 */}
           <EventBlock>
             <div className='line'>
-              <BasicBox hotel_box1 />
-              <BasicBox hotel_box2 />
+              <ImageBox
+                height='40rem'
+                img={'/img/hotel/hotel_main/fitpet_event/1.png'}
+              />
+              <ImageBox
+                height='52rem'
+                img={'/img/hotel/hotel_main/fitpet_event/4.png'}
+              />
             </div>
             <div className='line'>
-              <BasicBox hotel_box2></BasicBox>
-              <BasicBox hotel_box1></BasicBox>
+              <ImageBox
+                height='52rem'
+                img={'/img/hotel/hotel_main/fitpet_event/2.png'}></ImageBox>
+              <ImageBox
+                height='40rem'
+                img={'/img/hotel/hotel_main/fitpet_event/5.png'}></ImageBox>
             </div>
             <div className='line'>
-              <BasicBox hotel_box1 />
-              <BasicBox hotel_box2 />
+              <ImageBox
+                height='40rem'
+                img={'/img/hotel/hotel_main/fitpet_event/3.png'}
+              />
+              <ImageBox
+                height='52rem'
+                img={'/img/hotel/hotel_main/fitpet_event/6.png'}
+              />
             </div>
           </EventBlock>
         </div>
