@@ -9,7 +9,7 @@ const Login = ({ hideLogin, login }) => {
     <>
       <Overlay>
         <div className='center'>
-          <StyledForm onSubmit={handleLogin}>
+          <StyledForm>
             <div>
               <LoginHeader hideLogin={hideLogin} />
               {/* 로고 */}
@@ -26,10 +26,6 @@ const Login = ({ hideLogin, login }) => {
       </Overlay>
     </>
   );
-
-  function handleLogin(e) {
-    e.preventDefault();
-  }
 };
 
 // style

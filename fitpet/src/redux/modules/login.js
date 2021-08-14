@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, delay, put, takeEvery } from 'redux-saga/effects';
 import AuthService from '../../services/AuthService';
 import { closeLogin } from './modal';
 
@@ -11,16 +11,16 @@ const SUCCESS = namespace + 'SUCCESS';
 const FAIL = namespace + 'FAIL';
 
 // initial state
-const initialState = { token: null, error: null };
+const initialState = { userName: null, token: null, error: null };
 
 // reducer
 export default function login(state = initialState, action) {
   switch (action.type) {
     case START:
-      return { token: null, error: null };
+      return { userName: null, token: null, error: null };
 
     case SUCCESS:
-      return { ...state, token: action.token };
+      return { ...state, userName: action.userName, token: action.token };
 
     case FAIL:
       return { ...state, error: action.error };
@@ -31,7 +31,11 @@ export default function login(state = initialState, action) {
 
 // action creators
 export const loginStart = () => ({ type: START });
-export const loginSuccess = (token) => ({ type: SUCCESS, token });
+export const loginSuccess = (token, userName) => ({
+  type: SUCCESS,
+  token,
+  userName,
+});
 export const loginFail = (error) => ({ type: FAIL, error });
 
 // saga
@@ -48,9 +52,15 @@ export function* loginSaga(action) {
     const { userId, userPW } = action.payload;
 
     const response = yield call(AuthService.login, userId, userPW);
+    yield delay(1000);
 
-    // yield put(loginSuccess(response.data._id));
-    console.log(response.data);
+    let userName = response.data.userId;
+    const index = userName.indexOf('@');
+    userName = userName.split('').splice(0, index).join('');
+    localStorage.setItem('token', response.data._id);
+    localStorage.setItem('userName', userName);
+
+    yield put(loginSuccess(response.data._id, userName));
 
     yield put(closeLogin());
   } catch (error) {

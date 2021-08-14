@@ -10,6 +10,7 @@ const HeaderContainer = () => {
   const signupSuccessOpen = useSelector(
     (state) => state.modal.signupSuccessOpen,
   );
+  const token = useSelector((state) => state.login.token);
 
   // 로그인 팝업
   const showLogin = useCallback(() => {
@@ -45,6 +46,7 @@ const HeaderContainer = () => {
       signupOpen={signupOpen}
       signupSuccessOpen={signupSuccessOpen}
       showSignUp={showSignUp}
+      token={token}
     />
   );
 };

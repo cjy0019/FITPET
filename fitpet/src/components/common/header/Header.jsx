@@ -8,8 +8,10 @@ import SignupContainer from '../../../containers/SignupContainer';
 import SignupSuccessContainer from '../../../containers/SignupSuccessContainer';
 import LoginContainer from '../../../containers/LoginContainer';
 import MemberLinkLoginUl from './MemberLinkLoginUl';
+import MemberLinkUl from './MemberLinkUl';
 
 const Header = ({
+  token,
   showLogin,
   hideLogin,
   loginOpen,
@@ -37,8 +39,11 @@ const Header = ({
 
         {/* 멤버 링크 부분 */}
         <nav>
-          {/* <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} /> */}
-          <MemberLinkLoginUl />
+          {token ? (
+            <MemberLinkLoginUl />
+          ) : (
+            <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} />
+          )}
         </nav>
       </MainHeader>
       {/* 로그인 모달 */}

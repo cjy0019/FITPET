@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { StyeldLi, StyledButton, StyledImg } from './MemberLinkUl';
@@ -6,6 +7,8 @@ import { StyeldLi, StyledButton, StyledImg } from './MemberLinkUl';
 const MemberLinkLoginUl = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
+  const userName = useSelector((state) => state.login.userName);
+  console.log(userName);
 
   useEffect(() => {
     if (isOpen) {
@@ -47,7 +50,7 @@ const MemberLinkLoginUl = () => {
           <UserIcon>
             <img src='/img/header/usericon.svg' alt='userid' />
           </UserIcon>
-          <p>김혜진</p>
+          <p>{userName} 님</p>
         </UserId>
         <LinkWrapper>
           <Link to='/'>포인트</Link>
@@ -104,7 +107,7 @@ const UserId = styled.div`
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  padding: 2rem 0 2rem 2rem;
+  padding: 2rem 2rem 2rem 2rem;
   border-bottom: solid 1px #eee;
 `;
 
