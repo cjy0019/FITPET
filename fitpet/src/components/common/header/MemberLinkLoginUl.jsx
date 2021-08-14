@@ -4,11 +4,10 @@ import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { StyeldLi, StyledButton, StyledImg } from './MemberLinkUl';
 
-const MemberLinkLoginUl = () => {
+const MemberLinkLoginUl = ({ logOut }) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const userName = useSelector((state) => state.login.userName);
-  console.log(userName);
 
   useEffect(() => {
     if (isOpen) {
@@ -59,7 +58,7 @@ const MemberLinkLoginUl = () => {
           <Link to='/'>내가 Fit한 코스</Link>
           <Link to='/'>예약내역</Link>
         </LinkWrapper>
-        <Logout>로그아웃</Logout>
+        <Logout onClick={logOut}>로그아웃</Logout>
       </Mymenu>
     </>
   );

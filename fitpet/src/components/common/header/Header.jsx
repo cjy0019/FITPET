@@ -12,6 +12,7 @@ import MemberLinkUl from './MemberLinkUl';
 
 const Header = ({
   token,
+  logOut,
   showLogin,
   hideLogin,
   loginOpen,
@@ -40,7 +41,7 @@ const Header = ({
         {/* 멤버 링크 부분 */}
         <nav>
           {token ? (
-            <MemberLinkLoginUl />
+            <MemberLinkLoginUl logOut={logOut} />
           ) : (
             <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} />
           )}
