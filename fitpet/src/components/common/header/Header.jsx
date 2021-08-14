@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import MemberLinkUl from './MemberLinkUl';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HeaderNav from './HeaderNav';
 import Modal from '../../modal/Modal';
@@ -9,8 +8,11 @@ import SignupContainer from '../../../containers/SignupContainer';
 import SignupSuccessContainer from '../../../containers/SignupSuccessContainer';
 import LoginContainer from '../../../containers/LoginContainer';
 import MemberLinkLoginUl from './MemberLinkLoginUl';
+import MemberLinkUl from './MemberLinkUl';
 
 const Header = ({
+  token,
+  logOut,
   showLogin,
   hideLogin,
   loginOpen,
@@ -38,8 +40,11 @@ const Header = ({
 
         {/* 멤버 링크 부분 */}
         <nav>
-          {/* <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} /> */}
-          <MemberLinkLoginUl />
+          {token ? (
+            <MemberLinkLoginUl logOut={logOut} />
+          ) : (
+            <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} />
+          )}
         </nav>
       </MainHeader>
       {/* 로그인 모달 */}
@@ -73,7 +78,7 @@ const MainHeader = styled.header`
   display: grid;
   align-items: center;
   background-color: #ffffff;
-  grid-template-columns: 1.17fr 1.15fr 0.3fr;
+  grid-template-columns: 0.97fr 1.15fr 0.3fr;
   position: fixed;
   width: 100%;
   min-height: 10rem;

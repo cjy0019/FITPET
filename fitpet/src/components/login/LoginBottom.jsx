@@ -35,7 +35,7 @@ const LoginBottom = ({ login }) => {
 
       {/* 아이디 저장 및 찾기 */}
       <FindId />
-      <StyledButton children='로그인' onClick={signin} />
+      <StyledButton type='submit' children='로그인' onClick={signin} />
       {/* sns계정으로 가입 */}
       <SocialBlock>
         <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>
@@ -65,6 +65,7 @@ const LoginBottom = ({ login }) => {
 
   // signin
   function signin(e) {
+    e.preventDefault();
     login(email, password);
   }
 
