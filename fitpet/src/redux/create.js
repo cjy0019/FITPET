@@ -11,6 +11,13 @@ const create = (history) => {
 
   const store = createStore(
     reducer(history),
+    {
+      login: {
+        userName: localStorage.getItem('userName'),
+        token: localStorage.getItem('token'),
+        error: null,
+      },
+    },
     composeWithDevTools(
       applyMiddleware(
         thunk.withExtraArgument(history),
