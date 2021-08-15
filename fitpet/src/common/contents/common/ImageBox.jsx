@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const ImageBox = (props) => {
   const { margin, handleClick, height, img } = props;

@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import HotelTextInfo from '../hotel_list/HotelTextInfo';
 import PillBoxText from './PillBoxText';
 
 const PillBox = (props) => {
   const { margin, handleClick } = props;
-  const { img, text1, text2 } = props;
+  const { img } = props;
 
   const styles = {
     margin: margin,

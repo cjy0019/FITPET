@@ -22,7 +22,7 @@ const Calendar = (showCalendar) => {
     let week = firstWeek;
     for (week; week <= lastWeek; week++) {
       result = result.concat(
-        <tr key={week}>
+        <tr className='week_tr' key={week}>
           {Array(7)
             .fill(0)
             // eslint-disable-next-line
@@ -36,19 +36,19 @@ const Calendar = (showCalendar) => {
 
               if (moment().format('YYYYMMDD') === days.format('YYYYMMDD')) {
                 return (
-                  <td key={index}>
+                  <td className='week_td' key={index}>
                     <button>{days.format('D')}</button>
                   </td>
                 );
               } else if (days.format('MM') !== today.format('MM')) {
                 return (
-                  <td key={index}>
+                  <td className='week_td' key={index}>
                     <button>{days.format('D')}</button>
                   </td>
                 );
               } else {
                 return (
-                  <td key={index}>
+                  <td className='week_td' key={index}>
                     <button>{days.format('D')}</button>
                   </td>
                 );
@@ -75,15 +75,18 @@ const Calendar = (showCalendar) => {
           </CalendarMonthCaption>
           <table>
             <tbody>
-              <ul style={{ marginBottom: '2.4rem' }} s>
-                <li>일</li>
-                <li>월</li>
-                <li>화</li>
-                <li>수</li>
-                <li>목</li>
-                <li>금</li>
-                <li>토</li>
-              </ul>
+              <tr
+                className='weekHeader_tr'
+                style={{ marginBottom: '2.4rem' }}
+                s>
+                <td className='weekHeader_td'>일</td>
+                <td className='weekHeader_td'>월</td>
+                <td className='weekHeader_td'>화</td>
+                <td className='weekHeader_td'>수</td>
+                <td className='weekHeader_td'>목</td>
+                <td className='weekHeader_td'>금</td>
+                <td className='weekHeader_td'>토</td>
+              </tr>
               {calendarArr()}
             </tbody>
           </table>
@@ -102,15 +105,18 @@ const Calendar = (showCalendar) => {
           </CalendarMonthCaption>
           <table>
             <tbody>
-              <ul style={{ marginBottom: '2.4rem' }} s>
-                <li>일</li>
-                <li>월</li>
-                <li>화</li>
-                <li>수</li>
-                <li>목</li>
-                <li>금</li>
-                <li>토</li>
-              </ul>
+              <tr
+                className='weekHeader_tr'
+                style={{ marginBottom: '2.4rem' }}
+                s>
+                <td className='weekHeader_td'>일</td>
+                <td className='weekHeader_td'>월</td>
+                <td className='weekHeader_td'>화</td>
+                <td className='weekHeader_td'>수</td>
+                <td className='weekHeader_td'>목</td>
+                <td className='weekHeader_td'>금</td>
+                <td className='weekHeader_td'>토</td>
+              </tr>
               {calendarArr()}
             </tbody>
           </table>
@@ -131,39 +137,38 @@ const CalendarWrapper = styled.div`
   }
   table {
     display: flex;
-    width: 33.5rem;
-    height: 19.6rem;
   }
   table tbody {
     display: flex;
     flex-direction: column;
   }
-  ul {
+  .weekHeader_tr {
     display: flex;
     font-size: 1.4rem;
     color: ${(props) => props.theme.grey2_color};
   }
-  li {
+  .weekHeader_td {
     flex: 1 1 auto;
     text-align: center;
     width: 3.2rem;
     margin-right: 1rem;
   }
-  tr {
+  .week_tr {
     display: flex;
     flex-direction: row;
   }
-
-  td {
+  .week_td {
     display: flex;
     width: 3.2rem;
     height: 3.2rem;
     padding: 1.2rem;
+    align-items: center;
+
     margin-right: 1rem;
     position: relative;
     justify-content: center;
   }
-  td button {
+  .week_td button {
     display: flex;
     justify-content: center;
     align-items: center;
