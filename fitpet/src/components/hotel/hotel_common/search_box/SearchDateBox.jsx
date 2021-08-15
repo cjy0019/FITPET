@@ -13,7 +13,12 @@ const SearchDateBox = () => {
     <>
       <MenuContainer>
         <SearchDateWrapper onClick={onClick}>
-          <span>8월 6일 (금) - 8월 7일(토) | 1박</span>
+          <img
+            className='buttonImg'
+            src='/img/search_box/date.png'
+            alt='location'
+          />
+          <span className='buttonText'>8월 6일 (금) - 8월 7일(토) | 1박</span>
         </SearchDateWrapper>
 
         <nav
@@ -66,22 +71,28 @@ const MenuContainer = styled.div`
 `;
 
 const SearchDateWrapper = styled.button`
+  display: flex;
   width: 34.4rem;
   height: 4.8rem;
-  font-size: 1.6rem;
-  margin: 0 1rem 0 1rem;
   border-radius: 7px;
+  margin-right: 1rem;
+  padding: 0.7rem 0.8rem;
+  align-items: center;
   outline: none;
   background-color: ${(props) => props.theme.grey5_color};
-  background-image: url('/img/search_box/date.png');
-  background-size: 3.4rem 3.4rem;
-  background-position: 1.5rem center;
-  background-repeat: no-repeat;
   border: solid 1px ${(props) => props.theme.grey5_color};
-  color: ${(props) => props.theme.black1_color};
   &:focus,
   &:hover {
     border: solid 1px ${(props) => props.theme.main_color};
+  }
+  .buttonImg {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+  .buttonText {
+    color: ${(props) => props.theme.black1_color};
+    margin-left: 1.2rem;
+    font-size: 1.6rem;
   }
 `;
 
