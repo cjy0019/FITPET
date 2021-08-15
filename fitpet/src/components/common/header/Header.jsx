@@ -78,7 +78,7 @@ const MainHeader = styled.header`
   display: grid;
   align-items: center;
   background-color: #ffffff;
-  grid-template-columns: 0.97fr 1.15fr 0.3fr;
+  grid-template-columns: 1.15fr 1.15fr 0.3fr;
   position: fixed;
   width: 100%;
   min-height: 10rem;
