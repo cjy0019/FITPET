@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { RoundSquareBtn } from '../../../../common';
 import { useDetectOutsideClick } from '../../../../hooks/useDetectOutsideClick';
 import SearchButton from './SearchButton';
 
@@ -28,18 +27,19 @@ const SearchLocationBox = () => {
           ref={dropdownRef}
           className={`menu ${isLocation ? 'active' : 'inactive'}`}>
           <div>
-            <dl>
+            {/* <dl style={{ marginBottom: '3.2rem' }}>
               <LocationText>최근 검색한 곳</LocationText>
               <SearchButton>제주도</SearchButton>
-            </dl>
-            <dl style={{ marginTop: '3.2rem' }}>
+            </dl> */}
+            <dl>
               <LocationText>핏펫 인기 여행지</LocationText>
               <SearchButton>제주도</SearchButton>
-              <SearchButton>제주도</SearchButton>
-              <SearchButton>제주도</SearchButton>
-              <SearchButton>제주도</SearchButton>
-              <SearchButton>제주도</SearchButton>
-              <SearchButton>제주도</SearchButton>
+              <SearchButton>서울</SearchButton>
+              <SearchButton>전주</SearchButton>
+              <SearchButton>강릉</SearchButton>
+              <SearchButton>부산</SearchButton>
+              <SearchButton>포항</SearchButton>
+              <SearchButton>대구</SearchButton>
             </dl>
           </div>
         </nav>
@@ -56,7 +56,6 @@ const MenuContainer = styled.div`
   // 버튼 클릭 시 나오는 창
   .menu {
     width: 38rem;
-    height: 28rem;
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
     background-color: ${(props) => props.theme.white_color};
     position: absolute;

@@ -15,10 +15,11 @@ const StyledButton = styled.dd`
   border-radius: 5px;
   font-size: 1.4rem;
   letter-spacing: -0.28px;
-
+  cursor: pointer;
   background-color: ${(props) => props.theme.white_color};
   border: solid 1px ${(props) => props.theme.grey2_color};
   color: ${(props) => props.theme.black1_color};
+  :hover,
   :focus {
     color: ${(props) => props.theme.main_color};
     border: solid 1px ${(props) => props.theme.main_color};

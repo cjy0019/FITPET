@@ -2,8 +2,6 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { useDetectOutsideClick } from '../../../../hooks/useDetectOutsideClick';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-
-import { RoundSquareBtn } from '../../../../common';
 import SearchButton from './SearchButton';
 
 const SearchPeopleBox = () => {
