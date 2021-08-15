@@ -13,8 +13,6 @@ const SliderOnly = () => {
   // 5개 슬라이드 효과 주기 translateX(-68.7%)
   useEffect(() => {
     let slideValue = currentSlide * 6 * 10;
-    console.log(currentSlide);
-
     if (currentSlide > 0) {
       slideValue += 8.7;
       nextBtnRef.current.style = 'visibility:hidden;';

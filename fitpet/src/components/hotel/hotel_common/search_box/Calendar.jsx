@@ -75,10 +75,7 @@ const Calendar = (showCalendar) => {
           </CalendarMonthCaption>
           <table>
             <tbody>
-              <tr
-                className='weekHeader_tr'
-                style={{ marginBottom: '2.4rem' }}
-                s>
+              <tr className='weekHeader_tr'>
                 <td className='weekHeader_td'>일</td>
                 <td className='weekHeader_td'>월</td>
                 <td className='weekHeader_td'>화</td>
@@ -105,10 +102,7 @@ const Calendar = (showCalendar) => {
           </CalendarMonthCaption>
           <table>
             <tbody>
-              <tr
-                className='weekHeader_tr'
-                style={{ marginBottom: '2.4rem' }}
-                s>
+              <tr className='weekHeader_tr'>
                 <td className='weekHeader_td'>일</td>
                 <td className='weekHeader_td'>월</td>
                 <td className='weekHeader_td'>화</td>
@@ -148,10 +142,14 @@ const CalendarWrapper = styled.div`
     color: ${(props) => props.theme.grey2_color};
   }
   .weekHeader_td {
-    flex: 1 1 auto;
-    text-align: center;
+    display: flex;
     width: 3.2rem;
-    margin-right: 1rem;
+    height: 3.2rem;
+    padding: 1.2rem;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    margin: 0 0.5rem;
   }
   .week_tr {
     display: flex;
@@ -163,10 +161,9 @@ const CalendarWrapper = styled.div`
     height: 3.2rem;
     padding: 1.2rem;
     align-items: center;
-
-    margin-right: 1rem;
     position: relative;
     justify-content: center;
+    margin: 0 0.5rem;
   }
   .week_td button {
     display: flex;
