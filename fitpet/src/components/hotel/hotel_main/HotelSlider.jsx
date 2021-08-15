@@ -15,7 +15,6 @@ const HotelSlider = () => {
   // 6개 슬라이드 효과 주기
   useEffect(() => {
     let slideValue = currentSlide * 6 * 10;
-    console.log(currentSlide);
     if (currentSlide > 0) {
       slideValue += 8.7;
       nextBtnRef.current.style = 'visibility:hidden';
@@ -75,16 +74,13 @@ const SliderWrapper = styled.div`
   width: 91.5rem;
 `;
 const FillWrapper = styled.div`
-  /* width: 91.5rem;
-  overflow: hidden;
-  position: relative;
-  display: flex; */
   margin: 0;
   padding: 0;
   display: flex;
 `;
 const Content = styled.div`
   width: 100%;
+  height: 50rem;
   overflow: hidden;
   position: relative;
 `;
@@ -96,12 +92,12 @@ const ControlsBtn = styled.div`
 const PrevBtn = styled.span`
   left: -2rem;
   position: absolute;
-  bottom: 20rem;
+  bottom: 24rem;
 `;
 const NextBtn = styled.span`
   right: -2rem;
   position: absolute;
-  bottom: 20rem;
+  bottom: 24rem;
 `;
 
 export default HotelSlider;

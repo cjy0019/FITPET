@@ -21,7 +21,7 @@ const HotelInfo = () => {
 
         {/* 텍스트 Info */}
         <TextDetailWrapper>
-          <HotelTextInfo />
+          <HotelTextInfo hiddenPrice />
           <HotelDetails />
         </TextDetailWrapper>
       </Info>

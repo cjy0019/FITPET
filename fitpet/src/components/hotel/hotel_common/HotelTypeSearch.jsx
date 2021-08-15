@@ -16,7 +16,7 @@ const HotelTypeSearch = ({ isScroll }) => {
         </div>
         <div className='inputBox'>
           {/* 어디로 떠날까요? */}
-          <SearchLocationBox className='location' />
+          <SearchLocationBox />
           {/* 8월 6일 (금) - 8월 7일(토) | 1박' */}
           <SearchDateBox />
           {/* 성인2 | 객실1 | 소형견2 */}

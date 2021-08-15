@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import HotelTextInfo from '../../../components/hotel/hotel_list/HotelTextInfo';
+import PillBoxText from './PillBoxText';
 
 const PillBox = (props) => {
   const { margin, handleClick } = props;
-  const { img, text1, text2 } = props;
+  const { img } = props;
 
   const styles = {
     margin: margin,
@@ -13,7 +13,7 @@ const PillBox = (props) => {
     <PillBoxWrapper {...styles} onClick={handleClick}>
       <PillImageBox img={img}></PillImageBox>
       <PillTextBox>
-        <HotelTextInfo />
+        <PillBoxText />
       </PillTextBox>
     </PillBoxWrapper>
   );
@@ -38,7 +38,6 @@ const PillTextBox = styled.div`
   border-radius: 0 0 25px 25px;
   background-color: ${(props) => props.theme.white_color};
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.16);
-  padding: 2rem 0 0 1rem;
 `;
 
 export default PillBox;
