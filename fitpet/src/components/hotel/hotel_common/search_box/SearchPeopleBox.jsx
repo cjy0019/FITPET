@@ -10,7 +10,6 @@ const SearchPeopleBox = () => {
   const [isPeople, setIsPeopleBox] = useDetectOutsideClick(dropdownRef, false);
   const onClick = () => {
     setIsPeopleBox(!isPeople);
-    console.log('dd');
   };
 
   return (

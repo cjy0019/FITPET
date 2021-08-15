@@ -1,13 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import {
-  BasicBox,
-  Font,
-  MiddleBtn,
-  WishSmall,
-  SmallBtn,
-} from '../../../common';
+import { Font, MiddleBtn, WishSmall, SmallBtn } from '../../../common';
 import ImageBox from '../../../common/contents/common/ImageBox';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelSlider from './HotelSlider';

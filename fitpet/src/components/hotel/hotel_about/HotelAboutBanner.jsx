@@ -13,15 +13,12 @@ const HotelAboutBanner = () => {
 
   useEffect(() => {
     if (yOffset > 1000) {
-      console.log('메뉴헤더만 나와야함');
       setIsScrollMenu(true);
       setIsScrollDate(false);
     } else if (yOffset > 100) {
-      console.log('날짜헤더만 나와야함');
       setIsScrollDate(true);
       setIsScrollMenu(false);
     } else {
-      console.log('둘다 안나와야함');
       setIsScrollDate(false);
       setIsScrollMenu(false);
     }
