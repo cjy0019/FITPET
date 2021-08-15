@@ -2,8 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { useDetectOutsideClick } from '../../../../hooks/useDetectOutsideClick';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-
-import { RoundSquareBtn } from '../../../../common';
+import SearchButton from './SearchButton';
 
 const SearchPeopleBox = () => {
   const dropdownRef = useRef(null);
@@ -16,7 +15,12 @@ const SearchPeopleBox = () => {
     <>
       <MenuContainer>
         <SearchPeopleWrapper onClick={onClick}>
-          <span>성인1 | 객실1 | 소형견1</span>
+          <img
+            className='buttonImg'
+            src='/img/search_box/people.png'
+            alt='location'
+          />
+          <span className='buttonText'>성인1 | 객실1 | 소형견1</span>
         </SearchPeopleWrapper>
         <nav
           ref={dropdownRef}
@@ -26,12 +30,12 @@ const SearchPeopleBox = () => {
               <NumberBlock>
                 <TypeText>객실</TypeText>
                 <ButtonBlock>
-                  <button>
-                    <AiOutlineMinus size='13px' />
+                  <button className='numberBtn'>
+                    <AiOutlineMinus size='1.3rem' />
                   </button>
-                  <p>1</p>
-                  <button>
-                    <AiOutlinePlus size='13px' />
+                  <p className='number'>1</p>
+                  <button className='numberBtn'>
+                    <AiOutlinePlus size='1.3rem' />
                   </button>
                 </ButtonBlock>
               </NumberBlock>
@@ -40,12 +44,12 @@ const SearchPeopleBox = () => {
               <NumberBlock>
                 <TypeText>성인</TypeText>
                 <ButtonBlock>
-                  <button>
-                    <AiOutlineMinus size='13px' />
+                  <button className='numberBtn'>
+                    <AiOutlineMinus size='1.3rem' />
                   </button>
-                  <p>1</p>
-                  <button>
-                    <AiOutlinePlus size='13px' />
+                  <p className='number'>1</p>
+                  <button className='numberBtn'>
+                    <AiOutlinePlus size='1.3rem' />
                   </button>
                 </ButtonBlock>
               </NumberBlock>
@@ -55,27 +59,25 @@ const SearchPeopleBox = () => {
                 <TypeText>
                   어린이
                   <br />
-                  <span>( 만 12세 미만)</span>
+                  <span className='subText'>( 만 12세 미만)</span>
                 </TypeText>
                 <ButtonBlock>
-                  <button>
-                    <AiOutlineMinus size='13px' />
+                  <button className='numberBtn'>
+                    <AiOutlineMinus size='1.3rem' />
                   </button>
-                  <p>1</p>
-                  <button>
-                    <AiOutlinePlus size='13px' />
+                  <p className='number'>1</p>
+                  <button className='numberBtn'>
+                    <AiOutlinePlus size='1.3rem' />
                   </button>
                 </ButtonBlock>
               </NumberBlock>
             </li>
-            <li style={{ border: 'none' }}>
-              <RoundSquareBtn search_btn>소형견</RoundSquareBtn>
-              <RoundSquareBtn search_btn>중형견</RoundSquareBtn>
-              <RoundSquareBtn search_btn>대형견</RoundSquareBtn>
-              <RoundSquareBtn style={{ marginRight: '0' }} search_btn>
-                고양이
-              </RoundSquareBtn>
-            </li>
+            <dl style={{ border: 'none' }}>
+              <SearchButton>소형견</SearchButton>
+              <SearchButton>중형견</SearchButton>
+              <SearchButton>대형견</SearchButton>
+              <SearchButton style={{ marginRight: 0 }}>고양이</SearchButton>
+            </dl>
           </ul>
         </nav>
       </MenuContainer>
@@ -120,6 +122,9 @@ const MenuContainer = styled.div`
     // 검색, 재검색, 상세보기 버튼
     border-bottom: solid 1px ${(props) => props.theme.grey4_color};
   }
+  dl {
+    float: left;
+  }
 `;
 
 const NumberBlock = styled.div`
@@ -134,7 +139,7 @@ const TypeText = styled.p`
   font-weight: normal;
   text-align: left;
   color: ${(props) => props.theme.grey1_color};
-  span {
+  .subText {
     font-size: 1rem;
     margin-top: 0.5rem;
     letter-spacing: -0.8px;
@@ -144,44 +149,49 @@ const ButtonBlock = styled.div`
   display: flex;
   align-items: center;
   margin-left: auto;
-  button {
-    width: 28px;
-    height: 28px;
-    border-radius: 14px;
-    border: solid 1.6px ${(props) => props.theme.grey2_color};
+  .numberBtn {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 1.4rem;
+    border: solid 1px ${(props) => props.theme.grey2_color};
     color: ${(props) => props.theme.grey2_color};
     background-color: #fff;
-    font-size: 10px;
+    display: block;
+    margin: auto;
     &:active {
       color: ${(props) => props.theme.main_color};
-      border: solid 1.6px ${(props) => props.theme.main_color};
+      border: solid 1px ${(props) => props.theme.main_color};
     }
   }
-  p {
+  .number {
     font-size: 1.4rem;
     font-weight: normal;
-    //float: right;
     color: ${(props) => props.theme.grey1_color};
     margin: 0 1.5rem;
   }
 `;
 const SearchPeopleWrapper = styled.button`
+  display: flex;
   width: 26.6rem;
   height: 4.8rem;
-  font-size: 1.6rem;
   border-radius: 7px;
   outline: none;
+  align-items: center;
   background-color: ${(props) => props.theme.grey5_color};
-  background-image: url('/img/search_box/people.png');
   margin-right: 1rem;
-  background-size: 3.4rem 3.4rem;
-  background-position: 1.5rem center;
-  background-repeat: no-repeat;
   border: solid 1px ${(props) => props.theme.grey5_color};
-  color: ${(props) => props.theme.black1_color};
   &:focus,
   &:hover {
     border: solid 1px ${(props) => props.theme.main_color};
+  }
+  .buttonImg {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+  .buttonText {
+    color: ${(props) => props.theme.black1_color};
+    margin-left: 1.2rem;
+    font-size: 1.6rem;
   }
 `;
 
