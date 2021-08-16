@@ -85,21 +85,20 @@ const BottomContainer = styled.div`
 
 // sns로 회원가입 하기
 const SocialBlock = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 3.6rem 3.3rem;
   border-bottom: solid 1px ${(props) => props.theme.grey4_color};
 `;
 const SocialText = styled.p`
-  width: 17.8rem;
-  height: 1.6rem;
-  margin: 0 6.5rem 2rem;
   font-size: 1.4rem;
+  margin-bottom: 2rem;
+  text-align: center;
   font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.43;
   letter-spacing: -0.28px;
-  text-align: center;
+  white-space: nowrap;
   color: ${(props) => props.theme.black1_color};
 `;
 
@@ -132,7 +131,6 @@ const StyledText = styled.p`
   font-size: 1.4rem;
   font-weight: 600;
   font-stretch: normal;
-  font-style: normal;
   line-height: 1.14;
   letter-spacing: -0.28px;
   text-align: left;

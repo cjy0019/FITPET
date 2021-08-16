@@ -9,7 +9,7 @@ const RoundSquareBtn = (props) => {
 // 기본 : 장바구니 버튼
 const buttonStyle = css`
   height: 4.8rem;
-  width: 7.4rem;
+  min-width: 7.4rem;
   // padding: 1.6rem 2.8rem 1.3rem;
   border-radius: 7px;
   font-size: 1.6rem;
