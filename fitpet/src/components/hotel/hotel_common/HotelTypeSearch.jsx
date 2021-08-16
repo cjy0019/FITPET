@@ -21,7 +21,7 @@ const HotelTypeSearch = ({ isScroll }) => {
           <SearchDateBox />
           {/* 성인2 | 객실1 | 소형견2 */}
           <SearchPeopleBox />
-          <RoundSquareBtn main_color>검색</RoundSquareBtn>
+          <RoundSquareBtn search_btn>검색</RoundSquareBtn>
         </div>
       </SearchContainer>
     </>

@@ -11,7 +11,7 @@ const HotelDate = () => {
       <SearchDateBox />
       {/* 성인2 | 객실1 | 소형견2 */}
       <SearchPeopleBox />
-      <RoundSquareBtn main_color>재검색</RoundSquareBtn>
+      <RoundSquareBtn search_btn>재검색</RoundSquareBtn>
     </DateContainer>
   );
 };
