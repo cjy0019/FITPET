@@ -68,8 +68,8 @@ const Banner = styled.div`
   }
   .bannerMenu {
     height: 8rem;
-    padding-bottom: 3.1rem;
-    padding-top: 3.1rem;
+    /* padding-bottom: 3.1rem;
+    padding-top: 3.1rem; */
     padding-left: 32rem;
     box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.16);
   }

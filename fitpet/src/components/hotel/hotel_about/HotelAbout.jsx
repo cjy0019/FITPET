@@ -365,80 +365,46 @@ const HotelAbout = () => {
           <div className='iconsBlock'>
             {/* 스크롤 이동 [다른 추천 호텔] 지점 */}
             <div className='iconBox' id='othertravelersHotel'>
-              <SampleIcon
-                width='5rem'
-                height='5rem'
-                backColor='#cbcbcb'
-                borderRadius='50px'
-              />
+              <img src='/img/icon/wifi.png' alt='와이파이' />
               <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 와이파이
               </Font>
             </div>
+
             <div className='iconBox'>
-              <SampleIcon
-                width='5rem'
-                height='5rem'
-                backColor='#cbcbcb'
-                borderRadius='50px'
-              />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                무료주차
-              </Font>
-            </div>
-            <div className='iconBox'>
-              <SampleIcon
-                width='5rem'
-                height='5rem'
-                backColor='#cbcbcb'
-                borderRadius='50px'
-              />
+              <img src='/img/icon/fitness.png' alt='피트니스 센터' />
               <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 피트니스 센터
               </Font>
             </div>
             <div className='iconBox'>
-              <SampleIcon
-                width='5rem'
-                height='5rem'
-                backColor='#cbcbcb'
-                borderRadius='50px'
-              />
+              <img src='/img/icon/pool.png' alt='수영장' />
               <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 수영장
               </Font>
             </div>
             <div className='iconBox'>
-              <SampleIcon
-                width='5rem'
-                height='5rem'
-                backColor='#cbcbcb'
-                borderRadius='50px'
-              />
+              <img src='/img/icon/freeParking.png' alt='무료주차' />
               <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                운동장
+                무료주차
               </Font>
             </div>
             <div className='iconBox'>
-              <SampleIcon
-                width='5rem'
-                height='5rem'
-                backColor='#cbcbcb'
-                borderRadius='50px'
-              />
+              <img src='/img/icon/reception.png' alt='24시 리셉션' />
               <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 24시 리셉션
               </Font>
             </div>
             <div className='iconBox'>
-              <SampleIcon
-                width='5rem'
-                height='5rem'
-                backColor='#cbcbcb'
-                borderRadius='50px'
-              />
+              <img src='/img/icon/baggage.png' alt='수하물 보관' />
               <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 수하물 보관
+              </Font>
+            </div>
+            <div className='iconBox'>
+              <img src='/img/icon/wash.png' alt='세탁' />
+              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
+                세탁
               </Font>
             </div>
           </div>
@@ -537,7 +503,7 @@ const ServiceBlock = styled.div`
   display: flex;
   width: 128rem;
   margin: 0 auto;
-  border-bottom: 1.5px solid #979797;
+  border-bottom: 1px solid #979797;
 `;
 const ServiceBox = styled.div`
   line-height: 1.16;
@@ -550,7 +516,7 @@ const ServiceBox = styled.div`
 const About = styled.div`
   width: 128rem;
   margin: 0 auto;
-  border-bottom: 1.5px solid #979797;
+  border-bottom: 1px solid #979797;
   .aboutBox {
     display: flex;
     margin-bottom: 0.8rem;
@@ -564,7 +530,7 @@ const RoomChoose = styled.div`
   display: block;
   width: 128rem;
   margin: 0 auto;
-  border-bottom: 1px solid #979797;
+  border-bottom: 1px solid #eeeeee;
   padding-top: 5rem;
   .RoomDateBox {
     display: flex;
@@ -578,7 +544,7 @@ const HotelDetail = styled.div`
   display: block;
   width: 128rem;
   margin: 0 auto;
-  border-bottom: 1.5px solid #979797;
+  border-bottom: 1px solid #eeeeee;
   .guideBlock {
     display: block;
   }
@@ -601,7 +567,7 @@ const HotelService = styled.div`
   display: flex;
   width: 128rem;
   margin: 0 auto;
-  border-bottom: 0.5px solid #979797;
+  border-bottom: 1px solid #eeeeee;
   .title {
     width: 40rem;
     margin-right: auto;
@@ -617,12 +583,7 @@ const HotelService = styled.div`
       display: flex;
       div {
         margin: auto;
-      }
-    }
-    .iconNames {
-      display: flex;
-      div {
-        margin: 0 auto;
+        text-align: center;
       }
     }
   }

@@ -1,12 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  Font,
-  SampleIcon,
-  OpenBtn,
-  RoundSquareBtn,
-  ImgMoreBtn,
-} from '../../../common';
+import { Font, SampleIcon, RoundSquareBtn, ImgMoreBtn } from '../../../common';
 
 const HotelOneRoom = () => {
   return (
@@ -142,7 +136,7 @@ const HotelOneRoomWrapper = styled.div`
   display: block;
   width: 128rem;
   margin: 0 auto;
-  border-bottom: 0.5px solid #979797;
+  border-bottom: 1px solid #eeeeee;
   .roomNameBox {
     display: flex;
     align-items: center;

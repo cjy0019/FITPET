@@ -5,7 +5,7 @@ const size = {
 };
 
 // background-color: ${(props) => props.theme.white_color}
-// color: ${(theme.white_color)
+// color: ${(theme.white_color)}
 
 // 이런식으로 적용
 const theme = {

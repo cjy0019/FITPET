@@ -193,7 +193,7 @@ const HotelTwoRoomWrapper = styled.div`
   display: block;
   width: 128rem;
   margin: 0 auto;
-  border-bottom: 0.5px solid #2a2a2a;
+  border-bottom: 1px solid #eeeeee;
   .roomNameBox {
     display: flex;
     align-items: center;
@@ -214,7 +214,7 @@ const HotelTwoRoomWrapper = styled.div`
         display: flex;
         width: 87rem;
         :first-child {
-          border-bottom: 0.5px solid #979797;
+          border-bottom: 1px solid #eeeeee;
           margin-bottom: 4rem;
         }
         .bedroomInfo {
