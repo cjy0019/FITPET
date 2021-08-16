@@ -257,7 +257,7 @@ const HotelAbout = () => {
           </Font>
           <HotelDate mt='5.6rem' />
         </div>
-        <div class='RoomBox'>
+        <div className='RoomBox'>
           <IconButton
             text='조식포함'
             backColor='#ffffff'

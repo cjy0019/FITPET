@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import useWindowScroll from '../../../hooks/useWindowScroll';
 import HotelDate from '../hotel_common/HotelDate';
 import HotelMenu from '../hotel_common/HotelMenu';
@@ -28,7 +28,7 @@ const HotelAboutBanner = () => {
     <>
       {isScrollDate ? (
         <Banner scroll>
-          <div class='bannerDate'>
+          <div className='bannerDate'>
             <HotelDate isScroll={isScrollDate} />
           </div>
         </Banner>
@@ -37,7 +37,7 @@ const HotelAboutBanner = () => {
       )}
       {isScrollMenu ? (
         <Banner scroll>
-          <div class='bannerMenu'>
+          <div className='bannerMenu'>
             <HotelMenu isScroll={isScrollMenu} />
           </div>
         </Banner>
@@ -52,10 +52,6 @@ const Banner = styled.div`
   position: fixed;
   z-index: 999;
   top: 8rem;
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
-  //padding-top: 2.6rem;
   background-color: #fff;
   width: 100%;
   .bannerDate {
@@ -68,17 +64,10 @@ const Banner = styled.div`
   }
   .bannerMenu {
     height: 8rem;
-    /* padding-bottom: 3.1rem;
-    padding-top: 3.1rem; */
+
     padding-left: 32rem;
     box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.16);
   }
-  ${(props) =>
-    props.scroll &&
-    css`
-      //padding-right: 0.2rem;
-      //  padding: 1.6rem auto;
-    `}
 `;
 
 export default HotelAboutBanner;
