@@ -5,7 +5,6 @@ import LoginBottom from './LoginBottom';
 const Login = ({ hideLogin, login }) => {
   return (
     <>
-      {/* <Overlay> */}
       <StyledCenter>
         <StyledForm onSubmit={handleSubmit}>
           <div>
@@ -27,20 +26,28 @@ const Login = ({ hideLogin, login }) => {
           </div>
         </StyledForm>
       </StyledCenter>
-      {/* </Overlay> */}
     </>
   );
   function handleSubmit(e) {
     e.preventDefault();
   }
 };
-
 // 로그인 상단
+const StyledCenter = styled.div`
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  border-radius: 30px;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.6);
+  transform: translate(-50%, -50%);
+`;
+
 const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 2.2rem;
-  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-weight: 600;
   color: ${(props) => props.theme.black1_color};
 `;
 
@@ -50,42 +57,23 @@ const StyledX = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
-  width: 3.4rem;
-  height: 3.4rem;
-  object-fit: contain;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-size: cover;
   background-image: url('/img/auth/closebutton.svg');
   background-repeat: no-repeat;
   background-position: 50% 50%;
 `;
 
-// style
-// login wrapper
-// const Overlay = styled.div`
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   left: 0;
-//   bottom: 0;
-//   z-index: 999999999;
-//   background-color: rgba(0, 0, 0, 0.7);
-// `;
-
-// const Overlay = styled.div`
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   left: 0;
-//   bottom: 0;
-//   z-index: 999999999;
-//   background-color: rgba(0, 0, 0, 0.7);
-// `;
-
-const StyledCenter = styled.div`
-  position: absolute;
-  top: 50vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.4s;
+// 로고부분
+const Logo = styled.img.attrs({
+  src: '/img/header/loginLogo.svg',
+  alt: 'FitPet',
+})`
+  display: block;
+  width: 14.4rem;
+  height: 16rem;
+  margin: 1.5rem auto 0;
 `;
 
 const StyledForm = styled.form`
@@ -101,20 +89,9 @@ const StyledForm = styled.form`
   }
 `;
 
-// 로고부분
-const Logo = styled.img.attrs({
-  src: '/img/header/loginLogo.svg',
-  alt: 'FitPet',
-})`
-  display: block;
-  width: 14.8rem;
-  height: 16.6rem;
-  margin: 3.5rem auto 0;
-`;
-
 // 슬로건
 const StyledSlogan = styled.p`
-  margin-top: 0.6rem;
+  margin-top: 1.2rem;
   font-size: 1.4rem;
   font-style: normal;
   letter-spacing: -0.28px;

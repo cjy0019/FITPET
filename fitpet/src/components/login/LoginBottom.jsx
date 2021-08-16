@@ -83,6 +83,28 @@ const BottomContainer = styled.div`
   color: ${(props) => props.theme.black1_color};
 `;
 
+// 로그인 input 부분
+const StyledInput = styled.input`
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid ${(props) => props.theme.grey3_color};
+  padding-bottom: 1rem;
+  background-color: transparent;
+  font-size: 1.6rem;
+  line-height: 1.19;
+  color: ${(props) => props.theme.black1_color};
+  letter-spacing: 0.4px;
+  text-align: left;
+  outline: none;
+  margin-top: 0.6rem;
+
+  &:focus {
+    border-bottom: 1px solid ${(props) => props.theme.grey2_color};
+    color: ${(props) => props.theme.black1_color};
+  }
+`;
+
 // sns로 회원가입 하기
 const SocialBlock = styled.div`
   display: flex;
@@ -97,34 +119,9 @@ const SocialText = styled.p`
   text-align: center;
   font-weight: normal;
   line-height: 1.43;
-  letter-spacing: -0.28px;
+  letter-spacing: 0.4px;
   white-space: nowrap;
   color: ${(props) => props.theme.black1_color};
-`;
-
-// 로그인 input 부분
-const StyledInput = styled.input`
-  display: block;
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid ${(props) => props.theme.grey3_color};
-  padding-bottom: 1.4rem;
-  background-color: transparent;
-  font-size: 1.6rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.19;
-  color: ${(props) => props.theme.black1_color};
-  letter-spacing: -0.32px;
-  text-align: left;
-  outline: none;
-  margin-top: 0.4rem;
-
-  &:focus {
-    border-bottom: 1px solid ${(props) => props.theme.grey2_color};
-    color: ${(props) => props.theme.black1_color};
-  }
 `;
 
 const StyledText = styled.p`
@@ -132,7 +129,7 @@ const StyledText = styled.p`
   font-weight: 600;
   font-stretch: normal;
   line-height: 1.14;
-  letter-spacing: -0.28px;
+  letter-spacing: 0.4px;
   text-align: left;
   color: ${(props) => props.theme.black1_color};
   margin-top: 1.6rem;
@@ -145,6 +142,8 @@ const StyledTextHidden = styled(StyledText)`
 const StyledButton = styled.button`
   width: 100%;
   height: 5.2rem;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
   border-radius: 26px;
   background: ${(props) => props.theme.gradient_color};
 
@@ -162,14 +161,11 @@ const Container = styled.div`
 
   .signUp {
     display: inline-block;
-    height: 1.6rem;
-    margin: 0 0.3rem 0.2rem 1.5rem;
     font-size: 1.4rem;
+    padding: 0 0.2rem 1rem;
+    height: 1.6rem;
+    margin: 0 0 0 1rem;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: -0.28px;
     padding-bottom: 2rem;
     text-align: center;
     border: none;
