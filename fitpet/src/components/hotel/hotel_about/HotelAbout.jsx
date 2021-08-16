@@ -187,58 +187,58 @@ const HotelAbout = () => {
         <Font
           fontSize='2.4rem'
           fontWeight='bold'
-          color='#707070'
+          color='#2a2a2a'
           mt='4rem'
           mb='1.4rem'>
           숙소정보
         </Font>
         <div className='aboutBox'>
-          <SampleIcon />
+          <img src='/img/icon/location.png' alt='위치' />
           <Font
             fontSize='1.6rem'
             fontWeight='normal'
-            color='#979797'
+            color='#2a2a2a'
             ml='0.6rem'>
             서귀포시 노연로 80
           </Font>
         </div>
 
         <div className='aboutBox'>
-          <SampleIcon />
+          <img src='/img/icon/chekInOut.png' alt='체크인 체크아웃' />
           <Font
             fontSize='1.6rem'
             fontWeight='normal'
-            color='#979797'
+            color='#2a2a2a'
             ml='0.6rem'>
             체크인 15:00 PM - 체크아웃 12:00 PM
           </Font>
         </div>
         <div className='aboutBox'>
-          <SampleIcon />
+          <img src='/img/icon/guestRoom.png' alt='객실' />
           <Font
             fontSize='1.6rem'
             fontWeight='normal'
-            color='#979797'
+            color='#2a2a2a'
             ml='0.6rem'>
             11층 / 800객실
           </Font>
         </div>
         <div className='aboutBox' id='roomChoose'>
-          <SampleIcon />
+          <img src='/img/icon/phone.png' alt='전화' />
           <Font
             fontSize='1.6rem'
             fontWeight='normal'
-            color='#979797'
+            color='#2a2a2a'
             ml='0.6rem'>
             전화 82-64-908-8800
           </Font>
         </div>
         <div className='aboutBox'>
-          <SampleIcon />
+          <img src='/img/icon/fax.png' alt='팩스' />
           <Font
             fontSize='1.6rem'
             fontWeight='normal'
-            color='#979797'
+            color='#2a2a2a'
             ml='0.6rem'>
             팩스 82-64-908-8811
           </Font>
@@ -250,7 +250,7 @@ const HotelAbout = () => {
           <Font
             fontSize='2.4rem'
             fontWeight='bold'
-            color='#707070'
+            color='#2a2a2a'
             mt='1rem'
             mb='3.3rem'>
             객실선택
@@ -264,7 +264,7 @@ const HotelAbout = () => {
             height='40px'
             pr='1.2rem'
             pl='1.2rem'
-            color='#707070'
+            color='#2a2a2a'
             fontSize='1.4rem'
             borderRadius='7px'
             border='solid 1px #707070'
@@ -276,14 +276,14 @@ const HotelAbout = () => {
             height='40px'
             pr='1.2rem'
             pl='1.2rem'
-            color='#707070'
+            color='#2a2a2a'
             fontSize='1.4rem'
             borderRadius='7px'
             border='solid 1px #707070'
             mr='1rem'
           />
         </div>
-        <Font fontSize='1.6rem' fontWeight='normal' color='#707070' mb='1.4rem'>
+        <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a' mb='1.4rem'>
           아래 다양한 옵션 중 선택해보세요! 표시된 가격은 세금 및 서비스 요금을
           포함한 1박당 1개 객실 기준입니다. (예약 확정 전에는 요금이 청구되지
           않습니다)
@@ -302,7 +302,7 @@ const HotelAbout = () => {
         <Font
           fontSize='2.4rem'
           fontWeight='bold'
-          color='#707070'
+          color='#2a2a2a'
           mt='4rem'
           mb='2rem'>
           숙소 상세정보
@@ -310,12 +310,12 @@ const HotelAbout = () => {
         <div className='guideBlock'>
           <div className='guideBox'>
             <div className='title'>
-              <Font fontSize='2rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='2rem' fontWeight='normal' color='#2a2a2a'>
                 반려동물 동반 안내
               </Font>
             </div>
             <div className='contents'>
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 - 반려동물 동반 가능한 호텔로, 8kg미만 소형견만 입실 가능합니다.
                 <br />
                 - 반려동물 추가 요금은 별도로 없으며, 반려동물 전용 용품이 기본
@@ -330,12 +330,12 @@ const HotelAbout = () => {
           </div>
           <div className='guideBox'>
             <div className='title'>
-              <Font fontSize='2rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='2rem' fontWeight='normal' color='#2a2a2a'>
                 숙소 안내
               </Font>
             </div>
             <div className='contents'>
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 [ 입·퇴실 안내 ]<br />
                 - 체크인 15:00PM - 체크아웃 12:00PM
                 <br />- 객실 내 유무선 인터넷 무료로 이용 가능
@@ -356,7 +356,7 @@ const HotelAbout = () => {
       {/* 편의시설 및 서비스 */}
       <HotelService>
         <div className='title'>
-          <Font fontSize='2.4rem' fontWeight='bold' color='#707070' mt='4rem'>
+          <Font fontSize='2.4rem' fontWeight='bold' color='#2a2a2a' mt='4rem'>
             편의시설 및 서비스
           </Font>
         </div>
@@ -371,7 +371,7 @@ const HotelAbout = () => {
                 backColor='#cbcbcb'
                 borderRadius='50px'
               />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 와이파이
               </Font>
             </div>
@@ -382,7 +382,7 @@ const HotelAbout = () => {
                 backColor='#cbcbcb'
                 borderRadius='50px'
               />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 무료주차
               </Font>
             </div>
@@ -393,7 +393,7 @@ const HotelAbout = () => {
                 backColor='#cbcbcb'
                 borderRadius='50px'
               />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 피트니스 센터
               </Font>
             </div>
@@ -404,7 +404,7 @@ const HotelAbout = () => {
                 backColor='#cbcbcb'
                 borderRadius='50px'
               />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 수영장
               </Font>
             </div>
@@ -415,7 +415,7 @@ const HotelAbout = () => {
                 backColor='#cbcbcb'
                 borderRadius='50px'
               />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 운동장
               </Font>
             </div>
@@ -426,7 +426,7 @@ const HotelAbout = () => {
                 backColor='#cbcbcb'
                 borderRadius='50px'
               />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 24시 리셉션
               </Font>
             </div>
@@ -437,7 +437,7 @@ const HotelAbout = () => {
                 backColor='#cbcbcb'
                 borderRadius='50px'
               />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
                 수하물 보관
               </Font>
             </div>
@@ -449,7 +449,7 @@ const HotelAbout = () => {
         <Font
           fontSize='2.4rem'
           fontWeight='bold'
-          color='#707070'
+          color='#2a2a2a'
           mt='4rem'
           mb='1.4rem'>
           다른 여행객이 함께 본 숙소

@@ -1,21 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  Font,
-  ImgMoreBtn,
-  OpenBtn,
-  RoundSquareBtn,
-  SampleIcon,
-} from '../../../common';
+import { Font, ImgMoreBtn, RoundSquareBtn, SampleIcon } from '../../../common';
 
 const HotelTwoRoom = () => {
   return (
     <HotelTwoRoomWrapper>
       <div className='roomNameBox'>
-        <Font fontSize='2rem' color='#707070' fontWeight='bold' mr='2.4rem'>
+        <Font fontSize='2rem' color='#2a2a2a' fontWeight='bold' mr='2.4rem'>
           스탠다드 트윈룸
         </Font>
-        <Font fontSize='1.6rem' color='#707070' fontWeight='normal'>
+        <Font fontSize='1.6rem' color='#2a2a2a' fontWeight='normal'>
           객실크기: 25m
         </Font>
       </div>
@@ -28,45 +22,45 @@ const HotelTwoRoom = () => {
           {/* 싱글침대 2개, 트윈침대 1개 등등 */}
           <div className='bedroom'>
             <div className='bedroomInfo'>
-              <Font fontSize='2rem' color='#707070' fontWeight='bold' mb='2rem'>
+              <Font fontSize='2rem' color='#2a2a2a' fontWeight='bold' mb='2rem'>
                 싱글침대 2개
               </Font>
               <div className='aboutBox'>
-                <SampleIcon />
+                <img src='/img/icon/breakfast.png' alt='조식 포함' />
                 <Font
                   fontSize='1.6rem'
                   fontWeight='normal'
-                  color='#979797'
+                  color='#2a2a2a'
                   ml='0.6rem'>
                   조식 포함
                 </Font>
               </div>
               <div className='aboutBox'>
-                <SampleIcon />
+                <img src='/img/icon/freeCancel.png' alt='무료 예약 취소' />
                 <Font
                   fontSize='1.6rem'
                   fontWeight='normal'
-                  color='#979797'
+                  color='#2a2a2a'
                   ml='0.6rem'>
                   무료 예약 취소 (기간 한정)
                 </Font>
               </div>
               <div className='aboutBox'>
-                <SampleIcon />
+                <img src='/img/icon/maximumTwo.png' alt='인원수' />
                 <Font
                   fontSize='1.6rem'
                   fontWeight='normal'
-                  color='#979797'
+                  color='#2a2a2a'
                   ml='0.6rem'>
                   최대 2인 | 소형견 1마리
                 </Font>
               </div>
               <div className='aboutBox'>
-                <SampleIcon />
+                <img src='/img/icon/chekInOut.png' alt='체크인 체크아웃' />
                 <Font
                   fontSize='1.6rem'
                   fontWeight='normal'
-                  color='#979797'
+                  color='#2a2a2a'
                   ml='0.6rem'>
                   체크인 15:00 - 체크아웃 11:00
                 </Font>
@@ -74,18 +68,18 @@ const HotelTwoRoom = () => {
               <div className='roomInfomation'>
                 <Font
                   fontSize='1.4rem'
-                  color='#707070'
+                  color='#2a2a2a'
                   fontWeight='normal'
                   mr='0.6rem'>
                   객실 이용 안내
                 </Font>
-                <OpenBtn />
+                <img src='/img/icon/rightBtn.png' alt='객실 이용 안내' />
               </div>
             </div>
             <div className='bedroomPrice'>
               <Font
                 fontSize='1.6rem'
-                color='#707070'
+                color='#979797'
                 fontWeight='normal'
                 mb='0.6rem'>
                 1박당
@@ -93,7 +87,7 @@ const HotelTwoRoom = () => {
               <div className='price'>
                 <Font
                   fontSize='2.4rem'
-                  color='#707070'
+                  color='#2a2a2a'
                   fontWeight='bold'
                   mr='0.8rem'>
                   579,689
@@ -110,45 +104,45 @@ const HotelTwoRoom = () => {
           </div>
           <div className='bedroom'>
             <div className='bedroomInfo'>
-              <Font fontSize='2rem' color='#707070' fontWeight='bold' mb='2rem'>
+              <Font fontSize='2rem' color='#2a2a2a' fontWeight='bold' mb='2rem'>
                 싱글침대 2개
               </Font>
               <div className='aboutBox'>
-                <SampleIcon />
+                <img src='/img/icon/breakfast.png' alt='조식 포함' />
                 <Font
                   fontSize='1.6rem'
                   fontWeight='normal'
-                  color='#979797'
+                  color='#2a2a2a'
                   ml='0.6rem'>
                   조식 포함
                 </Font>
               </div>
               <div className='aboutBox'>
-                <SampleIcon />
+                <img src='/img/icon/freeCancel.png' alt='무료 예약 취소' />
                 <Font
                   fontSize='1.6rem'
                   fontWeight='normal'
-                  color='#979797'
+                  color='#2a2a2a'
                   ml='0.6rem'>
                   무료 예약 취소 (기간 한정)
                 </Font>
               </div>
               <div className='aboutBox'>
-                <SampleIcon />
+                <img src='/img/icon/maximumTwo.png' alt='인원수' />
                 <Font
                   fontSize='1.6rem'
                   fontWeight='normal'
-                  color='#979797'
+                  color='#2a2a2a'
                   ml='0.6rem'>
                   최대 2인 | 소형견 1마리
                 </Font>
               </div>
               <div className='aboutBox'>
-                <SampleIcon />
+                <img src='/img/icon/chekInOut.png' alt='체크인 체크아웃' />
                 <Font
                   fontSize='1.6rem'
                   fontWeight='normal'
-                  color='#979797'
+                  color='#2a2a2a'
                   ml='0.6rem'>
                   체크인 15:00 - 체크아웃 11:00
                 </Font>
@@ -156,18 +150,18 @@ const HotelTwoRoom = () => {
               <div className='roomInfomation'>
                 <Font
                   fontSize='1.4rem'
-                  color='#707070'
+                  color='#2a2a2a'
                   fontWeight='normal'
                   mr='0.6rem'>
                   객실 이용 안내
                 </Font>
-                <OpenBtn />
+                <img src='/img/icon/rightBtn.png' alt='객실 이용 안내' />
               </div>
             </div>
             <div className='bedroomPrice'>
               <Font
                 fontSize='1.6rem'
-                color='#707070'
+                color='#979797'
                 fontWeight='normal'
                 mb='0.6rem'>
                 1박당
@@ -175,7 +169,7 @@ const HotelTwoRoom = () => {
               <div className='price'>
                 <Font
                   fontSize='2.4rem'
-                  color='#707070'
+                  color='#2a2a2a'
                   fontWeight='bold'
                   mr='0.8rem'>
                   579,689
@@ -199,7 +193,7 @@ const HotelTwoRoomWrapper = styled.div`
   display: block;
   width: 128rem;
   margin: 0 auto;
-  border-bottom: 0.5px solid #979797;
+  border-bottom: 0.5px solid #2a2a2a;
   .roomNameBox {
     display: flex;
     align-items: center;
