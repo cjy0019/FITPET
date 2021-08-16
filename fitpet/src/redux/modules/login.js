@@ -6,10 +6,10 @@ import { closeLogin } from './modal';
 const namespace = 'fitpet/login';
 
 // action types
-const START = namespace + 'START';
-const SUCCESS = namespace + 'SUCCESS';
-const FAIL = namespace + 'FAIL';
-const LOGOUT = namespace + 'LOGOUT';
+const START = namespace + '/START';
+const SUCCESS = namespace + '/SUCCESS';
+const FAIL = namespace + '/FAIL';
+const LOGOUT = namespace + '/LOGOUT';
 
 // initial state
 const initialState = { userName: null, token: null, error: null };
@@ -46,6 +46,7 @@ export const loginFail = (error) => ({ type: FAIL, error });
 // saga
 const LOGIN_SAGA = namespace + '/LOGIN_SAGA';
 const LOGOUT_SAGA = namespace + '/LOGOUT_SAGA';
+const KAKAO_LOGIN_SAGA = namespace + '/KAKAO_LOGIN_SAGA';
 
 export const loginSagaStart = (userId, userPW) => ({
   type: LOGIN_SAGA,
@@ -54,6 +55,10 @@ export const loginSagaStart = (userId, userPW) => ({
 
 export const logoutSagaStart = () => ({
   type: LOGOUT_SAGA,
+});
+
+export const kakaoLoginSagaStart = () => ({
+  type: KAKAO_LOGIN_SAGA,
 });
 
 // login
@@ -79,14 +84,45 @@ export function* loginSaga(action) {
   }
 }
 
+const { Kakao } = window;
+// kakao login saga
+export function* loginKakaoSaga(action) {
+  try {
+    yield put(loginStart());
+
+    yield Kakao.Auth.login({
+      scope: 'profile_nickname, account_email, gender',
+      success: yield (authObj) => {
+        console.log(authObj);
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: (res) => {
+            const nickname = res.kakao_account.profile.nickname;
+            const token = authObj.access_token;
+            localStorage.setItem('token', token);
+            localStorage.setItem('userName', nickname);
+            put(loginSuccess(token, nickname));
+          },
+        });
+      },
+      fail: (err) => {
+        console.log(err);
+      },
+    });
+
+    yield put(closeLogin());
+  } catch (err) {
+    yield put(loginFail(err));
+  }
+}
+
 // logout
 export function* logoutSaga(action) {
   try {
     yield call(AuthService.logout);
     yield delay(500);
 
-    localStorage.removeItem('token');
-    localStorage.removeItem('userName');
+    localStorage.clear();
 
     yield put(logOut());
   } catch (error) {
@@ -98,4 +134,5 @@ export function* logoutSaga(action) {
 export function* watchLogin() {
   yield takeEvery(LOGIN_SAGA, loginSaga);
   yield takeEvery(LOGOUT_SAGA, logoutSaga);
+  yield takeEvery(KAKAO_LOGIN_SAGA, loginKakaoSaga);
 }
