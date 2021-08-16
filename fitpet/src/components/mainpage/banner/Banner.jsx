@@ -28,7 +28,7 @@ const BannerWrappr = styled.div`
   align-items: center;
   min-height: 74.4rem;
   padding-bottom: 17.6rem;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-image: url('/img/main/mainsearch.png');
 `;
