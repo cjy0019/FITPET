@@ -21,7 +21,7 @@ const Login = ({ hideLogin, login }) => {
               <br /> 핏펫에 오신걸 환영합니다&#58;&#41;
             </StyledSlogan>
 
-            {/* 팝업에서 아래쪽 부분 */}
+            {/* 로그인 input 부분 */}
             <LoginBottom login={login} />
           </div>
         </StyledForm>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { SocialBtn } from '../../common';
 
 const SignUp = ({ hideSignUp, signup, showSignupSuccess, goLogin }) => {
+  const [userName, setUserName] = useState('');
   const [userId, setUserId] = useState('');
   const [userPW, setUserPW] = useState('');
   const [CheckPassword, setCheckPassword] = useState('');
@@ -19,6 +20,13 @@ const SignUp = ({ hideSignUp, signup, showSignupSuccess, goLogin }) => {
           {/* 회원가입 내용 */}
           <SignUpContent>
             {/* 회원 정보 입력 칸, 다음으로 버튼 */}
+            <Input
+              onChange={changeName}
+              value={userName}
+              placeholder='이름'
+              type='text'
+            />
+
             <Input
               onChange={changeId}
               value={userId}
@@ -71,6 +79,10 @@ const SignUp = ({ hideSignUp, signup, showSignupSuccess, goLogin }) => {
   function changeCheckPassword(e) {
     setCheckPassword(e.target.value);
   }
+
+  function changeName(e) {
+    setUserName(e.target.userName);
+  }
 };
 
 const StyledCenter = styled.div`
@@ -82,7 +94,6 @@ const StyledCenter = styled.div`
 
 const SignUpWrapper = styled.div`
   width: 55.4rem;
-  height: 62.7rem;
   padding: 5rem 3.9rem 4.7rem;
   border-radius: 30px;
   border: solid 1px #707070;
@@ -96,8 +107,8 @@ const SignUpHeader = styled.div`
 `;
 const HeaderText = styled.div`
   font-size: 2.2rem;
-  font-weight: bold;
-  letter-spacing: -0.44px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
   line-height: 1.18;
   color: ${(props) => props.theme.black1_color};
   text-align: left;
@@ -106,7 +117,7 @@ const CloseBtn = styled.div`
   cursor: pointer;
   width: 3.4rem;
   height: 3.4rem;
-  object-fit: contain;
+  background-size: cover;
   background-image: url('/img/auth/closebutton.svg');
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -119,16 +130,13 @@ const SignUpContent = styled.div`
 
 const Input = styled.input`
   display: block;
-  width: 38.39rem;
-  height: 3.3rem;
+  width: 100%;
   font-size: 1.6rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.19;
-  letter-spacing: 0em;
   text-align: left;
+  padding-bottom: 1rem;
   color: ${(props) => props.theme.black1_color};
+  letter-spacing: 0.5px;
   border: none;
   border-bottom: 1px solid ${(props) => props.theme.grey3_color};
   outline: none;
@@ -142,7 +150,7 @@ const Input = styled.input`
 `;
 const NextButton = styled.button`
   cursor: pointer;
-  width: 37.4rem;
+  width: 100%;
   height: 5.2rem;
   border-radius: 26px;
   background: ${(props) => props.theme.gradient_color};
@@ -154,20 +162,22 @@ const NextButton = styled.button`
 
 // sns로 회원가입 하기
 const SocialBlock = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 3.6rem 3.3rem;
   border-bottom: solid 1px ${(props) => props.theme.grey4_color};
 `;
 const SocialText = styled.p`
-  // width: 17.8rem;
-  height: 1.6rem;
   margin: 0 6.5rem 2rem;
   font-size: 1.4rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.43;
-  letter-spacing: -0.28px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
   text-align: center;
   color: ${(props) => props.theme.black1_color};
 `;
@@ -181,11 +191,8 @@ const BottomBlock = styled.div`
     border: none;
     font-size: 1.4rem;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: -0.28px;
-    padding-bottom: 0.2rem;
+    letter-spacing: 0.2px;
+    padding: 0 0.2rem 0.2rem;
     text-align: center;
     background-color: transparent;
     border-bottom: 1px solid ${(props) => props.theme.grey1_color};
