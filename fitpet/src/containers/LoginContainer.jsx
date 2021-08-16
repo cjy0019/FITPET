@@ -1,11 +1,12 @@
 import React, { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Login from '../components/login/Login';
 import { loginSagaStart } from '../redux/modules/login';
 import { closeLogin } from '../redux/modules/modal';
 
 const LoginContainer = () => {
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.login.token);
 
   // 로그인 창 닫기
   const hideLogin = useCallback(() => {
@@ -18,7 +19,7 @@ const LoginContainer = () => {
     },
     [dispatch],
   );
-
+  if (token) return <></>;
   return <Login login={login} hideLogin={hideLogin} />;
 };
 
