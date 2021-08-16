@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font, HoverText, IconButton, SampleIcon } from '../../../common';
+import theme from '../../../assets/theme';
+import { Font, IconButton, SampleIcon } from '../../../common';
 import ImgMoreBtn from '../../../common/buttons/small_size/ImgMoreBtn';
 import HotelNameBlock from '../hotel_about/HotelNameBlock';
 import HotelOneRoom from '../hotel_about/HotelOneRoom';
@@ -30,20 +31,22 @@ const HotelAbout = () => {
           <HotelNameBlock />
           {/* 찜, 공유 */}
           <div className='icons'>
-            <SampleIcon></SampleIcon>
-            <SampleIcon ml='1rem' mr='2.4rem'></SampleIcon>
+            <button className='icon'>
+              <img src='/img/icon/likeicon2.png' alt='찜하기' />
+            </button>
+            <button className='icon'>
+              <img src='/img/icon/share.png' alt='공유하기' />
+            </button>
+            {/* <SampleIcon>
+              <img src='/img/icon/bluestaricon.svg' alt='평점' />
+            </SampleIcon>
+            <SampleIcon ml='1rem' mr='2.4rem'></SampleIcon> */}
           </div>
         </ContentsLeft>
         {/* 상세내용 오른쪽 (숙소 가격) */}
         <ContentsRight>
           <PriceBlock>
-            <Font
-              fontSize='3.2rem'
-              color='#707070'
-              fontWeight='bold'
-              mb='0.6rem'>
-              446,490 ~
-            </Font>
+            <p className='amount'>446,490 ~</p>
             <span className='price'> 원</span>
           </PriceBlock>
           <Font
@@ -70,33 +73,112 @@ const HotelAbout = () => {
       {/* 서비스 및 편의시설 */}
       <ServiceBlock>
         <ServiceBox>
-          <HoverText />
-        </ServiceBox>
-        <ServiceBox>
-          <SampleIcon width='12.5rem' height='12.5rem' />
-          <Font fontSize='2rem' fontWeight='normal' color='#707070' mt='0.7rem'>
+          <img src='/img/icon/smallPet.png' alt='소형견' />
+          <Font
+            fontSize='1.2rem'
+            fontWeight='normal'
+            color='#2a2a2a'
+            mt='0.6rem'>
             소형견
           </Font>
         </ServiceBox>
         <ServiceBox>
-          <SampleIcon width='12.5rem' height='12.5rem' />
-          <Font fontSize='2rem' fontWeight='normal' color='#707070' mt='0.7rem'>
+          <img src='/img/icon/mediumPet.png' alt='중형견' />
+          <Font
+            fontSize='1.2rem'
+            fontWeight='normal'
+            color='#2a2a2a'
+            mt='0.6rem'>
+            중형견
+          </Font>
+        </ServiceBox>
+        <ServiceBox>
+          <img src='/img/icon/withPet.png' alt='반려동물 동반' />
+          <Font
+            fontSize='1.2rem'
+            fontWeight='normal'
+            color='#2a2a2a'
+            mt='0.6rem'>
+            반려동물 <br />
+            동반
+          </Font>
+        </ServiceBox>
+        <ServiceBox>
+          <img src='/img/icon/stadium.png' alt='반려동물 운동장' />
+          <Font
+            fontSize='1.2rem'
+            fontWeight='normal'
+            color='#2a2a2a'
+            mt='0.6rem'>
+            반려동물
+            <br />
+            운동장
+          </Font>
+        </ServiceBox>
+        <ServiceBox>
+          <img src='/img/icon/petPool.png' alt='반려동물 수영장' />
+          <Font
+            fontSize='1.2rem'
+            fontWeight='normal'
+            color='#2a2a2a'
+            mt='0.6rem'>
+            반려동물
+            <br />
+            수영장
+          </Font>
+        </ServiceBox>
+        <ServiceBox>
+          <img src='/img/icon/wifi.png' alt='와이파이' />
+          <Font
+            fontSize='1.2rem'
+            fontWeight='normal'
+            color='#2a2a2a'
+            mt='0.6rem'>
+            와이파이
+          </Font>
+        </ServiceBox>
+        <ServiceBox>
+          <img src='/img/icon/fitness.png' alt='피트니스 센터' />
+          <Font
+            fontSize='1.2rem'
+            fontWeight='normal'
+            color='#2a2a2a'
+            mt='0.6rem'>
+            피트니스
+            <br />
+            센터
+          </Font>
+        </ServiceBox>
+        <ServiceBox>
+          <img src='/img/icon/pool.png' alt='수영장' />
+          <Font
+            fontSize='1.2rem'
+            fontWeight='normal'
+            color='#2a2a2a'
+            mt='0.6rem'>
+            수영장
+          </Font>
+        </ServiceBox>
+        <ServiceBox>
+          <img src='/img/icon/freeParking.png' alt='무료주차' />
+          <Font
+            fontSize='1.2rem'
+            fontWeight='normal'
+            color='#2a2a2a'
+            mt='0.6rem'>
             무료주차
           </Font>
         </ServiceBox>
         <ServiceBox>
-          <HoverText />
-        </ServiceBox>
-        <ServiceBox>
-          <SampleIcon width='12.5rem' height='12.5rem' />
-          <Font fontSize='2rem' fontWeight='normal' color='#707070' mt='0.7rem'>
-            비즈니스센터
-          </Font>
-        </ServiceBox>
-        <ServiceBox>
-          <SampleIcon width='12.5rem' height='12.5rem' />
-          <Font fontSize='2rem' fontWeight='normal' color='#707070' mt='0.7rem'>
-            해변근처
+          <img src='/img/icon/reception.png' alt='24시 리셉션' />
+          <Font
+            fontSize='1.2rem'
+            fontWeight='normal'
+            color='#2a2a2a'
+            mt='0.6rem'>
+            24시
+            <br />
+            리셉션
           </Font>
         </ServiceBox>
       </ServiceBlock>
@@ -402,10 +484,16 @@ const Contents = styled.div`
 const ContentsLeft = styled.div`
   display: flex;
   width: 89rem;
-  border-right: 0.5px solid #979797;
+  border-right: 0.5px solid ${theme.grey4_color};
   .icons {
     display: flex;
+    margin-right: 1.4rem;
     margin-left: auto;
+    .icon {
+      width: 3.4rem;
+      height: 3.4rem;
+      margin-right: 1rem;
+    }
   }
 `;
 const ContentsRight = styled.div`
@@ -415,11 +503,21 @@ const ContentsRight = styled.div`
 const PriceBlock = styled.div`
   display: flex;
   text-align: center;
+  margin-bottom: 0.6rem;
+  .amount {
+    font-size: 3.2rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.75;
+    letter-spacing: -0.64px;
+    text-align: left;
+    color: ${theme.black1_color};
+  }
   .price {
     font-size: 2.4rem;
     font-weight: 500;
-    color: #707070;
-
+    color: ${theme.black1_color};
     margin: 3px 0 0 8px;
   }
 `;
@@ -442,9 +540,12 @@ const ServiceBlock = styled.div`
   border-bottom: 1.5px solid #979797;
 `;
 const ServiceBox = styled.div`
+  line-height: 1.16;
+  height: 16.4rem;
   display: block;
-  margin: 5rem 2.8rem 5rem 0;
+  padding: 4rem 0 4rem 0;
   text-align: center;
+  margin-right: 1.6rem;
 `;
 const About = styled.div`
   width: 128rem;
