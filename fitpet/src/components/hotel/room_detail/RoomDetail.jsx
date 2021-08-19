@@ -2,6 +2,7 @@ import React from 'react';
 import { CloseOutlined } from '@ant-design/icons';
 import { Font, OpenBtn, RoundSquareBtn, SampleIcon } from '../../../common';
 import styled from 'styled-components';
+import theme from '../../../assets/theme';
 
 const RoomDetail = ({ hideRoomDetail }) => {
   // 객실 상세 모달 창 열기
@@ -9,185 +10,254 @@ const RoomDetail = ({ hideRoomDetail }) => {
     <>
       <RoomDetailWrapper>
         <RoomDetailBlock>
-          <CloseBtn onClick={hideRoomDetail}>
-            <CloseOutlined />
-          </CloseBtn>
-          <div className='bedroom'>
-            {/* 객실 정보 */}
-            <div className='bedroomInfo'>
-              <Font
-                fontSize='2.2rem'
-                color='#707070'
-                fontWeight='bold'
-                mb='2rem'>
-                스탠다드 트윈룸
-              </Font>
-              <Font fontSize='2rem' color='#707070' fontWeight='bold' mb='2rem'>
-                싱글침대 2개
-              </Font>
-              <div className='aboutBox'>
-                <SampleIcon />
+          <RoomDetailHeader onClick={hideRoomDetail}>
+            <div className='closeBtn'>
+              <button>
+                <CloseOutlined />
+              </button>
+            </div>
+          </RoomDetailHeader>
+          <RoomDetailContents>
+            <div className='contentsBlock'>
+              <div className='bedroom'>
+                {/* 객실 정보 */}
+                <div className='bedroomInfo'>
+                  <Font
+                    fontSize='2.2rem'
+                    color='#707070'
+                    fontWeight='bold'
+                    mb='2rem'>
+                    스탠다드 트윈룸
+                  </Font>
+                  <Font
+                    fontSize='2rem'
+                    color='#707070'
+                    fontWeight='bold'
+                    mb='2rem'>
+                    싱글침대 2개
+                  </Font>
+                  <div className='aboutBox'>
+                    <img src='/img/icon/breakfast.png' alt='조식 포함' />
+                    <Font
+                      fontSize='1.6rem'
+                      fontWeight='normal'
+                      color='#2a2a2a'
+                      ml='0.6rem'>
+                      조식 포함
+                    </Font>
+                  </div>
+                  <div className='aboutBox'>
+                    <img src='/img/icon/freeCancel.png' alt='무료 예약 취소' />
+                    <Font
+                      fontSize='1.6rem'
+                      fontWeight='normal'
+                      color='#2a2a2a'
+                      ml='0.6rem'>
+                      무료 예약 취소 (기간 한정)
+                    </Font>
+                  </div>
+                  <div className='aboutBox'>
+                    <img src='/img/icon/maximumTwo.png' alt='인원수' />
+                    <Font
+                      fontSize='1.6rem'
+                      fontWeight='normal'
+                      color='#2a2a2a'
+                      ml='0.6rem'>
+                      최대 2인 | 소형견 1마리
+                    </Font>
+                  </div>
+                  <div className='aboutBox'>
+                    <img src='/img/icon/chekInOut.png' alt='체크인 체크아웃' />
+                    <Font
+                      fontSize='1.6rem'
+                      fontWeight='normal'
+                      color='#2a2a2a'
+                      ml='0.6rem'>
+                      체크인 15:00 - 체크아웃 11:00
+                    </Font>
+                  </div>
+                </div>
+                {/* 객실 이미지 슬라이드 */}
+                <div className='bedroomImages'>
+                  <SampleIcon width='42.9rem' height='24.5rem' />
+                </div>
+              </div>
+              {/* 객실 설명 및 주의사항 */}
+              <div className='roomDetails'>
                 <Font
-                  fontSize='1.6rem'
-                  fontWeight='normal'
-                  color='#979797'
-                  ml='0.6rem'>
-                  조식 포함
+                  fontSize='2rem'
+                  color='#707070'
+                  fontWeight='bold'
+                  mb='2rem'>
+                  객실 설명 및 주의사항
+                </Font>
+                <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+                  면적 25.0m²의 객실로 탁트인 오션뷰를 제공합니다. 조식 미포함
+                  상품이며, 기간 내에 무료 예약 취소가 가능합니다. 예약 완료 후
+                  몇 분 내에 바로 확정이 됩니다.
+                  <br />
+                  반려동물 추가비용이나 인원 추가비용이 있는 경우는 현장결제
+                  하셔야 합니다. 최대 2인, 8kg 미만 소형견 1마리까지 입실
+                  가능합니다.
                 </Font>
               </div>
-              <div className='aboutBox'>
-                <SampleIcon />
+              {/* 객실 내 편의시설 */}
+              <div className='roomDetails'>
                 <Font
-                  fontSize='1.6rem'
-                  fontWeight='normal'
-                  color='#979797'
-                  ml='0.6rem'>
-                  무료 예약 취소 (기간 한정)
+                  fontSize='2rem'
+                  color='#707070'
+                  fontWeight='bold'
+                  mb='2rem'>
+                  객실 내 편의시설
                 </Font>
+                <div className='detailBox'>
+                  <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+                    [ 기본시설 ]<br />
+                    TV ㅣ 에어컨 ㅣ 냉장고 ㅣ 미니바 ㅣ 커피포트 욕조 ㅣ 비데 ㅣ
+                    욕실용품 ㅣ 드라이기
+                  </Font>
+                  <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+                    [ 기본시설 ]<br />
+                    TV ㅣ 에어컨 ㅣ 냉장고 ㅣ 미니바 ㅣ 커피포트 욕조 ㅣ 비데 ㅣ
+                    욕실용품 ㅣ 드라이기
+                  </Font>
+                </div>
               </div>
-              <div className='aboutBox'>
-                <SampleIcon />
+              {/* 환불정책 */}
+              <div className='roomDetails'>
                 <Font
-                  fontSize='1.6rem'
-                  fontWeight='normal'
-                  color='#979797'
-                  ml='0.6rem'>
-                  최대 2인 | 소형견 1마리
+                  fontSize='2rem'
+                  color='#707070'
+                  fontWeight='bold'
+                  mb='2rem'>
+                  환불정책
                 </Font>
-              </div>
-              <div className='aboutBox'>
-                <SampleIcon />
-                <Font
-                  fontSize='1.6rem'
-                  fontWeight='normal'
-                  color='#979797'
-                  ml='0.6rem'>
-                  체크인 15:00 - 체크아웃 11:00
+                <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
+                  - 2021. 08. 05 23:00시 전까지 무료 예약 취소가 가능합니다.
+                  <br />
+                  - 2021. 08. 06 23:00시 이후 예약 취소시 첫 1박에 대한 숙박
+                  요금, 세금 및 취소 수수료가 부과됩니다.
+                  <br />
+                  - 예약하신 객실 수에 따라 취소 수수료가 부과됩니다.
+                  <br />
+                  - 체크인을 하지 않거나 체크인 시간 이후 예약 취소/변경시 숙소
+                  측 재량에 따라 예약 가격의 최대 100%에 해당하는 취소 수수료가
+                  부과될 수 있습니다.
+                  <br />
                 </Font>
               </div>
             </div>
-            {/* 객실 이미지 슬라이드 */}
-            <div className='bedroomImages'>
-              <SampleIcon width='42.9rem' height='24.5rem' />
-            </div>
-          </div>
-          {/* 객실 설명 및 주의사항 */}
-          <div className='roomDetails'>
-            <Font fontSize='2rem' color='#707070' fontWeight='bold' mb='2rem'>
-              객실 설명 및 주의사항
-            </Font>
-            <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
-              면적 25.0m²의 객실로 탁트인 오션뷰를 제공합니다. 조식 미포함
-              상품이며, 기간 내에 무료 예약 취소가 가능합니다. 예약 완료 후 몇
-              분 내에 바로 확정이 됩니다.
-              <br />
-              반려동물 추가비용이나 인원 추가비용이 있는 경우는 현장결제 하셔야
-              합니다. 최대 2인, 8kg 미만 소형견 1마리까지 입실 가능합니다.
-            </Font>
-          </div>
-          {/* 객실 내 편의시설 */}
-          <div className='roomDetails'>
-            <Font fontSize='2rem' color='#707070' fontWeight='bold' mb='2rem'>
-              객실 내 편의시설
-            </Font>
-            <div className='detailBox'>
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
-                [ 기본시설 ]<br />
-                TV ㅣ 에어컨 ㅣ 냉장고 ㅣ 미니바 ㅣ 커피포트 욕조 ㅣ 비데 ㅣ
-                욕실용품 ㅣ 드라이기
-              </Font>
-              <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
-                [ 기본시설 ]<br />
-                TV ㅣ 에어컨 ㅣ 냉장고 ㅣ 미니바 ㅣ 커피포트 욕조 ㅣ 비데 ㅣ
-                욕실용품 ㅣ 드라이기
-              </Font>
-            </div>
-          </div>
-          {/* 환불정책 */}
-          <div className='roomDetails'>
-            <Font fontSize='2rem' color='#707070' fontWeight='bold' mb='2rem'>
-              환불정책
-            </Font>
-            <Font fontSize='1.6rem' fontWeight='normal' color='#979797'>
-              - 2021. 08. 05 23:00시 전까지 무료 예약 취소가 가능합니다.
-              <br />
-              - 2021. 08. 06 23:00시 이후 예약 취소시 첫 1박에 대한 숙박 요금,
-              세금 및 취소 수수료가 부과됩니다.
-              <br />
-              - 예약하신 객실 수에 따라 취소 수수료가 부과됩니다.
-              <br />
-              - 체크인을 하지 않거나 체크인 시간 이후 예약 취소/변경시 숙소 측
-              재량에 따라 예약 가격의 최대 100%에 해당하는 취소 수수료가 부과될
-              수 있습니다.
-              <br />
-            </Font>
-          </div>
+          </RoomDetailContents>
         </RoomDetailBlock>
+
         {/* 객실 예약 금액 + 장바구니, 바로예약 버튼 */}
-        <ReservationBlock>
-          <div className='priceBox'>
-            <div className='price'>
-              <Font
-                fontSize='2.4rem'
-                color='#707070'
-                fontWeight='bold'
-                mr='0.8rem'>
-                579,689
-              </Font>
-              <span className='one'> 원</span>
+        <RoomDetailFooter>
+          <div className='PriceAndBtnBox'>
+            <div className='priceBox'>
+              <div className='price'>
+                <Font
+                  fontSize='2.4rem'
+                  color='#4765ff'
+                  fontWeight='bold'
+                  mr='0.8rem'>
+                  579,689
+                </Font>
+                <span className='one'> 원</span>
+              </div>
+              <div className='roomInfomation'>
+                <Font
+                  fontSize='1.4rem'
+                  color='#979797'
+                  fontWeight='normal'
+                  mr='0.6rem'>
+                  세금 및 서비스 요금 포함
+                </Font>
+                <OpenBtn />
+              </div>
             </div>
-            <div className='roomInfomation'>
-              <Font
-                fontSize='1.4rem'
-                color='#707070'
-                fontWeight='normal'
-                mr='0.6rem'>
-                객실 이용 안내
-              </Font>
-              <OpenBtn />
+            <div className='buttons'>
+              <RoundSquareBtn>장바구니</RoundSquareBtn>
+              <RoundSquareBtn main_color style={{ marginLeft: '1.4rem' }}>
+                예약하기
+              </RoundSquareBtn>
             </div>
           </div>
-          <div className='buttons'>
-            <RoundSquareBtn text='장바구니' />
-            <RoundSquareBtn
-              text='바로예약'
-              backColor='#979797'
-              color='#fff'
-              fontSize='1.6rem'
-              ml='1.4rem'
-            />
-          </div>
-        </ReservationBlock>
+        </RoomDetailFooter>
       </RoomDetailWrapper>
     </>
   );
 };
 
 const RoomDetailWrapper = styled.div`
-  background-color: #fff;
-  width: 800px;
-  // height: 100%;
-  height: 1080px;
-  //margin: 0 0 0 1120px;
+  width: 80rem;
   margin-left: auto;
-  border: 1px solid red;
+  height: 100%;
+  background-color: ${theme.white_color};
+  display: flex;
+  padding-bottom: 4.2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
 `;
 const RoomDetailBlock = styled.div`
-  padding: 4rem;
+  background-color: ${theme.white_color};
+  -webkit-box-flex: 1;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  box-sizing: inherit;
+`;
+
+const RoomDetailHeader = styled.header`
+  background-color: ${theme.white_color};
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  .closeBtn {
+    line-height: 16px;
+    padding: 4rem;
+  }
+`;
+
+const RoomDetailContents = styled.div`
+  -webkit-box-flex: 1;
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+  transition: transform 0.5s;
+  display: flex;
+  box-sizing: inherit;
+  p {
+    color: ${theme.black1_color};
+  }
+  .contentsBlock {
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    padding-top: 24px;
+    overflow-y: auto;
+    line-height: 1.3;
+    width: 100%;
+    padding: 0 4rem 4rem;
+    height: 100%;
+  }
   .bedroom {
-    padding-bottom: 4rem;
     display: flex;
-    :first-child {
-      border-bottom: 0.5px solid #979797;
-      margin-bottom: 4rem;
-    }
+    margin-bottom: 4rem;
     .bedroomInfo {
       margin-right: auto;
-
       .aboutBox {
         display: flex;
         margin-bottom: 1rem;
         align-items: center;
+        img {
+          width: 2.8rem;
+          height: 2.8rem;
+        }
         :last-child {
           margin-bottom: 1.2rem;
         }
@@ -203,11 +273,9 @@ const RoomDetailBlock = styled.div`
     }
   }
   .roomDetails {
-    :not(:last-child) {
-      margin-bottom: 4rem;
-    }
+    margin-bottom: 4rem;
     p {
-      line-height: 25px;
+      line-height: 1.63;
     }
     .detailBox {
       display: flex;
@@ -217,31 +285,29 @@ const RoomDetailBlock = styled.div`
     }
   }
 `;
-
-const CloseBtn = styled.div`
-  cursor: pointer;
-  font-size: 2rem;
-  width: 3.4rem;
-  height: 3.4rem;
-  color: #707070;
-  margin-bottom: 4rem;
-`;
-
-const ReservationBlock = styled.div`
-  display: flex;
-  width: 80rem;
-  height: 13.3rem;
-  //margin: 42px 0 0;
-  padding: 38px 40px 36px;
-  opacity: 0.5;
-  box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16);
-  background-color: #ffffff;
+const RoomDetailFooter = styled.footer`
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  display: block;
+  box-sizing: inherit;
+  .PriceAndBtnBox {
+    box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16);
+    padding: 3.8rem 4rem 0;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+  }
   .priceBox {
     display: block;
     .price {
       display: flex;
       align-items: center;
       margin-bottom: 0.6rem;
+      color: ${theme.main_color};
     }
     .roomInfomation {
       display: flex;
