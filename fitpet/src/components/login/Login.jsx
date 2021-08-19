@@ -5,29 +5,29 @@ import LoginBottom from './LoginBottom';
 const Login = ({ hideLogin, login }) => {
   return (
     <>
-      <Overlay>
-        <div className='center'>
-          <StyledForm onSubmit={handleSubmit}>
-            <div>
-              <StyledDiv>
-                <h1>로그인</h1>
-                <StyledX onClick={hideLogin} />
-              </StyledDiv>
-              {/* 로고 */}
-              <Logo />
+      {/* <Overlay> */}
+      <StyledCenter>
+        <StyledForm onSubmit={handleSubmit}>
+          <div>
+            <StyledDiv>
+              <h1>로그인</h1>
+              <StyledX onClick={hideLogin} />
+            </StyledDiv>
+            {/* 로고 */}
+            <Logo />
 
-              {/* 슬로건 */}
-              <StyledSlogan>
-                반려동물과 함께하는 맞춤 힐링여행!
-                <br /> 핏펫에 오신걸 환영합니다&#58;&#41;
-              </StyledSlogan>
+            {/* 슬로건 */}
+            <StyledSlogan>
+              반려동물과 함께하는 맞춤 힐링여행!
+              <br /> 핏펫에 오신걸 환영합니다&#58;&#41;
+            </StyledSlogan>
 
-              {/* 팝업에서 아래쪽 부분 */}
-              <LoginBottom login={login} />
-            </div>
-          </StyledForm>
-        </div>
-      </Overlay>
+            {/* 팝업에서 아래쪽 부분 */}
+            <LoginBottom login={login} />
+          </div>
+        </StyledForm>
+      </StyledCenter>
+      {/* </Overlay> */}
     </>
   );
   function handleSubmit(e) {
@@ -60,22 +60,32 @@ const StyledX = styled.button`
 
 // style
 // login wrapper
+// const Overlay = styled.div`
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   bottom: 0;
+//   z-index: 999999999;
+//   background-color: rgba(0, 0, 0, 0.7);
+// `;
 
-const Overlay = styled.div`
+// const Overlay = styled.div`
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   bottom: 0;
+//   z-index: 999999999;
+//   background-color: rgba(0, 0, 0, 0.7);
+// `;
+
+const StyledCenter = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 999999999;
-  background-color: rgba(0, 0, 0, 0.7);
-
-  .center {
-    position: absolute;
-    top: 50vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.4s;
 `;
 
 const StyledForm = styled.form`

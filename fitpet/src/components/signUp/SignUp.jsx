@@ -9,53 +9,51 @@ const SignUp = ({ hideSignUp, signup, showSignupSuccess, goLogin }) => {
 
   return (
     <>
-      <Overlay>
-        <div className='center'>
-          <SignUpWrapper>
-            {/* 회원가입 헤더 부분 */}
-            <SignUpHeader>
-              <HeaderText>회원가입</HeaderText>
-              <CloseBtn onClick={hideSignUp} />
-            </SignUpHeader>
-            {/* 회원가입 내용 */}
-            <SignUpContent>
-              {/* 회원 정보 입력 칸, 다음으로 버튼 */}
-              <Input
-                onChange={changeId}
-                value={userId}
-                placeholder='이메일 아이디'
-                type='email'
-              />
-              <Input
-                onChange={changePassword}
-                value={userPW}
-                placeholder='비밀번호'
-                type='password'
-              />
-              <Input
-                onChange={changeCheckPassword}
-                value={CheckPassword}
-                placeholder='비밀번호 확인'
-                type='password'
-              />
-              <NextButton onClick={clickSignup}>회원가입</NextButton>
-              {/* sns계정으로 가입 */}
-              <SocialBlock>
-                <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>
-                {/* sns로 가입하기 버튼 */}
-                <SocialBtn />
-              </SocialBlock>
-              {/* 라인 아래 부분 */}
-              <BottomBlock>
-                <BottomText>이미 핏펫 회원이신가요?</BottomText>
-                <button className='login' onClick={goLogin}>
-                  로그인
-                </button>
-              </BottomBlock>
-            </SignUpContent>
-          </SignUpWrapper>
-        </div>
-      </Overlay>
+      <StyledCenter>
+        <SignUpWrapper>
+          {/* 회원가입 헤더 부분 */}
+          <SignUpHeader>
+            <HeaderText>회원가입</HeaderText>
+            <CloseBtn onClick={hideSignUp} />
+          </SignUpHeader>
+          {/* 회원가입 내용 */}
+          <SignUpContent>
+            {/* 회원 정보 입력 칸, 다음으로 버튼 */}
+            <Input
+              onChange={changeId}
+              value={userId}
+              placeholder='이메일 아이디'
+              type='email'
+            />
+            <Input
+              onChange={changePassword}
+              value={userPW}
+              placeholder='비밀번호'
+              type='password'
+            />
+            <Input
+              onChange={changeCheckPassword}
+              value={CheckPassword}
+              placeholder='비밀번호 확인'
+              type='password'
+            />
+            <NextButton onClick={clickSignup}>회원가입</NextButton>
+            {/* sns계정으로 가입 */}
+            <SocialBlock>
+              <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>
+              {/* sns로 가입하기 버튼 */}
+              <SocialBtn />
+            </SocialBlock>
+            {/* 라인 아래 부분 */}
+            <BottomBlock>
+              <BottomText>이미 핏펫 회원이신가요?</BottomText>
+              <button className='login' onClick={goLogin}>
+                로그인
+              </button>
+            </BottomBlock>
+          </SignUpContent>
+        </SignUpWrapper>
+      </StyledCenter>
     </>
   );
 
@@ -75,22 +73,13 @@ const SignUp = ({ hideSignUp, signup, showSignupSuccess, goLogin }) => {
   }
 };
 
-const Overlay = styled.div`
+const StyledCenter = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 999999999;
-  background-color: rgba(0, 0, 0, 0.7);
-
-  .center {
-    position: absolute;
-    top: 50vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
+
 const SignUpWrapper = styled.div`
   width: 55.4rem;
   height: 62.7rem;
