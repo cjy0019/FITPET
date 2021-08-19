@@ -87,6 +87,7 @@ export const UpButton = (props) => {
         Icon={IoIosArrowUp}
         width='2.8rem'
         height='2.8rem'
+        backColor='#fff'
         border='none'
         borderRadius='0'
         color='black'
@@ -106,8 +107,8 @@ export const DownButton = (props) => {
         width='2.8rem'
         height='2.8rem'
         border='none'
-        borderRadius='0'
         backColor='#fff'
+        borderRadius='0'
         color='black'
         handleClick={props.handleClick}
       />

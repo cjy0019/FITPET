@@ -10,7 +10,10 @@ const HotelFilter = () => {
   return (
     <FilterSection>
       <MapContainer>
-        <MapButton>지도와 함께 보기</MapButton>
+        <MapButton>
+          <img src='/img/hotel/hotel_list/mapicon.svg' alt='지도와 함께 보기' />
+          <span>지도와 함께 보기</span>
+        </MapButton>
       </MapContainer>
 
       {/* 등급 필터링 */}
@@ -44,6 +47,9 @@ const MapContainer = styled.div`
 `;
 
 const MapButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 16.9rem;
   height: 4rem;
   font-size: 1.6rem;

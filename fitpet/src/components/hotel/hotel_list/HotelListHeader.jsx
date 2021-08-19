@@ -5,7 +5,7 @@ import { SmallHeader } from '../hotel_common/filterCommon';
 const HotelListHeader = () => {
   return (
     <>
-      <SmallHeader>
+      <SmallHeaderBorder>
         <h2>예약 가능한 숙소 121개</h2>
         <FlexUl>
           <StyledLi>
@@ -27,7 +27,7 @@ const HotelListHeader = () => {
             <FilteringBtn>등급순</FilteringBtn>
           </StyledLi>
         </FlexUl>
-      </SmallHeader>
+      </SmallHeaderBorder>
     </>
   );
 };
@@ -53,6 +53,11 @@ const FilteringBtn = styled.button`
   line-height: 1.71;
   letter-spacing: -0.28px;
   color: #707070;
+`;
+
+const SmallHeaderBorder = styled(SmallHeader)`
+  padding-bottom: 2.2rem;
+  border-bottom: solid 1px #eee;
 `;
 
 export default HotelListHeader;

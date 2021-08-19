@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import SmallLine from '../../common/utility/SmallLine';
 import { SmallHeader } from '../hotel/hotel_common/filterCommon';
 
 const RentCarHeader = () => {
@@ -22,7 +21,6 @@ const RentCarHeader = () => {
           </StyledLi>
         </FlexUl>
       </SmallHeader>
-      <SmallLine />
     </>
   );
 };
