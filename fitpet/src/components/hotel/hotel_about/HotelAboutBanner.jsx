@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import useWindowScroll from '../../../hooks/useWindowScroll';
 import HotelDate from '../hotel_common/HotelDate';
 import HotelMenu from '../hotel_common/HotelMenu';
@@ -13,8 +13,8 @@ const HotelAboutBanner = () => {
 
   useEffect(() => {
     if (yOffset > 1000) {
-      setIsScrollMenu(true);
       setIsScrollDate(false);
+      setIsScrollMenu(true);
     } else if (yOffset > 100) {
       setIsScrollDate(true);
       setIsScrollMenu(false);
@@ -64,10 +64,14 @@ const Banner = styled.div`
   }
   .bannerMenu {
     height: 8rem;
-
     padding-left: 32rem;
     box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.16);
   }
+  ${(props) =>
+    props.scroll &&
+    css`
+      margin-top: 0;
+    `}
 `;
 
 export default HotelAboutBanner;
