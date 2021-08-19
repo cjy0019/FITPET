@@ -1,6 +1,6 @@
 import React from 'react';
 import { CloseOutlined } from '@ant-design/icons';
-import { Font, OpenBtn, RoundSquareBtn, SampleIcon } from '../../../common';
+import { Font, RoundSquareBtn, SampleIcon } from '../../../common';
 import styled from 'styled-components';
 import theme from '../../../assets/theme';
 
@@ -172,7 +172,9 @@ const RoomDetail = ({ hideRoomDetail }) => {
                   mr='0.6rem'>
                   세금 및 서비스 요금 포함
                 </Font>
-                <OpenBtn />
+                <button>
+                  <img src='/img/icon/rightBtn.png' alt='객실 이용 안내' />
+                </button>
               </div>
             </div>
             <div className='buttons'>
