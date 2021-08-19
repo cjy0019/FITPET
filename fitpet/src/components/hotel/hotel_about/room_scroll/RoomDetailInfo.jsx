@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Font } from '../../../../common';
 
-const RoomDetail = () => {
+const RoomDetailInfo = () => {
   return (
-    <RoomDetailWrapper id='roomDetail'>
+    <RoomDetailInfoWrapper id='roomDetailInfo'>
       <Font
         fontSize='2.4rem'
         fontWeight='bold'
@@ -58,11 +58,11 @@ const RoomDetail = () => {
           </div>
         </div>
       </div>
-    </RoomDetailWrapper>
+    </RoomDetailInfoWrapper>
   );
 };
 
-const RoomDetailWrapper = styled.div`
+const RoomDetailInfoWrapper = styled.div`
   display: block;
   width: 128rem;
   margin: 0 auto;
@@ -86,4 +86,4 @@ const RoomDetailWrapper = styled.div`
   }
 `;
 
-export default RoomDetail;
+export default RoomDetailInfo;

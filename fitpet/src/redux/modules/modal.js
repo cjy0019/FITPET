@@ -13,6 +13,9 @@ const CLOSE_SIGNUP = namespace + 'CLOSE_SIGNUP';
 const SIGNUP_SUCCESS_OPEN = namespace + 'SIGNUP_SUCCESS_OPEN';
 const SIGNUP_SUCCESS_CLOSE = namespace + 'SIGNUP_SUCCESS_CLOSE';
 
+const OPEN_ROOMDETAIL = namespace + 'OPEN_ROOMDETAIL';
+const CLOSE_ROOMDETAIL = namespace + 'CLOSE_ROOMDETAIL';
+
 // action creators
 export const openLogin = () => ({ type: OPEN_LOGIN });
 export const closeLogin = () => ({ type: CLOSE_LOGIN });
@@ -23,11 +26,15 @@ export const closeSignUp = () => ({ type: CLOSE_SIGNUP });
 export const signupSuccessOpen = () => ({ type: SIGNUP_SUCCESS_OPEN });
 export const signupSuccessClose = () => ({ type: SIGNUP_SUCCESS_CLOSE });
 
+export const openRoomDetail = () => ({ type: OPEN_ROOMDETAIL });
+export const closeRoomDetail = () => ({ type: CLOSE_ROOMDETAIL });
+
 // initial state
 const initialState = {
   loginOpen: false,
   signupOpen: false,
   signupSuccessOpen: false,
+  roomDetailOpen: false,
 };
 
 // reudcer
@@ -50,6 +57,11 @@ export default function modal(state = initialState, action) {
     case SIGNUP_SUCCESS_CLOSE:
       return { ...state, signupSuccessOpen: false };
 
+    case OPEN_ROOMDETAIL:
+      return { ...state, roomDetailOpen: true };
+
+    case CLOSE_ROOMDETAIL:
+      return { ...state, roomDetailClose: false };
     default:
       return state;
   }

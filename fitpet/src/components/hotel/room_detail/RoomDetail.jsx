@@ -1,13 +1,14 @@
-import styled from 'styled-components';
+import React from 'react';
 import { CloseOutlined } from '@ant-design/icons';
 import { Font, OpenBtn, RoundSquareBtn, SampleIcon } from '../../../common';
+import styled from 'styled-components';
 
-// 객실 상세 모달 창 열기
-const RoomDetailModal = () => {
+const RoomDetail = ({ hideRoomDetail, showRoomDetail }) => {
+  // 객실 상세 모달 창 열기
   return (
-    <RoomDetailModalWrapper>
+    <RoomDetailWrapper>
       <RoomDetailBlock>
-        <CloseBtn>
+        <CloseBtn onClick={hideRoomDetail}>
           <CloseOutlined />
         </CloseBtn>
         <div className='bedroom'>
@@ -152,11 +153,11 @@ const RoomDetailModal = () => {
           />
         </div>
       </ReservationBlock>
-    </RoomDetailModalWrapper>
+    </RoomDetailWrapper>
   );
 };
 
-const RoomDetailModalWrapper = styled.div`
+const RoomDetailWrapper = styled.div`
   background-color: #fff;
   width: 800px;
   // height: 100%;
@@ -248,4 +249,4 @@ const ReservationBlock = styled.div`
   }
 `;
 
-export default RoomDetailModal;
+export default RoomDetail;

@@ -8,10 +8,10 @@ import HotelOneRoom from '../hotel_about/HotelOneRoom';
 import HotelTwoRoom from '../hotel_about/HotelTwoRoom';
 import OthertravelersHotels from './room_scroll/OthertravelersHotels';
 import RoomChoose from './room_scroll/RoomChoose';
-import RoomDetail from './room_scroll/RoomDetail';
+import RoomDetailInfo from './room_scroll/RoomDetailInfo';
 import RoomService from './room_scroll/RoomService';
 
-const HotelAbout = () => {
+const HotelAbout = ({ showRoomDetail, roomDetailOpen }) => {
   return (
     <HotelsAboutWrapper>
       {/* 숙소 이미지 3장 */}
@@ -249,13 +249,16 @@ const HotelAbout = () => {
       {/* 객실 선택 */}
       <RoomChoose />
       <HotelTwoRoom />
-      <HotelOneRoom />
+      <HotelOneRoom
+        showRoomDetail={showRoomDetail}
+        roomDetailOpen={roomDetailOpen}
+      />
       <HotelTwoRoom />
       <HotelTwoRoom />
       <HotelOneRoom />
       {/* 스크롤 이동 [다른 추천 호텔] 지점 */}
       {/* 숙소 상세정보 */}
-      <RoomDetail />
+      <RoomDetailInfo />
       {/* 편의시설 및 서비스 */}
       <RoomService />
       {/* 다른 여행객이 함께 본 숙소 */}

@@ -21,8 +21,6 @@ const Header = ({
   signupOpen,
   signupSuccessOpen,
   showSignupSuccess,
-  hideSignupSuccess,
-  signupStatus,
 }) => {
   return (
     <>
