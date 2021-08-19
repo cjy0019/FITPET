@@ -202,30 +202,47 @@ const RoomDetailWrapper = styled.div`
 const RoomDetailBlock = styled.div`
   background-color: ${theme.white_color};
   flex: 1;
+  min-height: 0;
   overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: inherit;
 `;
 
 const RoomDetailHeader = styled.header`
   background-color: ${theme.white_color};
+  flex: 0 0 auto;
   .closeBtn {
+    line-height: 16px;
     padding: 4rem;
   }
 `;
 
 const RoomDetailContents = styled.div`
+  flex: 1;
+  min-height: 0;
+  height: 100%;
   transition: transform 0.5s;
+  display: flex;
+  box-sizing: inherit;
   p {
     color: ${theme.black1_color};
   }
   .contentsBlock {
+    flex: 0 0 100%;
+    padding-top: 24px;
     overflow-y: auto;
-    line-height: 1.2;
+    line-height: 1.3;
+    width: 100%;
     padding: 0 4rem 4rem;
+    height: 100%;
   }
   .bedroom {
     display: flex;
     margin-bottom: 4rem;
     .bedroomInfo {
+      margin-right: auto;
       .aboutBox {
         display: flex;
         margin-bottom: 1rem;
@@ -234,6 +251,9 @@ const RoomDetailContents = styled.div`
           width: 2.8rem;
           height: 2.8rem;
         }
+        :last-child {
+          margin-bottom: 1.2rem;
+        }
       }
       .roomInfomation {
         display: flex;
@@ -241,6 +261,7 @@ const RoomDetailContents = styled.div`
       }
     }
     .bedroomImages {
+      text-align: right;
       margin-left: auto;
     }
   }
@@ -258,11 +279,16 @@ const RoomDetailContents = styled.div`
   }
 `;
 const RoomDetailFooter = styled.footer`
+  flex: 0 0 auto;
+  display: block;
+  box-sizing: inherit;
   .PriceAndBtnBox {
     box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16);
     padding: 3.8rem 4rem 0;
     position: relative;
+    z-index: 2;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
   .priceBox {
