@@ -61,7 +61,7 @@ export default function modal(state = initialState, action) {
       return { ...state, roomDetailOpen: true };
 
     case CLOSE_ROOMDETAIL:
-      return { ...state, roomDetailClose: false };
+      return { ...state, roomDetailOpen: false };
     default:
       return state;
   }

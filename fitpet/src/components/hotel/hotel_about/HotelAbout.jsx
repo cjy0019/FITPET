@@ -11,7 +11,7 @@ import RoomChoose from './room_scroll/RoomChoose';
 import RoomDetailInfo from './room_scroll/RoomDetailInfo';
 import RoomService from './room_scroll/RoomService';
 
-const HotelAbout = ({ showRoomDetail, roomDetailOpen }) => {
+const HotelAbout = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
   return (
     <HotelsAboutWrapper>
       {/* 숙소 이미지 3장 */}
@@ -252,6 +252,7 @@ const HotelAbout = ({ showRoomDetail, roomDetailOpen }) => {
       <HotelOneRoom
         showRoomDetail={showRoomDetail}
         roomDetailOpen={roomDetailOpen}
+        hideRoomDetail={hideRoomDetail}
       />
       <HotelTwoRoom />
       <HotelTwoRoom />

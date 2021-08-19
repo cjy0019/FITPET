@@ -3,16 +3,21 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import HotelAbout from '../components/hotel/hotel_about/HotelAbout';
-import { openRoomDetail } from '../redux/modules/modal';
+import { closeRoomDetail, openRoomDetail } from '../redux/modules/modal';
 
 const HotelAboutContainer = () => {
   const dispatch = useDispatch();
   const roomDetailOpen = useSelector((state) => state.modal.roomDetailOpen);
 
+  // 객실 상세 창 열기
   const showRoomDetail = useCallback(() => {
-    console.log('showRoomDetail: ' + roomDetailOpen);
     dispatch(openRoomDetail());
   }, [dispatch, roomDetailOpen]);
+
+  // 객실 상세 창 닫기
+  const hideRoomDetail = useCallback(() => {
+    dispatch(closeRoomDetail());
+  }, [dispatch]);
 
   useEffect(() => {
     if (roomDetailOpen) {
@@ -35,6 +40,7 @@ const HotelAboutContainer = () => {
     <HotelAbout
       showRoomDetail={showRoomDetail}
       roomDetailOpen={roomDetailOpen}
+      hideRoomDetail={hideRoomDetail}
     />
   );
 };

@@ -4,7 +4,7 @@ import { Font, SampleIcon, RoundSquareBtn, ImgMoreBtn } from '../../../common';
 import Modal from '../../modal/Modal';
 import RoomDetail from '../room_detail/RoomDetail';
 
-const HotelOneRoom = ({ showRoomDetail, roomDetailOpen }) => {
+const HotelOneRoom = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
   return (
     <>
       <HotelOneRoomWrapper>
@@ -141,7 +141,7 @@ const HotelOneRoom = ({ showRoomDetail, roomDetailOpen }) => {
       </HotelOneRoomWrapper>
       {roomDetailOpen ? (
         <Modal>
-          <RoomDetail />
+          <RoomDetail hideRoomDetail={hideRoomDetail} />
         </Modal>
       ) : null}
     </>
