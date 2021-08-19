@@ -14,6 +14,7 @@ export default class AuthService {
       userId,
       userPW,
     });
+    console.log(response.data);
     return response;
   }
 
