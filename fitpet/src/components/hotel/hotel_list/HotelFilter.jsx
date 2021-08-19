@@ -5,6 +5,7 @@ import HotelTypeFilter from './HotelTypeFilter';
 import LevelFilter from './LevelFilter';
 import RatingFilter from './RatingFilter';
 import ServiceFilter from './ServiceFilter';
+import BudgetFilter from './BudgetFilter';
 
 const HotelFilter = () => {
   return (
@@ -15,6 +16,8 @@ const HotelFilter = () => {
           <span>지도와 함께 보기</span>
         </MapButton>
       </MapContainer>
+
+      <BudgetFilter />
 
       {/* 등급 필터링 */}
       <LevelFilter />
@@ -43,6 +46,7 @@ const MapContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #cbcbcb;
+  margin-bottom: 4rem;
   height: 9.6rem;
 `;
 

@@ -91,7 +91,6 @@ export const UpButton = (props) => {
         border='none'
         borderRadius='0'
         color='black'
-        backColor='#fff'
         handleClick={props.handleClick}
       />
     </>
