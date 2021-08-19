@@ -1,30 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Font } from '../../../common';
-import { AiFillStar } from 'react-icons/ai';
 
 const HotelNameBlock = () => {
   return (
     <div>
       <HotelName>
-        <Font fontSize='1.6rem' fontWeight='bold' mb='1.4rem'>
+        <Font
+          color='theme.black1_color'
+          fontSize='1.6rem'
+          fontWeight='bold'
+          mb='1.4rem'>
           호텔 | 5성급
         </Font>
-        <Font fontSize='3.8rem' color='#707070' fontWeight='bold'>
+        <Font color='theme.black1_color' fontSize='3.8rem' fontWeight='bold'>
           롯데호텔 제주
         </Font>
-        <Font fontSize='1.6rem' color='#979797' mt='1rem' mb='1.1rem'>
+        <Font color='#979797' fontSize='1.6rem' mt='1rem' mb='1.1rem'>
           Lotte Hotel JEJU
         </Font>
       </HotelName>
       <Star>
-        <AiFillStar size='2rem' color='#979797' />
-        <Font fontSize='1.6rem' color='#979797' ml='0.73rem'>
+        <img src='/img/icon/bluestaricon.svg' alt='평점' />
+        <Font fontSize='1.6rem' ml='0.2rem' color='#2a2a2a'>
           4.5
         </Font>
       </Star>
       <PetInfo>
-        <Font fontSize='1.4rem' color='#707070' mt='2rem'>
+        <Font color='theme.black1_color' fontSize='1.4rem' mt='2rem'>
           소형견 | 중형견 | 애견동반
         </Font>
       </PetInfo>

@@ -10,7 +10,7 @@ const RoundSquareBtn = (props) => {
 const buttonStyle = css`
   height: 4.8rem;
   min-width: 7.4rem;
-  // padding: 1.6rem 2.8rem 1.3rem;
+  padding: 1.6rem 2.8rem 1.3rem;
   border-radius: 7px;
   font-size: 1.6rem;
   font-weight: normal;
@@ -18,7 +18,7 @@ const buttonStyle = css`
   background-color: ${(props) => props.theme.grey4_color};
   color: ${(props) => props.theme.main_color};
 
-  // 검색, 재검색, 상세보기 버튼
+  // 상세보기 버튼
   ${(props) =>
     props.main_color &&
     css`
@@ -26,6 +26,15 @@ const buttonStyle = css`
       color: ${(props) => props.theme.white_color};
     `}
 
+  // 검색, 재검색, 상세보기 버튼
+  ${(props) =>
+    props.search_btn &&
+    css`
+      padding: 1.6rem;
+
+      background-color: ${(props) => props.theme.main_color};
+      color: ${(props) => props.theme.white_color};
+    `}
   // 모두사용, 인증하기 버튼
   ${(props) =>
     props.grey_color &&

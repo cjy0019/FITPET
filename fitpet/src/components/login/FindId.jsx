@@ -11,7 +11,9 @@ const FindId = () => {
           <p>아이디 저장</p>
         </label>
       </div>
-      <StyledLink to='/signup'>아이디/비밀번호 찾기</StyledLink>
+      <NavLink style={{ color: '#2a2a2a' }} to='/signup'>
+        아이디/비밀번호 찾기
+      </NavLink>
     </AboutId>
   );
 };
@@ -39,7 +41,7 @@ const AboutId = styled.div`
   }
 
   label {
-    transform: translateY(0.15rem);
+    transform: translateY(0.14rem);
     cursor: pointer;
   }
 
@@ -53,9 +55,8 @@ const AboutId = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
-  transform: translateY(0.35rem);
-  color: ${(props) => props.theme.black1_color};
+const NavLink = styled(Link)`
+  transform: translateY(20%);
 `;
 
 export default FindId;

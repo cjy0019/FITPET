@@ -5,6 +5,8 @@ const size = {
 };
 
 // background-color: ${(props) => props.theme.white_color}
+// color: ${(theme.white_color)}
+
 // 이런식으로 적용
 const theme = {
   main_color: '#4765ff', // 메인 컬러
@@ -19,6 +21,7 @@ const theme = {
   grey5_color: '#f9f9f9', // 배경없는 컴텐츠 박스 색상
   white_color: '#ffffff', // 화이트 컬러
   wish_color: '#ff7a5c', // 찜하기 하트 색상
+  red_color: '#ff4920',
   mobile: `(max-width:${size.mobile})`,
   tablet: `(max-width:${size.tablet})`,
   laptop: `(max-width:${size.laptop})`,

@@ -15,9 +15,11 @@ const banner = () => {
       {/* 검색창 */}
       <SearchInput placeholder='어디로 떠날까요? 여행지 또는 상품을 검색해주세요 &#58;&#41;'></SearchInput>
 
-      <MiddleBtn style={{ marginTop: '14.3rem' }}>
-        다양한 숙소 둘러보기
-      </MiddleBtn>
+      <div>
+        <MiddleBtn style={{ marginTop: '14.3rem' }}>
+          다양한 숙소 둘러보기
+        </MiddleBtn>
+      </div>
     </BannerWrappr>
   );
 };
@@ -28,7 +30,7 @@ const BannerWrappr = styled.div`
   align-items: center;
   min-height: 74.4rem;
   padding-bottom: 17.6rem;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-image: url('/img/main/mainsearch.png');
 `;

@@ -9,16 +9,7 @@ import HotelFilter from './HotelFilter';
 import HeaderContainer from '../../../containers/HeaderContainer';
 import Footer from '../../../components/common/Footer';
 
-const HotelList = () => {
-  const hotels = [
-    { id: 1, name: '제주' },
-    { id: 2, name: '이름' },
-    { id: 3, name: '이름' },
-    { id: 4, name: '이름' },
-    { id: 5, name: '이름' },
-    { id: 6, name: '이름' },
-  ];
-
+const HotelList = ({ hotels }) => {
   return (
     <>
       <Container>
@@ -36,6 +27,7 @@ const HotelList = () => {
             {hotels.map((hotel, i) => {
               return (
                 <div key={i}>
+                  {/* <p>{hotel.lodgignName}</p> */}
                   <HotelInfo key={hotel.id} />
                 </div>
               );
