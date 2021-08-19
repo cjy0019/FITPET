@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { SocialBtn } from '../../common';
@@ -8,7 +8,18 @@ import FindId from './FindId';
 const LoginBottom = ({ login }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const _ref = useRef(null);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!email || !password) {
+      _ref.current.style = 'opacity:0.4';
+      _ref.current.disabled = true;
+    } else {
+      _ref.current.style = 'opacity:1; cursor:pointer;';
+      _ref.current.disabled = false;
+    }
+  }, [email, password]);
 
   return (
     <BottomContainer>
@@ -35,7 +46,12 @@ const LoginBottom = ({ login }) => {
 
       {/* 아이디 저장 및 찾기 */}
       <FindId />
-      <StyledButton type='submit' children='로그인' onClick={signin} />
+      <StyledButton
+        ref={_ref}
+        type='submit'
+        children='로그인'
+        onClick={signin}
+      />
       {/* sns계정으로 가입 */}
       <SocialBlock>
         <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>
@@ -147,7 +163,7 @@ const StyledButton = styled.button`
   border-radius: 26px;
   background: ${(props) => props.theme.gradient_color};
 
-  cursor: pointer;
+  cursor: not-allowed;
   outline: none;
   border: none;
   color: ${(props) => props.theme.white_color};
