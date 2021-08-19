@@ -5,7 +5,7 @@ import {
   SliderLeftButton,
   SliderRightButton,
   WishSmall,
-} from '../../../common';
+} from '../../../../common';
 
 const TOTAL_SLIDES = 1;
 
