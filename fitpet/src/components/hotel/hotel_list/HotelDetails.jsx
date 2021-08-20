@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { RoundSquareBtn } from '../../../common';
 
 const HotelDetails = ({ hotel }) => {
-  console.log(hotel);
   return (
     <DetailWrapper>
       <StyledP>1박 기준</StyledP>
