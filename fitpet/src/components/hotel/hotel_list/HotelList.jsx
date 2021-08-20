@@ -27,8 +27,7 @@ const HotelList = ({ hotels }) => {
             {hotels.map((hotel, i) => {
               return (
                 <div key={i}>
-                  {/* <p>{hotel.lodgignName}</p> */}
-                  <HotelInfo key={hotel.id} />
+                  <HotelInfo key={hotel.id} hotel={hotel} />
                 </div>
               );
             })}
