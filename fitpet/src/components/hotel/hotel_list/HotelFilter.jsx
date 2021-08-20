@@ -68,14 +68,6 @@ const MapButton = styled.button`
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #fff;
   color: ${(props) => props.theme.main_color};
-
-  &::before {
-    display: block;
-    content: '';
-    background: url('/img/icon/mapicon.svg') no-repeat;
-    width: 3.4rem;
-    height: 3.4rem;
-  }
 `;
 
 export default HotelFilter;

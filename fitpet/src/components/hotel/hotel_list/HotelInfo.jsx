@@ -8,7 +8,7 @@ import {
   TextDetailWrapper,
 } from '../hotel_common/filterCommon';
 
-const HotelInfo = () => {
+const HotelInfo = ({ hotel }) => {
   return (
     <>
       <Info>
@@ -21,8 +21,8 @@ const HotelInfo = () => {
 
         {/* 텍스트 Info */}
         <TextDetailWrapper>
-          <HotelTextInfo hiddenPrice />
-          <HotelDetails />
+          <HotelTextInfo hiddenPrice hotel={hotel} />
+          <HotelDetails hotel={hotel} />
         </TextDetailWrapper>
       </Info>
     </>

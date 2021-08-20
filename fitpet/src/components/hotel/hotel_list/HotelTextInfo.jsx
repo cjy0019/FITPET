@@ -9,16 +9,19 @@ import {
   Star,
 } from '../hotel_common/filterCommon';
 
-const HotelTextInfo = () => {
+const HotelTextInfo = ({ hotel }) => {
   return (
     <InfoContainer>
       <HotelName>
-        <Text mb='1.2rem'>호텔 | 5성급</Text>
+        <Text mb='1.2rem'>
+          {hotel.lodgingType === 'Hotel' ? '호텔' : '숙소'} |{' '}
+          {hotel.lodgingClass}
+        </Text>
         <Text mb='0.6rem' maintext>
-          롯데호텔 제주
+          {hotel.lodgignName}
         </Text>
         <Font fontSize='1.4rem' mb='1.1rem'>
-          Lotte Hotel JEJU
+          {hotel.lodgingEnName}
         </Font>
       </HotelName>
 
@@ -26,18 +29,18 @@ const HotelTextInfo = () => {
         <Star>
           <img src='/img/icon/bluestaricon.svg' alt='평점' />
           <Font fontSize='1.4rem' ml='0.2rem' color='#2a2a2a'>
-            4.5
+            {hotel.lodgingStar}
           </Font>
         </Star>
         <City>
           <img src='/img/icon/bluelocationicon.svg' alt='위치' />
-          <span style={{ marginLeft: '0.4rem' }}>서귀포시</span>
+          <span style={{ marginLeft: '0.4rem' }}>{hotel.lodgingLocation}</span>
         </City>
       </CityStar>
 
       <div>
         <Text mt='2rem' normal>
-          소형견 | 중형견 | 애견동반
+          {hotel.lodginSubDescription}
         </Text>
       </div>
     </InfoContainer>
