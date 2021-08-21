@@ -51,6 +51,13 @@ const CourseNavWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+  a {
+    padding: 0 0.4rem;
+    color: ${(props) => props.theme.black1_color};
+  }
+  a:visited {
+    color: ${(props) => props.theme.black1_color};
+  }
 `;
 const GoToCourseWrapper = styled.div`
   white-space: nowrap;
