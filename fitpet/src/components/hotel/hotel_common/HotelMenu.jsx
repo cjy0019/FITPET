@@ -17,7 +17,7 @@ const HotelMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to='roomDetail' spy={true} smooth={true}>
+            <Link to='roomDetailInfo' spy={true} smooth={true}>
               <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
                 숙소상세정보
               </Font>

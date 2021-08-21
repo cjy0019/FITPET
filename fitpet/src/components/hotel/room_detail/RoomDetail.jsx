@@ -197,28 +197,21 @@ const RoomDetailWrapper = styled.div`
   background-color: ${theme.white_color};
   display: flex;
   padding-bottom: 4.2rem;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
 `;
 const RoomDetailBlock = styled.div`
   background-color: ${theme.white_color};
-  -webkit-box-flex: 1;
   flex: 1;
   min-height: 0;
   overflow: hidden;
   position: relative;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
   box-sizing: inherit;
 `;
 
 const RoomDetailHeader = styled.header`
   background-color: ${theme.white_color};
-  -webkit-box-flex: 0;
   flex: 0 0 auto;
   .closeBtn {
     line-height: 16px;
@@ -227,7 +220,6 @@ const RoomDetailHeader = styled.header`
 `;
 
 const RoomDetailContents = styled.div`
-  -webkit-box-flex: 1;
   flex: 1;
   min-height: 0;
   height: 100%;
@@ -238,7 +230,6 @@ const RoomDetailContents = styled.div`
     color: ${theme.black1_color};
   }
   .contentsBlock {
-    -webkit-box-flex: 0;
     flex: 0 0 100%;
     padding-top: 24px;
     overflow-y: auto;
@@ -288,7 +279,6 @@ const RoomDetailContents = styled.div`
   }
 `;
 const RoomDetailFooter = styled.footer`
-  -webkit-box-flex: 0;
   flex: 0 0 auto;
   display: block;
   box-sizing: inherit;
@@ -298,9 +288,7 @@ const RoomDetailFooter = styled.footer`
     position: relative;
     z-index: 2;
     display: flex;
-    -webkit-box-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
     align-items: center;
   }
   .priceBox {
@@ -314,6 +302,14 @@ const RoomDetailFooter = styled.footer`
     .roomInfomation {
       display: flex;
       align-items: center;
+      button {
+        align-items: center;
+        display: flex;
+        img {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
     }
   }
   .buttons {
