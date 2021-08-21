@@ -31,7 +31,6 @@ const buttonStyle = css`
     props.search_btn &&
     css`
       padding: 1.6rem;
-
       background-color: ${(props) => props.theme.main_color};
       color: ${(props) => props.theme.white_color};
     `}
@@ -41,6 +40,18 @@ const buttonStyle = css`
     css`
       background-color: ${(props) => props.theme.grey3_color};
       color: ${(props) => props.theme.white_color};
+    `}
+  //  Fit한 코스 계획하기 버튼
+  ${(props) =>
+    props.course_btn &&
+    css`
+      height: 6rem;
+      padding: 1.8rem 3.5rem;
+      border-radius: 15px;
+      background-color: ${(props) => props.theme.main_color};
+      color: ${(props) => props.theme.white_color};
+      font-size: 2rem;
+      line-height: 1.2;
     `}
 `;
 

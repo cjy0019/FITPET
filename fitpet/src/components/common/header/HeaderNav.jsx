@@ -29,7 +29,7 @@ const HeaderNav = () => {
           <NavLink to='/rentalcar'>렌트카</NavLink>
         </MenuLi>
         <MenuLi>
-          <NavLink to='course'>코스짜기</NavLink>
+          <NavLink to='/course'>코스짜기</NavLink>
         </MenuLi>
         <MenuLi>
           <NavLink to='community'>커뮤니티</NavLink>

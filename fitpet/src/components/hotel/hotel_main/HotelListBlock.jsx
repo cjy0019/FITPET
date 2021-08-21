@@ -6,7 +6,6 @@ const HotelListBlock = () => {
   return (
     <HotelListWrapper>
       <div className='hotelListBox'>
-        dd
         <div className='locationBox'>
           <BasicBox style={{ width: '44rem', height: '57.2rem' }} />
         </div>
