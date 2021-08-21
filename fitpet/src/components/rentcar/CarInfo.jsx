@@ -1,5 +1,4 @@
 import React from 'react';
-import SmallLine from '../../common/utility/SmallLine';
 import {
   ImgBox,
   Info,
@@ -24,7 +23,6 @@ const CarInfo = () => {
           <RentDetails />
         </TextDetailWrapper>
       </Info>
-      <SmallLine />
     </>
   );
 };

@@ -7,7 +7,7 @@ import { hotelListSagaStart } from '../redux/modules/hotelList';
 const HotelListContainer = () => {
   const dispatch = useDispatch();
   const hotels = useSelector((state) => state.hotelList.hotels);
-  console.log(hotels);
+
   useEffect(() => {
     dispatch(hotelListSagaStart());
   }, [dispatch]);

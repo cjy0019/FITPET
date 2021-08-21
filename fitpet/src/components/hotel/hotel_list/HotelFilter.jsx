@@ -5,13 +5,19 @@ import HotelTypeFilter from './HotelTypeFilter';
 import LevelFilter from './LevelFilter';
 import RatingFilter from './RatingFilter';
 import ServiceFilter from './ServiceFilter';
+import BudgetFilter from './BudgetFilter';
 
 const HotelFilter = () => {
   return (
     <FilterSection>
       <MapContainer>
-        <MapButton>지도와 함께 보기</MapButton>
+        <MapButton>
+          <img src='/img/hotel/hotel_list/mapicon.svg' alt='지도와 함께 보기' />
+          <span>지도와 함께 보기</span>
+        </MapButton>
       </MapContainer>
+
+      <BudgetFilter />
 
       {/* 등급 필터링 */}
       <LevelFilter />
@@ -40,10 +46,14 @@ const MapContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #cbcbcb;
+  margin-bottom: 4rem;
   height: 9.6rem;
 `;
 
 const MapButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 16.9rem;
   height: 4rem;
   font-size: 1.6rem;
@@ -58,14 +68,6 @@ const MapButton = styled.button`
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #fff;
   color: ${(props) => props.theme.main_color};
-
-  &::before {
-    display: block;
-    content: '';
-    background: url('/img/icon/mapicon.svg') no-repeat;
-    width: 3.4rem;
-    height: 3.4rem;
-  }
 `;
 
 export default HotelFilter;

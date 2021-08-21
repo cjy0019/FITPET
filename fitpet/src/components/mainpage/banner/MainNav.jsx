@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MainNav = () => {
+  const _ref = useRef(null);
+  const location = useSelector((state) => state.router.location.pathname);
+
+  useEffect(() => {
+    if (location === '/hotelList') {
+      _ref.current.style = 'border-bottom: solid 0.4rem #4765ff;';
+    }
+  }, [location]);
+
   return (
     <StyledNav>
       <ListWrapper>
         <MenuLi>
           <NavLink to='/'>홈</NavLink>
         </MenuLi>
-        <MenuLi>
+        <MenuLi ref={_ref}>
           <NavLink to='/hotel'>숙소</NavLink>
         </MenuLi>
         <MenuLi>
@@ -29,6 +39,7 @@ const MainNav = () => {
 const StyledNav = styled.nav`
   white-space: nowrap;
   margin-top: 2.6rem;
+  align-items: center;
 `;
 
 const ListWrapper = styled.ul`
@@ -40,17 +51,14 @@ const MenuLi = styled.li`
   margin-right: 3.6rem;
   padding-bottom: 0.4rem;
   border-bottom: solid 0.4rem transparent;
-
-  &:hover {
-    border-bottom: solid 0.4rem #4765ff;
-  }
+  color: ${(props) => props.theme.white_color};
 
   a {
-    color: ${(props) => props.theme.black1_color};
     padding: 0 0.4rem;
+    color: ${(props) => props.theme.white_color};
   }
   a:visited {
-    color: ${(props) => props.theme.black1_color};
+    color: ${(props) => props.theme.white_color};
   }
 `;
 

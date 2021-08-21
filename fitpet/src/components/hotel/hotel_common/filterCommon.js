@@ -37,6 +37,12 @@ export const FilterBtn = styled.button`
   white-space: nowrap;
   margin-left: 1rem;
 
+  &:hover {
+    color: ${(props) => props.theme.main_color};
+
+    border: solid 1px ${(props) => props.theme.main_color};
+  }
+
   ${(props) =>
     props.noMargin &&
     css`
@@ -87,10 +93,10 @@ export const UpButton = (props) => {
         Icon={IoIosArrowUp}
         width='2.8rem'
         height='2.8rem'
+        backColor='#fff'
         border='none'
         borderRadius='0'
         color='black'
-        backColor='#fff'
         handleClick={props.handleClick}
       />
     </>
@@ -106,8 +112,8 @@ export const DownButton = (props) => {
         width='2.8rem'
         height='2.8rem'
         border='none'
-        borderRadius='0'
         backColor='#fff'
+        borderRadius='0'
         color='black'
         handleClick={props.handleClick}
       />
@@ -184,8 +190,8 @@ export const LikeBtn = styled.div`
   top: 1.4rem;
   right: 2.4rem;
   cursor: pointer;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 4rem;
+  height: 4rem;
   background: url('/img/icon/likeicon.png') no-repeat;
 `;
 
