@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BasicBox, Font, WishSmall } from '../../../common';
+import { BasicBox, Font } from '../../../common';
 
 const PopularCourse = () => {
   return (
@@ -44,7 +44,6 @@ const PopularCourse = () => {
         </div>
         <div>
           <BasicBox rentalcar_box2></BasicBox>
-
           <Font
             color='#2A2A2A'
             fontSize='1.4rem'
@@ -61,7 +60,6 @@ const PopularCourse = () => {
         </div>
         <div>
           <BasicBox rentalcar_box2></BasicBox>
-
           <Font
             color='#2A2A2A'
             fontSize='1.4rem'
@@ -78,7 +76,6 @@ const PopularCourse = () => {
         </div>
         <div>
           <BasicBox rentalcar_box2></BasicBox>
-
           <Font
             color='#2A2A2A'
             fontSize='1.4rem'
@@ -95,7 +92,6 @@ const PopularCourse = () => {
         </div>
         <div>
           <BasicBox rentalcar_box2 style={{ margin: '0' }}></BasicBox>
-
           <Font
             color='#2A2A2A'
             fontSize='1.4rem'
@@ -129,8 +125,6 @@ const PopularCourseWrapper = styled.article`
       border-radius: 25px;
       margin: 0 4rem 9.4rem 0;
     }
-  }
-  .othersCourse {
   }
 `;
 export default PopularCourse;
