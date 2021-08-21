@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Font, RoundSquareBtn } from '../../../common';
 import OthersCourse from './OthersCourse';
 import PopularCourse from './PopularCourse';
+import ProfessionalCourse from './ProfessionalCourse';
+import SliderLocation from './SliderLocation';
 
 const CourseMain = () => {
   return (
@@ -31,6 +33,14 @@ const CourseMain = () => {
           <OthersCourse />
           {/* 여름 여행 인기 코스 총정리 */}
           <PopularCourse />
+        </div>
+      </div>
+      {/* 어디로 갈지 모르겠다연? */}
+      <SliderLocation />
+      <div className='margin'>
+        <div className='articleBlock'>
+          {/* 전문가들의 Fit한 코스 */}
+          <ProfessionalCourse />
         </div>
       </div>
     </CourseMainWrapper>
