@@ -21,7 +21,7 @@ const WishCourse = (props) => {
           fontWeight='600'
           lineHeight='1.33'
           mb='2.4rem'>
-          반려동물과 호텔에서 2박 3일 제주도 여행! (feat. 렌트카)
+          반려동물과 호텔에서 2박 3일 제주도 여행! &#40;feat. 렌트카&#41;
         </Font>
         {/* 태그 모음 */}
         <div className='tagBox'>
@@ -57,7 +57,7 @@ const WishCourse = (props) => {
 
 const WishCourseBox = styled.div`
   width: 40rem;
-  background-color: ${(props) => props.theme.main_color};
+  background-color: ${(props) => props.theme.grey4_color};
   cursor: pointer;
   border-radius: 25px;
   .imageBox {

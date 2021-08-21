@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Font, RoundSquareBtn } from '../../../common';
 import OthersCourse from './OthersCourse';
+import PopularCourse from './PopularCourse';
 
 const CourseMain = () => {
   return (
@@ -28,6 +29,8 @@ const CourseMain = () => {
           </CourseHeader>
           {/* 다른 사람들의 fit한 코스 */}
           <OthersCourse />
+          {/* 여름 여행 인기 코스 총정리 */}
+          <PopularCourse />
         </div>
       </div>
     </CourseMainWrapper>

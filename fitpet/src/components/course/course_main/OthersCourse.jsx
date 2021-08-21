@@ -33,8 +33,8 @@ const OthersCourse = () => {
 };
 
 const OthersCourseWrapper = styled.article`
-  background-color: #cdcdcd;
   width: 128rem;
+  margin-bottom: 12rem;
   .tagBlock {
     margin-bottom: 2.6rem;
   }
