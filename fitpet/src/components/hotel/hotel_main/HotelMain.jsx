@@ -8,7 +8,7 @@ import HotelSlider from './HotelSlider';
 
 const HotelMain = () => {
   return (
-    <HotelMainWraper>
+    <HotelMainWrapper>
       {/* 숙소 검색창 */}
       <HotelSearchBlock>
         <div>
@@ -246,11 +246,11 @@ const HotelMain = () => {
           </PopularHotel>
         </div>
       </PopularHotels>
-    </HotelMainWraper>
+    </HotelMainWrapper>
   );
 };
 
-const HotelMainWraper = styled.div`
+const HotelMainWrapper = styled.div`
   max-width: 100%;
   margin-top: 8rem;
 `;
