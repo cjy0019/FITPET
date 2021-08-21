@@ -64,7 +64,7 @@ Font.defaultProps = {
   fontFamily: 'Pretendard',
   fontSize: '2.8rem',
   fontWeight: 'Medium',
-  color: '#707070',
+  color: '#2a2a2a',
   borderBottom: 'none',
   textDecoration: 'none',
   handleClick: () => {},
