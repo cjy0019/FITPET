@@ -1,15 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from '../../../assets/theme';
-import { Font, IconButton, SampleIcon } from '../../../common';
+import { Font, SampleIcon } from '../../../common';
 import ImgMoreBtn from '../../../common/buttons/small_size/ImgMoreBtn';
 import HotelNameBlock from '../hotel_about/HotelNameBlock';
 import HotelOneRoom from '../hotel_about/HotelOneRoom';
 import HotelTwoRoom from '../hotel_about/HotelTwoRoom';
-import OtherHotelSlider from '../hotel_about/OtherHotelSlider';
-import HotelDate from '../hotel_common/HotelDate';
+import OthertravelersHotels from './room_scroll/OthertravelersHotels';
+import RoomChoose from './room_scroll/RoomChoose';
+import RoomDetailInfo from './room_scroll/RoomDetailInfo';
+import RoomService from './room_scroll/RoomService';
 
-const HotelAbout = () => {
+const HotelAbout = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
   return (
     <HotelsAboutWrapper>
       {/* 숙소 이미지 3장 */}
@@ -223,7 +225,7 @@ const HotelAbout = () => {
             11층 / 800객실
           </Font>
         </div>
-        <div className='aboutBox' id='roomChoose'>
+        <div className='aboutBox'>
           <img src='/img/icon/phone.png' alt='전화' />
           <Font
             fontSize='1.6rem'
@@ -245,183 +247,23 @@ const HotelAbout = () => {
         </div>
       </About>
       {/* 객실 선택 */}
-      <RoomChoose>
-        <div className='RoomDateBox'>
-          <Font
-            fontSize='2.4rem'
-            fontWeight='bold'
-            color='#2a2a2a'
-            mt='1rem'
-            mb='3.3rem'>
-            객실선택
-          </Font>
-          <HotelDate mt='5.6rem' />
-        </div>
-        <div className='RoomBox'>
-          <IconButton
-            text='조식포함'
-            backColor='#ffffff'
-            height='40px'
-            pr='1.2rem'
-            pl='1.2rem'
-            color='#2a2a2a'
-            fontSize='1.4rem'
-            borderRadius='7px'
-            border='solid 1px #707070'
-            mr='1rem'
-          />
-          <IconButton
-            text='무료 예약 취소 (기간 한정)'
-            backColor='#ffffff'
-            height='40px'
-            pr='1.2rem'
-            pl='1.2rem'
-            color='#2a2a2a'
-            fontSize='1.4rem'
-            borderRadius='7px'
-            border='solid 1px #707070'
-            mr='1rem'
-          />
-        </div>
-        <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a' mb='1.4rem'>
-          아래 다양한 옵션 중 선택해보세요! 표시된 가격은 세금 및 서비스 요금을
-          포함한 1박당 1개 객실 기준입니다. (예약 확정 전에는 요금이 청구되지
-          않습니다)
-        </Font>
-      </RoomChoose>
+      <RoomChoose />
       <HotelTwoRoom />
-      <HotelOneRoom />
+      <HotelOneRoom
+        showRoomDetail={showRoomDetail}
+        roomDetailOpen={roomDetailOpen}
+        hideRoomDetail={hideRoomDetail}
+      />
       <HotelTwoRoom />
       <HotelTwoRoom />
       <HotelOneRoom />
       {/* 스크롤 이동 [다른 추천 호텔] 지점 */}
-      <div id='hotelDetail'></div>
       {/* 숙소 상세정보 */}
-
-      <HotelDetail>
-        <Font
-          fontSize='2.4rem'
-          fontWeight='bold'
-          color='#2a2a2a'
-          mt='4rem'
-          mb='2rem'>
-          숙소 상세정보
-        </Font>
-        <div className='guideBlock'>
-          <div className='guideBox'>
-            <div className='title'>
-              <Font fontSize='2rem' fontWeight='normal' color='#2a2a2a'>
-                반려동물 동반 안내
-              </Font>
-            </div>
-            <div className='contents'>
-              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                - 반려동물 동반 가능한 호텔로, 8kg미만 소형견만 입실 가능합니다.
-                <br />
-                - 반려동물 추가 요금은 별도로 없으며, 반려동물 전용 용품이 기본
-                제공됩니다.(샴푸, 칫솔, 비누, 수건, 간식 등)
-                <br />
-                ※ 개인적으로 사용하는 용품은 개별적으로 지참하시길 바랍니다.
-                <br />
-                - 캐리어 사용하여 이동 가능하며, 공공장소 방치는 불가합니다.
-                <br />- 레스토랑 및 바 이용 시 동반 불가합니다.
-              </Font>
-            </div>
-          </div>
-          <div className='guideBox'>
-            <div className='title'>
-              <Font fontSize='2rem' fontWeight='normal' color='#2a2a2a'>
-                숙소 안내
-              </Font>
-            </div>
-            <div className='contents'>
-              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                [ 입·퇴실 안내 ]<br />
-                - 체크인 15:00PM - 체크아웃 12:00PM
-                <br />- 객실 내 유무선 인터넷 무료로 이용 가능
-                {/* 스크롤 이동 [편의시설 및 서비스] 지점 */}
-                <br id='hotelService' />
-                - 호텔 내 레스토랑 이용 시 10% 할인
-                <br />
-                - 호텔 내 실내 수영장, 피트니스 센터 무료 입장 (피트니스의 경우
-                만 16세 이상 입장 가능)
-                <br />
-                ※ 코로나로 인해 일시 영업 중단할 수 있습니다.
-                <br />
-              </Font>
-            </div>
-          </div>
-        </div>
-      </HotelDetail>
+      <RoomDetailInfo />
       {/* 편의시설 및 서비스 */}
-      <HotelService>
-        <div className='title'>
-          <Font fontSize='2.4rem' fontWeight='bold' color='#2a2a2a' mt='4rem'>
-            편의시설 및 서비스
-          </Font>
-        </div>
-        {/* 편의시설 및 서비스 아이콘들 */}
-        <div className='contents'>
-          <div className='iconsBlock'>
-            {/* 스크롤 이동 [다른 추천 호텔] 지점 */}
-            <div className='iconBox' id='othertravelersHotel'>
-              <img src='/img/icon/wifi.png' alt='와이파이' />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                와이파이
-              </Font>
-            </div>
-
-            <div className='iconBox'>
-              <img src='/img/icon/fitness.png' alt='피트니스 센터' />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                피트니스 센터
-              </Font>
-            </div>
-            <div className='iconBox'>
-              <img src='/img/icon/pool.png' alt='수영장' />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                수영장
-              </Font>
-            </div>
-            <div className='iconBox'>
-              <img src='/img/icon/freeParking.png' alt='무료주차' />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                무료주차
-              </Font>
-            </div>
-            <div className='iconBox'>
-              <img src='/img/icon/reception.png' alt='24시 리셉션' />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                24시 리셉션
-              </Font>
-            </div>
-            <div className='iconBox'>
-              <img src='/img/icon/baggage.png' alt='수하물 보관' />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                수하물 보관
-              </Font>
-            </div>
-            <div className='iconBox'>
-              <img src='/img/icon/wash.png' alt='세탁' />
-              <Font fontSize='1.6rem' fontWeight='normal' color='#2a2a2a'>
-                세탁
-              </Font>
-            </div>
-          </div>
-        </div>
-      </HotelService>
+      <RoomService />
       {/* 다른 여행객이 함께 본 숙소 */}
-      <OthertravelersHotel>
-        <Font
-          fontSize='2.4rem'
-          fontWeight='bold'
-          color='#2a2a2a'
-          mt='4rem'
-          mb='1.4rem'>
-          다른 여행객이 함께 본 숙소
-        </Font>
-        <OtherHotelSlider />
-      </OthertravelersHotel>
+      <OthertravelersHotels />
     </HotelsAboutWrapper>
   );
 };
@@ -525,73 +367,6 @@ const About = styled.div`
       margin-bottom: 4rem;
     }
   }
-`;
-const RoomChoose = styled.div`
-  display: block;
-  width: 128rem;
-  margin: 0 auto;
-  border-bottom: 1px solid #eeeeee;
-  padding-top: 5rem;
-  .RoomDateBox {
-    display: flex;
-  }
-  .RoomBox {
-    display: flex;
-    margin-bottom: 2.4rem;
-  }
-`;
-const HotelDetail = styled.div`
-  display: block;
-  width: 128rem;
-  margin: 0 auto;
-  border-bottom: 1px solid #eeeeee;
-  .guideBlock {
-    display: block;
-  }
-  .guideBox {
-    display: flex;
-    margin-bottom: 4.4rem;
-    .title {
-      width: 40rem;
-      margin-right: auto;
-    }
-    .contents {
-      width: 85rem;
-      display: flex;
-      margin-left: auto;
-      line-height: 25px;
-    }
-  }
-`;
-const HotelService = styled.div`
-  display: flex;
-  width: 128rem;
-  margin: 0 auto;
-  border-bottom: 1px solid #eeeeee;
-  .title {
-    width: 40rem;
-    margin-right: auto;
-  }
-  .contents {
-    width: 85rem;
-    display: block;
-    margin-right: auto;
-    margin-top: 4rem;
-    margin-bottom: 10.4rem;
-    line-height: 20px;
-    .iconsBlock {
-      display: flex;
-      div {
-        margin: auto;
-        text-align: center;
-      }
-    }
-  }
-`;
-const OthertravelersHotel = styled.div`
-  display: block;
-  width: 128rem;
-  margin: 0 auto 25.6rem;
 `;
 
 export default HotelAbout;

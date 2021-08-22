@@ -17,14 +17,14 @@ const HotelMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to='hotelDetail' spy={true} smooth={true}>
+            <Link to='roomDetailInfo' spy={true} smooth={true}>
               <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
                 숙소상세정보
               </Font>
             </Link>
           </li>
           <li>
-            <Link to='hotelService' spy={true} smooth={true}>
+            <Link to='roomService' spy={true} smooth={true}>
               <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
                 편의시설 및 서비스
               </Font>
@@ -36,7 +36,7 @@ const HotelMenu = () => {
             </Font>
           </Link> */}
           <li>
-            <Link to='othertravelersHotel' spy={true} smooth={true}>
+            <Link to='othertravelersHotels' spy={true} smooth={true}>
               <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
                 다른 추천 호텔
               </Font>

@@ -9,7 +9,6 @@ import CommonPage from './pages/CommonPage';
 import ReservationPage from './pages/ReservationPage';
 import HotelAboutPage from './pages/HotelAboutPage';
 import HotelListPage from './pages/HotelListPage';
-import RoomDetailModalPage from './pages/RoomDetailModalPage';
 import { Provider } from 'react-redux';
 import RentCarDetailPage from './pages/RentCarDetailPage';
 import RentCarPage from './pages/RentCarPage';
@@ -20,6 +19,7 @@ import { createBrowserHistory } from 'history';
 import create from './redux/create';
 import { ConnectedRouter } from 'connected-react-router';
 import CourseMapPage from './pages/CourseMapPage';
+import CourseMainPage from './pages/CourseMainPage';
 
 const history = createBrowserHistory();
 
@@ -37,12 +37,12 @@ function App() {
             <Route component={ReservationPage} path='/hotel/reservation' />
             <Route component={HotelMainPage} path='/hotel' />
             <Route component={HotelAboutPage} path='/hotelAbout' />
-            <Route component={RoomDetailModalPage} path='/roomDetail' />
             <Route component={HotelListPage} path='/hotelList' />
             <Route component={RentalcarMainPage} path='/rentalcar' />
             <Route component={RentCarPage} path='/rentcar' />
             <Route component={RentCarDetailPage} path='/rentcardetail' />
             <Route component={DriverInfoPage} path='/driver' />
+            <Route component={CourseMainPage} path='/course' />
             <Route component={NotFoundPage} />
           </Switch>
         </ConnectedRouter>

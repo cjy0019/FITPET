@@ -4,28 +4,37 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MainNav = () => {
-  const _ref = useRef(null);
+  const hotelLink = useRef(null);
+  const homeLink = useRef(null);
+  const rentalcarLink = useRef(null);
+  const courseLink = useRef(null);
   const location = useSelector((state) => state.router.location.pathname);
-
+  console.log('location:' + location);
   useEffect(() => {
-    if (location === '/hotelList') {
-      _ref.current.style = 'border-bottom: solid 0.4rem #4765ff;';
+    if (location === '/home') {
+      homeLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
+    } else if (location === '/hotel' || location === '/hotellist') {
+      hotelLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
+    } else if (location === '/rentalcar') {
+      rentalcarLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
+    } else if (location === '/course') {
+      courseLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
     }
   }, [location]);
 
   return (
     <StyledNav>
       <ListWrapper>
-        <MenuLi>
+        <MenuLi ref={homeLink}>
           <NavLink to='/'>홈</NavLink>
         </MenuLi>
-        <MenuLi ref={_ref}>
+        <MenuLi ref={hotelLink}>
           <NavLink to='/hotel'>숙소</NavLink>
         </MenuLi>
-        <MenuLi>
+        <MenuLi ref={rentalcarLink}>
           <NavLink to='/rentalcar'>렌트카</NavLink>
         </MenuLi>
-        <MenuLi>
+        <MenuLi ref={courseLink}>
           <NavLink to='course'>코스짜기</NavLink>
         </MenuLi>
         <MenuLi>

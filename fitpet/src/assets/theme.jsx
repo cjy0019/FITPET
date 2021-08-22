@@ -5,8 +5,7 @@ const size = {
 };
 
 // background-color: ${(props) => props.theme.white_color}
-// color: ${(theme.white_color)}
-
+// color: ${(theme.white_color)} : import 해 줘야 함
 // 이런식으로 적용
 const theme = {
   main_color: '#4765ff', // 메인 컬러

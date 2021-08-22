@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { SocialBtn } from '../../common';
 
-const SignUp = ({ hideSignUp, signup, showSignupSuccess, goLogin }) => {
+const SignUp = ({ hideSignUp, signup, goLogin }) => {
   const [userName, setUserName] = useState('');
   const [userId, setUserId] = useState('');
   const [userPW, setUserPW] = useState('');

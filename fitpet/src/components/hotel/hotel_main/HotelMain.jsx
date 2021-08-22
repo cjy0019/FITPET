@@ -3,26 +3,36 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Font, MiddleBtn, WishSmall, SmallBtn } from '../../../common';
 import ImageBox from '../../../common/contents/common/ImageBox';
+import MainNav from '../../mainpage/banner/MainNav';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelSlider from './HotelSlider';
 
 const HotelMain = () => {
   return (
-    <HotelMainWraper>
+    <HotelMainWrapper>
       {/* 숙소 검색창 */}
       <HotelSearchBlock>
-        <div>
-          <div className='searchBox'>
-            <Font fontSize='3.8rem' fontWeight='bold' mb='3.4rem' color='#fff'>
-              어떤 숙소에서 쉬어볼까요?
-            </Font>
-            {/* 검색 입력 창 */}
-            <HotelTypeSearch />
+        <div className='HotelSearchBox'>
+          <div className='navBox'>
+            <MainNav />
           </div>
-          <div className='MoreHotelBtn'>
-            <NavLink to='/hotellist' style={{ marginTop: '14.3rem' }}>
-              <MiddleBtn>다양한 숙소 둘러보기</MiddleBtn>
-            </NavLink>
+          <div>
+            <div className='searchBox'>
+              <Font
+                fontSize='3.8rem'
+                fontWeight='bold'
+                mb='3.4rem'
+                color='#fff'>
+                어떤 숙소에서 쉬어볼까요?
+              </Font>
+              {/* 검색 입력 창 */}
+              <HotelTypeSearch />
+            </div>
+            <div className='MoreHotelBtn'>
+              <NavLink to='/hotellist' style={{ marginTop: '14.3rem' }}>
+                <MiddleBtn>다양한 숙소 둘러보기</MiddleBtn>
+              </NavLink>
+            </div>
           </div>
         </div>
       </HotelSearchBlock>
@@ -246,11 +256,11 @@ const HotelMain = () => {
           </PopularHotel>
         </div>
       </PopularHotels>
-    </HotelMainWraper>
+    </HotelMainWrapper>
   );
 };
 
-const HotelMainWraper = styled.div`
+const HotelMainWrapper = styled.div`
   max-width: 100%;
   margin-top: 8rem;
 `;
@@ -259,17 +269,26 @@ const HotelSearchBlock = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  height: 74.4rem;
-  background-color: ${(props) => props.theme.grey3_color};
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('/img/hotel/hotel_main/mainImg.png');
+  .HotelSearchBox {
+    align-items: center;
+  }
+  .navBox {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 16.5rem;
+  }
   .searchBox {
     width: 108rem;
   }
   .MoreHotelBtn {
     display: flex;
     justify-content: center;
+    margin-bottom: 17.6rem;
   }
 `;
 const FitPetEventBlock = styled.div`
