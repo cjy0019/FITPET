@@ -4,6 +4,7 @@ import modal from './modal';
 import signup from './signup';
 import login from './login';
 import hotelList from './hotelList';
+import markers from './markers';
 
 const reducer = (history) =>
   combineReducers({
@@ -11,6 +12,7 @@ const reducer = (history) =>
     signup,
     login,
     hotelList,
+    markers,
     router: connectRouter(history),
   });
 
