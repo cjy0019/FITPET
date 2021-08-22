@@ -19,6 +19,7 @@ import DriverInfoPage from './pages/DriverInfoPage';
 import { createBrowserHistory } from 'history';
 import create from './redux/create';
 import { ConnectedRouter } from 'connected-react-router';
+import CourseMapPage from './pages/CourseMapPage';
 
 const history = createBrowserHistory();
 
@@ -32,6 +33,7 @@ function App() {
           <Switch>
             <Route component={MainPage} exact path='/' />
             <Route component={CommonPage} path='/common' />
+            <Route component={CourseMapPage} path='/course/mymap' />
             <Route component={ReservationPage} path='/hotel/reservation' />
             <Route component={HotelMainPage} path='/hotel' />
             <Route component={HotelAboutPage} path='/hotelAbout' />
