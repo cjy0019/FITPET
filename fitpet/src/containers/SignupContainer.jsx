@@ -18,9 +18,10 @@ const SignupContainer = ({ showSignupSuccess }) => {
     dispatch(openLogin());
   }, [dispatch]);
 
+  // 로그인 버튼 클릭시
   const signup = useCallback(
-    (userId, userPW) => {
-      dispatch(signupSagaStart(userId, userPW));
+    (userId, userPW, userName) => {
+      dispatch(signupSagaStart(userId, userPW, userName));
     },
     [dispatch],
   );

@@ -70,9 +70,7 @@ export function* loginSaga(action) {
     const response = yield call(AuthService.login, userId, userPW);
     yield delay(500);
 
-    let userName = response.data.userId;
-    const index = userName.indexOf('@');
-    userName = userName.split('').splice(0, index).join('');
+    const userName = response.data.userName;
     localStorage.setItem('token', response.data._id);
     localStorage.setItem('userName', userName);
 

@@ -37,21 +37,20 @@ export default function signup(state = initialState, action) {
 // saga
 const SIGNUP_SAGA = namespace + '/SIGNUP_SAGA';
 
-export const signupSagaStart = (userId, userPW) => ({
+export const signupSagaStart = (userId, userPW, userName) => ({
   type: SIGNUP_SAGA,
-  payload: { userId, userPW },
+  payload: { userId, userPW, userName },
 });
 
 export function* signupSaga(action) {
   try {
     yield put(signupStart());
 
-    const { userId, userPW } = action.payload;
+    const { userId, userPW, userName } = action.payload;
 
-    const response = yield call(AuthService.signup, userId, userPW);
+    const response = yield call(AuthService.signup, userId, userPW, userName);
 
     yield put(signupSuccess(response.data));
-
     if (response.data === 'OK') {
       yield put(closeSignUp());
       yield put(signupSuccessOpen());
