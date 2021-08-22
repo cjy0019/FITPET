@@ -91,7 +91,7 @@ const SignUp = ({ hideSignUp, signup, goLogin }) => {
               <Warning>입력한 비밀번호와 동일하게 입력해주세요.</Warning>
             )}
 
-            <NextButton onClick={clickSignup} disabled ref={_ref}>
+            <NextButton onClick={clickSignup} ref={_ref}>
               회원가입
             </NextButton>
             {/* sns계정으로 가입 */}
@@ -114,7 +114,7 @@ const SignUp = ({ hideSignUp, signup, goLogin }) => {
   );
 
   function clickSignup() {
-    signup(userId, userPW);
+    signup(userId, userPW, userName);
   }
 
   function changeId(e) {
@@ -211,9 +211,7 @@ const Warning = styled.p`
     `}
 `;
 
-const NextButton = styled.button.attrs({
-  disabled: true,
-})`
+const NextButton = styled.button`
   cursor: pointer;
   width: 100%;
   height: 5.2rem;
@@ -222,11 +220,13 @@ const NextButton = styled.button.attrs({
   opacity: 0.4;
   border: none;
   letter-spacing: 0.4px;
-  /* color: ${(props) => props.theme.black1_color}; */
   color: #ffffff;
   font-size: 1.8rem;
   margin-top: 3.6rem;
-  transition: all 0.5s;
+
+  &:hover {
+    background: ${(props) => props.theme.main_color};
+  }
 `;
 
 // sns로 회원가입 하기
