@@ -30,7 +30,7 @@ export default function hotelList(state = initialState, action) {
 
 // action creators
 export const hotelListStart = () => ({ type: START });
-export const hotelListSucess = (hotels) => ({
+export const hotelListSuccess = (hotels) => ({
   type: SUCCESS,
   hotels,
 });
@@ -49,7 +49,7 @@ export function* hotelListSaga(action) {
   try {
     yield put(hotelListStart());
     const response = yield call(HotelService.getHotelList);
-    yield put(hotelListSucess(response.data));
+    yield put(hotelListSuccess(response.data));
   } catch (error) {
     yield put(hotelListFail(error));
   }
