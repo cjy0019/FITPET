@@ -7,7 +7,8 @@ import MainNav from '../../mainpage/banner/MainNav';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelSlider from './HotelSlider';
 
-const HotelMain = () => {
+const HotelMain = ({ hitsList }) => {
+  console.log(hitsList);
   return (
     <HotelMainWrapper>
       {/* 숙소 검색창 */}
@@ -124,136 +125,28 @@ const HotelMain = () => {
           </Font>
         </TextBlock>
         <div className='popularHotelsBox'>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-        </div>
-        <div className='popularHotelsBox'>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
+          {hitsList.map((hotel, i) => {
+            return (
+              <PopularHotel key={i}>
+                <WishSmall></WishSmall>
+                <Font
+                  color='#2A2A2A'
+                  fontSize='1.8rem'
+                  margin='1.4rem 0 3.8rem 2.3rem'>
+                  <span className='smallFont'>
+                    {hotel.lodgingType}| {hotel.lodgingClass}
+                  </span>
+                  <span>
+                    <br />
+                    {hotel.lodgignName}
+                    <br />
+                    {hotel.lodgingMinMoney}
+                  </span>
+                  <span className='smallPrice'>~ {hotel.lodgingMaxMoney}</span>
+                </Font>
+              </PopularHotel>
+            );
+          })}
         </div>
       </PopularHotels>
     </HotelMainWrapper>
@@ -355,6 +248,12 @@ const PopularHotels = styled.div`
   margin-bottom: 12rem;
   .popularHotelsBox {
     display: flex;
+    flex-wrap: wrap;
+    li {
+      :not(:nth-child(4n)) {
+        margin-right: 4rem;
+      }
+    }
   }
 `;
 const TextBlock = styled.div`
