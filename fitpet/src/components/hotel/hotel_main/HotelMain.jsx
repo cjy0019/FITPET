@@ -8,7 +8,6 @@ import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelSlider from './HotelSlider';
 
 const HotelMain = ({ hitsList }) => {
-  console.log(hitsList);
   return (
     <HotelMainWrapper>
       {/* 숙소 검색창 */}
@@ -63,10 +62,12 @@ const HotelMain = ({ hitsList }) => {
             <div className='line'>
               <ImageBox
                 height='52rem'
-                img={'/img/hotel/hotel_main/fitpet_event/2.png'}></ImageBox>
+                img={'/img/hotel/hotel_main/fitpet_event/2.png'}
+              />
               <ImageBox
                 height='40rem'
-                img={'/img/hotel/hotel_main/fitpet_event/5.png'}></ImageBox>
+                img={'/img/hotel/hotel_main/fitpet_event/5.png'}
+              />
             </div>
             <div className='line'>
               <ImageBox
@@ -111,7 +112,7 @@ const HotelMain = ({ hitsList }) => {
             </HotelLocationWrapper>
           </div>
           {/* 호텔 슬라이드 부분 */}
-          <HotelSlider />
+          <HotelSlider hotels={hitsList} />
         </div>
       </HotelListBlock>
 
@@ -134,7 +135,7 @@ const HotelMain = ({ hitsList }) => {
                   fontSize='1.8rem'
                   margin='1.4rem 0 3.8rem 2.3rem'>
                   <span className='smallFont'>
-                    {hotel.lodgingType}| {hotel.lodgingClass}
+                    {hotel.lodgingTypeKr}| {hotel.lodgingClass}
                   </span>
                   <span>
                     <br />
