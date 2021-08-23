@@ -141,9 +141,13 @@ const HotelMain = ({ hitsList }) => {
                     <br />
                     {hotel.lodgignName}
                     <br />
-                    {hotel.lodgingMinMoney}
+                    {hotel.lodgingMinMoney.toLocaleString()}
                   </span>
-                  <span className='smallPrice'>~ {hotel.lodgingMaxMoney}</span>
+                  <span className='smallPrice'>
+                    ~ {hotel.lodgingMaxMoney.toLocaleString()}
+                  </span>
+                  <p>{hotel.lodgingImg}</p>
+                  <img src='{hotel.lodgingImg}' alt={hotel.lodgingImg} />
                 </Font>
               </PopularHotel>
             );
