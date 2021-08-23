@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { Font, MiddleBtn, WishSmall, SmallBtn } from '../../../common';
+import { Font, MiddleBtn, WishSmall } from '../../../common';
 import ImageBox from '../../../common/contents/common/ImageBox';
 import MainNav from '../../mainpage/banner/MainNav';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
-import HotelSlider from './HotelSlider';
+import HotelListBlock from './HotelListBlock';
 
 const HotelMain = ({ hitsList }) => {
   return (
@@ -83,39 +83,7 @@ const HotelMain = ({ hitsList }) => {
         </div>
       </FitPetEventBlock>
       {/* 반려동물과 함게 펫캉스 즐기자! */}
-      <HotelListBlock>
-        <div className='hotelListBox'>
-          <div className='locationBox'>
-            <HotelLocationWrapper>
-              <Font
-                fontSize='3rem'
-                fontWeight='normal'
-                color='#ffffff'
-                mb='5rem'>
-                반려동물과 함께 <br />
-                펫캉스 즐기자!
-              </Font>
-              <div className='tagBox'>
-                <div>
-                  <SmallBtn style={{ marginBottom: '1rem' }}>제주도</SmallBtn>
-                </div>
-                <div>
-                  <SmallBtn style={{ marginBottom: '1rem' }}>속초</SmallBtn>
-                </div>
-                <div>
-                  <SmallBtn style={{ marginBottom: '1rem' }}>전주</SmallBtn>
-                </div>
-                <div>
-                  <SmallBtn style={{ marginBottom: '1rem' }}>부산</SmallBtn>
-                </div>
-              </div>
-            </HotelLocationWrapper>
-          </div>
-          {/* 호텔 슬라이드 부분 */}
-          <HotelSlider hotels={hitsList} />
-        </div>
-      </HotelListBlock>
-
+      <HotelListBlock hitsList={hitsList} />
       {/* 띠배너 부분 */}
       <BandBanner img={'/img/hotel/hotel_main/banner.png'} />
       {/* 지금 이 숙소가 인기있어요 */}
@@ -201,39 +169,6 @@ const EventBlock = styled.div`
     display: block;
   }
 `;
-const HotelListBlock = styled.div`
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-  background-color: ${(props) => props.theme.grey3_color};
-  height: 55.6rem;
-  .hotelListBox {
-    display: flex;
-    width: 128rem;
-    height: 55.6rem;
-    .locationBox {
-      margin-top: 10rem;
-      position: absolute;
-    }
-  }
-`;
-const HotelLocationWrapper = styled.div`
-  width: 44rem;
-  height: 57.2rem;
-  color: ${(props) => props.theme.white_color};
-  padding: 5rem 0 0 5rem;
-  position: absolute;
-  display: block;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url('/img/hotel/hotel_main/locationBox.png');
-  line-height: 1.3; // 줄 간격
-  .tagBox {
-    display: block;
-  }
-`;
-
 const BandBanner = styled.div`
   margin: 0 auto;
   width: 128rem;
