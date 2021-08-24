@@ -247,17 +247,18 @@ const HotelAbout = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
         </div>
       </About>
       {/* 객실 선택 */}
-      <RoomChoose />
-      <HotelTwoRoom />
-      <HotelOneRoom
-        showRoomDetail={showRoomDetail}
-        roomDetailOpen={roomDetailOpen}
-        hideRoomDetail={hideRoomDetail}
-      />
-      <HotelTwoRoom />
-      <HotelTwoRoom />
-      <HotelOneRoom />
-      {/* 스크롤 이동 [다른 추천 호텔] 지점 */}
+      <div id='roomChoose'>
+        <RoomChoose />
+        <HotelTwoRoom />
+        <HotelOneRoom
+          showRoomDetail={showRoomDetail}
+          roomDetailOpen={roomDetailOpen}
+          hideRoomDetail={hideRoomDetail}
+        />
+        <HotelTwoRoom />
+        <HotelTwoRoom />
+        <HotelOneRoom />
+      </div>
       {/* 숙소 상세정보 */}
       <RoomDetailInfo />
       {/* 편의시설 및 서비스 */}

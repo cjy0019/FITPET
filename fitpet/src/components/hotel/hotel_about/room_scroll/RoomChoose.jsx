@@ -5,7 +5,7 @@ import HotelDate from '../../hotel_common/HotelDate';
 
 const RoomChoose = () => {
   return (
-    <RoomChooseWrapper id='roomChoose'>
+    <RoomChooseWrapper>
       <div className='RoomDateBox'>
         <Font
           fontSize='2.4rem'

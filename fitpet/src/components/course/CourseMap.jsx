@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
 import Marker from '../../common/map/Marker';
