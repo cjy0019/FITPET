@@ -46,12 +46,9 @@ const LoginBottom = ({ login }) => {
 
       {/* 아이디 저장 및 찾기 */}
       <FindId />
-      <StyledButton
-        ref={_ref}
-        type='submit'
-        children='로그인'
-        onClick={signin}
-      />
+      <StyledButton ref={_ref} type='submit' onClick={signin}>
+        로그인
+      </StyledButton>
       {/* sns계정으로 가입 */}
       <SocialBlock>
         <SocialText>SNS 계정으로 간편하게 가입하기</SocialText>
@@ -167,6 +164,10 @@ const StyledButton = styled.button`
   outline: none;
   border: none;
   color: ${(props) => props.theme.white_color};
+
+  &:hover {
+    background: ${(props) => props.theme.main_color};
+  }
 `;
 
 // 회원가입 버튼 부분

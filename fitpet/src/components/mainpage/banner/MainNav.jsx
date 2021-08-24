@@ -9,7 +9,6 @@ const MainNav = () => {
   const rentalcarLink = useRef(null);
   const courseLink = useRef(null);
   const location = useSelector((state) => state.router.location.pathname);
-  console.log('location:' + location);
   useEffect(() => {
     if (location === '/home') {
       homeLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';

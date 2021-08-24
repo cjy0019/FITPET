@@ -1,6 +1,6 @@
 import { call, delay, put, takeEvery } from 'redux-saga/effects';
 import AuthService from '../../services/AuthService';
-import { closeLogin } from './modal';
+import { closeLogin, openLoginFail } from './modal';
 
 // namespace
 const namespace = 'fitpet/login';
@@ -70,9 +70,7 @@ export function* loginSaga(action) {
     const response = yield call(AuthService.login, userId, userPW);
     yield delay(500);
 
-    let userName = response.data.userId;
-    const index = userName.indexOf('@');
-    userName = userName.split('').splice(0, index).join('');
+    const userName = response.data.userName;
     localStorage.setItem('token', response.data._id);
     localStorage.setItem('userName', userName);
 
@@ -81,6 +79,9 @@ export function* loginSaga(action) {
     yield put(closeLogin());
   } catch (error) {
     yield put(loginFail(error));
+    yield delay(1000);
+    yield put(closeLogin());
+    yield put(openLoginFail());
   }
 }
 

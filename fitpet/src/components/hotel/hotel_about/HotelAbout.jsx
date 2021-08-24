@@ -246,6 +246,7 @@ const HotelAbout = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
           </Font>
         </div>
       </About>
+
       {/* 객실 선택 */}
       <div id='roomChoose'>
         <RoomChoose />
@@ -271,7 +272,11 @@ const HotelAbout = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
 
 const HotelsAboutWrapper = styled.div`
   max-width: 100%;
-  margin-top: 12rem;
+  // margin-top: 12rem;
+  //padding-top: 12rem;
+  position: relative;
+  box-sizing: inherit;
+  top: 12rem;
 `;
 const HotelImages = styled.div`
   // background-color: aliceblue;
