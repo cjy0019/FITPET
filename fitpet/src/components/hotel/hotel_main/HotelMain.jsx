@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Font, MiddleBtn, WishSmall } from '../../../common';
 import ImageBox from '../../../common/contents/common/ImageBox';
 import MainNav from '../../mainpage/banner/MainNav';
+import { ImgBox } from '../hotel_common/filterCommon';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelListBlock from './HotelListBlock';
 
@@ -98,7 +99,13 @@ const HotelMain = ({ hitsList }) => {
           {hitsList.map((hotel, i) => {
             return (
               <PopularHotel key={i}>
-                <WishSmall></WishSmall>
+                <div className='imgBox'>
+                  <img
+                    src={IMG_API + hotel.lodgingImg}
+                    alt={hotel.lodgingImg}
+                  />
+                  <LikeBtn />
+                </div>
                 <Font
                   color='#2A2A2A'
                   fontSize='1.8rem'
@@ -116,10 +123,10 @@ const HotelMain = ({ hitsList }) => {
                     ~ {hotel.lodgingMaxMoney.toLocaleString()}
                   </span>
 
-                  <img
+                  {/* <img
                     src={IMG_API + hotel.lodgingImg}
                     alt={hotel.lodgingImg}
-                  />
+                  /> */}
                 </Font>
               </PopularHotel>
             );
@@ -209,6 +216,14 @@ const PopularHotel = styled.li`
     font-size: 1.4rem;
     font-weight: 600;
   }
+  .imgBox {
+    img {
+      width: 29rem;
+      height: 29rem;
+    }
+    border-radius: 25px;
+    cursor: pointer;
+  }
   span {
     font-weight: bold;
   }
@@ -220,5 +235,14 @@ const PopularHotel = styled.li`
     font-size: 1.8rem;
     font-weight: normal;
   }
+`;
+export const LikeBtn = styled.div`
+  position: absolute;
+  top: 1.4rem;
+  right: 2.4rem;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  background: url('/img/icon/likeicon.png') no-repeat;
 `;
 export default HotelMain;
