@@ -14,9 +14,9 @@ const HotelSlider = ({ hotels }) => {
   console.log(hotels);
   // 6개 슬라이드 효과 주기
   useEffect(() => {
-    let slideValue = currentSlide * 6 * 10;
+    let slideValue = currentSlide * 100;
     if (currentSlide > 0) {
-      slideValue += 8.7;
+      slideValue += 3;
       nextBtnRef.current.style = 'visibility:hidden';
       prevBtnRef.current.style = 'visibility:visible';
     } else {

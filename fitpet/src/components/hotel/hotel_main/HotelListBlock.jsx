@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Font, SmallBtn } from '../../../common';
 import HotelSlider from './HotelSlider';
 
-const HotelListBlock = ({ hitsList }) => {
+const HotelListBlock = ({ hotels }) => {
   return (
     <HotelListWrapper>
       <div className='hotelListBox'>
@@ -30,7 +30,7 @@ const HotelListBlock = ({ hitsList }) => {
           </HotelLocationWrapper>
         </div>
         {/* 호텔 슬라이드 부분 */}
-        <HotelSlider hotels={hitsList} />
+        <HotelSlider hotels={hotels} />
       </div>
     </HotelListWrapper>
   );

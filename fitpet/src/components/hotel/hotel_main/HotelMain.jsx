@@ -8,7 +8,7 @@ import { ImgBox } from '../hotel_common/filterCommon';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelListBlock from './HotelListBlock';
 
-const HotelMain = ({ hitsList }) => {
+const HotelMain = ({ hitsList, hotels }) => {
   const IMG_API = 'http://www.ongyeol.com:61010/public';
   return (
     <HotelMainWrapper>
@@ -85,7 +85,7 @@ const HotelMain = ({ hitsList }) => {
         </div>
       </FitPetEventBlock>
       {/* 반려동물과 함게 펫캉스 즐기자! */}
-      <HotelListBlock hitsList={hitsList} />
+      <HotelListBlock hotels={hotels} />
       {/* 띠배너 부분 */}
       <BandBanner img={'/img/hotel/hotel_main/banner.png'} />
       {/* 지금 이 숙소가 인기있어요 */}
