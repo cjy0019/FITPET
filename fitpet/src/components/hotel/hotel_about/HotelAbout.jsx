@@ -247,25 +247,27 @@ const HotelAbout = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
         </div>
       </About>
 
-      {/* 객실 선택 */}
-      <div id='roomChoose'>
-        <RoomChoose />
-        <HotelTwoRoom />
-        <HotelOneRoom
-          showRoomDetail={showRoomDetail}
-          roomDetailOpen={roomDetailOpen}
-          hideRoomDetail={hideRoomDetail}
-        />
-        <HotelTwoRoom />
-        <HotelTwoRoom />
-        <HotelOneRoom />
+      <div className='scroll'>
+        {/* 객실 선택 */}
+        <div id='roomChoose'>
+          <RoomChoose />
+          <HotelTwoRoom />
+          <HotelOneRoom
+            showRoomDetail={showRoomDetail}
+            roomDetailOpen={roomDetailOpen}
+            hideRoomDetail={hideRoomDetail}
+          />
+          <HotelTwoRoom />
+          <HotelTwoRoom />
+          <HotelOneRoom />
+        </div>
+        {/* 숙소 상세정보 */}
+        <RoomDetailInfo />
+        {/* 편의시설 및 서비스 */}
+        <RoomService />
+        {/* 다른 여행객이 함께 본 숙소 */}
+        <OthertravelersHotels />
       </div>
-      {/* 숙소 상세정보 */}
-      <RoomDetailInfo />
-      {/* 편의시설 및 서비스 */}
-      <RoomService />
-      {/* 다른 여행객이 함께 본 숙소 */}
-      <OthertravelersHotels />
     </HotelsAboutWrapper>
   );
 };
