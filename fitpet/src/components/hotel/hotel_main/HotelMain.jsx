@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { Font, MiddleBtn, WishSmall, SmallBtn } from '../../../common';
+import { Font, MiddleBtn, WishSmall } from '../../../common';
 import ImageBox from '../../../common/contents/common/ImageBox';
 import MainNav from '../../mainpage/banner/MainNav';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
-import HotelSlider from './HotelSlider';
+import HotelListBlock from './HotelListBlock';
 
-const HotelMain = () => {
+const HotelMain = ({ hitsList }) => {
   return (
     <HotelMainWrapper>
       {/* 숙소 검색창 */}
@@ -62,10 +62,12 @@ const HotelMain = () => {
             <div className='line'>
               <ImageBox
                 height='52rem'
-                img={'/img/hotel/hotel_main/fitpet_event/2.png'}></ImageBox>
+                img={'/img/hotel/hotel_main/fitpet_event/2.png'}
+              />
               <ImageBox
                 height='40rem'
-                img={'/img/hotel/hotel_main/fitpet_event/5.png'}></ImageBox>
+                img={'/img/hotel/hotel_main/fitpet_event/5.png'}
+              />
             </div>
             <div className='line'>
               <ImageBox
@@ -81,39 +83,7 @@ const HotelMain = () => {
         </div>
       </FitPetEventBlock>
       {/* 반려동물과 함게 펫캉스 즐기자! */}
-      <HotelListBlock>
-        <div className='hotelListBox'>
-          <div className='locationBox'>
-            <HotelLocationWrapper>
-              <Font
-                fontSize='3rem'
-                fontWeight='normal'
-                color='#ffffff'
-                mb='5rem'>
-                반려동물과 함께 <br />
-                펫캉스 즐기자!
-              </Font>
-              <div className='tagBox'>
-                <div>
-                  <SmallBtn style={{ marginBottom: '1rem' }}>제주도</SmallBtn>
-                </div>
-                <div>
-                  <SmallBtn style={{ marginBottom: '1rem' }}>속초</SmallBtn>
-                </div>
-                <div>
-                  <SmallBtn style={{ marginBottom: '1rem' }}>전주</SmallBtn>
-                </div>
-                <div>
-                  <SmallBtn style={{ marginBottom: '1rem' }}>부산</SmallBtn>
-                </div>
-              </div>
-            </HotelLocationWrapper>
-          </div>
-          {/* 호텔 슬라이드 부분 */}
-          <HotelSlider />
-        </div>
-      </HotelListBlock>
-
+      <HotelListBlock hitsList={hitsList} />
       {/* 띠배너 부분 */}
       <BandBanner img={'/img/hotel/hotel_main/banner.png'} />
       {/* 지금 이 숙소가 인기있어요 */}
@@ -124,136 +94,32 @@ const HotelMain = () => {
           </Font>
         </TextBlock>
         <div className='popularHotelsBox'>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-        </div>
-        <div className='popularHotelsBox'>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
-          <PopularHotel>
-            <WishSmall margin='0 4rem 0 0'></WishSmall>
-            <Font
-              color='#2A2A2A'
-              fontSize='1.8rem'
-              margin='1.4rem 0 3.8rem 2.3rem'>
-              <span className='smallFont'>호텔 | 5성급</span>
-              <span>
-                <br />
-                롯데호텔 제주
-                <br />
-                44,900
-              </span>
-              <span className='smallPrice'>~ 50,000</span>
-            </Font>
-          </PopularHotel>
+          {hitsList.map((hotel, i) => {
+            return (
+              <PopularHotel key={i}>
+                <WishSmall></WishSmall>
+                <Font
+                  color='#2A2A2A'
+                  fontSize='1.8rem'
+                  margin='1.4rem 0 3.8rem 2.3rem'>
+                  <span className='smallFont'>
+                    {hotel.lodgingTypeKr}| {hotel.lodgingClass}
+                  </span>
+                  <span>
+                    <br />
+                    {hotel.lodgignName}
+                    <br />
+                    {hotel.lodgingMinMoney.toLocaleString()}
+                  </span>
+                  <span className='smallPrice'>
+                    ~ {hotel.lodgingMaxMoney.toLocaleString()}
+                  </span>
+                  <p>{hotel.lodgingImg}</p>
+                  <img src='{hotel.lodgingImg}' alt={hotel.lodgingImg} />
+                </Font>
+              </PopularHotel>
+            );
+          })}
         </div>
       </PopularHotels>
     </HotelMainWrapper>
@@ -303,39 +169,6 @@ const EventBlock = styled.div`
     display: block;
   }
 `;
-const HotelListBlock = styled.div`
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-  background-color: ${(props) => props.theme.grey3_color};
-  height: 55.6rem;
-  .hotelListBox {
-    display: flex;
-    width: 128rem;
-    height: 55.6rem;
-    .locationBox {
-      margin-top: 10rem;
-      position: absolute;
-    }
-  }
-`;
-const HotelLocationWrapper = styled.div`
-  width: 44rem;
-  height: 57.2rem;
-  color: ${(props) => props.theme.white_color};
-  padding: 5rem 0 0 5rem;
-  position: absolute;
-  display: block;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url('/img/hotel/hotel_main/locationBox.png');
-  line-height: 1.3; // 줄 간격
-  .tagBox {
-    display: block;
-  }
-`;
-
 const BandBanner = styled.div`
   margin: 0 auto;
   width: 128rem;
@@ -355,6 +188,12 @@ const PopularHotels = styled.div`
   margin-bottom: 12rem;
   .popularHotelsBox {
     display: flex;
+    flex-wrap: wrap;
+    li {
+      :not(:nth-child(4n)) {
+        margin-right: 4rem;
+      }
+    }
   }
 `;
 const TextBlock = styled.div`
