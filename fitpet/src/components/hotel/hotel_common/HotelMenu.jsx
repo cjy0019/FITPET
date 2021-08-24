@@ -2,38 +2,47 @@ import React from 'react';
 import styled from 'styled-components';
 import { Font } from '../../../common';
 import { Link } from 'react-scroll';
+import theme from '../../../assets/theme';
 
 const HotelMenu = () => {
   return (
     <div>
       <MenuContainer>
-        <div className='menu'>
-          <Link to='roomChoose' spy={true} smooth={true}>
-            <Font fontSize='1.6rem' fontWeight='500' mr='5rem'>
-              객실선택
-            </Font>
-          </Link>
-          <Link to='hotelDetail' spy={true} smooth={true}>
-            <Font fontSize='1.6rem' fontWeight='500' mr='5rem'>
-              숙소상세정보
-            </Font>
-          </Link>
-          <Link to='hotelService' spy={true} smooth={true}>
-            <Font fontSize='1.6rem' fontWeight='500' mr='5rem'>
-              편의시설 및 서비스
-            </Font>
-          </Link>
+        <ul className='menu'>
+          <li>
+            <Link to='roomChoose' spy={true} smooth={true}>
+              <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
+                객실선택
+              </Font>
+            </Link>
+          </li>
+          <li>
+            <Link to='roomDetailInfo' spy={true} smooth={true}>
+              <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
+                숙소상세정보
+              </Font>
+            </Link>
+          </li>
+          <li>
+            <Link to='roomService' spy={true} smooth={true}>
+              <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
+                편의시설 및 서비스
+              </Font>
+            </Link>
+          </li>
           {/* <Link to='hotelService' spy={true} smooth={true}>
-            <Font fontSize='1.6rem' fontWeight='500' mr='5rem'>
+            <Font fontSize='1.6rem' fontWeight='500'>
               후기
             </Font>
           </Link> */}
-          <Link to='othertravelersHotel' spy={true} smooth={true}>
-            <Font fontSize='1.6rem' fontWeight='500'>
-              다른 추천 호텔
-            </Font>
-          </Link>
-        </div>
+          <li>
+            <Link to='othertravelersHotels' spy={true} smooth={true}>
+              <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
+                다른 추천 호텔
+              </Font>
+            </Link>
+          </li>
+        </ul>
       </MenuContainer>
     </div>
   );
@@ -45,15 +54,21 @@ const MenuContainer = styled.div`
   flex-direction: column;
   font-size: 1.6rem;
   .menu {
-    margin: 0;
     display: flex;
-    Link {
+    li {
+      margin-right: 5rem;
+      height: 8rem;
+      align-items: center;
       cursor: pointer;
+      display: flex;
+      border-bottom: solid 4px transparent;
+      &:active {
+        border-bottom: 4px solid ${theme.main_color};
+      }
       p {
-        &:hover {
-          font-weight: bold;
-          padding-bottom: 3.1rem;
-          border-bottom: 4px solid #979797;
+        text-align: center;
+        &:active {
+          font-weight: 600;
         }
       }
     }

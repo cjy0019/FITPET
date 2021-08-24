@@ -32,14 +32,15 @@ const HotelBanner = () => {
 const Banner = styled.div`
   position: fixed;
   z-index: 999;
-  top: 8rem;
+  top: 10rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2.6rem;
   padding-bottom: 2.3rem;
-  background-color: #cbcbcb;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/img/hotel/hotel_list/hotelsearchbanner.png');
 
   ${(props) =>
     props.scroll &&

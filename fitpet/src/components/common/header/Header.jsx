@@ -1,61 +1,27 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import MemberLinkUl from './MemberLinkUl';
-
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HeaderNav from './HeaderNav';
-import Login from '../../login/Login';
-import SignUp from '../../signUp/SignUp';
 import Modal from '../../modal/Modal';
+import SignupContainer from '../../../containers/SignupContainer';
+import SignupSuccessContainer from '../../../containers/SignupSuccessContainer';
+import LoginContainer from '../../../containers/LoginContainer';
+import MemberLinkLoginUl from './MemberLinkLoginUl';
+import MemberLinkUl from './MemberLinkUl';
 
-const Header = () => {
-  // 로그인
-  const [loginOpen, setloginOpen] = useState(false);
-  const showLogin = useCallback(() => setloginOpen(true), []);
-  const hideLogin = useCallback(() => setloginOpen(false), []);
-
-  // 회원가입
-  const [signUpOpen, setSignUpOpen] = useState(false);
-  const showSignUp = useCallback(() => setSignUpOpen(true), []);
-  const hideSignUp = useCallback(() => setSignUpOpen(false), []);
-
-  // 로그인
-  useEffect(() => {
-    if (loginOpen) {
-      document.body.style.cssText = `
-      position:fixed;
-      top: -${window.scrollY}px;
-      overflow-y: scroll;
-      width: 100%;
-    `;
-    }
-
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = '';
-      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
-    };
-  }, [loginOpen]);
-
-  //회원가입
-  useEffect(() => {
-    if (signUpOpen) {
-      document.body.style.cssText = `
-      position:fixed;
-      top: -${window.scrollY}px;
-      overflow-y: scroll;
-      width: 100%;
-    `;
-    }
-
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = '';
-      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
-    };
-  }, [signUpOpen]);
-
+const Header = ({
+  token,
+  logOut,
+  showLogin,
+  hideLogin,
+  loginOpen,
+  showSignUp,
+  hideSignUp,
+  signupOpen,
+  signupSuccessOpen,
+  showSignupSuccess,
+}) => {
   return (
     <>
       <MainHeader>
@@ -72,19 +38,34 @@ const Header = () => {
 
         {/* 멤버 링크 부분 */}
         <nav>
-          <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} />
+          {token ? (
+            <MemberLinkLoginUl logOut={logOut} />
+          ) : (
+            <MemberLinkUl showLogin={showLogin} showSignUp={showSignUp} />
+          )}
         </nav>
       </MainHeader>
       {/* 로그인 모달 */}
       {loginOpen ? (
         <Modal>
-          <Login hideLogin={hideLogin} />
+          <LoginContainer hideLogin={hideLogin} />
         </Modal>
       ) : null}
+
       {/* 회원가입 모달 */}
-      {signUpOpen ? (
+      {signupOpen ? (
         <Modal>
-          <SignUp hideSignUp={hideSignUp} />
+          <SignupContainer
+            hideSignUp={hideSignUp}
+            showSignupSuccess={showSignupSuccess}
+          />
+        </Modal>
+      ) : null}
+
+      {/* 회원가입 성공 모달 */}
+      {signupSuccessOpen ? (
+        <Modal>
+          <SignupSuccessContainer showLogin={showLogin} />
         </Modal>
       ) : null}
     </>
@@ -95,13 +76,13 @@ const MainHeader = styled.header`
   display: grid;
   align-items: center;
   background-color: #ffffff;
-  grid-template-columns: 1.17fr 1.15fr 0.7fr;
+  grid-template-columns: 1.15fr 1.15fr 0.3fr;
   position: fixed;
   width: 100%;
-  height: 8rem;
+  min-height: 10rem;
   top: 0;
   padding: 0rem 6rem 0rem 6rem;
-  z-index: 10;
+  z-index: 30;
 `;
 
 const FitPetLogo = styled.img.attrs({

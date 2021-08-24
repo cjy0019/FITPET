@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import SmallLine from '../../common/utility/SmallLine';
-import { DownButton, Rect, UpButton } from '../hotel/hotel_common/filterCommon';
+import { DownButton, UpButton } from '../hotel/hotel_common/filterCommon';
 import { HiCheck } from 'react-icons/hi';
-import { Line } from '../reservation/Reservation';
 
 const DriverAgreement = () => {
   const [showAll, setShowAll] = useState(true);
@@ -11,7 +9,8 @@ const DriverAgreement = () => {
 
   useEffect(() => {
     if (showAll) {
-      showRef.current.style = 'visibility : visible; opacity : 1;';
+      showRef.current.style =
+        'visibility : visible; opacity : 1; height:14.3rem';
     } else {
       showRef.current.style = 'height:0rem; visibility : hidden; opacity:0';
     }
@@ -19,17 +18,16 @@ const DriverAgreement = () => {
 
   return (
     <AgreeWrapper>
-      <FlexContainer>
+      <FlexContainer line>
         <StyledTitle>이용 약관 동의</StyledTitle>
         <FlexContainer>
-          <Rect />
+          <IconImg src='/img/icon/infoicon.svg' />
           <Desc>
             현장에서 사인한 계약서를 기준으로 약관이 적용되니 반드시 현장
             계약서를 확인해주시기 바랍니다
           </Desc>
         </FlexContainer>
       </FlexContainer>
-      <Line />
 
       <RadioWrapper firstline>
         <AgreeLabel htmlFor='agreeAll'>
@@ -47,8 +45,6 @@ const DriverAgreement = () => {
           <DownButton handleClick={handleClick} />
         )}
       </RadioWrapper>
-
-      <SmallLine />
 
       {/* 숨겨지는 부분 */}
       <RadioWrapper flex ref={showRef}>
@@ -103,6 +99,19 @@ const DriverAgreement = () => {
 const FlexContainer = styled.div`
   display: flex;
   align-items: center;
+  ${(props) =>
+    props.line &&
+    css`
+      padding-bottom: 1.4rem;
+      border-bottom: solid 1.5px ${(props) => props.theme.main_color};
+    `}
+`;
+
+const IconImg = styled.img`
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  margin-right: 0.4rem;
 `;
 
 const Desc = styled.p`
@@ -126,7 +135,8 @@ const StyledTitle = styled.p`
   font-size: 2.4rem;
   font-weight: bold;
   line-height: 1.2;
-  color: ${(props) => props.theme.grey1_color};
+  color: ${(props) => props.theme.black1_color};
+
   margin-right: 1.8rem;
 `;
 
@@ -140,6 +150,8 @@ const RadioWrapper = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-bottom: 1.3rem;
+      border-bottom: solid 1px #eee; ;
     `}
 
   ${(props) =>
@@ -179,7 +191,7 @@ const AgreeCheck = styled.div`
   position: relative;
   width: 2.4rem;
   height: 2.4rem;
-  border: solid 2px #979797;
+  border: solid 1px #eee;
   border-radius: 50%;
   margin-right: 1rem;
 
@@ -193,13 +205,13 @@ const AgreeCheck = styled.div`
   }
   /* size='1.6rem' color='blue' stroke-width='1.4' */
   input:checked + &::after {
-    background-color: #0186df;
+    background-color: ${(props) => props.theme.main_color};
     transform: scale(1.15);
     transition: transform 0.3s;
   }
 
   input:checked + & div {
-    color: yellow;
+    color: #fff;
   }
 `;
 
@@ -208,7 +220,7 @@ const IconWrapper = styled.div`
   top: 60%;
   left: 50%;
   z-index: 10;
-  color: #000000;
+  color: #eee;
   transform: translate(-50%, -50%);
 `;
 

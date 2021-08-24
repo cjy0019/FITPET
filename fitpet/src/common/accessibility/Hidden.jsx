@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // 웹 접근성을 위한 a11y-hidden style
-export const A11yHidden = styled.span`
+export const A11yHidden = styled.h1`
   overflow: hidden;
   position: absolute;
   clip: rect(0 0 0 0); /* IE 6,7 */

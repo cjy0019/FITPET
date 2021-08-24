@@ -9,14 +9,22 @@ import ToggleButton from './buttons/small_size/ToggleButton';
 import WishSmall from './contents/common/WishSmall';
 import SampleIcon from './icons/SampleIcon';
 import OpenBtn from './buttons/small_size/OpenBtn';
-import RoundSquareBtn from './buttons/small_size/RoundSquareBtn';
+import RoundSquareBtn from './buttons/RoundSquareBtn';
 import HoverText from './contents/common/HoverText';
 import ImgMoreBtn from './buttons/small_size/ImgMoreBtn';
 import SocialBtn from './buttons/middle_size/SocialBtn';
 import BasicBox from './contents/common/BasicBox';
-import FillBox from './contents/common/PillBox';
+import FillBox from '../components/hotel/hotel_main/PillBox';
 import MagazineBox from './contents/common/MagazineBox';
 import MiddleBtn from './buttons/MiddleBtn';
+import { SectionHeader, StyledArticle } from './wrapper/LayOutWrappers';
+import {
+  Circle,
+  CircleText,
+  Track,
+  TrackContainer,
+} from './utility/HeaderProcess';
+import SmallBtn from './buttons/SmallBtn';
 export {
   Font,
   CoursePage,
@@ -37,4 +45,11 @@ export {
   FillBox,
   MagazineBox,
   MiddleBtn,
+  SectionHeader,
+  StyledArticle,
+  Circle,
+  CircleText,
+  Track,
+  TrackContainer,
+  SmallBtn,
 };

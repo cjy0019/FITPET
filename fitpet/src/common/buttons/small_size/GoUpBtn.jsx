@@ -4,16 +4,15 @@ import { BsArrowUp } from 'react-icons/bs';
 import styled from 'styled-components';
 
 const GoUpBtn = () => {
-  const [btnRender, setBtnRender] = useState(true);
+  const [btnRender, setBtnRender] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', btnAppear);
-    if (btnRender) setBtnRender(false);
 
     return () => {
       window.removeEventListener('scroll', btnAppear);
     };
-  }, [btnRender]);
+  }, []);
 
   return (
     btnRender && (
@@ -26,7 +25,7 @@ const GoUpBtn = () => {
           color='#979797'
           fontSize='4rem'
           backColor='#ffffff'
-          hoverColor='#979797'
+          hoverColor='#4765ff'
           textHover='#ffffff'
           position='fixed'
           top='90vh'
@@ -43,8 +42,10 @@ const GoUpBtn = () => {
       window.scrollY ||
       document.documentElement.scrollTop || // 익스9 이하 버전 지원
       document.body.scrollTop; // 오페라 크롬 사파리 지원
+    if (top >= 500) setBtnRender(true);
+    else setBtnRender(false);
 
-    top >= 500 ? setBtnRender(true) : setBtnRender(false);
+    // top >= 500 ? setBtnRender(true) : setBtnRender(false);
   }
 
   // 클릭시 최상단으로 이동

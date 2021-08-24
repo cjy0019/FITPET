@@ -1,56 +1,79 @@
 import React from 'react';
 import styled from 'styled-components';
 import LoginBottom from './LoginBottom';
-import LoginHeader from './LoginHeader';
-import Slogan from './Slogan';
 
-const Login = ({ hideLogin }) => {
+const Login = ({ hideLogin, login }) => {
   return (
     <>
-      <Overlay>
-        <div className='center'>
-          <StyledForm onSubmit={handleSubmit}>
-            <div>
-              <LoginHeader hideLogin={hideLogin} />
-              {/* 로고 */}
-              <Logo />
+      <StyledCenter>
+        <StyledForm onSubmit={handleSubmit}>
+          <div>
+            <StyledDiv>
+              <h1>로그인</h1>
+              <StyledX onClick={hideLogin} />
+            </StyledDiv>
+            {/* 로고 */}
+            <Logo />
 
-              {/* 슬로건 */}
-              <Slogan />
+            {/* 슬로건 */}
+            <StyledSlogan>
+              반려동물과 함께하는 맞춤 힐링여행!
+              <br /> 핏펫에 오신걸 환영합니다&#58;&#41;
+            </StyledSlogan>
 
-              {/* 팝업에서 아래쪽 부분 */}
-              <LoginBottom />
-            </div>
-          </StyledForm>
-        </div>
-      </Overlay>
+            {/* 로그인 input 부분 */}
+            <LoginBottom login={login} />
+          </div>
+        </StyledForm>
+      </StyledCenter>
     </>
   );
-
-  // form 기본동작 방지
   function handleSubmit(e) {
     e.preventDefault();
   }
 };
-
-// style
-// login wrapper
-
-const Overlay = styled.div`
+// 로그인 상단
+const StyledCenter = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 999999999;
-  background-color: rgba(0, 0, 0, 0.7);
+  top: 50vh;
+  left: 50%;
+  border-radius: 30px;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.6);
+  transform: translate(-50%, -50%);
+`;
 
-  .center {
-    position: absolute;
-    top: 50vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: ${(props) => props.theme.black1_color};
+`;
+
+const StyledX = styled.button`
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-size: cover;
+  background-image: url('/img/auth/closebutton.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+`;
+
+// 로고부분
+const Logo = styled.img.attrs({
+  src: '/img/header/loginLogo.svg',
+  alt: 'FitPet',
+})`
+  display: block;
+  width: 14.4rem;
+  height: 16rem;
+  margin: 1.5rem auto 0;
 `;
 
 const StyledForm = styled.form`
@@ -66,15 +89,15 @@ const StyledForm = styled.form`
   }
 `;
 
-// 로고부분
-const Logo = styled.img.attrs({
-  src: '/img/header/loginLogo.svg',
-  alt: 'FitPet',
-})`
-  display: block;
-  width: 14.8rem;
-  height: 16.6rem;
-  margin: 3.5rem auto 0;
+// 슬로건
+const StyledSlogan = styled.p`
+  margin-top: 1.2rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  letter-spacing: -0.28px;
+  text-align: center;
+  line-height: 1.43;
+  color: ${(props) => props.theme.black1_color};
 `;
 
 export default Login;

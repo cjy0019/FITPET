@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { RoundSquareBtn } from '../../../common';
+import SearchDateBox from './search_box/SearchDateBox';
+import SearchPeopleBox from './search_box/SearchPeopleBox';
 
 const HotelDate = () => {
   return (
     <DateContainer>
-      <DateBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
-      <DateBox placeholder='성인1 | 객실1 | 소형견1' />
-      <RoundSquareBtn main_color>재검색</RoundSquareBtn>
+      {/* 8월 6일 (금) - 8월 7일(토) | 1박' */}
+      <SearchDateBox />
+      {/* 성인2 | 객실1 | 소형견2 */}
+      <SearchPeopleBox />
+      <RoundSquareBtn search_btn>재검색</RoundSquareBtn>
     </DateContainer>
   );
 };
@@ -17,23 +21,7 @@ const DateContainer = styled.div`
   background-color: #fff;
   border-radius: 15px;
   margin-left: auto;
-`;
-
-const DateBox = styled.input`
-  border: none;
-  width: 30rem;
-  height: 4.8rem;
-  padding: 0.7rem 0 0.7rem 5.6rem;
-  margin-right: 1rem;
-  font-size: 1.6rem;
-  border-radius: 7px;
-  color: #707070;
-  outline: none;
-  background-color: #cbcbcb;
-  background-image: url('/img/logo-social.png');
-  background-size: 3.4rem 3.4rem;
-  background-position: 1.5rem center;
-  background-repeat: no-repeat;
+  align-items: center;
 `;
 
 export default HotelDate;

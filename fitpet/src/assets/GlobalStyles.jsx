@@ -23,6 +23,12 @@ const GlobalStyles = createGlobalStyle`
     }
     button{
       cursor: pointer;
+      background: inherit ; 
+      border:none;
+      box-shadow:none; 
+      border-radius:0;
+      padding:0;
+      overflow:visible;
     }
 
     li{
@@ -37,13 +43,13 @@ const GlobalStyles = createGlobalStyle`
 
     @media ${(props) => props.theme.tablet}{
       html {
-        font-size: 5px;
+        font-size: 6px;
       }
     }
 
     @media ${(props) => props.theme.mobile}{
       html {
-        font-size: 3px;
+        font-size: 4px;
       }
     }
 `;

@@ -13,15 +13,12 @@ const HotelAboutBanner = () => {
 
   useEffect(() => {
     if (yOffset > 1000) {
-      console.log('메뉴헤더만 나와야함');
-      setIsScrollMenu(true);
       setIsScrollDate(false);
+      setIsScrollMenu(true);
     } else if (yOffset > 100) {
-      console.log('날짜헤더만 나와야함');
       setIsScrollDate(true);
       setIsScrollMenu(false);
     } else {
-      console.log('둘다 안나와야함');
       setIsScrollDate(false);
       setIsScrollMenu(false);
     }
@@ -31,7 +28,7 @@ const HotelAboutBanner = () => {
     <>
       {isScrollDate ? (
         <Banner scroll>
-          <div class='bannerDate'>
+          <div className='bannerDate'>
             <HotelDate isScroll={isScrollDate} />
           </div>
         </Banner>
@@ -40,7 +37,7 @@ const HotelAboutBanner = () => {
       )}
       {isScrollMenu ? (
         <Banner scroll>
-          <div class='bannerMenu'>
+          <div className='bannerMenu'>
             <HotelMenu isScroll={isScrollMenu} />
           </div>
         </Banner>
@@ -55,10 +52,6 @@ const Banner = styled.div`
   position: fixed;
   z-index: 999;
   top: 8rem;
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
-  //padding-top: 2.6rem;
   background-color: #fff;
   width: 100%;
   .bannerDate {
@@ -71,16 +64,13 @@ const Banner = styled.div`
   }
   .bannerMenu {
     height: 8rem;
-    padding-bottom: 3.1rem;
-    padding-top: 3.1rem;
     padding-left: 32rem;
     box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.16);
   }
   ${(props) =>
     props.scroll &&
     css`
-      //padding-right: 0.2rem;
-      //  padding: 1.6rem auto;
+      margin-top: 0;
     `}
 `;
 

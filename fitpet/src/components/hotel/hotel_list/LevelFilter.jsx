@@ -1,27 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
+import useFoldingSection from '../../../hooks/useFoldingSection';
 import {
   DownButton,
   FilterBtn,
   FilterTitle,
   UpButton,
-  AllWrapper,
   ButtonContainer,
   Folder,
   LineWrapper,
+  AllWrapper,
 } from '../hotel_common/filterCommon';
 
 const LevelFilter = () => {
-  const [isFold, setisFold] = useState(true);
   const foldingRef = useRef(null);
-
-  useEffect(() => {
-    if (isFold) {
-      foldingRef.current.style =
-        'visibility : visible; height: 10rem; opacity:1; ';
-    } else {
-      foldingRef.current.style = 'visibility : hidden; height: 0rem; opacity:0';
-    }
-  }, [isFold]);
+  const [isFold, setisFold] = useFoldingSection(foldingRef, 10);
 
   return (
     <AllWrapper>

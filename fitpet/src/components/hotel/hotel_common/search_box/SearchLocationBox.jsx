@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { RoundSquareBtn } from '../../../../common';
 import { useDetectOutsideClick } from '../../../../hooks/useDetectOutsideClick';
+import SearchButton from './SearchButton';
 
 const SearchLocationBox = () => {
   const dropdownRef = useRef(null);
@@ -16,25 +16,32 @@ const SearchLocationBox = () => {
     <>
       <MenuContainer>
         <SearchLocationWrapper onClick={onClick}>
-          <span>어디로 떠날까요?</span>
+          <img
+            className='buttonImg'
+            src='/img/search_box/location.png'
+            alt='location'
+          />
+          <span className='buttonText'>어디로 떠날까요?</span>
         </SearchLocationWrapper>
         <nav
           ref={dropdownRef}
           className={`menu ${isLocation ? 'active' : 'inactive'}`}>
-          <ul>
-            <li>
+          <div>
+            {/* <dl style={{ marginBottom: '3.2rem' }}>
               <LocationText>최근 검색한 곳</LocationText>
-              <RoundSquareBtn search_btn>제주도</RoundSquareBtn>
-            </li>
-            <li style={{ marginTop: '3.2rem' }}>
+              <SearchButton>제주도</SearchButton>
+            </dl> */}
+            <dl>
               <LocationText>핏펫 인기 여행지</LocationText>
-              <RoundSquareBtn search_btn>제주도</RoundSquareBtn>
-              <RoundSquareBtn search_btn>서울</RoundSquareBtn>
-              <RoundSquareBtn search_btn>전주</RoundSquareBtn>
-              <RoundSquareBtn search_btn>강릉</RoundSquareBtn>
-              <RoundSquareBtn search_btn>부산</RoundSquareBtn>
-            </li>
-          </ul>
+              <SearchButton>제주도</SearchButton>
+              <SearchButton>서울</SearchButton>
+              <SearchButton>전주</SearchButton>
+              <SearchButton>강릉</SearchButton>
+              <SearchButton>부산</SearchButton>
+              <SearchButton>포항</SearchButton>
+              <SearchButton>대구</SearchButton>
+            </dl>
+          </div>
         </nav>
       </MenuContainer>
     </>
@@ -49,7 +56,6 @@ const MenuContainer = styled.div`
   // 버튼 클릭 시 나오는 창
   .menu {
     width: 38rem;
-    height: 28rem;
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
     background-color: ${(props) => props.theme.white_color};
     position: absolute;
@@ -67,18 +73,16 @@ const MenuContainer = styled.div`
     visibility: visible;
     transform: translateY(0);
   }
-  .menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  dl {
+    float: left;
   }
-  .menu li {
+  dt {
     display: block;
-    align-items: center;
+    margin: 0;
   }
 `;
 
-const LocationText = styled.p`
+const LocationText = styled.dt`
   height: 1.6rem;
   font-size: 1.4rem;
   font-weight: normal;
@@ -86,20 +90,28 @@ const LocationText = styled.p`
   color: ${(props) => props.theme.black1_color};
 `;
 const SearchLocationWrapper = styled.button`
+  display: flex;
   width: 30rem;
   height: 4.8rem;
   border-radius: 7px;
+  margin-right: 1rem;
+  padding: 0.7rem 0.8rem;
+  align-items: center;
   background-color: ${(props) => props.theme.grey5_color};
-  outline: none;
-  background-image: url('/img/search_box/location.png');
-  background-size: 3.4rem 3.4rem;
-  background-position: 1.5rem center;
-  background-repeat: no-repeat;
   border: solid 1px ${(props) => props.theme.grey5_color};
-  color: ${(props) => props.theme.black1_color};
+  outline: none;
   &:focus,
   &:hover {
     border: solid 1px ${(props) => props.theme.main_color};
+  }
+  .buttonImg {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+  .buttonText {
+    color: ${(props) => props.theme.black1_color};
+    margin-left: 1.2rem;
+    font-size: 1.6rem;
   }
 `;
 

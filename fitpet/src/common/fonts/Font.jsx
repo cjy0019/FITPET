@@ -19,6 +19,7 @@ const Font = (props) => {
     ml,
     borderBottom,
     textDecoration,
+    lineHeight,
   } = props;
 
   const styles = {
@@ -36,6 +37,7 @@ const Font = (props) => {
     mr: mr,
     borderBottom: borderBottom,
     textDecoration: textDecoration,
+    lineHeight: lineHeight,
   };
 
   return (
@@ -62,7 +64,7 @@ Font.defaultProps = {
   fontFamily: 'Pretendard',
   fontSize: '2.8rem',
   fontWeight: 'Medium',
-  color: '#707070',
+  color: '#2a2a2a',
   borderBottom: 'none',
   textDecoration: 'none',
   handleClick: () => {},
@@ -85,4 +87,5 @@ const StyledFont = styled.p`
   margin-left: ${(props) => props.ml};
   border-bottom: ${(props) => props.borderBottom};
   text-decoration: ${(props) => props.textDecoration};
+  line-height: ${(props) => props.lineHeight};
 `;

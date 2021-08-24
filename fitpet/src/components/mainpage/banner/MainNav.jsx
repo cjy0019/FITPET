@@ -1,21 +1,40 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MainNav = () => {
+  const hotelLink = useRef(null);
+  const homeLink = useRef(null);
+  const rentalcarLink = useRef(null);
+  const courseLink = useRef(null);
+  const location = useSelector((state) => state.router.location.pathname);
+  console.log('location:' + location);
+  useEffect(() => {
+    if (location === '/home') {
+      homeLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
+    } else if (location === '/hotel' || location === '/hotellist') {
+      hotelLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
+    } else if (location === '/rentalcar') {
+      rentalcarLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
+    } else if (location === '/course') {
+      courseLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
+    }
+  }, [location]);
+
   return (
     <StyledNav>
       <ListWrapper>
-        <MenuLi>
+        <MenuLi ref={homeLink}>
           <NavLink to='/'>홈</NavLink>
         </MenuLi>
-        <MenuLi>
+        <MenuLi ref={hotelLink}>
           <NavLink to='/hotel'>숙소</NavLink>
         </MenuLi>
-        <MenuLi>
+        <MenuLi ref={rentalcarLink}>
           <NavLink to='/rentalcar'>렌트카</NavLink>
         </MenuLi>
-        <MenuLi>
+        <MenuLi ref={courseLink}>
           <NavLink to='course'>코스짜기</NavLink>
         </MenuLi>
         <MenuLi>
@@ -27,8 +46,9 @@ const MainNav = () => {
 };
 
 const StyledNav = styled.nav`
-  min-height: 2.8rem;
   white-space: nowrap;
+  margin-top: 2.6rem;
+  align-items: center;
 `;
 
 const ListWrapper = styled.ul`
@@ -39,14 +59,12 @@ const MenuLi = styled.li`
   font-size: 1.8rem;
   margin-right: 3.6rem;
   padding-bottom: 0.4rem;
-
-  &:hover {
-    border-bottom: solid 4px #4765ff;
-  }
+  border-bottom: solid 0.4rem transparent;
+  color: ${(props) => props.theme.white_color};
 
   a {
-    color: ${(props) => props.theme.white_color};
     padding: 0 0.4rem;
+    color: ${(props) => props.theme.white_color};
   }
   a:visited {
     color: ${(props) => props.theme.white_color};

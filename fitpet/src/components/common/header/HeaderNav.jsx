@@ -29,7 +29,7 @@ const HeaderNav = () => {
           <NavLink to='/rentalcar'>렌트카</NavLink>
         </MenuLi>
         <MenuLi>
-          <NavLink to='course'>코스짜기</NavLink>
+          <NavLink to='/course'>코스짜기</NavLink>
         </MenuLi>
         <MenuLi>
           <NavLink to='community'>커뮤니티</NavLink>
@@ -41,7 +41,6 @@ const HeaderNav = () => {
 
 const StyledNav = styled.nav`
   transform: translateY(0.5rem);
-  min-height: 3;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
@@ -56,9 +55,10 @@ const MenuLi = styled.li`
   font-size: 1.8rem;
   margin-right: 3.6rem;
   padding-bottom: 0.4rem;
+  border-bottom: solid 0.4rem transparent;
 
   &:hover {
-    border-bottom: solid 4px #4765ff;
+    border-bottom: solid 0.4rem #4765ff;
   }
 
   a {

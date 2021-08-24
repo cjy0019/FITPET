@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { MiddleBtn } from '../../common';
 import { A11yHidden } from '../../common/accessibility/Hidden';
-import SmallLine from '../../common/utility/SmallLine';
 
 const DriverSticky = () => {
   return (
@@ -18,15 +17,12 @@ const DriverSticky = () => {
             <SmallDetail>일반자차보험</SmallDetail>
           </div>
         </FlexContainer>
-        <SmallLine />
 
         <SmallTitle>인수</SmallTitle>
         <Detail>서울 강서구 / 8월 6일 (금) 10:00</Detail>
 
         <SmallTitle>반납</SmallTitle>
         <Detail>서울 강서구 / 8월 7일 (토) 10:00</Detail>
-
-        <SmallLine margin />
 
         {/* 결제 금액 부분 */}
         <SmallTitle>결제 금액</SmallTitle>
@@ -72,8 +68,8 @@ const DriverSticky = () => {
 
 const RightSection = styled.section`
   position: sticky;
-  top: 0;
-  background-color: #cbcbcb;
+  top: 22rem;
+  background-color: ${(props) => props.grey5_color};
   padding: 4.2rem 3.55rem 4.2rem 3.6rem;
   min-width: 39.8rem;
   max-height: 75rem;
@@ -136,14 +132,13 @@ const Price = styled.p`
   font-weight: bold;
   line-height: 0.86;
   letter-spacing: -0.56px;
-  color: #707070;
+  color: ${(props) => props.theme.main_color};
 
   span {
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 1.33;
     letter-spacing: -0.36px;
-    color: #707070;
   }
 `;
 

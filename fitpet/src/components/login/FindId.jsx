@@ -8,10 +8,12 @@ const FindId = () => {
       <div>
         <input type='checkbox' id='saveId' />
         <label htmlFor='saveId'>
-          <span>아이디 저장</span>
+          <p>아이디 저장</p>
         </label>
       </div>
-      <Link to='/signup'>아이디/비밀번호 찾기</Link>
+      <NavLink style={{ color: '#2a2a2a' }} to='/signup'>
+        아이디/비밀번호 찾기
+      </NavLink>
     </AboutId>
   );
 };
@@ -27,8 +29,21 @@ const AboutId = styled.div`
   letter-spacing: -0.24px;
   text-align: left;
   margin: 0.6rem 0 3.6rem;
+  margin-top: 1rem;
+
   line-height: 1.17;
   color: ${(props) => props.theme.black1_color};
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  label {
+    transform: translateY(0.14rem);
+    cursor: pointer;
+  }
 
   span {
     vertical-align: bottom;
@@ -38,10 +53,10 @@ const AboutId = styled.div`
     vertical-align: bottom;
     cursor: pointer;
   }
-  a {
-    transform: translateY(0.5rem);
-    color: ${(props) => props.theme.black1_color};
-  }
+`;
+
+const NavLink = styled(Link)`
+  transform: translateY(20%);
 `;
 
 export default FindId;
