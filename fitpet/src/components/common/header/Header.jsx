@@ -9,11 +9,15 @@ import SignupSuccessContainer from '../../../containers/SignupSuccessContainer';
 import LoginContainer from '../../../containers/LoginContainer';
 import MemberLinkLoginUl from './MemberLinkLoginUl';
 import MemberLinkUl from './MemberLinkUl';
+import LoginFail from '../../login/LoginFail';
 
 const Header = ({
   token,
   logOut,
   showLogin,
+  loginAgain,
+  isloginFailOpen,
+  hideLoginFail,
   hideLogin,
   loginOpen,
   showSignUp,
@@ -66,6 +70,12 @@ const Header = ({
       {signupSuccessOpen ? (
         <Modal>
           <SignupSuccessContainer showLogin={showLogin} />
+        </Modal>
+      ) : null}
+
+      {isloginFailOpen ? (
+        <Modal>
+          <LoginFail loginAgain={loginAgain} hideLoginFail={hideLoginFail} />
         </Modal>
       ) : null}
     </>

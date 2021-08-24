@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../components/common/header/Header';
 import { logoutSagaStart } from '../redux/modules/login';
-import { openLogin, openSignUp } from '../redux/modules/modal';
+import { closeLoginFail, openLogin, openSignUp } from '../redux/modules/modal';
 
 const HeaderContainer = () => {
   const dispatch = useDispatch();
@@ -11,12 +11,24 @@ const HeaderContainer = () => {
   const signupSuccessOpen = useSelector(
     (state) => state.modal.signupSuccessOpen,
   );
+  const isloginFailOpen = useSelector((state) => state.modal.isloginFailOpen);
   const token = useSelector((state) => state.login.token);
 
   // 로그인 팝업
   const showLogin = useCallback(() => {
     dispatch(openLogin());
   }, [dispatch]);
+
+  // 로그인 실패 팝업닫기
+  const hideLoginFail = useCallback(() => {
+    dispatch(closeLoginFail());
+  }, [dispatch]);
+
+  // 로그인 실패 팝업닫으면서 다시 로그인창으로 이동
+  const loginAgain = useCallback(() => {
+    hideLoginFail();
+    showLogin();
+  }, [hideLoginFail, showLogin]);
 
   // 회원가입 팝업
   const showSignUp = useCallback(() => {
@@ -49,6 +61,9 @@ const HeaderContainer = () => {
     <Header
       showLogin={showLogin}
       loginOpen={loginOpen}
+      isloginFailOpen={isloginFailOpen}
+      loginAgain={loginAgain}
+      hideLoginFail={hideLoginFail}
       signupOpen={signupOpen}
       signupSuccessOpen={signupSuccessOpen}
       showSignUp={showSignUp}
