@@ -11,7 +11,6 @@ const HotelSlider = ({ hotels }) => {
   const slideRef = useRef(null);
   const prevBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
-  console.log(hotels);
   // 6개 슬라이드 효과 주기
   useEffect(() => {
     let slideValue = currentSlide * 100;

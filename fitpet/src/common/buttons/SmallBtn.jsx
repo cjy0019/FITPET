@@ -18,10 +18,6 @@ const buttonStyle = css`
   padding: 1.1rem 1.9rem 1rem 1.9rem;
   border-radius: 2.6rem;
   background-color: ${(props) => props.theme.grey4_color};
-  :focus {
-    background-color: ${(props) => props.theme.main_color};
-    color: ${(props) => props.theme.white_color};
-  }
 
   // GoUpBtn
   ${(props) =>

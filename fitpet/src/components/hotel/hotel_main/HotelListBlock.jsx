@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Font, SmallBtn } from '../../../common';
 import HotelSlider from './HotelSlider';
 
 const HotelListBlock = ({ hotels }) => {
+  const [handleState, setHandleState] = useState(1);
+  const locationTab = (index) => {
+    setHandleState(index);
+  };
   return (
     <HotelListWrapper>
       <div className='hotelListBox'>
@@ -15,22 +19,46 @@ const HotelListBlock = ({ hotels }) => {
             </Font>
             <div className='tagBox'>
               <div>
-                <SmallBtn>제주도</SmallBtn>
+                <SmallBtn
+                  index='1'
+                  region='jeju'
+                  onClick={() => locationTab(1)}
+                  className={handleState === 1 ? 'active' : ''}>
+                  제주도
+                </SmallBtn>
               </div>
               <div>
-                <SmallBtn>속초</SmallBtn>
+                <SmallBtn
+                  index='2'
+                  region='sokcho'
+                  onClick={() => locationTab(2)}
+                  className={handleState === 2 ? 'active' : ''}>
+                  속초
+                </SmallBtn>
               </div>
               <div>
-                <SmallBtn>전주</SmallBtn>
+                <SmallBtn
+                  index='3'
+                  region='jeonju'
+                  onClick={() => locationTab(3)}
+                  className={handleState === 3 ? 'active' : ''}>
+                  전주
+                </SmallBtn>
               </div>
               <div>
-                <SmallBtn>부산</SmallBtn>
+                <SmallBtn
+                  index='4'
+                  region='busan'
+                  onClick={() => locationTab(4)}
+                  className={handleState === 4 ? 'active' : ''}>
+                  부산
+                </SmallBtn>
               </div>
             </div>
           </HotelLocationWrapper>
         </div>
         {/* 호텔 슬라이드 부분 */}
-        <HotelSlider hotels={hotels} />
+        <HotelSlider hotels={hotels} region='busan' />
       </div>
     </HotelListWrapper>
   );
@@ -65,6 +93,10 @@ const HotelLocationWrapper = styled.div`
   line-height: 1.3; // 줄 간격
   .tagBox {
     display: block;
+    .active {
+      background-color: ${(props) => props.theme.main_color};
+      color: ${(props) => props.theme.white_color};
+    }
     div {
       margin-bottom: 1rem;
     }
