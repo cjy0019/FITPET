@@ -5,11 +5,7 @@ import { Link } from 'react-scroll';
 import theme from '../../../assets/theme';
 
 const HotelMenu = () => {
-  const [handleState, setHandleState] = useState(0);
-  const handleClick = (index) => {
-    console.log(index);
-    setHandleState(index);
-  };
+  const [handleState] = useState(0);
 
   return (
     <MenuContainer>
@@ -18,7 +14,6 @@ const HotelMenu = () => {
           <Link
             to='roomChoose'
             className={handleState === 1 ? 'active' : ''}
-            onClick={() => handleClick(1)}
             spy={true}
             smooth={true}>
             <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
@@ -30,7 +25,6 @@ const HotelMenu = () => {
           <Link
             to='roomDetailInfo'
             className={handleState === 2 ? 'active' : ''}
-            onClick={() => handleClick(2)}
             spy={true}
             smooth={true}>
             <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
@@ -42,7 +36,6 @@ const HotelMenu = () => {
           <Link
             to='roomService'
             className={handleState === 3 ? 'active' : ''}
-            onClick={() => handleClick(3)}
             spy={true}
             smooth={true}>
             <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>
@@ -59,7 +52,6 @@ const HotelMenu = () => {
           <Link
             to='othertravelersHotels'
             className={handleState === 4 ? 'active' : ''}
-            onClick={() => handleClick(4)}
             spy={true}
             smooth={true}>
             <Font color='#2a2a2a' fontSize='1.6rem' fontWeight='500'>

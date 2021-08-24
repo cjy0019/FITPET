@@ -8,6 +8,7 @@ import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelListBlock from './HotelListBlock';
 
 const HotelMain = ({ hitsList }) => {
+  const IMG_API = 'http://www.ongyeol.com:61010/public';
   return (
     <HotelMainWrapper>
       {/* 숙소 검색창 */}
@@ -114,8 +115,11 @@ const HotelMain = ({ hitsList }) => {
                   <span className='smallPrice'>
                     ~ {hotel.lodgingMaxMoney.toLocaleString()}
                   </span>
-                  <p>{hotel.lodgingImg}</p>
-                  <img src='{hotel.lodgingImg}' alt={hotel.lodgingImg} />
+
+                  <img
+                    src={IMG_API + hotel.lodgingImg}
+                    alt={hotel.lodgingImg}
+                  />
                 </Font>
               </PopularHotel>
             );
