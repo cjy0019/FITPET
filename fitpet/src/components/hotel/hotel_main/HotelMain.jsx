@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { Font, MiddleBtn, WishSmall } from '../../../common';
+import { Font, MiddleBtn } from '../../../common';
 import ImageBox from '../../../common/contents/common/ImageBox';
 import MainNav from '../../mainpage/banner/MainNav';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelListBlock from './HotelListBlock';
 
-const HotelMain = ({ hitsList }) => {
+const HotelMain = ({ hitsList, hotels }) => {
   const IMG_API = 'http://www.ongyeol.com:61010/public';
   return (
     <HotelMainWrapper>
@@ -84,7 +84,7 @@ const HotelMain = ({ hitsList }) => {
         </div>
       </FitPetEventBlock>
       {/* 반려동물과 함게 펫캉스 즐기자! */}
-      <HotelListBlock hitsList={hitsList} />
+      <HotelListBlock hotels={hotels} />
       {/* 띠배너 부분 */}
       <BandBanner img={'/img/hotel/hotel_main/banner.png'} />
       {/* 지금 이 숙소가 인기있어요 */}
@@ -98,7 +98,13 @@ const HotelMain = ({ hitsList }) => {
           {hitsList.map((hotel, i) => {
             return (
               <PopularHotel key={i}>
-                <WishSmall></WishSmall>
+                <div className='imgBox'>
+                  <img
+                    src={IMG_API + hotel.lodgingImg}
+                    alt={hotel.lodgingImg}
+                  />
+                  <LikeBtn />
+                </div>
                 <Font
                   color='#2A2A2A'
                   fontSize='1.8rem'
@@ -116,10 +122,10 @@ const HotelMain = ({ hitsList }) => {
                     ~ {hotel.lodgingMaxMoney.toLocaleString()}
                   </span>
 
-                  <img
+                  {/* <img
                     src={IMG_API + hotel.lodgingImg}
                     alt={hotel.lodgingImg}
-                  />
+                  /> */}
                 </Font>
               </PopularHotel>
             );
@@ -209,6 +215,14 @@ const PopularHotel = styled.li`
     font-size: 1.4rem;
     font-weight: 600;
   }
+  .imgBox {
+    img {
+      width: 29rem;
+      height: 29rem;
+    }
+    border-radius: 25px;
+    cursor: pointer;
+  }
   span {
     font-weight: bold;
   }
@@ -220,5 +234,14 @@ const PopularHotel = styled.li`
     font-size: 1.8rem;
     font-weight: normal;
   }
+`;
+export const LikeBtn = styled.div`
+  position: absolute;
+  top: 1.4rem;
+  right: 2.4rem;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  background: url('/img/icon/likeicon.png') no-repeat;
 `;
 export default HotelMain;

@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import HotelTextInfo from '../hotel_list/HotelTextInfo';
 
 const PillBox = ({ hotel }) => {
+  const IMG_API = 'http://www.ongyeol.com:61010/public';
+
   return (
     <PillBoxWrapper>
-      <PillImageBox></PillImageBox>
+      <PillImageBox>
+        <img src={IMG_API + hotel.lodgingImg} alt={hotel.lodgingImg} />
+      </PillImageBox>
       <PillTextBox>
         <HotelTextInfo hotel={hotel} />
       </PillTextBox>
@@ -18,8 +22,10 @@ const PillBoxWrapper = styled.div`
   ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0')}
 `;
 const PillImageBox = styled.div`
-  width: 28.4rem;
-  height: 20.4rem;
+  img {
+    width: 28.4rem;
+    height: 20.4rem;
+  }
   background-image: url(${(props) => props.img});
   border-radius: 25px 25px 0 0;
   background-repeat: no-repeat;
