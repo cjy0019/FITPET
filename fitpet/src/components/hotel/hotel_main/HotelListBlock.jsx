@@ -19,16 +19,11 @@ const HotelListWrapper = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-
   background-color: ${(props) => props.theme.grey3_color};
-  //position: absolute;
-
   height: 55.6rem;
   .hotelListBox {
     width: 128rem;
     height: 57.2rem;
-    //  position: absolute;
-    // top: 10rem;
     background-color: #3f709b;
     .locationBox {
       position: absolute;

@@ -246,6 +246,7 @@ const HotelAbout = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
           </Font>
         </div>
       </About>
+
       {/* 객실 선택 */}
       <RoomChoose />
       <HotelTwoRoom />
@@ -257,7 +258,6 @@ const HotelAbout = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
       <HotelTwoRoom />
       <HotelTwoRoom />
       <HotelOneRoom />
-      {/* 스크롤 이동 [다른 추천 호텔] 지점 */}
       {/* 숙소 상세정보 */}
       <RoomDetailInfo />
       {/* 편의시설 및 서비스 */}
@@ -270,7 +270,11 @@ const HotelAbout = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
 
 const HotelsAboutWrapper = styled.div`
   max-width: 100%;
-  margin-top: 12rem;
+  // margin-top: 12rem;
+  //padding-top: 12rem;
+  position: relative;
+  box-sizing: inherit;
+  top: 12rem;
 `;
 const HotelImages = styled.div`
   // background-color: aliceblue;
