@@ -1,6 +1,6 @@
 import { call, delay, put, takeEvery } from 'redux-saga/effects';
 import AuthService from '../../services/AuthService';
-import { closeLogin } from './modal';
+import { closeLogin, openLoginFail } from './modal';
 
 // namespace
 const namespace = 'fitpet/login';
@@ -79,6 +79,9 @@ export function* loginSaga(action) {
     yield put(closeLogin());
   } catch (error) {
     yield put(loginFail(error));
+    yield delay(1000);
+    yield put(closeLogin());
+    yield put(openLoginFail());
   }
 }
 

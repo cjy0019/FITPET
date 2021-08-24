@@ -1,34 +1,26 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import styled, { css } from 'styled-components';
-import { signupSuccessClose } from '../../redux/modules/modal';
 
-const SignUpEnd = ({ goLogin }) => {
-  const dispatch = useDispatch();
-
+const LoginFail = ({ hideLoginFail, retryLogin }) => {
   return (
     <CenterDiv>
       <SignUpEndWrapper>
         <Logo />
         <EndText>
-          회원가입이 완료되었습니다!
+          로그인에 실패하였습니다.
           <br />
-          반려동물과 함께 맞춤 여행을 떠나보세요 &#58;&#41;
+          아이디와 비밀번호를 다시한번 확인해주세요.
         </EndText>
 
         <BtnBlock>
-          <GotoBtn onClick={goHome}>홈으로</GotoBtn>
-          <GotoBtn primary onClick={goLogin}>
-            로그인
+          <GotoBtn onClick={hideLoginFail}>홈으로</GotoBtn>
+          <GotoBtn primary onClick={retryLogin}>
+            다시 로그인하기
           </GotoBtn>
         </BtnBlock>
       </SignUpEndWrapper>
     </CenterDiv>
   );
-
-  function goHome() {
-    dispatch(signupSuccessClose());
-  }
 };
 
 const CenterDiv = styled.div`
@@ -87,9 +79,9 @@ const GotoBtn = styled.button`
   ${(props) =>
     props.primary &&
     css`
-      background-color: ${props.theme.main_color};
+      background: ${props.theme.main_color};
       color: #fff;
     `}
 `;
 
-export default SignUpEnd;
+export default LoginFail;

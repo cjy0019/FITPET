@@ -7,6 +7,9 @@ const namespace = 'fitpet/modal/';
 const OPEN_LOGIN = namespace + 'OPEN_LOGIN';
 const CLOSE_LOGIN = namespace + 'CLOSE_LOGIN';
 
+const OPEN_LOGIN_FAIL = namespace + 'OPEN_LOGIN_FAIL';
+const CLOSE_LOGIN_FAIL = namespace + 'CLOSE_LOGIN_FAIL';
+
 const OPEN_SIGNUP = namespace + 'OPEN_SIGNUP';
 const CLOSE_SIGNUP = namespace + 'CLOSE_SIGNUP';
 
@@ -20,6 +23,9 @@ const CLOSE_ROOMDETAIL = namespace + 'CLOSE_ROOMDETAIL';
 export const openLogin = () => ({ type: OPEN_LOGIN });
 export const closeLogin = () => ({ type: CLOSE_LOGIN });
 
+export const openLoginFail = () => ({ type: OPEN_LOGIN_FAIL });
+export const closeLoginFail = () => ({ type: CLOSE_LOGIN_FAIL });
+
 export const openSignUp = () => ({ type: OPEN_SIGNUP });
 export const closeSignUp = () => ({ type: CLOSE_SIGNUP });
 
@@ -31,9 +37,10 @@ export const closeRoomDetail = () => ({ type: CLOSE_ROOMDETAIL });
 
 // initial state
 const initialState = {
-  loginOpen: false,
-  signupOpen: false,
-  signupSuccessOpen: false,
+  isLoginOpen: false,
+  isLoginFailOpen: false,
+  isSignupOpen: false,
+  isSignupSuccessOpen: false,
   roomDetailOpen: false,
 };
 
@@ -41,21 +48,27 @@ const initialState = {
 export default function modal(state = initialState, action) {
   switch (action.type) {
     case OPEN_LOGIN:
-      return { ...state, loginOpen: true };
+      return { ...state, isLoginOpen: true };
     case CLOSE_LOGIN:
-      return { ...state, loginOpen: false };
+      return { ...state, isLoginOpen: false };
+
+    case OPEN_LOGIN_FAIL:
+      return { ...state, isLoginFailOpen: true };
+
+    case CLOSE_LOGIN_FAIL:
+      return { ...state, isLoginFailOpen: false };
 
     case OPEN_SIGNUP:
-      return { ...state, signupOpen: true };
+      return { ...state, isSignupOpen: true };
 
     case CLOSE_SIGNUP:
-      return { ...state, signupOpen: false };
+      return { ...state, isSignupOpen: false };
 
     case SIGNUP_SUCCESS_OPEN:
-      return { ...state, signupSuccessOpen: true };
+      return { ...state, isSignupSuccessOpen: true };
 
     case SIGNUP_SUCCESS_CLOSE:
-      return { ...state, signupSuccessOpen: false };
+      return { ...state, isSignupSuccessOpen: false };
 
     case OPEN_ROOMDETAIL:
       return { ...state, roomDetailOpen: true };
