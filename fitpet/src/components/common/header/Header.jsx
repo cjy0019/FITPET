@@ -15,15 +15,15 @@ const Header = ({
   token,
   logOut,
   showLogin,
-  loginAgain,
-  isloginFailOpen,
+  retryLogin,
+  isLoginFailOpen,
   hideLoginFail,
   hideLogin,
-  loginOpen,
+  isLoginOpen,
   showSignUp,
   hideSignUp,
-  signupOpen,
-  signupSuccessOpen,
+  isSignupOpen,
+  isSignupSuccessOpen,
   showSignupSuccess,
 }) => {
   return (
@@ -50,14 +50,14 @@ const Header = ({
         </nav>
       </MainHeader>
       {/* 로그인 모달 */}
-      {loginOpen ? (
+      {isLoginOpen ? (
         <Modal>
           <LoginContainer hideLogin={hideLogin} />
         </Modal>
       ) : null}
 
       {/* 회원가입 모달 */}
-      {signupOpen ? (
+      {isSignupOpen ? (
         <Modal>
           <SignupContainer
             hideSignUp={hideSignUp}
@@ -67,15 +67,15 @@ const Header = ({
       ) : null}
 
       {/* 회원가입 성공 모달 */}
-      {signupSuccessOpen ? (
+      {isSignupSuccessOpen ? (
         <Modal>
           <SignupSuccessContainer showLogin={showLogin} />
         </Modal>
       ) : null}
 
-      {isloginFailOpen ? (
+      {isLoginFailOpen ? (
         <Modal>
-          <LoginFail loginAgain={loginAgain} hideLoginFail={hideLoginFail} />
+          <LoginFail retryLogin={retryLogin} hideLoginFail={hideLoginFail} />
         </Modal>
       ) : null}
     </>

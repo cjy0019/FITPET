@@ -37,10 +37,10 @@ export const closeRoomDetail = () => ({ type: CLOSE_ROOMDETAIL });
 
 // initial state
 const initialState = {
-  loginOpen: false,
-  isloginFailOpen: false,
-  signupOpen: false,
-  signupSuccessOpen: false,
+  isLoginOpen: false,
+  isLoginFailOpen: false,
+  isSignupOpen: false,
+  isSignupSuccessOpen: false,
   roomDetailOpen: false,
 };
 
@@ -48,27 +48,27 @@ const initialState = {
 export default function modal(state = initialState, action) {
   switch (action.type) {
     case OPEN_LOGIN:
-      return { ...state, loginOpen: true };
+      return { ...state, isLoginOpen: true };
     case CLOSE_LOGIN:
-      return { ...state, loginOpen: false };
+      return { ...state, isLoginOpen: false };
 
     case OPEN_LOGIN_FAIL:
-      return { ...state, isloginFailOpen: true };
+      return { ...state, isLoginFailOpen: true };
 
     case CLOSE_LOGIN_FAIL:
-      return { ...state, isloginFailOpen: false };
+      return { ...state, isLoginFailOpen: false };
 
     case OPEN_SIGNUP:
-      return { ...state, signupOpen: true };
+      return { ...state, isSignupOpen: true };
 
     case CLOSE_SIGNUP:
-      return { ...state, signupOpen: false };
+      return { ...state, isSignupOpen: false };
 
     case SIGNUP_SUCCESS_OPEN:
-      return { ...state, signupSuccessOpen: true };
+      return { ...state, isSignupSuccessOpen: true };
 
     case SIGNUP_SUCCESS_CLOSE:
-      return { ...state, signupSuccessOpen: false };
+      return { ...state, isSignupSuccessOpen: false };
 
     case OPEN_ROOMDETAIL:
       return { ...state, roomDetailOpen: true };

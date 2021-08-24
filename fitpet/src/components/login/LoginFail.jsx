@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const LoginFail = ({ hideLoginFail, loginAgain }) => {
+const LoginFail = ({ hideLoginFail, retryLogin }) => {
   return (
     <CenterDiv>
       <SignUpEndWrapper>
@@ -14,7 +14,7 @@ const LoginFail = ({ hideLoginFail, loginAgain }) => {
 
         <BtnBlock>
           <GotoBtn onClick={hideLoginFail}>홈으로</GotoBtn>
-          <GotoBtn primary onClick={loginAgain}>
+          <GotoBtn primary onClick={retryLogin}>
             다시 로그인하기
           </GotoBtn>
         </BtnBlock>
