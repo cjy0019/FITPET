@@ -7,12 +7,13 @@ import { hotelListSagaStart } from '../redux/modules/hotelList';
 const HotelListContainer = () => {
   const dispatch = useDispatch();
   const hotels = useSelector((state) => state.hotelList.hotels);
+  const isLoading = useSelector((state) => state.hotelList.isLoading);
 
   useEffect(() => {
     dispatch(hotelListSagaStart());
   }, [dispatch]);
 
-  return <HotelList hotels={hotels} />;
+  return <HotelList hotels={hotels} isLoading={isLoading} />;
 };
 
 export default HotelListContainer;

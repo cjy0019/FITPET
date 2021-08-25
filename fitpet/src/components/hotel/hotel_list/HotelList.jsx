@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HotelInfo from './HotelInfo';
@@ -8,10 +8,36 @@ import HotelBanner from './HotelBanner';
 import HotelFilter from './HotelFilter';
 import HeaderContainer from '../../../containers/HeaderContainer';
 import Footer from '../../../components/common/Footer';
+import Modal from '../../modal/Modal';
 
-const HotelList = ({ hotels }) => {
+const HotelList = ({ hotels, isLoading }) => {
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.cssText = `
+      position:fixed;
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 100%;
+    `;
+    }
+
+    return () => {
+      const scrollY = document.body.style.top;
+      document.body.style.cssText = '';
+      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
+    };
+  }, [isLoading]);
+
   return (
     <>
+      {isLoading && (
+        <Modal>
+          <Center>
+            <img src='/img/loading.gif' alt='loading spinner' />
+          </Center>
+        </Modal>
+      )}
+
       <Container>
         <HeaderContainer />
         <HotelBanner />
@@ -39,6 +65,18 @@ const HotelList = ({ hotels }) => {
     </>
   );
 };
+const Center = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 25rem;
+    height: 25rem;
+  }
+`;
 
 const Container = styled.div`
   padding-top: 33rem;
