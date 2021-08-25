@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
+import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import { SocialBtn } from '../../common';
 
-const SignUp = ({ hideSignUp, signup, goLogin }) => {
+const SignUp = ({ hideSignUp, signup, goLogin, isLoading }) => {
   const [userName, setUserName] = useState('');
   const [userId, setUserId] = useState('');
   const [userPW, setUserPW] = useState('');
@@ -10,6 +12,18 @@ const SignUp = ({ hideSignUp, signup, goLogin }) => {
   const [isEmail, setIsEmail] = useState(null);
   const [isPassword, setIsPassword] = useState(null);
   const _ref = useRef(null);
+
+  const antIcon = (
+    <LoadingOutlined
+      style={{
+        fontSize: '2.2rem',
+        position: 'absolute',
+        left: '2rem',
+        top: '25%',
+      }}
+      spin
+    />
+  );
 
   useEffect(() => {
     const PwRegex =
@@ -93,6 +107,7 @@ const SignUp = ({ hideSignUp, signup, goLogin }) => {
 
             <NextButton onClick={clickSignup} ref={_ref}>
               회원가입
+              {isLoading && <Spin indicator={antIcon} />}
             </NextButton>
             {/* sns계정으로 가입 */}
             <SocialBlock>
@@ -213,6 +228,7 @@ const Warning = styled.p`
 
 const NextButton = styled.button`
   cursor: pointer;
+  position: relative;
   width: 100%;
   height: 5.2rem;
   border-radius: 26px;

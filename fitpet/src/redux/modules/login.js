@@ -78,7 +78,7 @@ export function* loginSaga(action) {
     const { userId, userPW } = action.payload;
 
     const response = yield call(AuthService.login, userId, userPW);
-    yield delay(2000);
+    yield delay(1800);
 
     const userName = response.data.userName;
     localStorage.setItem('token', response.data._id);
@@ -88,8 +88,8 @@ export function* loginSaga(action) {
 
     yield put(closeLogin());
   } catch (error) {
+    yield delay(1800);
     yield put(loginFail(error));
-    yield delay(1000);
     yield put(closeLogin());
     yield put(openLoginFail());
   }
