@@ -78,11 +78,10 @@ const CartCircle = styled.div`
   left: 2.4rem;
   width: 2.1rem;
   height: 2.1rem;
-  border-radius: 100%;
+  border-radius: 50px;
   font-size: 1.2rem;
-  padding: 0.4rem;
+  padding-bottom: 0.2rem;
   text-align: center;
-  border: solid 1px #fff;
   color: ${(props) => props.theme.white_color};
   background-color: ${(props) => props.theme.main_color};
 `;
@@ -107,6 +106,11 @@ const UserId = styled.div`
   gap: 1.6rem;
   padding: 2rem 2rem 2rem 2rem;
   border-bottom: solid 1px #eee;
+
+  img {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
 `;
 
 const LinkWrapper = styled.div`
