@@ -12,7 +12,7 @@ const HotelAboutContainer = () => {
   // 객실 상세 창 열기
   const showRoomDetail = useCallback(() => {
     dispatch(openRoomDetail());
-  }, [dispatch, roomDetailOpen]);
+  }, [dispatch]);
 
   // 객실 상세 창 닫기
   const hideRoomDetail = useCallback(() => {

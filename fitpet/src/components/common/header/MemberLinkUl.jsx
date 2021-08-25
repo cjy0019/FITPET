@@ -38,6 +38,7 @@ const MemberLinkUl = ({ showLogin, showSignUp }) => {
 
 const MemberWrapper = styled.ul`
   display: flex;
+  z-index: 999;
 `;
 
 export const StyeldLi = styled.li`

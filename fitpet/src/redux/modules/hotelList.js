@@ -1,4 +1,5 @@
 import { call, put, takeEvery } from '@redux-saga/core/effects';
+import { delay } from 'redux-saga/effects';
 import HotelService from '../../services/HotelService';
 
 // namespace
@@ -10,19 +11,19 @@ const SUCCESS = namespace + '/SUCCESS';
 const FAIL = namespace + '/FAIL';
 
 // initial state
-const initialState = { hotels: [], error: null };
+const initialState = { hotels: [], isLoading: false, error: null };
 
 // reducer
 export default function hotelList(state = initialState, action) {
   switch (action.type) {
     case START:
-      return { hotels: [], error: null };
+      return { hotels: [], isLoading: true, error: null };
 
     case SUCCESS:
-      return { ...state, hotels: action.hotels };
+      return { ...state, hotels: action.hotels, isLoading: false };
 
     case FAIL:
-      return { ...state, error: action.error };
+      return { ...state, error: action.error, isLoading: false };
     default:
       return state;
   }
@@ -48,6 +49,7 @@ export const hotelListSagaStart = () => ({
 export function* hotelListSaga(action) {
   try {
     yield put(hotelListStart());
+    yield delay(1900);
     const response = yield call(HotelService.getHotelList);
     yield put(hotelListSucess(response.data));
   } catch (error) {

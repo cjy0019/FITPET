@@ -1,11 +1,12 @@
 import React, { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import SignUp from '../components/signUp/SignUp';
 import { closeSignUp, openLogin } from '../redux/modules/modal';
 import { signupSagaStart } from '../redux/modules/signup';
 
 const SignupContainer = ({ showSignupSuccess }) => {
   const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.signup.isLoading);
 
   // 회원가입창 닫기
   const hideSignUp = useCallback(() => {
@@ -32,6 +33,7 @@ const SignupContainer = ({ showSignupSuccess }) => {
       goLogin={goLogin}
       signup={signup}
       showSignupSuccess={showSignupSuccess}
+      isLoading={isLoading}
     />
   );
 };
