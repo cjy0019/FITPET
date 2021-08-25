@@ -13,6 +13,7 @@ const create = (history) => {
     reducer(history),
     {
       login: {
+        isLoading: false,
         userName: localStorage.getItem('userName'),
         token: localStorage.getItem('token'),
         error: null,

@@ -1,15 +1,29 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import { SocialBtn } from '../../common';
 import { closeLogin, openSignUp } from '../../redux/modules/modal';
 import FindId from './FindId';
 
-const LoginBottom = ({ login }) => {
+const LoginBottom = ({ login, isLoading }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const _ref = useRef(null);
   const dispatch = useDispatch();
+
+  const antIcon = (
+    <LoadingOutlined
+      style={{
+        fontSize: '2.2rem',
+        position: 'absolute',
+        left: '2rem',
+        top: '25%',
+      }}
+      spin
+    />
+  );
 
   useEffect(() => {
     if (!email || !password) {
@@ -48,6 +62,7 @@ const LoginBottom = ({ login }) => {
       <FindId />
       <StyledButton ref={_ref} type='submit' onClick={signin}>
         로그인
+        {isLoading && <Spin indicator={antIcon} />}
       </StyledButton>
       {/* sns계정으로 가입 */}
       <SocialBlock>
@@ -159,6 +174,7 @@ const StyledButton = styled.button`
   letter-spacing: 1px;
   border-radius: 26px;
   background: ${(props) => props.theme.gradient_color};
+  position: relative;
 
   cursor: not-allowed;
   outline: none;

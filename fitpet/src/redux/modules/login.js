@@ -12,22 +12,32 @@ const FAIL = namespace + '/FAIL';
 const LOGOUT = namespace + '/LOGOUT';
 
 // initial state
-const initialState = { userName: null, token: null, error: null };
+const initialState = {
+  isLoading: false,
+  userName: null,
+  token: null,
+  error: null,
+};
 
 // reducer
 export default function login(state = initialState, action) {
   switch (action.type) {
     case START:
-      return { userName: null, token: null, error: null };
+      return { isLoading: true, userName: null, token: null, error: null };
 
     case SUCCESS:
-      return { ...state, userName: action.userName, token: action.token };
+      return {
+        ...state,
+        isLoading: false,
+        userName: action.userName,
+        token: action.token,
+      };
 
     case LOGOUT:
       return { userName: null, token: null, error: null };
 
     case FAIL:
-      return { ...state, error: action.error };
+      return { ...state, isLoading: false, error: action.error };
     default:
       return state;
   }
@@ -68,7 +78,7 @@ export function* loginSaga(action) {
     const { userId, userPW } = action.payload;
 
     const response = yield call(AuthService.login, userId, userPW);
-    yield delay(500);
+    yield delay(2000);
 
     const userName = response.data.userName;
     localStorage.setItem('token', response.data._id);
