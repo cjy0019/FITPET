@@ -26,9 +26,9 @@ const HotelList = ({ hotels }) => {
             <HotelListHeader />
             {hotels.map((hotel, i) => {
               return (
-                <div key={i}>
+                <React.Fragment key={i}>
                   <HotelInfo key={hotel.id} hotel={hotel} />
-                </div>
+                </React.Fragment>
               );
             })}
           </PossibleHotel>

@@ -67,6 +67,7 @@ const MemberLinkLoginUl = ({ logOut }) => {
 const MemberWrapper = styled.ul`
   display: flex;
   position: relative;
+  z-index: 999;
 `;
 
 const CartCircle = styled.div`

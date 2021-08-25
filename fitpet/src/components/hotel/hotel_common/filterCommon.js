@@ -169,6 +169,7 @@ export const SmallHeader = styled.header`
 
 // HotelInfo.jsx
 export const Info = styled.div`
+  position: relative;
   padding: 4rem 0;
   display: flex;
   border-bottom: solid 1.5px #eee;
@@ -179,16 +180,15 @@ export const ImgBox = styled.div`
   min-width: 22rem;
   height: 22rem;
   border-radius: 18px;
-  background-color: #979797;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-image: url(${(props) => props.IMG_URL});
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export const LikeBtn = styled.div`
   position: absolute;
   top: 1.4rem;
-  right: 2.4rem;
+  right: 1.4rem;
   cursor: pointer;
   width: 4rem;
   height: 4rem;
@@ -197,7 +197,6 @@ export const LikeBtn = styled.div`
 
 export const TextDetailWrapper = styled.div`
   width: 100%;
-
   /* clearfix */
   &:after {
     display: block;
