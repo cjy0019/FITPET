@@ -11,10 +11,9 @@ const MemberLinkLoginUl = ({ logOut }) => {
 
   useEffect(() => {
     if (isOpen) {
-      menuRef.current.style =
-        'height : 35rem; backgroundColor:white; opacity:1';
+      menuRef.current.style = 'opacity:1; visibility:visible; height:auto;';
     } else {
-      menuRef.current.style = 'height : 0; visibility:hidden; opacity:0;';
+      menuRef.current.style = 'height:0; visibility:hidden; opacity:0;';
     }
   }, [isOpen]);
 
@@ -46,10 +45,8 @@ const MemberLinkLoginUl = ({ logOut }) => {
 
       <Mymenu ref={menuRef}>
         <UserId>
-          <UserIcon>
-            <img src='/img/header/usericon.svg' alt='userid' />
-          </UserIcon>
-          <p>{userName} 님</p>
+          <img src='/img/header/usericon.svg' alt='userid' />
+          <div>{userName === 'undefined' ? '고객' : userName} 님</div>
         </UserId>
         <LinkWrapper>
           <Link to='/'>포인트</Link>
@@ -74,6 +71,9 @@ const MemberWrapper = styled.ul`
 
 const CartCircle = styled.div`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: -0.4rem;
   left: 2.4rem;
   width: 2.1rem;
@@ -99,7 +99,6 @@ const Mymenu = styled.div`
   width: 17.4rem;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
   border: solid 1px ${(props) => props.theme.main_color};
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.16s;
 `;
 
 const UserId = styled.div`
@@ -110,21 +109,19 @@ const UserId = styled.div`
   border-bottom: solid 1px #eee;
 `;
 
-const UserIcon = styled.div`
-  width: 3.6rem;
-  height: 3.6rem;
-  border-radius: 50%;
-`;
-
 const LinkWrapper = styled.div`
-  padding: 1.95rem 0 1.95rem 1.9rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 
   a {
+    padding-left: 1.9rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     &:visited {
       color: ${(props) => props.theme.black1_color};
+    }
+    &:hover {
+      background-color: ${(props) => props.theme.grey3_color};
     }
   }
 `;
@@ -137,6 +134,10 @@ const Logout = styled.button`
   text-align: left;
   background-color: transparent;
   border-top: solid 1px #eee;
+
+  &:hover {
+    background-color: ${(props) => props.theme.grey3_color};
+  }
 `;
 
 export default MemberLinkLoginUl;
