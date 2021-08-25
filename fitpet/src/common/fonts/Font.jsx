@@ -74,7 +74,6 @@ const StyledFont = styled.p`
   font-family: Pretendard;
   font-size: ${(props) => props.fontSize};
   font-weight: ${(props) => props.fontWeight};
-  /* letter-spacing: -20px; */
   color: ${(props) => props.color};
   ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0px')}
   padding-top: ${(props) => props.pt};

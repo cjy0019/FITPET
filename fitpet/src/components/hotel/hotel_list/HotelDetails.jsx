@@ -17,7 +17,9 @@ const HotelDetails = ({ hotel }) => {
 };
 
 const DetailWrapper = styled.div`
-  float: right;
+  position: absolute;
+  bottom: 4rem;
+  right: 0;
 `;
 
 const StyledP = styled.p`

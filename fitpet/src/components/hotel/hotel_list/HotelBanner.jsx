@@ -31,7 +31,7 @@ const HotelBanner = () => {
 
 const Banner = styled.div`
   position: fixed;
-  z-index: 999;
+  z-index: 10;
   top: 10rem;
   width: 100%;
   display: flex;

@@ -20,7 +20,7 @@ const HotelTextInfo = ({ hotel }) => {
         <Text mb='0.6rem' maintext>
           {hotel.lodgignName}
         </Text>
-        <Font fontSize='1.4rem' mb='1.1rem'>
+        <Font color='#979797' fontSize='1.4rem' mb='1rem'>
           {hotel.lodgingEnName}
         </Font>
       </HotelName>
@@ -39,7 +39,7 @@ const HotelTextInfo = ({ hotel }) => {
       </CityStar>
 
       <div>
-        <Text mt='2rem' normal>
+        <Text mt='1rem' normal>
           {hotel.lodginSubDescription}
         </Text>
       </div>
@@ -52,8 +52,6 @@ const Text = styled.p`
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.71;
-  letter-spacing: -0.28px;
   text-align: left;
   color: ${(props) => props.theme.black1_color};
   margin-bottom: ${(props) => props.mb};
