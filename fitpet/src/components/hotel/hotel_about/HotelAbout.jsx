@@ -3,14 +3,17 @@ import styled from 'styled-components';
 import theme from '../../../assets/theme';
 import { Font, SampleIcon } from '../../../common';
 import ImgMoreBtn from '../../../common/buttons/small_size/ImgMoreBtn';
+
 import Modal from '../../modal/Modal';
 import HotelNameBlock from '../hotel_about/HotelNameBlock';
 import HotelOneRoom from '../hotel_about/HotelOneRoom';
 import HotelTwoRoom from '../hotel_about/HotelTwoRoom';
+import HotelService from './HotelService';
 import OthertravelersHotels from './room_scroll/OthertravelersHotels';
 import RoomChoose from './room_scroll/RoomChoose';
 import RoomDetailInfo from './room_scroll/RoomDetailInfo';
 import RoomService from './room_scroll/RoomService';
+const IMG_API = 'http://www.ongyeol.com:61010/public';
 
 const HotelAbout = ({
   showRoomDetail,
@@ -19,7 +22,8 @@ const HotelAbout = ({
   options,
   isLoading,
 }) => {
-  console.log(options);
+  const IMG_URL = IMG_API + options.lodgingImg;
+
   useEffect(() => {
     if (isLoading) {
       document.body.style.cssText = `
@@ -52,6 +56,7 @@ const HotelAbout = ({
           <SampleIcon width='88rem' height='50rem' mr='1rem' />
           {/* 숙소 서브 사진들 */}
           <div className='subImage'>
+            {/* <div className='image1' IMG_URL={IMG_URL}></div> */}
             <SampleIcon width='39rem' height='24.5rem' mb='1rem' />
             <div className='imgBtn'>
               <SampleIcon width='39rem' height='24.5rem' />
@@ -63,7 +68,7 @@ const HotelAbout = ({
         <Contents>
           {/* 상세내용 왼쪽 (숙소 이름, 편의시설..) */}
           <ContentsLeft>
-            <HotelNameBlock />
+            <HotelNameBlock options={options} />
             {/* 찜, 공유 */}
             <div className='icons'>
               <button className='icon'>
@@ -72,16 +77,15 @@ const HotelAbout = ({
               <button className='icon'>
                 <img src='/img/icon/share.png' alt='공유하기' />
               </button>
-              {/* <SampleIcon>
-              <img src='/img/icon/bluestaricon.svg' alt='평점' />
-            </SampleIcon>
-            <SampleIcon ml='1rem' mr='2.4rem'></SampleIcon> */}
             </div>
           </ContentsLeft>
           {/* 상세내용 오른쪽 (숙소 가격) */}
           <ContentsRight>
             <PriceBlock>
-              <p className='amount'>446,490 ~</p>
+              <p className='amount'>
+                {/* {options.lodgingMinMoney.toLocaleString()}~ */}
+                {options.lodgingMinMoney} ~
+              </p>
               <span className='price'> 원</span>
             </PriceBlock>
             <Font
@@ -99,124 +103,14 @@ const HotelAbout = ({
                   fontWeight='normal'
                   color='#979797'
                   ml='0.6rem'>
-                  서귀포시 노연로 80
+                  {options.lodgingLocation}
                 </Font>
               </div>
             </HotelLocationBlock>
           </ContentsRight>
         </Contents>
         {/* 서비스 및 편의시설 */}
-        <ServiceBlock>
-          <ServiceBox>
-            <img src='/img/icon/smallPet.png' alt='소형견' />
-            <Font
-              fontSize='1.2rem'
-              fontWeight='normal'
-              color='#2a2a2a'
-              mt='0.6rem'>
-              소형견
-            </Font>
-          </ServiceBox>
-          <ServiceBox>
-            <img src='/img/icon/mediumPet.png' alt='중형견' />
-            <Font
-              fontSize='1.2rem'
-              fontWeight='normal'
-              color='#2a2a2a'
-              mt='0.6rem'>
-              중형견
-            </Font>
-          </ServiceBox>
-          <ServiceBox>
-            <img src='/img/icon/withPet.png' alt='반려동물 동반' />
-            <Font
-              fontSize='1.2rem'
-              fontWeight='normal'
-              color='#2a2a2a'
-              mt='0.6rem'>
-              반려동물 <br />
-              동반
-            </Font>
-          </ServiceBox>
-          <ServiceBox>
-            <img src='/img/icon/stadium.png' alt='반려동물 운동장' />
-            <Font
-              fontSize='1.2rem'
-              fontWeight='normal'
-              color='#2a2a2a'
-              mt='0.6rem'>
-              반려동물
-              <br />
-              운동장
-            </Font>
-          </ServiceBox>
-          <ServiceBox>
-            <img src='/img/icon/petPool.png' alt='반려동물 수영장' />
-            <Font
-              fontSize='1.2rem'
-              fontWeight='normal'
-              color='#2a2a2a'
-              mt='0.6rem'>
-              반려동물
-              <br />
-              수영장
-            </Font>
-          </ServiceBox>
-          <ServiceBox>
-            <img src='/img/icon/wifi.png' alt='와이파이' />
-            <Font
-              fontSize='1.2rem'
-              fontWeight='normal'
-              color='#2a2a2a'
-              mt='0.6rem'>
-              와이파이
-            </Font>
-          </ServiceBox>
-          <ServiceBox>
-            <img src='/img/icon/fitness.png' alt='피트니스 센터' />
-            <Font
-              fontSize='1.2rem'
-              fontWeight='normal'
-              color='#2a2a2a'
-              mt='0.6rem'>
-              피트니스
-              <br />
-              센터
-            </Font>
-          </ServiceBox>
-          <ServiceBox>
-            <img src='/img/icon/pool.png' alt='수영장' />
-            <Font
-              fontSize='1.2rem'
-              fontWeight='normal'
-              color='#2a2a2a'
-              mt='0.6rem'>
-              수영장
-            </Font>
-          </ServiceBox>
-          <ServiceBox>
-            <img src='/img/icon/freeParking.png' alt='무료주차' />
-            <Font
-              fontSize='1.2rem'
-              fontWeight='normal'
-              color='#2a2a2a'
-              mt='0.6rem'>
-              무료주차
-            </Font>
-          </ServiceBox>
-          <ServiceBox>
-            <img src='/img/icon/reception.png' alt='24시 리셉션' />
-            <Font
-              fontSize='1.2rem'
-              fontWeight='normal'
-              color='#2a2a2a'
-              mt='0.6rem'>
-              24시
-              <br />
-              리셉션
-            </Font>
-          </ServiceBox>
-        </ServiceBlock>
+        <HotelService options={options} />
         {/* 숙소 정보 */}
         <About>
           <Font
@@ -234,7 +128,7 @@ const HotelAbout = ({
               fontWeight='normal'
               color='#2a2a2a'
               ml='0.6rem'>
-              서귀포시 노연로 80
+              {options.lodgingLocation}
             </Font>
           </div>
 
@@ -245,7 +139,8 @@ const HotelAbout = ({
               fontWeight='normal'
               color='#2a2a2a'
               ml='0.6rem'>
-              체크인 15:00 PM - 체크아웃 12:00 PM
+              체크인 {options.lodgingCheckIn} - 체크아웃{' '}
+              {options.lodgingCheckOut}
             </Font>
           </div>
           <div className='aboutBox'>
@@ -255,7 +150,7 @@ const HotelAbout = ({
               fontWeight='normal'
               color='#2a2a2a'
               ml='0.6rem'>
-              11층 / 800객실
+              {options.lodgingFloor}층 / {options.lodgingRoomNum}객실
             </Font>
           </div>
           <div className='aboutBox'>
@@ -265,7 +160,7 @@ const HotelAbout = ({
               fontWeight='normal'
               color='#2a2a2a'
               ml='0.6rem'>
-              전화 82-64-908-8800
+              전화 {options.loadingNumber}
             </Font>
           </div>
           <div className='aboutBox'>
@@ -275,7 +170,7 @@ const HotelAbout = ({
               fontWeight='normal'
               color='#2a2a2a'
               ml='0.6rem'>
-              팩스 82-64-908-8811
+              팩스 {options.lodgingFaxNumber}
             </Font>
           </div>
         </About>
@@ -334,6 +229,14 @@ const HotelImages = styled.div`
   display: flex;
   .subImage {
     display: block;
+    .image1 {
+      width: '39rem';
+      height: '24.5rem';
+      margin-bottom: '1rem';
+      background-image: url(${(props) => props.IMG_URL});
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
   .imgBtn {
     position: relative;
@@ -396,20 +299,7 @@ const HotelLocationBlock = styled.div`
     justify-content: center;
   }
 `;
-const ServiceBlock = styled.div`
-  display: flex;
-  width: 128rem;
-  margin: 0 auto;
-  border-bottom: 1px solid #979797;
-`;
-const ServiceBox = styled.div`
-  line-height: 1.16;
-  height: 16.4rem;
-  display: block;
-  padding: 4rem 0 4rem 0;
-  text-align: center;
-  margin-right: 1.6rem;
-`;
+
 const About = styled.div`
   width: 128rem;
   margin: 0 auto;

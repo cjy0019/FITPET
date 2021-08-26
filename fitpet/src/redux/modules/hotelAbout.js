@@ -51,7 +51,7 @@ export const hotelAboutSagaStart = (hotelId) => ({
 export function* hotelAboutSaga(action) {
   try {
     yield put(hotelAboutStart());
-    yield delay(900);
+    yield delay(500);
     const response = yield call(HotelService.getHotelAbout, action.hotelId);
     yield put(hotelAboutSuccess(response.data));
   } catch (error) {
