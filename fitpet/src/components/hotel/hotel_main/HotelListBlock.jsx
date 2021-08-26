@@ -8,6 +8,7 @@ const HotelListBlock = ({ hotels }) => {
   const locationTab = (index) => {
     setHandleState(index);
   };
+
   return (
     <HotelListWrapper>
       <div className='hotelListBox'>
@@ -58,7 +59,7 @@ const HotelListBlock = ({ hotels }) => {
           </HotelLocationWrapper>
         </div>
         {/* 호텔 슬라이드 부분 */}
-        <HotelSlider hotels={hotels} region='busan' />
+        <HotelSlider hotels={hotels} />
       </div>
     </HotelListWrapper>
   );

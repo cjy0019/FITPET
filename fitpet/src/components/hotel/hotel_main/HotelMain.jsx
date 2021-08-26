@@ -59,23 +59,23 @@ const HotelMain = ({ hitsList, hotels }) => {
               />
               <ImageBox
                 height='52rem'
-                img={'/img/hotel/hotel_main/fitpet_event/4.png'}
+                img={'/img/hotel/hotel_main/fitpet_event/2.png'}
               />
             </div>
             <div className='line'>
               <ImageBox
                 height='52rem'
-                img={'/img/hotel/hotel_main/fitpet_event/2.png'}
+                img={'/img/hotel/hotel_main/fitpet_event/3.png'}
               />
               <ImageBox
                 height='40rem'
-                img={'/img/hotel/hotel_main/fitpet_event/5.png'}
+                img={'/img/hotel/hotel_main/fitpet_event/4.png'}
               />
             </div>
             <div className='line'>
               <ImageBox
                 height='40rem'
-                img={'/img/hotel/hotel_main/fitpet_event/3.png'}
+                img={'/img/hotel/hotel_main/fitpet_event/5.png'}
               />
               <ImageBox
                 height='52rem'
@@ -123,11 +123,6 @@ const HotelMain = ({ hitsList, hotels }) => {
                   <span className='smallPrice'>
                     ~ {hotel.lodgingMaxMoney.toLocaleString()}
                   </span>
-
-                  {/* <img
-                    src={IMG_API + hotel.lodgingImg}
-                    alt={hotel.lodgingImg}
-                  /> */}
                 </Font>
               </PopularHotel>
             );
