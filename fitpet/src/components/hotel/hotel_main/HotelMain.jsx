@@ -7,7 +7,7 @@ import MainNav from '../../mainpage/banner/MainNav';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelListBlock from './HotelListBlock';
 
-const HotelMain = ({ hitsList, hotels }) => {
+const HotelMain = ({ hitsList }) => {
   const IMG_API = 'http://www.ongyeol.com:61010/public';
   return (
     <HotelMainWrapper>
@@ -31,7 +31,7 @@ const HotelMain = ({ hitsList, hotels }) => {
             </div>
             <div className='MoreHotelBtn'>
               <NavLink
-                to='/accomodations?page=1'
+                to='/accomodations/hotels?page=1'
                 style={{ marginTop: '14.3rem' }}>
                 <MiddleBtn>다양한 숙소 둘러보기</MiddleBtn>
               </NavLink>
@@ -59,23 +59,23 @@ const HotelMain = ({ hitsList, hotels }) => {
               />
               <ImageBox
                 height='52rem'
-                img={'/img/hotel/hotel_main/fitpet_event/4.png'}
+                img={'/img/hotel/hotel_main/fitpet_event/2.png'}
               />
             </div>
             <div className='line'>
               <ImageBox
                 height='52rem'
-                img={'/img/hotel/hotel_main/fitpet_event/2.png'}
+                img={'/img/hotel/hotel_main/fitpet_event/3.png'}
               />
               <ImageBox
                 height='40rem'
-                img={'/img/hotel/hotel_main/fitpet_event/5.png'}
+                img={'/img/hotel/hotel_main/fitpet_event/4.png'}
               />
             </div>
             <div className='line'>
               <ImageBox
                 height='40rem'
-                img={'/img/hotel/hotel_main/fitpet_event/3.png'}
+                img={'/img/hotel/hotel_main/fitpet_event/5.png'}
               />
               <ImageBox
                 height='52rem'
@@ -86,7 +86,7 @@ const HotelMain = ({ hitsList, hotels }) => {
         </div>
       </FitPetEventBlock>
       {/* 반려동물과 함게 펫캉스 즐기자! */}
-      <HotelListBlock hotels={hotels} />
+      <HotelListBlock />
       {/* 띠배너 부분 */}
       <BandBanner img={'/img/hotel/hotel_main/banner.png'} />
       {/* 지금 이 숙소가 인기있어요 */}
@@ -123,11 +123,6 @@ const HotelMain = ({ hitsList, hotels }) => {
                   <span className='smallPrice'>
                     ~ {hotel.lodgingMaxMoney.toLocaleString()}
                   </span>
-
-                  {/* <img
-                    src={IMG_API + hotel.lodgingImg}
-                    alt={hotel.lodgingImg}
-                  /> */}
                 </Font>
               </PopularHotel>
             );
@@ -221,8 +216,8 @@ const PopularHotel = styled.li`
     img {
       width: 29rem;
       height: 29rem;
+      border-radius: 25px;
     }
-    border-radius: 25px;
     cursor: pointer;
   }
   span {

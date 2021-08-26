@@ -9,6 +9,7 @@ const size = {
 // 이런식으로 적용
 const theme = {
   main_color: '#4765ff', // 메인 컬러
+  main2_color: '#d0d7ff',
   sub_color: '#32d8b8', // 서브 컬러
   gradient_color:
     '-webkit-linear-gradient(130deg,rgba(50, 216, 184, 1) 20%,rgba(71, 101, 255, 1) 100%)', // 그라데이션 컬러

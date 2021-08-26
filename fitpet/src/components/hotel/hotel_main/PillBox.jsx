@@ -2,16 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import HotelTextInfo from '../hotel_list/HotelTextInfo';
 
-const PillBox = ({ hotel }) => {
+const PillBox = ({ region }) => {
   const IMG_API = 'http://www.ongyeol.com:61010/public';
 
   return (
     <PillBoxWrapper>
       <PillImageBox>
-        <img src={IMG_API + hotel.lodgingImg} alt={hotel.lodgingImg} />
+        <img src={IMG_API + region.lodgingImg} alt={region.lodgingImg} />
       </PillImageBox>
       <PillTextBox>
-        <HotelTextInfo hotel={hotel} />
+        <HotelTextInfo hotel={region} />
       </PillTextBox>
     </PillBoxWrapper>
   );

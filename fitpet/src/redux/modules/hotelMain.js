@@ -6,20 +6,24 @@ const namespace = 'fitpet/hotel';
 
 // action types
 const START = namespace + '/START';
-const SUCCESS = namespace + '/SUCCESS';
+const HITSLIST_SUCCESS = namespace + '/HITSLIST_SUCCESS';
+const REGION_SUCCESS = namespace + '/REGION_SUCCESS';
 const FAIL = namespace + '/FAIL';
 
 // initial state
-const initialState = { hitsList: [], error: null };
+const initialState = { regions: [], hitsList: [], error: null };
 
 // reducer
 export default function hotelMain(state = initialState, action) {
   switch (action.type) {
     case START:
-      return { hitsList: [], error: null };
+      return { regions: [], hitsList: [], error: null };
 
-    case SUCCESS:
+    case HITSLIST_SUCCESS:
       return { ...state, hitsList: action.hitsList };
+
+    case REGION_SUCCESS:
+      return { ...state, regions: action.regions };
 
     case FAIL:
       return { ...state, error: action.error };
@@ -31,9 +35,13 @@ export default function hotelMain(state = initialState, action) {
 
 // action creators
 export const hotelMainStart = () => ({ type: START });
-export const hotelMainSuccess = (hitsList) => ({
-  type: SUCCESS,
+export const hitsListSuccess = (hitsList) => ({
+  type: HITSLIST_SUCCESS,
   hitsList,
+});
+export const regionsSuccess = (regions) => ({
+  type: REGION_SUCCESS,
+  regions,
 });
 
 export const hotelMainFail = (error) => ({ type: FAIL, error });
@@ -41,16 +49,20 @@ export const hotelMainFail = (error) => ({ type: FAIL, error });
 // saga
 const HOTEL_MAIN_SAGA = namespace + '/HOTEL_MAIN_SAGA';
 
-export const hotelMainSagaStart = () => ({
+export const hotelMainSagaStart = (region) => ({
   type: HOTEL_MAIN_SAGA,
+  region,
 });
 
 // hotelMain
 export function* hotelMainSaga(action) {
   try {
     yield put(hotelMainStart());
-    const response = yield call(HotelService.getHotelMainHitsList);
-    yield put(hotelMainSuccess(response.data));
+    const hitsList = yield call(HotelService.getHotelMainHitsList);
+    const regions = yield call(HotelService.getHotelMainRegion, action.region);
+    console.log(regions);
+    yield put(hitsListSuccess(hitsList.data));
+    yield put(regionsSuccess(regions.data));
   } catch (error) {
     yield put(hotelMainFail(error));
   }

@@ -49,7 +49,6 @@ export const hotelListSagaStart = (page) => ({
 // hotelList
 export function* hotelListSaga(action) {
   try {
-    console.log(action.page);
     yield put(hotelListStart());
     yield delay(1900);
     const response = yield call(HotelService.getHotelList, action.page);
