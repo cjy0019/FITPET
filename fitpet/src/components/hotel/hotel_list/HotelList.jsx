@@ -66,11 +66,11 @@ const HotelList = ({ hotels, isLoading }) => {
                   style={{ transform: 'translateY(-36%)' }}
                 />
               </Link>
-              <Link to='/accomodations?page=1'>1</Link>
-              <Link to='/accomodations?page=2'>2</Link>
-              <Link to='/accomodations?page=3'>3</Link>
-              <Link to='/accomodations?page=4'>4</Link>
-              <Link to='/accomodations?page=5'>5</Link>
+              <Link to='/accomodations/hotels?page=1'>1</Link>
+              <Link to='/accomodations/hotels?page=2'>2</Link>
+              <Link to='/accomodations/hotels?page=3'>3</Link>
+              <Link to='/accomodations/hotels?page=4'>4</Link>
+              <Link to='/accomodations/hotels?page=5'>5</Link>
               <Link to='/'>
                 <img
                   src='/img/hotel/hotel_list/pageright.svg'
