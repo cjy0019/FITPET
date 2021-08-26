@@ -37,7 +37,7 @@ function App() {
             <Route component={ReservationPage} path='/hotel/reservation' />
             <Route component={HotelMainPage} path='/hotel' />
             <Route component={HotelAboutPage} path='/hotelAbout' />
-            <Route component={HotelListPage} path='/hotelList' />
+            <Route component={HotelListPage} path='/accomodations' />
             <Route component={RentalcarMainPage} path='/rentalcar' />
             <Route component={RentCarPage} path='/rentcar' />
             <Route component={RentCarDetailPage} path='/rentcardetail' />

@@ -8,10 +8,12 @@ const HotelListContainer = () => {
   const dispatch = useDispatch();
   const hotels = useSelector((state) => state.hotelList.hotels);
   const isLoading = useSelector((state) => state.hotelList.isLoading);
+  const search = useSelector((state) => state.router.location.search);
+  const page = search.split('').splice(6).toString();
 
   useEffect(() => {
-    dispatch(hotelListSagaStart());
-  }, [dispatch]);
+    dispatch(hotelListSagaStart(page));
+  }, [dispatch, page]);
 
   return <HotelList hotels={hotels} isLoading={isLoading} />;
 };
