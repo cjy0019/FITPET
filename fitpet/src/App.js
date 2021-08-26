@@ -35,9 +35,16 @@ function App() {
             <Route component={CommonPage} path='/common' />
             <Route component={CourseMapPage} path='/course/mymap' />
             <Route component={ReservationPage} path='/hotel/reservation' />
-            <Route component={HotelAboutPage} path='/hotelAbout' />
+            <Route
+              component={HotelAboutPage}
+              path='/accomodations/hotels/:hotelId'
+            />
             <Route component={HotelMainPage} exact path='/accomodations' />
-            <Route component={HotelListPage} path='/accomodations/hotels' />
+            <Route
+              component={HotelListPage}
+              exact
+              path='/accomodations/hotels'
+            />
             <Route component={RentalcarMainPage} path='/rentalcar' />
             <Route component={RentCarPage} path='/rentcar' />
             <Route component={RentCarDetailPage} path='/rentcardetail' />
