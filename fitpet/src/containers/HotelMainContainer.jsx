@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 const HotelMainContainer = () => {
   const dispatch = useDispatch();
   const hitsList = useSelector((state) => state.hotelMain.hitsList);
+  const isLoading = useSelector((state) => state.hotelMain.isLoading);
   const search = useSelector((state) => state.router.location.search);
   const region = search.split('').splice(8).join('').toString();
 
@@ -15,7 +16,7 @@ const HotelMainContainer = () => {
     dispatch(hotelMainSagaStart(region));
   }, [dispatch, region]);
 
-  return <HotelMain hitsList={hitsList} />;
+  return <HotelMain hitsList={hitsList} isLoading={isLoading} />;
 };
 
 export default HotelMainContainer;
