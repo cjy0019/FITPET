@@ -4,19 +4,18 @@ import { useDispatch } from 'react-redux';
 import { hotelMainSagaStart } from '../redux/modules/hotelMain';
 import HotelMain from '../components/hotel/hotel_main/HotelMain';
 import { useEffect } from 'react';
-import { hotelListSagaStart } from '../redux/modules/hotelList';
 
 const HotelMainContainer = () => {
   const dispatch = useDispatch();
   const hitsList = useSelector((state) => state.hotelMain.hitsList);
-  const hotels = useSelector((state) => state.hotelList.hotels);
+  const search = useSelector((state) => state.router.location.search);
+  const region = search.split('').splice(8).join('').toString();
 
   useEffect(() => {
-    dispatch(hotelMainSagaStart());
-    dispatch(hotelListSagaStart());
-  }, [dispatch]);
+    dispatch(hotelMainSagaStart(region));
+  }, [dispatch, region]);
 
-  return <HotelMain hitsList={hitsList} hotels={hotels} />;
+  return <HotelMain hitsList={hitsList} />;
 };
 
 export default HotelMainContainer;

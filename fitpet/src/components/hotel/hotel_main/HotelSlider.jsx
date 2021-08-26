@@ -2,15 +2,18 @@ import React from 'react';
 import { useState } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { SliderLeftButton, SliderRightButton } from '../../../common';
 import PillBox from './PillBox';
-const HotelSlider = ({ hotels }) => {
+const HotelSlider = () => {
   const TOTAL_SLIDES = 1;
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const prevBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
+  const regions = useSelector((state) => state.hotelMain.regions);
+
   // 6개 슬라이드 효과 주기
   useEffect(() => {
     let slideValue = currentSlide * 100;
@@ -29,10 +32,10 @@ const HotelSlider = ({ hotels }) => {
     <SliderWrapper>
       <Content>
         <PillWrapper ref={slideRef}>
-          {hotels.map((hotel, i) => {
+          {regions.map((region, i) => {
             return (
               <div className='PillBox' key={i}>
-                <PillBox key={hotel.id} hotel={hotel} margin='0 3rem 0 0' />
+                <PillBox key={region.id} region={region} margin='0 3rem 0 0' />
               </div>
             );
           })}
