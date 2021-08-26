@@ -1,17 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { RoundSquareBtn } from '../../../common';
 
 const HotelDetails = ({ hotel }) => {
+  const hotelAboutLink = '/accomodations/hotels/';
   return (
     <DetailWrapper>
       <StyledP>1박 기준</StyledP>
       <Price>
         {hotel.lodgingMinMoney.toLocaleString()} ~ <span>원</span>
       </Price>
-      <RoundSquareBtn main_color style={{ marginTop: '1.4rem' }}>
+      <Link
+        to={hotelAboutLink + hotel._id}
+        main_color
+        style={{ marginTop: '1.4rem' }}>
         상세보기
-      </RoundSquareBtn>
+      </Link>
     </DetailWrapper>
   );
 };

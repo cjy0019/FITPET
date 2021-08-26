@@ -66,7 +66,6 @@ export function* hotelMainSaga(action) {
     yield delay(900);
     const hitsList = yield call(HotelService.getHotelMainHitsList);
     const regions = yield call(HotelService.getHotelMainRegion, action.region);
-    console.log(regions);
     yield put(hitsListSuccess(hitsList.data));
     yield put(regionsSuccess(regions.data));
   } catch (error) {

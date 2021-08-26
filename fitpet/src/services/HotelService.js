@@ -18,4 +18,10 @@ export default class HotelService {
     const response = await axios.get(`/api/lodging/list/?nowPage=${page}`);
     return response;
   }
+
+  // 호텔 상세보기 (객실 정보)
+  static async getHotelAbout(hotelId) {
+    const response = await axios.get(`/api/lodging/${hotelId}`);
+    return response;
+  }
 }
