@@ -19,39 +19,39 @@ const HotelListBlock = () => {
               펫캉스 즐기자!
             </Font>
             <div className='tagBox'>
-              <div>
+              <div className='tagBtnBlock'>
                 <Link
                   index='1'
                   to='accomodations?region=jeju'
                   onClick={() => locationTab(1)}
-                  className={handleState === 1 ? 'active' : ''}>
+                  className={handleState === 1 ? 'active tagBtn' : 'tagBtn'}>
                   제주도
                 </Link>
               </div>
-              <div>
+              <div className='tagBtnBlock'>
                 <Link
                   index='2'
                   to='accomodations?region=sokcho'
                   onClick={() => locationTab(2)}
-                  className={handleState === 2 ? 'active' : ''}>
+                  className={handleState === 2 ? 'active tagBtn' : 'tagBtn'}>
                   속초
                 </Link>
               </div>
-              <div>
+              <div className='tagBtnBlock'>
                 <Link
                   index='3'
                   to='accomodations?region=jeonju'
                   onClick={() => locationTab(3)}
-                  className={handleState === 3 ? 'active' : ''}>
+                  className={handleState === 3 ? 'active tagBtn' : 'tagBtn'}>
                   전주
                 </Link>
               </div>
-              <div>
+              <div className='tagBtnBlock'>
                 <Link
                   index='4'
                   to='accomodations?region=busan'
                   onClick={() => locationTab(4)}
-                  className={handleState === 4 ? 'active' : ''}>
+                  className={handleState === 4 ? 'active tagBtn' : 'tagBtn'}>
                   부산
                 </Link>
               </div>
@@ -85,7 +85,7 @@ const HotelLocationWrapper = styled.div`
   width: 44rem;
   height: 57.2rem;
   color: ${(props) => props.theme.white_color};
-  padding: 5rem 0 0 5rem;
+  padding: 5rem;
   position: absolute;
   display: block;
   background-size: cover;
@@ -94,11 +94,30 @@ const HotelLocationWrapper = styled.div`
   line-height: 1.3; // 줄 간격
   .tagBox {
     display: block;
+    .tagBtn {
+      border-radius: 26px;
+      color: ${(props) => props.theme.grey1_color};
+      font-size: 1.6rem;
+      font-weight: normal;
+      padding: 1.1rem 1.9rem 1rem 1.9rem;
+      border-radius: 2.6rem;
+      background-color: ${(props) => props.theme.grey4_color};
+      &:active,
+      &:focus {
+        background-color: ${(props) => props.theme.main_color};
+        color: ${(props) => props.theme.white_color};
+      }
+      &:hover {
+        color: ${(props) => props.theme.main_color};
+        background-color: ${(props) => props.theme.main2_color};
+      }
+    }
     .active {
       background-color: ${(props) => props.theme.main_color};
       color: ${(props) => props.theme.white_color};
     }
-    div {
+    .tagBtnBlock {
+      display: flex;
       margin-bottom: 1rem;
     }
   }
