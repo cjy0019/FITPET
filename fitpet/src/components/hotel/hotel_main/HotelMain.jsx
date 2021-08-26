@@ -29,7 +29,9 @@ const HotelMain = () => {
               <HotelTypeSearch />
             </div>
             <div className='MoreHotelBtn'>
-              <NavLink to='/hotellist' style={{ marginTop: '14.3rem' }}>
+              <NavLink
+                to='/accomodations?page=1'
+                style={{ marginTop: '14.3rem' }}>
                 <MiddleBtn>다양한 숙소 둘러보기</MiddleBtn>
               </NavLink>
             </div>

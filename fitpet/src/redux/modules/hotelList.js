@@ -41,16 +41,18 @@ export const hotelListFail = (error) => ({ type: FAIL, error });
 // saga
 const HOTEL_LIST_SAGA = namespace + '/HOTEL_LIST_SAGA';
 
-export const hotelListSagaStart = () => ({
+export const hotelListSagaStart = (page) => ({
   type: HOTEL_LIST_SAGA,
+  page,
 });
 
 // hotelList
 export function* hotelListSaga(action) {
   try {
+    console.log(action.page);
     yield put(hotelListStart());
     yield delay(1900);
-    const response = yield call(HotelService.getHotelList);
+    const response = yield call(HotelService.getHotelList, action.page);
     yield put(hotelListSucess(response.data));
   } catch (error) {
     yield put(hotelListFail(error));

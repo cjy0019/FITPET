@@ -9,6 +9,7 @@ import HotelFilter from './HotelFilter';
 import HeaderContainer from '../../../containers/HeaderContainer';
 import Footer from '../../../components/common/Footer';
 import Modal from '../../modal/Modal';
+import { Link } from 'react-router-dom';
 
 const HotelList = ({ hotels, isLoading }) => {
   useEffect(() => {
@@ -57,6 +58,27 @@ const HotelList = ({ hotels, isLoading }) => {
                 </React.Fragment>
               );
             })}
+            <Pagenations>
+              <Link to='/'>
+                <img
+                  src='/img/hotel/hotel_list/pageleft.svg'
+                  alt=''
+                  style={{ transform: 'translateY(-36%)' }}
+                />
+              </Link>
+              <Link to='/accomodations?page=1'>1</Link>
+              <Link to='/accomodations?page=2'>2</Link>
+              <Link to='/accomodations?page=3'>3</Link>
+              <Link to='/accomodations?page=4'>4</Link>
+              <Link to='/accomodations?page=5'>5</Link>
+              <Link to='/'>
+                <img
+                  src='/img/hotel/hotel_list/pageright.svg'
+                  alt=''
+                  style={{ transform: 'translateY(-35%)' }}
+                />
+              </Link>
+            </Pagenations>
           </PossibleHotel>
           <GoUpBtn />
         </HotelMain>
@@ -93,6 +115,20 @@ const HotelMain = styled.main`
 const PossibleHotel = styled.section`
   width: 100%;
   margin-left: 5.05rem;
+`;
+
+const Pagenations = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 3.7rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: ${(props) => props.theme.black1_color};
+
+  a:visited {
+    color: ${(props) => props.theme.black1_color};
+  }
 `;
 
 export default HotelList;
