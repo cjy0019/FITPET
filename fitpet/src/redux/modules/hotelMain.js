@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from '@redux-saga/core/effects';
+import { call, delay, put, takeEvery } from '@redux-saga/core/effects';
 import HotelService from '../../services/HotelService';
 
 // namespace
@@ -11,22 +11,27 @@ const REGION_SUCCESS = namespace + '/REGION_SUCCESS';
 const FAIL = namespace + '/FAIL';
 
 // initial state
-const initialState = { regions: [], hitsList: [], error: null };
+const initialState = {
+  regions: [],
+  hitsList: [],
+  isLoading: false,
+  error: null,
+};
 
 // reducer
 export default function hotelMain(state = initialState, action) {
   switch (action.type) {
     case START:
-      return { regions: [], hitsList: [], error: null };
+      return { regions: [], hitsList: [], isLoading: true, error: null };
 
     case HITSLIST_SUCCESS:
-      return { ...state, hitsList: action.hitsList };
+      return { ...state, hitsList: action.hitsList, isLoading: false };
 
     case REGION_SUCCESS:
-      return { ...state, regions: action.regions };
+      return { ...state, regions: action.regions, isLoading: false };
 
     case FAIL:
-      return { ...state, error: action.error };
+      return { ...state, error: action.error, isLoading: false };
 
     default:
       return state;
@@ -58,6 +63,7 @@ export const hotelMainSagaStart = (region) => ({
 export function* hotelMainSaga(action) {
   try {
     yield put(hotelMainStart());
+    yield delay(900);
     const hitsList = yield call(HotelService.getHotelMainHitsList);
     const regions = yield call(HotelService.getHotelMainRegion, action.region);
     console.log(regions);
