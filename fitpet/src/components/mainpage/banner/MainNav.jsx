@@ -9,11 +9,10 @@ const MainNav = () => {
   const rentalcarLink = useRef(null);
   const courseLink = useRef(null);
   const location = useSelector((state) => state.router.location.pathname);
-  console.log('location:' + location);
   useEffect(() => {
-    if (location === '/home') {
+    if (location === '/') {
       homeLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
-    } else if (location === '/hotel' || location === '/hotellist') {
+    } else if (location === '/accomodations' || location === '/hotellist') {
       hotelLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
     } else if (location === '/rentalcar') {
       rentalcarLink.current.style = 'border-bottom: solid 0.4rem #4765ff;';
@@ -29,7 +28,7 @@ const MainNav = () => {
           <NavLink to='/'>홈</NavLink>
         </MenuLi>
         <MenuLi ref={hotelLink}>
-          <NavLink to='/hotel'>숙소</NavLink>
+          <NavLink to='/accomodations'>숙소</NavLink>
         </MenuLi>
         <MenuLi ref={rentalcarLink}>
           <NavLink to='/rentalcar'>렌트카</NavLink>

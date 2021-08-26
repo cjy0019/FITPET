@@ -2,21 +2,23 @@ import React from 'react';
 import { useState } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { FillBox, SliderLeftButton, SliderRightButton } from '../../../common';
-
+import { SliderLeftButton, SliderRightButton } from '../../../common';
+import PillBox from './PillBox';
 const HotelSlider = () => {
   const TOTAL_SLIDES = 1;
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const prevBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
+  const regions = useSelector((state) => state.hotelMain.regions);
 
   // 6개 슬라이드 효과 주기
   useEffect(() => {
-    let slideValue = currentSlide * 6 * 10;
+    let slideValue = currentSlide * 100;
     if (currentSlide > 0) {
-      slideValue += 8.7;
+      slideValue += 3;
       nextBtnRef.current.style = 'visibility:hidden';
       prevBtnRef.current.style = 'visibility:visible';
     } else {
@@ -29,14 +31,15 @@ const HotelSlider = () => {
   return (
     <SliderWrapper>
       <Content>
-        <FillWrapper ref={slideRef}>
-          <FillBox margin='0 3rem 0 0' />
-          <FillBox margin='0 3rem 0 0' />
-          <FillBox margin='0 3rem 0 0' />
-          <FillBox margin='0 3rem 0 0' />
-          <FillBox margin='0 3rem 0 0' />
-          <FillBox margin='0 3rem 0 0' />
-        </FillWrapper>
+        <PillWrapper ref={slideRef}>
+          {regions.map((region, i) => {
+            return (
+              <div className='PillBox' key={i}>
+                <PillBox key={region.id} region={region} margin='0 3rem 0 0' />
+              </div>
+            );
+          })}
+        </PillWrapper>
       </Content>
       <ControlsBtn>
         <PrevBtn ref={prevBtnRef}>
@@ -73,10 +76,13 @@ const SliderWrapper = styled.div`
   position: absolute;
   width: 91.5rem;
 `;
-const FillWrapper = styled.div`
+const PillWrapper = styled.div`
   margin: 0;
   padding: 0;
   display: flex;
+  .PillBox {
+    margin-right: 3rem;
+  }
 `;
 const Content = styled.div`
   width: 100%;

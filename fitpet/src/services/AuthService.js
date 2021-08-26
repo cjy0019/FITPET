@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 export default class AuthService {
-  static async signup(userId, userPW) {
+  static async signup(userId, userPW, userName) {
     const response = await axios.post('/api/auth/join', {
       userId,
       userPW,
+      userName,
     });
     return response;
   }
@@ -14,7 +15,6 @@ export default class AuthService {
       userId,
       userPW,
     });
-    console.log(response.data);
     return response;
   }
 

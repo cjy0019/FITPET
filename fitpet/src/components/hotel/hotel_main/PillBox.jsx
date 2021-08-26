@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import PillBoxText from './PillBoxText';
+import HotelTextInfo from '../hotel_list/HotelTextInfo';
 
-const PillBox = (props) => {
-  const { margin, handleClick } = props;
-  const { img } = props;
+const PillBox = ({ region }) => {
+  const IMG_API = 'http://www.ongyeol.com:61010/public';
 
-  const styles = {
-    margin: margin,
-  };
   return (
-    <PillBoxWrapper {...styles} onClick={handleClick}>
-      <PillImageBox img={img}></PillImageBox>
+    <PillBoxWrapper>
+      <PillImageBox>
+        <img src={IMG_API + region.lodgingImg} alt={region.lodgingImg} />
+      </PillImageBox>
       <PillTextBox>
-        <PillBoxText />
+        <HotelTextInfo hotel={region} />
       </PillTextBox>
     </PillBoxWrapper>
   );
@@ -24,8 +22,10 @@ const PillBoxWrapper = styled.div`
   ${(props) => (props.margin ? `margin:${props.margin};` : 'margin:0')}
 `;
 const PillImageBox = styled.div`
-  width: 28.4rem;
-  height: 20.4rem;
+  img {
+    width: 28.4rem;
+    height: 20.4rem;
+  }
   background-image: url(${(props) => props.img});
   border-radius: 25px 25px 0 0;
   background-repeat: no-repeat;
@@ -35,6 +35,7 @@ const PillImageBox = styled.div`
 const PillTextBox = styled.div`
   width: 28.4rem;
   height: 27rem;
+  padding: 2.8rem 0 0 1rem;
   border-radius: 0 0 25px 25px;
   background-color: ${(props) => props.theme.white_color};
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.16);

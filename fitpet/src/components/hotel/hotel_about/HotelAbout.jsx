@@ -246,31 +246,39 @@ const HotelAbout = ({ showRoomDetail, roomDetailOpen, hideRoomDetail }) => {
           </Font>
         </div>
       </About>
-      {/* 객실 선택 */}
-      <RoomChoose />
-      <HotelTwoRoom />
-      <HotelOneRoom
-        showRoomDetail={showRoomDetail}
-        roomDetailOpen={roomDetailOpen}
-        hideRoomDetail={hideRoomDetail}
-      />
-      <HotelTwoRoom />
-      <HotelTwoRoom />
-      <HotelOneRoom />
-      {/* 스크롤 이동 [다른 추천 호텔] 지점 */}
-      {/* 숙소 상세정보 */}
-      <RoomDetailInfo />
-      {/* 편의시설 및 서비스 */}
-      <RoomService />
-      {/* 다른 여행객이 함께 본 숙소 */}
-      <OthertravelersHotels />
+
+      <div className='scroll'>
+        {/* 객실 선택 */}
+        <div id='roomChoose'>
+          <RoomChoose />
+          <HotelTwoRoom />
+          <HotelOneRoom
+            showRoomDetail={showRoomDetail}
+            roomDetailOpen={roomDetailOpen}
+            hideRoomDetail={hideRoomDetail}
+          />
+          <HotelTwoRoom />
+          <HotelTwoRoom />
+          <HotelOneRoom />
+        </div>
+        {/* 숙소 상세정보 */}
+        <RoomDetailInfo />
+        {/* 편의시설 및 서비스 */}
+        <RoomService />
+        {/* 다른 여행객이 함께 본 숙소 */}
+        <OthertravelersHotels />
+      </div>
     </HotelsAboutWrapper>
   );
 };
 
 const HotelsAboutWrapper = styled.div`
   max-width: 100%;
-  margin-top: 12rem;
+  // margin-top: 12rem;
+  //padding-top: 12rem;
+  position: relative;
+  box-sizing: inherit;
+  top: 12rem;
 `;
 const HotelImages = styled.div`
   // background-color: aliceblue;

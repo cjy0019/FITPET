@@ -12,7 +12,7 @@ const HotelAboutBanner = () => {
   const [isScrollMenu, setIsScrollMenu] = useState(true);
 
   useEffect(() => {
-    if (yOffset > 1000) {
+    if (yOffset > 943) {
       setIsScrollDate(false);
       setIsScrollMenu(true);
     } else if (yOffset > 100) {

@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
+import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import { SocialBtn } from '../../common';
 
-const SignUp = ({ hideSignUp, signup, goLogin }) => {
+const SignUp = ({ hideSignUp, signup, goLogin, isLoading }) => {
   const [userName, setUserName] = useState('');
   const [userId, setUserId] = useState('');
   const [userPW, setUserPW] = useState('');
@@ -10,6 +12,18 @@ const SignUp = ({ hideSignUp, signup, goLogin }) => {
   const [isEmail, setIsEmail] = useState(null);
   const [isPassword, setIsPassword] = useState(null);
   const _ref = useRef(null);
+
+  const antIcon = (
+    <LoadingOutlined
+      style={{
+        fontSize: '2.2rem',
+        position: 'absolute',
+        left: '2rem',
+        top: '25%',
+      }}
+      spin
+    />
+  );
 
   useEffect(() => {
     const PwRegex =
@@ -91,8 +105,9 @@ const SignUp = ({ hideSignUp, signup, goLogin }) => {
               <Warning>입력한 비밀번호와 동일하게 입력해주세요.</Warning>
             )}
 
-            <NextButton onClick={clickSignup} disabled ref={_ref}>
+            <NextButton onClick={clickSignup} ref={_ref}>
               회원가입
+              {isLoading && <Spin indicator={antIcon} />}
             </NextButton>
             {/* sns계정으로 가입 */}
             <SocialBlock>
@@ -114,7 +129,7 @@ const SignUp = ({ hideSignUp, signup, goLogin }) => {
   );
 
   function clickSignup() {
-    signup(userId, userPW);
+    signup(userId, userPW, userName);
   }
 
   function changeId(e) {
@@ -211,10 +226,9 @@ const Warning = styled.p`
     `}
 `;
 
-const NextButton = styled.button.attrs({
-  disabled: true,
-})`
+const NextButton = styled.button`
   cursor: pointer;
+  position: relative;
   width: 100%;
   height: 5.2rem;
   border-radius: 26px;
@@ -222,11 +236,13 @@ const NextButton = styled.button.attrs({
   opacity: 0.4;
   border: none;
   letter-spacing: 0.4px;
-  /* color: ${(props) => props.theme.black1_color}; */
   color: #ffffff;
   font-size: 1.8rem;
   margin-top: 3.6rem;
-  transition: all 0.5s;
+
+  &:hover {
+    background: ${(props) => props.theme.main_color};
+  }
 `;
 
 // sns로 회원가입 하기

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HotelInfo from './HotelInfo';
@@ -8,10 +8,37 @@ import HotelBanner from './HotelBanner';
 import HotelFilter from './HotelFilter';
 import HeaderContainer from '../../../containers/HeaderContainer';
 import Footer from '../../../components/common/Footer';
+import Modal from '../../modal/Modal';
+import { Link } from 'react-router-dom';
 
-const HotelList = ({ hotels }) => {
+const HotelList = ({ hotels, isLoading }) => {
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.cssText = `
+      position:fixed;
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 100%;
+    `;
+    }
+
+    return () => {
+      const scrollY = document.body.style.top;
+      document.body.style.cssText = '';
+      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
+    };
+  }, [isLoading]);
+
   return (
     <>
+      {isLoading && (
+        <Modal>
+          <Center>
+            <img src='/img/loading.gif' alt='loading spinner' />
+          </Center>
+        </Modal>
+      )}
+
       <Container>
         <HeaderContainer />
         <HotelBanner />
@@ -26,11 +53,32 @@ const HotelList = ({ hotels }) => {
             <HotelListHeader />
             {hotels.map((hotel, i) => {
               return (
-                <div key={i}>
+                <React.Fragment key={i}>
                   <HotelInfo key={hotel.id} hotel={hotel} />
-                </div>
+                </React.Fragment>
               );
             })}
+            <Pagenations>
+              <Link to='/'>
+                <img
+                  src='/img/hotel/hotel_list/pageleft.svg'
+                  alt=''
+                  style={{ transform: 'translateY(-36%)' }}
+                />
+              </Link>
+              <Link to='/accomodations/hotels?page=1'>1</Link>
+              <Link to='/accomodations/hotels?page=2'>2</Link>
+              <Link to='/accomodations/hotels?page=3'>3</Link>
+              <Link to='/accomodations/hotels?page=4'>4</Link>
+              <Link to='/accomodations/hotels?page=5'>5</Link>
+              <Link to='/'>
+                <img
+                  src='/img/hotel/hotel_list/pageright.svg'
+                  alt=''
+                  style={{ transform: 'translateY(-35%)' }}
+                />
+              </Link>
+            </Pagenations>
           </PossibleHotel>
           <GoUpBtn />
         </HotelMain>
@@ -39,6 +87,18 @@ const HotelList = ({ hotels }) => {
     </>
   );
 };
+const Center = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 25rem;
+    height: 25rem;
+  }
+`;
 
 const Container = styled.div`
   padding-top: 33rem;
@@ -55,6 +115,20 @@ const HotelMain = styled.main`
 const PossibleHotel = styled.section`
   width: 100%;
   margin-left: 5.05rem;
+`;
+
+const Pagenations = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 3.7rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: ${(props) => props.theme.black1_color};
+
+  a:visited {
+    color: ${(props) => props.theme.black1_color};
+  }
 `;
 
 export default HotelList;

@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import LoginBottom from './LoginBottom';
 
-const Login = ({ hideLogin, login }) => {
+const Login = (props) => {
+  const { hideLogin, login, isLoading } = props;
   return (
     <>
       <StyledCenter>
@@ -22,7 +23,7 @@ const Login = ({ hideLogin, login }) => {
             </StyledSlogan>
 
             {/* 로그인 input 부분 */}
-            <LoginBottom login={login} />
+            <LoginBottom login={login} isLoading={isLoading} />
           </div>
         </StyledForm>
       </StyledCenter>

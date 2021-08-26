@@ -7,6 +7,7 @@ import { closeLogin } from '../redux/modules/modal';
 const LoginContainer = () => {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.login.token);
+  const isLoading = useSelector((state) => state.login.isLoading);
 
   // 로그인 창 닫기
   const hideLogin = useCallback(() => {
@@ -20,7 +21,7 @@ const LoginContainer = () => {
     [dispatch],
   );
   if (token) return <></>;
-  return <Login login={login} hideLogin={hideLogin} />;
+  return <Login login={login} hideLogin={hideLogin} isLoading={isLoading} />;
 };
 
 export default LoginContainer;
