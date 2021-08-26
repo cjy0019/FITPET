@@ -3,7 +3,14 @@ import { watchHotelList } from './hotelList';
 import { watchLogin } from './login';
 import { authSaga } from './signup';
 import { watchHotelMain } from './hotelMain';
+import { watchHotelAbout } from './hotelAbout';
 
 export default function* rootSaga() {
-  yield all([authSaga(), watchLogin(), watchHotelList(), watchHotelMain()]);
+  yield all([
+    authSaga(),
+    watchLogin(),
+    watchHotelList(),
+    watchHotelMain(),
+    watchHotelAbout(),
+  ]);
 }
