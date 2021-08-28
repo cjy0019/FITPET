@@ -45,8 +45,8 @@ function App() {
               exact
               path='/accomodations/hotels'
             />
-            <Route component={RentalcarMainPage} path='/rentalcar' />
-            <Route component={RentCarPage} path='/rentcar' />
+            <Route component={RentCarPage} path='/rentcar/searchcars' />
+            <Route component={RentalcarMainPage} path='/rentcar' />
             <Route component={RentCarDetailPage} path='/rentcardetail' />
             <Route component={DriverInfoPage} path='/driver' />
             <Route component={CourseMainPage} path='/course' />
