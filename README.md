@@ -12,7 +12,7 @@ Front-end(React) : 3인 <br/>
 Back-end : 2인 ([Github Repo](https://github.com/re-nolja/FITPET_BACKEND)) <br/>
 Designer : 2인  <br/>
 
-  
+
 ### ☀️ 목차
 [1. 프로젝트 설명 ](#프로젝트-설명)<br/>
 [2. 사용기술 ](#-tools)<br/>
@@ -36,6 +36,28 @@ Designer : 2인  <br/>
 
 ## 🕹 기능정보
 
+### 디렉토리 아키텍쳐
+
+- src > common 폴더에 자주 사용되는 폰트, 버튼 UI 컴포넌트 등을 따로 분리하여 재사용에 용이하도록 구성.
+- src > components 폴더에는 presentational components 들을 분류하여 view 영역을 따로 관리.
+- src > pages 폴더에는 라우팅처리와 관련하여 해당 페이지를 관리하는 부분.
+- src > hooks 커스텀 훅을 저장하여 재사용성을 높임.
+- src > containers 주로 비동기 통신과 관련된 로직을 이곳에서 처리하며 useCallback을 이용하여 함수 렌더링 최적화, 뷰와 함수 생성, 비동기 로직을 완전분리.
+- src > redux 리덕스 스토어를 생성, ducks 패턴을 이용하여 관심사대로 모듈들을 분리하였습니다. (Redux Saga 주로 사용)
+- src > services 에는 API를 호출하는 반복되는 로직들을 정리하였습니다. ES6의 클래스를 사용하여 필요한 관심사대로 분리하였습니다.
+
+### 헤더
+
+- 메인로고가 이미지이기 때문에 웹 접근성을 고려하여 대체텍스트 처리.
+- React에서 제공하는 Portal을 사용하여 회원가입, 로그인 모달창 구현.
+- 카카오 로그인 API 연동하여 로그인 기능 구현.
+- UX를 고려하여 로그인, 회원가입시 로딩 스피너 사용.
+- 전체 모달창을 하나의 리덕스 module에서 관리.
+- 스크롤시 네비게이션 생기도록 구현(커스텀훅 사용).
+- 로그인시 토큰 localStorage에 저장.
+
+
+
 ---
 
 ## 진행과정
@@ -43,4 +65,4 @@ Designer : 2인  <br/>
 - notion을 이용하여 진행현황과 요청사항을 공유할 수 있도록 했습니다.
 - 매주 일요일 5시에 Discord를 이용하여 전체 회의를 진행했습니다.
   
- 
+
