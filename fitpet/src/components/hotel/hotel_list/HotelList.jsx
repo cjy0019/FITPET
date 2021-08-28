@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { A11yHidden } from '../../../common/accessibility/Hidden';
 import HotelInfo from './HotelInfo';
@@ -12,23 +12,6 @@ import Modal from '../../modal/Modal';
 import { Link } from 'react-router-dom';
 
 const HotelList = ({ hotels, isLoading }) => {
-  useEffect(() => {
-    if (isLoading) {
-      document.body.style.cssText = `
-      position:fixed;
-      top: -${window.scrollY}px;
-      overflow-y: scroll;
-      width: 100%;
-    `;
-    }
-
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = '';
-      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
-    };
-  }, [isLoading]);
-
   return (
     <>
       {isLoading && (

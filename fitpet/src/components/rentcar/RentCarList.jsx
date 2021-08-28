@@ -3,46 +3,59 @@ import styled from 'styled-components';
 import { A11yHidden } from '../../common/accessibility/Hidden';
 import GoUpBtn from '../../common/buttons/small_size/GoUpBtn';
 import RentCarFilter from '../../components/rentcar/RentCarFilter';
+import HeaderContainer from '../../containers/HeaderContainer';
+import Modal from '../modal/Modal';
 import CarInfo from './CarInfo';
 import RentCarHeader from './RentCarHeader';
 
-const RentCarList = () => {
-  const cars = [
-    { id: 1, name: '제주' },
-    { id: 2, name: '이름' },
-    { id: 3, name: '이름' },
-    { id: 4, name: '이름' },
-    { id: 5, name: '이름' },
-    { id: 6, name: '이름' },
-  ];
-
+const RentCarList = ({ rentcars, isLoading }) => {
   return (
-    <Container>
-      <RentMain>
-        <h1>
+    <>
+      {isLoading && (
+        <Modal>
+          <Center>
+            <img src='/img/loading.gif' alt='loading spinner' />
+          </Center>
+        </Modal>
+      )}
+      <HeaderContainer />
+      <Container>
+        <RentMain>
           <A11yHidden>렌트카 목록</A11yHidden>
-        </h1>
 
-        {/* 렌트카 필터링 */}
-        <RentCarFilter />
+          {/* 렌트카 필터링 */}
+          <RentCarFilter />
 
-        {/* 예약 가능한 차량  */}
-        <PossibleCars>
-          <RentCarHeader />
-
-          {cars.map((car, i) => {
-            return (
-              <div key={i}>
-                <CarInfo key={car.id} />
-              </div>
-            );
-          })}
-        </PossibleCars>
-        <GoUpBtn />
-      </RentMain>
-    </Container>
+          {/* 예약 가능한 차량  */}
+          <PossibleCars>
+            <RentCarHeader />
+            {rentcars.map((car, idx) => {
+              return (
+                <React.Fragment key={car._id}>
+                  <CarInfo car={car} />
+                </React.Fragment>
+              );
+            })}
+          </PossibleCars>
+          <GoUpBtn />
+        </RentMain>
+      </Container>
+    </>
   );
 };
+
+const Center = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 25rem;
+    height: 25rem;
+  }
+`;
 
 const Container = styled.div``;
 

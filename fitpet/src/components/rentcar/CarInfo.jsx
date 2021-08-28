@@ -7,20 +7,22 @@ import {
 } from '../hotel/hotel_common/filterCommon';
 import RentDetails from '../rentcar/RentDetails';
 import CarTextInfo from './CarTextInfo';
+const IMG_API = 'http://www.ongyeol.com:61010/public';
 
-const CarInfo = () => {
+const CarInfo = ({ car }) => {
+  const IMG_URL = IMG_API + car.picture;
   return (
     <>
       <Info>
         {/* 이미지 부분 */}
-        <ImgBox>
+        <ImgBox IMG_URL={IMG_URL}>
           <LikeBtn />
         </ImgBox>
 
         {/* 텍스트 Info */}
         <TextDetailWrapper>
-          <CarTextInfo />
-          <RentDetails />
+          <CarTextInfo car={car} />
+          <RentDetails car={car} />
         </TextDetailWrapper>
       </Info>
     </>
