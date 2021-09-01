@@ -1,4 +1,5 @@
 {
+  "homepage": "https://fitpet.github.io/",
   "name": "fitpet",
   "version": "0.1.0",
   "private": true,
@@ -11,6 +12,7 @@
     "antd": "^4.16.13",
     "axios": "^0.21.1",
     "connected-react-router": "^6.9.1",
+    "gh-pages": "^2.0.1",
     "google-map-react": "^2.1.10",
     "moment": "^2.29.1",
     "react": "^17.0.2",
@@ -34,7 +36,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
