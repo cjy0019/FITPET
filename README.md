@@ -1,5 +1,15 @@
 # 🐶 FITPET
 
+<img width="1552" alt="스크린샷 2021-08-29 오후 4 24 05" src="https://user-images.githubusercontent.com/69631850/131650902-dafdb762-0baf-466f-9ebd-45f343a1c852.png">
+<div align='center'>
+  
+  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+  ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+  ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+  ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+
+</div>
+
 <h4><a href="https://www.notion.so/FITPET-d85e24eb8e954970a2a70af180d75310" target="_blank"> Notion</a><h4>
 
 개발기간  2021.07 ~ 진행 중
