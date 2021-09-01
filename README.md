@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# 🐶 FITPET
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="1552" alt="스크린샷 2021-08-29 오후 4 24 05" src="https://user-images.githubusercontent.com/69631850/131650902-dafdb762-0baf-466f-9ebd-45f343a1c852.png">
+<div align='center'>
+  
+  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+  ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+  ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+  ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+<h4><a href="https://www.notion.so/FITPET-d85e24eb8e954970a2a70af180d75310" target="_blank"> Notion</a><h4>
 
-### `npm start`
+개발기간  2021.07 ~ 진행 중
+<br/>
+<br/>
+### 👨‍👩‍👧‍👧 팀 구성
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[팀 소개 페이지로 이동하기](https://www.notion.so/8654f82b457e4781bb826e4f34f52df8) <br/>
+Front-end(React) : 3인 <br/>
+Back-end : 2인 ([Github Repo](https://github.com/re-nolja/FITPET_BACKEND)) <br/>
+Designer : 2인  <br/>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### ☀️ 목차
+[1. 프로젝트 설명 ](#프로젝트-설명)<br/>
+[2. 사용기술 ](#-tools)<br/>
+[3. 기능정보 ](#-기능정보)<br/>
+[4. 진행과정 ](#진행과정)<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 프로젝트 설명 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠 Tools
+```
+- View (React with JavaScript, React-Router, react-icon, Styled-components)
+- State Management (Redux, Redux-Thunk, Redux-saga)
+- Build Tool (Create React App)
+- Other Tools (Git, Github, notion, Discord, Zeplin, Google Docs)
+```
 
-### `npm run eject`
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🕹 기능정보
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 디렉토리 아키텍쳐
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- src > common 폴더에 자주 사용되는 폰트, 버튼 UI 컴포넌트 등을 따로 분리하여 재사용에 용이하도록 구성.
+- src > components 폴더에는 presentational components 들을 분류하여 view 영역을 따로 관리.
+- src > pages 폴더에는 라우팅처리와 관련하여 해당 페이지를 관리하는 부분.
+- src > hooks 커스텀 훅을 저장하여 재사용성을 높임.
+- src > containers 주로 비동기 통신과 관련된 로직을 이곳에서 처리하며 useCallback을 이용하여 함수 렌더링 최적화, 뷰와 함수 생성, 비동기 로직을 완전분리.
+- src > redux 리덕스 스토어를 생성, ducks 패턴을 이용하여 관심사대로 모듈들을 분리하였습니다. (Redux Saga 주로 사용)
+- src > services 에는 API를 호출하는 반복되는 로직들을 정리하였습니다. ES6의 클래스를 사용하여 필요한 관심사대로 분리하였습니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 헤더
 
-## Learn More
+- 메인로고가 이미지이기 때문에 웹 접근성을 고려하여 대체텍스트 처리.
+- React에서 제공하는 Portal을 사용하여 회원가입, 로그인 모달창 구현.
+- 카카오 로그인 API 연동하여 로그인 기능 구현.
+- UX를 고려하여 로그인, 회원가입시 로딩 스피너 사용.
+- 전체 모달창을 하나의 리덕스 module에서 관리.
+- 스크롤시 네비게이션 생기도록 구현(커스텀훅 사용).
+- 로그인시 토큰 localStorage에 저장.
+  
+  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 진행과정
+### 협업환경 구축
+- notion을 이용하여 진행현황과 요청사항을 공유할 수 있도록 했습니다.
+- 매주 일요일 5시에 Discord를 이용하여 전체 회의를 진행했습니다.
+  
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
