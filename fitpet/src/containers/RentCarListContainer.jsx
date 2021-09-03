@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import RentCarList from '../components/rentcar/RentCarList';
+import RentCarList from '../components/rentalcar/rentcar/RentCarList';
 import { getRentcarList } from '../redux/modules/rentcar';
 
 const RentCarListContainer = () => {

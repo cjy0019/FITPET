@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { A11yHidden } from '../../common/accessibility/Hidden';
-import GoUpBtn from '../../common/buttons/small_size/GoUpBtn';
-import RentCarFilter from '../../components/rentcar/RentCarFilter';
-import HeaderContainer from '../../containers/HeaderContainer';
-import Modal from '../modal/Modal';
+import { A11yHidden } from '../../../common/accessibility/Hidden';
+import GoUpBtn from '../../../common/buttons/small_size/GoUpBtn';
+import HeaderContainer from '../../../containers/HeaderContainer';
+import Modal from '../../modal/Modal';
 import CarInfo from './CarInfo';
+import RentCarFilter from './RentCarFilter';
 import RentCarHeader from './RentCarHeader';
 
 const RentCarList = ({ rentcars, isLoading }) => {

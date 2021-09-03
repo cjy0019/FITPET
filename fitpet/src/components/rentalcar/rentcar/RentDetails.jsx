@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { RoundSquareBtn } from '../../common';
+import { RoundSquareBtn } from '../../../common';
 
 const RentDetails = ({ car }) => {
   return (

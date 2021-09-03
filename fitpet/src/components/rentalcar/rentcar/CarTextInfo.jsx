@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
-import { Font } from '../../common';
+import { Font } from '../../../common';
 import {
   City,
   CityStar,
@@ -8,7 +8,7 @@ import {
   InfoContainer,
   Rect,
   Star,
-} from '../hotel/hotel_common/filterCommon';
+} from '../../hotel/hotel_common/filterCommon';
 
 const CarTextInfo = ({ car }) => {
   return (

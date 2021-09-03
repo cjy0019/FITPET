@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { SmallHeader } from '../hotel/hotel_common/filterCommon';
+import { SmallHeader } from '../../hotel/hotel_common/filterCommon';
 
 const RentCarHeader = () => {
   return (

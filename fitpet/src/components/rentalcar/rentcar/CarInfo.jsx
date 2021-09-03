@@ -4,7 +4,7 @@ import {
   Info,
   LikeBtn,
   TextDetailWrapper,
-} from '../hotel/hotel_common/filterCommon';
+} from '../../hotel/hotel_common/filterCommon';
 import RentDetails from '../rentcar/RentDetails';
 import CarTextInfo from './CarTextInfo';
 const IMG_API = 'http://www.ongyeol.com:61010/public';
