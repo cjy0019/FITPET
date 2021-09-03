@@ -19,7 +19,7 @@ const RantalcarMain = () => {
             <RentalcarSearch />
           </div>
           <div className='MoreRentalcarBtn'>
-            <MiddleBtn style={{ marginTop: '4.4rem' }}>
+            <MiddleBtn to='/rentcar/searchcars' style={{ marginTop: '4.4rem' }}>
               다양한 차량 둘러보기
             </MiddleBtn>
           </div>

@@ -1,10 +1,10 @@
 import React from 'react';
-import RentCarList from '../components/rentcar/RentCarList';
+import RentCarListContainer from '../containers/RentCarListContainer';
 
 const RentCarPage = () => {
   return (
     <>
-      <RentCarList />
+      <RentCarListContainer />
     </>
   );
 };
