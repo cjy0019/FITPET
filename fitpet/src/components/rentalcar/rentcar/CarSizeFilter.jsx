@@ -8,7 +8,7 @@ import {
   Folder,
   LineWrapper,
   UpButton,
-} from '../hotel/hotel_common/filterCommon';
+} from '../../hotel/hotel_common/filterCommon';
 
 const CarSizeFilter = () => {
   const [isFold, setisFold] = useState(true);

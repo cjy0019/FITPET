@@ -8,9 +8,9 @@ import {
   Folder,
   LineWrapper,
   UpButton,
-} from '../hotel/hotel_common/filterCommon';
+} from '../../hotel/hotel_common/filterCommon';
 
-const BrandFilter = () => {
+const FuelFilter = () => {
   const [isFold, setisFold] = useState(true);
   const foldingRef = useRef(null);
 
@@ -26,7 +26,7 @@ const BrandFilter = () => {
   return (
     <AllWrapper>
       <ButtonContainer>
-        <FilterTitle>브랜드</FilterTitle>
+        <FilterTitle>연료</FilterTitle>
         {isFold ? (
           <UpButton handleClick={handleClick} />
         ) : (
@@ -36,14 +36,13 @@ const BrandFilter = () => {
 
       <Folder ref={foldingRef}>
         <LineWrapper>
-          <FilterBtn noMargin>현대</FilterBtn>
-          <FilterBtn>기아</FilterBtn>
-          <FilterBtn>르노삼성</FilterBtn>
-          <FilterBtn>쌍용</FilterBtn>
+          <FilterBtn noMargin>휘발유(가솔린)</FilterBtn>
+          <FilterBtn>경유(디젤)</FilterBtn>
+          <FilterBtn>LPG</FilterBtn>
         </LineWrapper>
         <LineWrapper>
-          <FilterBtn noMargin>쉐보레</FilterBtn>
-          <FilterBtn>수입</FilterBtn>
+          <FilterBtn noMargin>하이브리드</FilterBtn>
+          <FilterBtn>전기</FilterBtn>
         </LineWrapper>
       </Folder>
     </AllWrapper>
@@ -54,4 +53,4 @@ const BrandFilter = () => {
   }
 };
 
-export default BrandFilter;
+export default FuelFilter;

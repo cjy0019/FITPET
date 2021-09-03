@@ -8,7 +8,7 @@ import {
   TextDetailWrapper,
 } from '../hotel_common/filterCommon';
 import styled, { css } from 'styled-components';
-const IMG_API = 'http://www.ongyeol.com:61010/public';
+const IMG_API = 'http://211.219.114.239:61010/public';
 
 const HotelInfo = ({ hotel }) => {
   const IMG_URL = IMG_API + hotel.lodgingImg;

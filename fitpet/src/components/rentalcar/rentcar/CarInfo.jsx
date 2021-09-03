@@ -4,23 +4,25 @@ import {
   Info,
   LikeBtn,
   TextDetailWrapper,
-} from '../hotel/hotel_common/filterCommon';
+} from '../../hotel/hotel_common/filterCommon';
 import RentDetails from '../rentcar/RentDetails';
 import CarTextInfo from './CarTextInfo';
+const IMG_API = 'http://211.219.114.239:61010/public';
 
-const CarInfo = () => {
+const CarInfo = ({ car }) => {
+  const IMG_URL = IMG_API + car.picture;
   return (
     <>
       <Info>
         {/* 이미지 부분 */}
-        <ImgBox>
+        <ImgBox IMG_URL={IMG_URL}>
           <LikeBtn />
         </ImgBox>
 
         {/* 텍스트 Info */}
         <TextDetailWrapper>
-          <CarTextInfo />
-          <RentDetails />
+          <CarTextInfo car={car} />
+          <RentDetails car={car} />
         </TextDetailWrapper>
       </Info>
     </>
