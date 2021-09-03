@@ -7,7 +7,7 @@ import {
 } from '../../hotel/hotel_common/filterCommon';
 import RentDetails from '../rentcar/RentDetails';
 import CarTextInfo from './CarTextInfo';
-const IMG_API = 'http://www.ongyeol.com:61010/public';
+const IMG_API = 'http://211.219.114.239:61010/public';
 
 const CarInfo = ({ car }) => {
   const IMG_URL = IMG_API + car.picture;

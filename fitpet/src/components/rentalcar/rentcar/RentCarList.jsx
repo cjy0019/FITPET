@@ -29,7 +29,7 @@ const RentCarList = ({ rentcars, isLoading }) => {
           {/* 예약 가능한 차량  */}
           <PossibleCars>
             <RentCarHeader />
-            {rentcars.map((car, idx) => {
+            {rentcars.map((car) => {
               return (
                 <React.Fragment key={car._id}>
                   <CarInfo car={car} />
