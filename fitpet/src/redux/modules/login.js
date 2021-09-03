@@ -80,9 +80,11 @@ export function* loginSaga(action) {
     const response = yield call(AuthService.login, userId, userPW);
     yield delay(1800);
 
+    // 210903 by.jy
+    // localStorage => sessionStorage
     const userName = response.data.userName;
-    localStorage.setItem('token', response.data._id);
-    localStorage.setItem('userName', userName);
+    sessionStorage.setItem('token', response.data._id);
+    sessionStorage.setItem('userName', userName);
 
     yield put(loginSuccess(response.data._id, userName));
 
@@ -110,8 +112,8 @@ export function* loginKakaoSaga(action) {
           success: (res) => {
             const nickname = res.kakao_account.profile.nickname;
             const token = authObj.access_token;
-            localStorage.setItem('token', token);
-            localStorage.setItem('userName', nickname);
+            sessionStorage.setItem('token', token);
+            sessionStorage.setItem('userName', nickname);
             put(loginSuccess(token, nickname));
           },
         });
@@ -133,7 +135,7 @@ export function* logoutSaga(action) {
     yield call(AuthService.logout);
     yield delay(500);
 
-    localStorage.clear();
+    sessionStorage.clear();
 
     yield put(logOut());
   } catch (error) {

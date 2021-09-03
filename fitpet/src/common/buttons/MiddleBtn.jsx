@@ -14,7 +14,7 @@ const buttonStyle = css`
   outline: none;
   cursor: pointer;
   font-size: 2rem;
-  font-weight: normal;
+  font-family: Pretendard;
   height: 5.4rem;
   padding: 1.4rem 4.1rem 1.4rem 4.2rem;
   border-radius: 26px;
@@ -31,7 +31,6 @@ const buttonStyle = css`
       background-color: ${(props) => props.theme.main_color};
       color: ${(props) => props.theme.white_color};
       font-size: 2rem;
-      font-weight: normal;
       font-size: 2.1rem;
       font-weight: bold;
       text-align: left;
