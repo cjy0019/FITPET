@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import theme from '../../../assets/theme';
 import { Font, SampleIcon } from '../../../common';
 import ImgMoreBtn from '../../../common/buttons/small_size/ImgMoreBtn';
-
 import Modal from '../../modal/Modal';
 import HotelNameBlock from '../hotel_about/HotelNameBlock';
 import HotelOneRoom from '../hotel_about/HotelOneRoom';
@@ -13,7 +12,7 @@ import OthertravelersHotels from './room_scroll/OthertravelersHotels';
 import RoomChoose from './room_scroll/RoomChoose';
 import RoomDetailInfo from './room_scroll/RoomDetailInfo';
 import RoomService from './room_scroll/RoomService';
-const IMG_API = 'http://www.ongyeol.com:61010/public';
+const IMG_API = 'http://211.219.114.239:61010/public';
 
 const HotelAbout = ({
   showRoomDetail,
@@ -209,8 +208,8 @@ const Center = styled.div`
   align-items: center;
 
   img {
-    width: 25rem;
-    height: 25rem;
+    width: 17rem;
+    height: 17rem;
   }
 `;
 

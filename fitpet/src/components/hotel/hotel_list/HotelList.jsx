@@ -8,36 +8,49 @@ import HotelBanner from './HotelBanner';
 import HotelFilter from './HotelFilter';
 import HeaderContainer from '../../../containers/HeaderContainer';
 import Footer from '../../../components/common/Footer';
-import Modal from '../../modal/Modal';
 import { Link } from 'react-router-dom';
+import { Skeleton } from 'antd';
 
 const HotelList = ({ hotels, isLoading }) => {
+  const list = Array.from({ length: 9 }, (x) => x);
   return (
     <>
-      {isLoading && (
-        <Modal>
-          <Center>
-            <img src='/img/loading.gif' alt='loading spinner' />
-          </Center>
-        </Modal>
-      )}
-
       <Container>
         <HeaderContainer />
         <HotelBanner />
         <HotelMain>
           <A11yHidden>숙소 목록</A11yHidden>
-
           {/* 필터링 기능 부분 */}
           <HotelFilter />
-
           {/* 예약 가능한 숙소 부분 */}
           <PossibleHotel>
             <HotelListHeader />
+
+            {/* 210903 by.jy 
+            로딩 스피너 제거 & 스켈레톤 UI 적용 */}
+            {isLoading &&
+              list.map((v, i) => {
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      marginTop: '3rem',
+                      paddingBottom: '4rem',
+                      borderBottom: 'solid 1px #eee',
+                    }}>
+                    <Skeleton active={true} avatar paragraph={{ rows: 4 }} />
+                  </div>
+                );
+              })}
+
             {hotels.map((hotel, i) => {
               return (
                 <React.Fragment key={i}>
-                  <HotelInfo key={hotel.id} hotel={hotel} />
+                  <HotelInfo
+                    isLoading={isLoading}
+                    key={hotel.id}
+                    hotel={hotel}
+                  />
                 </React.Fragment>
               );
             })}
@@ -70,18 +83,6 @@ const HotelList = ({ hotels, isLoading }) => {
     </>
   );
 };
-const Center = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    width: 15rem;
-    height: 15rem;
-  }
-`;
 
 const Container = styled.div`
   padding-top: 33rem;
