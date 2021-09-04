@@ -21,7 +21,8 @@ const HotelList = ({ hotels, isLoading }) => {
         <HotelMain>
           <A11yHidden>숙소 목록</A11yHidden>
           {/* 필터링 기능 부분 */}
-          <HotelFilter />;{/* 예약 가능한 숙소 부분 */}
+          <HotelFilter />
+          {/* 예약 가능한 숙소 부분 */}
           <PossibleHotel>
             <HotelListHeader />
 
