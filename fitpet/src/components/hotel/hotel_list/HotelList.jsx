@@ -78,8 +78,8 @@ const Center = styled.div`
   align-items: center;
 
   img {
-    width: 25rem;
-    height: 25rem;
+    width: 15rem;
+    height: 15rem;
   }
 `;
 

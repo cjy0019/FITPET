@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import HotelTextInfo from '../hotel_list/HotelTextInfo';
 
 const PillBox = ({ region }) => {
-  const IMG_API = 'http://www.ongyeol.com:61010/public';
+  // 210904 API 주소 변경
+  const IMG_API = 'http://211.219.114.239:61010/public';
 
   return (
     <PillBoxWrapper>

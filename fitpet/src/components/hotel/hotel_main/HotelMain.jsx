@@ -10,7 +10,8 @@ import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelListBlock from './HotelListBlock';
 
 const HotelMain = ({ hitsList, isLoading }) => {
-  const IMG_API = 'http://www.ongyeol.com:61010/public';
+  // 210904 API 주소 변경.
+  const IMG_API = 'http://211.219.114.239:61010/public';
   useEffect(() => {
     if (isLoading) {
       document.body.style.cssText = `
@@ -171,8 +172,8 @@ const Center = styled.div`
   align-items: center;
 
   img {
-    width: 25rem;
-    height: 25rem;
+    width: 17rem;
+    height: 17rem;
   }
 `;
 

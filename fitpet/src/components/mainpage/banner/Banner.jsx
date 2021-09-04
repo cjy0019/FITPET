@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { MiddleBtn } from '../../../common';
 import MainNav from './MainNav';
 
 const banner = () => {
@@ -15,11 +15,9 @@ const banner = () => {
       {/* 검색창 */}
       <SearchInput placeholder='어디로 떠날까요? 여행지 또는 상품을 검색해주세요 &#58;&#41;'></SearchInput>
 
-      <div>
-        <MiddleBtn style={{ marginTop: '14.3rem' }}>
-          다양한 숙소 둘러보기
-        </MiddleBtn>
-      </div>
+      <MoveHotelBtn to='/accomodations/hotels?page=1'>
+        다양한 숙소 둘러보기
+      </MoveHotelBtn>
     </BannerWrappr>
   );
 };
@@ -73,6 +71,22 @@ const SectionTitle = styled.h2`
   margin-top: 15.7rem;
   letter-spacing: normal;
   color: ${(props) => props.theme.white_color};
+`;
+
+// 210903 by.jy
+// hover시에 박스쉐도우로 스타일 변경.
+const MoveHotelBtn = styled(Link)`
+  padding: 1.4rem 4rem;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 14.3rem;
+  border-radius: 26px;
+  color: ${(props) => props.theme.white_color};
+  background-color: ${(props) => props.theme.main_color};
+
+  &:hover {
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
+  }
 `;
 
 export default banner;

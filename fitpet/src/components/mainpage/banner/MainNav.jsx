@@ -31,7 +31,7 @@ const MainNav = () => {
           <NavLink to='/accomodations'>숙소</NavLink>
         </MenuLi>
         <MenuLi ref={rentalcarLink}>
-          <NavLink to='/rentalcar'>렌트카</NavLink>
+          <NavLink to='/rentcar'>렌트카</NavLink>
         </MenuLi>
         <MenuLi ref={courseLink}>
           <NavLink to='course'>코스짜기</NavLink>
