@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { RoundSquareBtn } from '../../../common';
 
 const HotelDetails = ({ hotel }) => {
   const hotelAboutLink = '/accomodations/hotels/';
@@ -11,12 +10,7 @@ const HotelDetails = ({ hotel }) => {
       <Price>
         {hotel.lodgingMinMoney.toLocaleString()} ~ <span>원</span>
       </Price>
-      <Link
-        to={hotelAboutLink + hotel._id}
-        main_color
-        style={{ marginTop: '1.4rem' }}>
-        상세보기
-      </Link>
+      <DetailLink to={hotelAboutLink + hotel._id}>상세보기</DetailLink>
     </DetailWrapper>
   );
 };
@@ -39,7 +33,6 @@ const Price = styled.p`
   font-size: 2rem;
   font-weight: bold;
   line-height: 1.2;
-  letter-spacing: -0.4px;
   color: ${(props) => props.theme.black1_color};
 
   span {
@@ -47,6 +40,21 @@ const Price = styled.p`
     font-weight: 500;
     line-height: 1.71;
   }
+`;
+
+// 210904 by.jy 상세보기 버튼 스타일 변경 버튼 => 링크
+const DetailLink = styled(Link)`
+  margin-top: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: ${(props) => props.theme.main_color};
+  width: 11.6rem;
+  height: 4.8rem;
+  color: #fff;
 `;
 
 export default HotelDetails;
