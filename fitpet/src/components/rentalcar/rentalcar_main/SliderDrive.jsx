@@ -55,10 +55,10 @@ const SliderDrive = () => {
                 fontSize='1.6rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span className='bold'>
-                  제주도
+                  안동
                   <br />
                 </span>
-                청량한 바다가 아름다운 곳
+                역사가 살아 숨 쉬는 곳
               </Font>
             </Rentalcar>
             <Rentalcar>
@@ -68,10 +68,10 @@ const SliderDrive = () => {
                 fontSize='1.6rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span className='bold'>
-                  제주도
+                  통영
                   <br />
                 </span>
-                청량한 바다가 아름다운 곳
+                아름다운 수국이 피어나는 곳
               </Font>
             </Rentalcar>
             <Rentalcar>
@@ -81,10 +81,10 @@ const SliderDrive = () => {
                 fontSize='1.6rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span className='bold'>
-                  제주도
+                  수원
                   <br />
                 </span>
-                청량한 바다가 아름다운 곳
+                문득 생각나는 행궁의 야경
               </Font>
             </Rentalcar>
             <Rentalcar>
@@ -94,10 +94,10 @@ const SliderDrive = () => {
                 fontSize='1.6rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span className='bold'>
-                  제주도
+                  부산
                   <br />
                 </span>
-                청량한 바다가 아름다운 곳
+                바다하면 부산!
               </Font>
             </Rentalcar>
             <Rentalcar>
@@ -107,10 +107,10 @@ const SliderDrive = () => {
                 fontSize='1.6rem'
                 margin='1.4rem 0 3.8rem 2.3rem'>
                 <span className='bold'>
-                  제주도
+                  안동
                   <br />
                 </span>
-                청량한 바다가 아름다운 곳
+                역사가 살아 숨 쉬는 곳
               </Font>
             </Rentalcar>
           </RentalcarWrapper>

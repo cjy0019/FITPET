@@ -24,7 +24,7 @@ const RentalcarSearch = ({ isScroll }) => {
           />
           <SearchDateBox placeholder='8월 6일 (금) - 8월 7일(토) | 1박' />
           <SearchBox placeholder='차종' />
-          <RoundSquareBtn>재검색</RoundSquareBtn>
+          <RoundSquareBtn search_btn>검색</RoundSquareBtn>
         </div>
         <div className='ageCheckBox'>
           <Font
