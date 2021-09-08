@@ -97,19 +97,6 @@ const HotelMain = ({ hitsList, isLoading }) => {
   );
 };
 
-// const Center = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   img {
-//     width: 17rem;
-//     height: 17rem;
-//   }
-// `;
-
 const HotelMainWrapper = styled.div`
   max-width: 100%;
   margin-top: 8rem;
@@ -165,7 +152,6 @@ const BandBanner = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 `;
-
 export const LikeBtn = styled.div`
   position: absolute;
   top: 1.4rem;

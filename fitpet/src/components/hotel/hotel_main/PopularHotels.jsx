@@ -92,10 +92,16 @@ const PopularHotel = styled.li`
     font-weight: 600;
   }
   .imgBox {
+    margin: 0px auto;
+    overflow: hidden;
+    width: 29rem;
+    height: 29rem;
+    border-radius: 25px;
     img {
-      width: 29rem;
-      height: 29rem;
-      border-radius: 25px;
+      transition: all 0.1s linear;
+    }
+    &:hover img {
+      transform: scale(1.1);
     }
     cursor: pointer;
   }
