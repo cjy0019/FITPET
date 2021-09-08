@@ -6,13 +6,16 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { SliderLeftButton, SliderRightButton } from '../../../common';
 import PillBox from './PillBox';
-const HotelSlider = () => {
+import PillBoxSkeleton from './PillBoxSkeleton';
+
+const HotelSlider = ({ isLoading }) => {
   const TOTAL_SLIDES = 1;
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const prevBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
   const regions = useSelector((state) => state.hotelMain.regions);
+  console.log('HotelSlider : ' + isLoading);
 
   // 6개 슬라이드 효과 주기
   useEffect(() => {
@@ -28,6 +31,9 @@ const HotelSlider = () => {
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${slideValue}%)`;
   }, [currentSlide]);
+
+  // 210905 by.dy
+  // 로딩 스피너 제거 & 스켈레톤 UI 적용
   return (
     <SliderWrapper>
       <Content>
@@ -35,6 +41,8 @@ const HotelSlider = () => {
           {regions.map((region, i) => {
             return (
               <div className='PillBox' key={i}>
+                {/* 로딩 스피너 제거 & 스켈레톤 UI 적용 */}
+                {isLoading && <PillBoxSkeleton margin='0 3rem 0 0' />}
                 <PillBox key={region.id} region={region} margin='0 3rem 0 0' />
               </div>
             );
