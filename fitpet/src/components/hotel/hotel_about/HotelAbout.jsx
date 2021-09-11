@@ -60,7 +60,7 @@ const HotelAbout = ({
             <img
               style={{ width: '88rem', height: '50rem' }}
               src={IMG2_URL}
-              alt={IMG2_URL}
+              alt='호텔 메인 이미지'
             />
           </div>
           {/* 숙소 서브 사진들 */}
@@ -72,13 +72,13 @@ const HotelAbout = ({
                 marginBottom: '1rem',
               }}
               src={IMG3_URL}
-              alt={IMG4_URL}
+              alt='호텔 서브 이미지1'
             />
             <div className='imgBtn'>
               <img
                 style={{ width: '39rem', height: '24.5rem' }}
                 src={IMG4_URL}
-                alt={IMG4_URL}
+                alt='호텔 서브 이미지2'
               />
               {/* <ImgMoreBtn position='absolute' top='18rem' right='1rem' /> */}
             </div>{' '}
