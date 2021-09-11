@@ -51,7 +51,7 @@ const PopularHotels = ({ hitsList, isLoading }) => {
                 </span>
                 <span>
                   <br />
-                  {hotel.lodgignName}
+                  {hotel.lodgingName}
                   <br />
                   {hotel.lodgingMinMoney.toLocaleString()}
                 </span>
