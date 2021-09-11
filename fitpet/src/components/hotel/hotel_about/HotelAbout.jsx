@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import theme from '../../../assets/theme';
 import { Font, SampleIcon } from '../../../common';
-import ImgMoreBtn from '../../../common/buttons/small_size/ImgMoreBtn';
 import Modal from '../../modal/Modal';
 import HotelNameBlock from '../hotel_about/HotelNameBlock';
 import HotelOneRoom from '../hotel_about/HotelOneRoom';
