@@ -15,7 +15,7 @@ const HotelNameBlock = ({ options }) => {
           {options.lodgingClass}
         </Font>
         <Font color='theme.black1_color' fontSize='3.8rem' fontWeight='bold'>
-          {options.lodgignName}
+          {options.lodgingName}
         </Font>
         <Font color='#979797' fontSize='1.6rem' mt='1rem' mb='1.1rem'>
           {options.lodgingEnName}
