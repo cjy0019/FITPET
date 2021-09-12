@@ -8,14 +8,13 @@ import { SliderLeftButton, SliderRightButton } from '../../../common';
 import PillBox from './PillBox';
 import PillBoxSkeleton from './PillBoxSkeleton';
 
-const HotelSlider = ({ isLoading }) => {
+const HotelSlider = () => {
   const TOTAL_SLIDES = 1;
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const prevBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
   const regions = useSelector((state) => state.hotelMain.regions);
-  console.log('HotelSlider : ' + isLoading);
 
   // 6개 슬라이드 효과 주기
   useEffect(() => {
@@ -38,11 +37,26 @@ const HotelSlider = ({ isLoading }) => {
     <SliderWrapper>
       <Content>
         <PillWrapper ref={slideRef}>
+          {/* regions 데이터가 없을 때 (로딩 중) */}
+          {regions.length === 0 ? (
+            <>
+              <div className='PillBox'>
+                {<PillBoxSkeleton margin='0 3rem 0 0' />}
+              </div>
+              <div className='PillBox'>
+                {<PillBoxSkeleton margin='0 3rem 0 0' />}
+              </div>
+              <div className='PillBox'>
+                {<PillBoxSkeleton margin='0 3rem 0 0' />}
+              </div>
+            </>
+          ) : (
+            ''
+          )}
           {regions.map((region, i) => {
             return (
               <div className='PillBox' key={i}>
                 {/* 로딩 스피너 제거 & 스켈레톤 UI 적용 */}
-                {isLoading && <PillBoxSkeleton margin='0 3rem 0 0' />}
                 <PillBox key={region.id} region={region} margin='0 3rem 0 0' />
               </div>
             );

@@ -69,7 +69,7 @@ const HotelListWrapper = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.theme.grey3_color};
+  background-color: #32d8b8;
   height: 55.6rem;
   .hotelListBox {
     display: flex;
