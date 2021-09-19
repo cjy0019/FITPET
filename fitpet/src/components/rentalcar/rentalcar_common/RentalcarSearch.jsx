@@ -34,15 +34,15 @@ const RentalcarSearch = () => {
             <>
               {/* 다른 장소에서 반납 체크 한 경우 */}
               {/* 어디서 픽업하세요? */}
-              <SearchLocationBox />
+              <SearchLocationBox width='21rem' />
               {/* 어디서 반납하세요?*/}
-              <SearchLocationBox />
+              <SearchLocationBox width='21rem' />
             </>
           ) : (
             <>
               {/* 다른 장소에서 반납 체크 안 한 경우 */}
               {/* 어디서 픽업하세요? */}
-              <SearchLocationBox className='oneBox' />
+              <SearchLocationBox width='42.9rem' />
             </>
           )}
 
