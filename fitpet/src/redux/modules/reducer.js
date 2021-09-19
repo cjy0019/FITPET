@@ -8,6 +8,7 @@ import markers from './markers';
 import hotelMain from './hotelMain';
 import hotelAbout from './hotelAbout';
 import rentcar from './rentcar';
+import filteringCar from './filteringCar';
 
 const reducer = (history) =>
   combineReducers({
@@ -19,6 +20,7 @@ const reducer = (history) =>
     hotelAbout,
     markers,
     rentcar,
+    filteringCar,
     router: connectRouter(history),
   });
 
