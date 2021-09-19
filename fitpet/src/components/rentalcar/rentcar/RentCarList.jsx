@@ -32,7 +32,18 @@ const RentCarList = ({ rentcars, isLoading }) => {
             {rentcars.map((car) => {
               return (
                 <React.Fragment key={car._id}>
-                  <CarInfo car={car} />
+                  <CarInfo
+                    carType={car.carType}
+                    carName={car.carName}
+                    minPrice={car.minPrice}
+                    picture={car.picture}
+                    romStar={car.romStar}
+                    maximumPeople={car.maximumPeople}
+                    rentLocation={car.rentLocation}
+                    fuelType={car.options.fuelType}
+                    RearCamera={car.options.RearCamera}
+                    deliveryCheck={car.options.deliveryCheck}
+                  />
                 </React.Fragment>
               );
             })}

@@ -9,8 +9,20 @@ import RentDetails from '../rentcar/RentDetails';
 import CarTextInfo from './CarTextInfo';
 const IMG_API = 'http://211.219.114.239:61010/public';
 
-const CarInfo = ({ car }) => {
-  const IMG_URL = IMG_API + car.picture;
+const CarInfo = (props) => {
+  const {
+    carType,
+    carName,
+    minPrice,
+    picture,
+    romStar,
+    rentLocation,
+    maximumPeople,
+    deliveryCheck,
+    fuelType,
+    RearCamera,
+  } = props;
+  const IMG_URL = IMG_API + picture;
   return (
     <>
       <Info>
@@ -21,8 +33,21 @@ const CarInfo = ({ car }) => {
 
         {/* 텍스트 Info */}
         <TextDetailWrapper>
-          <CarTextInfo car={car} />
-          <RentDetails car={car} />
+          <CarTextInfo
+            carType={carType}
+            carName={carName}
+            romStar={romStar}
+            rentLocation={rentLocation}
+            maximumPeople={maximumPeople}
+            deliveryCheck={deliveryCheck}
+            fuelType={fuelType}
+            RearCamera={RearCamera}
+          />
+          <RentDetails
+            carType={carType}
+            minPrice={minPrice}
+            picture={picture}
+          />
         </TextDetailWrapper>
       </Info>
     </>

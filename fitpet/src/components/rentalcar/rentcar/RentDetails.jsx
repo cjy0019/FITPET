@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { RoundSquareBtn } from '../../../common';
 
-const RentDetails = ({ car }) => {
+const RentDetails = ({ minPrice }) => {
   return (
     <DetailWrapper>
       <StyledP>일반자차 | 1일 기준</StyledP>
       <Price>
-        {car.price.toLocaleString()}~ <span>원</span>
+        {minPrice.toLocaleString()}~ <span>원</span>
       </Price>
       <RoundSquareBtn main_color style={{ marginTop: '1.4rem' }}>
         상세보기
