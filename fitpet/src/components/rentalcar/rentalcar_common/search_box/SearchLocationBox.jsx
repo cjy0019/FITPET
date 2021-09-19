@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useDetectOutsideClick } from '../../../../hooks/useDetectOutsideClick';
 import SearchButton from './SearchButton';
 
-const SearchLocationBox = () => {
+const SearchLocationBox = (props) => {
+  const { width } = props;
+  const styles = { width: width };
   const dropdownRef = useRef(null);
   const [isLocation, setIsLocationBox] = useDetectOutsideClick(
     dropdownRef,
@@ -15,7 +17,7 @@ const SearchLocationBox = () => {
   return (
     <>
       <MenuContainer>
-        <SearchLocationWrapper onClick={onClick}>
+        <SearchLocationWrapper {...styles} onClick={onClick}>
           <img
             className='buttonImg'
             src='/img/search_box/location.png'
@@ -92,6 +94,7 @@ const LocationText = styled.dt`
 const SearchLocationWrapper = styled.button`
   display: flex;
   width: 21rem;
+  width: ${({ width }) => width};
   height: 4.8rem;
   border-radius: 7px;
   margin-right: 1rem;
