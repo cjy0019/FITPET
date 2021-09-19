@@ -10,7 +10,7 @@ const RentalcarSearch = ({ isScroll }) => {
     <>
       <SearchContainer>
         <div className='checkBox'>
-          <SampleIcon width='2.4rem' height='2.4rem' borderRadius='3px' />
+          <Checkbox type='checkbox' />
           <Font
             fontSize='1.4rem'
             fontWeight='normal'
@@ -50,7 +50,12 @@ const RentalcarSearch = ({ isScroll }) => {
             margin='auto 0'>
             : 25~ 65세
           </Font>
-          <SampleIcon width='2.4rem' height='2.4rem' borderRadius='3px' />
+          <img
+            width='16px'
+            height='16px'
+            src='/img/search_box/bottomArrow.png'
+            alt='location'
+          />
         </div>
       </SearchContainer>
     </>
@@ -80,6 +85,11 @@ const SearchContainer = styled.div`
     margin-top: 1.4rem;
     text-align: center;
   }
+`;
+
+const Checkbox = styled.input`
+  width: 2.4rem;
+  height: 2.4rem;
 `;
 
 // const SearchLocationBox = styled.input`
