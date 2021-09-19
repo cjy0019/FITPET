@@ -77,6 +77,7 @@ const RentalcarSearchBlock = styled.div`
   .MoreRentalcarBtn {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 `;
 const ContentsWrapper = styled.div`
