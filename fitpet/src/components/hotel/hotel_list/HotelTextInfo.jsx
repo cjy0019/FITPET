@@ -18,7 +18,7 @@ const HotelTextInfo = ({ hotel }) => {
           {hotel.lodgingClass}
         </Text>
         <Text mb='0.6rem' maintext>
-          {hotel.lodgignName}
+          {hotel.lodgingName}
         </Text>
         <Font color='#979797' fontSize='1.4rem' mb='1rem'>
           {hotel.lodgingEnName}

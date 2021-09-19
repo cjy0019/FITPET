@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import theme from '../../../assets/theme';
 import { Font, SampleIcon } from '../../../common';
-import ImgMoreBtn from '../../../common/buttons/small_size/ImgMoreBtn';
 import Modal from '../../modal/Modal';
 import HotelNameBlock from '../hotel_about/HotelNameBlock';
 import HotelOneRoom from '../hotel_about/HotelOneRoom';
@@ -12,7 +11,6 @@ import OthertravelersHotels from './room_scroll/OthertravelersHotels';
 import RoomChoose from './room_scroll/RoomChoose';
 import RoomDetailInfo from './room_scroll/RoomDetailInfo';
 import RoomService from './room_scroll/RoomService';
-const IMG_API = 'http://211.219.114.239:61010/public';
 
 const HotelAbout = ({
   showRoomDetail,
@@ -21,7 +19,12 @@ const HotelAbout = ({
   options,
   isLoading,
 }) => {
-  const IMG_URL = IMG_API + options.lodgingImg;
+  // 210905 by.dy
+  // 숙소 상세보기 이미지 추가
+  const IMG_API = 'http://211.219.114.239:61010/public';
+  const IMG2_URL = IMG_API + options.lodgingImg2;
+  const IMG3_URL = IMG_API + options.lodgingImg3;
+  const IMG4_URL = IMG_API + options.lodgingImg4;
 
   useEffect(() => {
     if (isLoading) {
@@ -52,14 +55,31 @@ const HotelAbout = ({
       <HotelsAboutWrapper>
         {/* 숙소 이미지 3장 */}
         <HotelImages>
-          <SampleIcon width='88rem' height='50rem' mr='1rem' />
+          <div style={{ marginRight: '1rem' }}>
+            <img
+              style={{ width: '88rem', height: '50rem' }}
+              src={IMG2_URL}
+              alt='호텔 메인 이미지'
+            />
+          </div>
           {/* 숙소 서브 사진들 */}
           <div className='subImage'>
-            {/* <div className='image1' IMG_URL={IMG_URL}></div> */}
-            <SampleIcon width='39rem' height='24.5rem' mb='1rem' />
+            <img
+              style={{
+                width: '39rem',
+                height: '24.5rem',
+                marginBottom: '1rem',
+              }}
+              src={IMG3_URL}
+              alt='호텔 서브 이미지1'
+            />
             <div className='imgBtn'>
-              <SampleIcon width='39rem' height='24.5rem' />
-              <ImgMoreBtn position='absolute' top='18rem' right='1rem' />
+              <img
+                style={{ width: '39rem', height: '24.5rem' }}
+                src={IMG4_URL}
+                alt='호텔 서브 이미지2'
+              />
+              {/* <ImgMoreBtn position='absolute' top='18rem' right='1rem' /> */}
             </div>{' '}
           </div>
         </HotelImages>
@@ -199,7 +219,15 @@ const HotelAbout = ({
     </>
   );
 };
-
+export const ImgBox = styled.div`
+  position: relative;
+  min-width: 22rem;
+  height: 22rem;
+  border-radius: 18px;
+  background-image: url(${(props) => props.IMG_URL});
+  background-size: cover;
+  background-repeat: no-repeat;
+`;
 const Center = styled.div`
   width: 100%;
   height: 100%;

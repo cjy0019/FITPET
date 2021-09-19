@@ -1,41 +1,16 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Font, MiddleBtn } from '../../../common';
 import ImageBox from '../../../common/contents/common/ImageBox';
 import MainNav from '../../mainpage/banner/MainNav';
-import Modal from '../../modal/Modal';
 import HotelTypeSearch from '../hotel_common/HotelTypeSearch';
 import HotelListBlock from './HotelListBlock';
+import PopularHotels from './PopularHotels';
 
 const HotelMain = ({ hitsList, isLoading }) => {
-  // 210904 API 주소 변경.
-  const IMG_API = 'http://211.219.114.239:61010/public';
-  useEffect(() => {
-    if (isLoading) {
-      document.body.style.cssText = `
-      position:fixed;
-      top: -${window.scrollY}px;
-      overflow-y: scroll;
-      width: 100%;
-    `;
-    }
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = '';
-      window.scrollTo(window.scrollY, parseInt(scrollY || '0', 10) * -1);
-    };
-  }, [isLoading]);
   return (
     <>
-      {isLoading && (
-        <Modal>
-          <Center>
-            <img src='/img/loading.gif' alt='loading spinner' />
-          </Center>
-        </Modal>
-      )}
       <HotelMainWrapper>
         {/* 숙소 검색창 */}
         <HotelSearchBlock>
@@ -112,70 +87,15 @@ const HotelMain = ({ hitsList, isLoading }) => {
           </div>
         </FitPetEventBlock>
         {/* 반려동물과 함게 펫캉스 즐기자! */}
-        <HotelListBlock />
+        <HotelListBlock isLoading={isLoading} />
         {/* 띠배너 부분 */}
         <BandBanner img={'/img/hotel/hotel_main/banner.png'} />
         {/* 지금 이 숙소가 인기있어요 */}
-        <PopularHotels>
-          <TextBlock>
-            <Font
-              color='#2A2A2A'
-              fontSize='4.2rem'
-              fontWeight='bold'
-              mb='2.6rem'>
-              지금 이 숙소가 인기있어요
-            </Font>
-          </TextBlock>
-          <div className='popularHotelsBox'>
-            {hitsList.map((hotel, i) => {
-              return (
-                <PopularHotel key={i}>
-                  <div className='imgBox'>
-                    <img
-                      src={IMG_API + hotel.lodgingImg}
-                      alt={hotel.lodgingImg}
-                    />
-                    <LikeBtn />
-                  </div>
-                  <Font
-                    color='#2A2A2A'
-                    fontSize='1.8rem'
-                    margin='1.4rem 0 3.8rem 2.3rem'>
-                    <span className='smallFont'>
-                      {hotel.lodgingTypeKr}| {hotel.lodgingClass}
-                    </span>
-                    <span>
-                      <br />
-                      {hotel.lodgignName}
-                      <br />
-                      {hotel.lodgingMinMoney.toLocaleString()}
-                    </span>
-                    <span className='smallPrice'>
-                      ~ {hotel.lodgingMaxMoney.toLocaleString()}
-                    </span>
-                  </Font>
-                </PopularHotel>
-              );
-            })}
-          </div>
-        </PopularHotels>
+        <PopularHotels hitsList={hitsList} isLoading={isLoading} />
       </HotelMainWrapper>
     </>
   );
 };
-
-const Center = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    width: 17rem;
-    height: 17rem;
-  }
-`;
 
 const HotelMainWrapper = styled.div`
   max-width: 100%;
@@ -231,50 +151,6 @@ const BandBanner = styled.div`
   background-image: url(${(props) => props.img});
   background-repeat: no-repeat;
   background-size: cover;
-`;
-const PopularHotels = styled.div`
-  margin: 0 auto;
-  width: 128rem;
-  display: block;
-  margin-bottom: 12rem;
-  .popularHotelsBox {
-    display: flex;
-    flex-wrap: wrap;
-    li {
-      :not(:nth-child(4n)) {
-        margin-right: 4rem;
-      }
-    }
-  }
-`;
-const TextBlock = styled.div`
-  margin: 0 auto;
-`;
-const PopularHotel = styled.li`
-  position: relative;
-  .smallFont {
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
-  .imgBox {
-    img {
-      width: 29rem;
-      height: 29rem;
-      border-radius: 25px;
-    }
-    cursor: pointer;
-  }
-  span {
-    font-weight: bold;
-  }
-  p {
-    line-height: 25px;
-  }
-  .smallPrice {
-    margin-left: 1rem;
-    font-size: 1.8rem;
-    font-weight: normal;
-  }
 `;
 export const LikeBtn = styled.div`
   position: absolute;

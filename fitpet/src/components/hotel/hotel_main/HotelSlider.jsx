@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { SliderLeftButton, SliderRightButton } from '../../../common';
 import PillBox from './PillBox';
+import PillBoxSkeleton from './PillBoxSkeleton';
+
 const HotelSlider = () => {
   const TOTAL_SLIDES = 1;
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,13 +30,33 @@ const HotelSlider = () => {
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${slideValue}%)`;
   }, [currentSlide]);
+
+  // 210905 by.dy
+  // 로딩 스피너 제거 & 스켈레톤 UI 적용
   return (
     <SliderWrapper>
       <Content>
         <PillWrapper ref={slideRef}>
+          {/* regions 데이터가 없을 때 (로딩 중) */}
+          {regions.length === 0 ? (
+            <>
+              <div className='PillBox'>
+                {<PillBoxSkeleton margin='0 3rem 0 0' />}
+              </div>
+              <div className='PillBox'>
+                {<PillBoxSkeleton margin='0 3rem 0 0' />}
+              </div>
+              <div className='PillBox'>
+                {<PillBoxSkeleton margin='0 3rem 0 0' />}
+              </div>
+            </>
+          ) : (
+            ''
+          )}
           {regions.map((region, i) => {
             return (
               <div className='PillBox' key={i}>
+                {/* 로딩 스피너 제거 & 스켈레톤 UI 적용 */}
                 <PillBox key={region.id} region={region} margin='0 3rem 0 0' />
               </div>
             );

@@ -99,12 +99,12 @@ const ControlsBtn = styled.div`
 const PrevBtn = styled.span`
   left: -2rem;
   position: absolute;
-  bottom: 20rem;
+  bottom: 17.6rem;
 `;
 const NextBtn = styled.span`
   right: -2rem;
   position: absolute;
-  bottom: 20rem;
+  bottom: 17.6rem;
 `;
 
 export default SliderLocation;

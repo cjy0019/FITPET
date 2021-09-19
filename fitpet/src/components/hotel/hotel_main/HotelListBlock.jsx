@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Font } from '../../../common';
 import HotelSlider from './HotelSlider';
 
-const HotelListBlock = () => {
+const HotelListBlock = ({ isLoading }) => {
   const [handleState, setHandleState] = useState(1);
   const locationTab = (index) => {
     setHandleState(index);
@@ -59,7 +59,7 @@ const HotelListBlock = () => {
           </HotelLocationWrapper>
         </div>
         {/* 호텔 슬라이드 부분 */}
-        <HotelSlider />
+        <HotelSlider isLoading={isLoading} />
       </div>
     </HotelListWrapper>
   );
@@ -69,7 +69,7 @@ const HotelListWrapper = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.theme.grey3_color};
+  background-color: #32d8b8;
   height: 55.6rem;
   .hotelListBox {
     display: flex;
