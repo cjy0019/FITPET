@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
-import { Font, RoundSquareBtn, SampleIcon } from '../../../common';
+import { Font, RoundSquareBtn } from '../../../common';
 import SearchCarBox from './search_box/SearchCarBox';
 import SearchDateBox from './search_box/SearchDateBox';
 import SearchLocationBox from './search_box/SearchLocationBox';
@@ -61,7 +61,7 @@ const RentalcarSearch = () => {
             margin='auto 0'>
             운전자 연령
           </Font>
-          <SampleIcon width='2.4rem' height='2.4rem' borderRadius='3px' />
+          <IconImg src='/img/icon/infoicon.svg' />
           <Font
             fontSize='1.4rem'
             fontWeight='normal'
@@ -71,12 +71,7 @@ const RentalcarSearch = () => {
             margin='auto 0'>
             : 25~ 65세
           </Font>
-          <img
-            width='16px'
-            height='16px'
-            src='/img/search_box/bottomArrow.png'
-            alt='location'
-          />
+          <IconImg src='/img/search_box/bottomArrow.png' />
         </div>
       </SearchContainer>
     </>
@@ -111,6 +106,12 @@ const SearchContainer = styled.div`
 const Checkbox = styled.input`
   width: 2.4rem;
   height: 2.4rem;
+`;
+const IconImg = styled.img`
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  margin-right: 0.4rem;
 `;
 
 // const SearchLocationBox = styled.input`
