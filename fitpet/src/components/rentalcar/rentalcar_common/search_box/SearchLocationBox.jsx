@@ -4,7 +4,7 @@ import { useDetectOutsideClick } from '../../../../hooks/useDetectOutsideClick';
 import SearchButton from './SearchButton';
 
 const SearchLocationBox = (props) => {
-  const { width } = props;
+  const { width, text } = props;
   const styles = { width: width };
   const dropdownRef = useRef(null);
   const [isLocation, setIsLocationBox] = useDetectOutsideClick(
@@ -23,7 +23,7 @@ const SearchLocationBox = (props) => {
             src='/img/search_box/location.png'
             alt='location'
           />
-          <span className='buttonText'>어디서 픽업하세요?</span>
+          <span className='buttonText'>어디서 {text}하세요?</span>
         </SearchLocationWrapper>
         <nav
           ref={dropdownRef}
