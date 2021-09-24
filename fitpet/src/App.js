@@ -51,6 +51,7 @@ function App() {
             <Route component={DriverInfoPage} path='/driver' />
             <Route component={CourseMainPage} path='/course' />
             <Route component={NotFoundPage} />
+            <Route component={NotFoundPage} path='/admin/create' />
           </Switch>
         </ConnectedRouter>
         <GlobalStyles />
