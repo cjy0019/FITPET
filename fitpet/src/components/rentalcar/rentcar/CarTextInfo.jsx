@@ -1,12 +1,10 @@
 import React from 'react';
-import { AiFillStar } from 'react-icons/ai';
 import { Font } from '../../../common';
 import {
   City,
   CityStar,
   HotelName,
   InfoContainer,
-  Rect,
   Star,
 } from '../../hotel/hotel_common/filterCommon';
 
@@ -33,13 +31,14 @@ const CarTextInfo = ({
 
       <CityStar rent>
         <Star>
-          <AiFillStar size='2rem' />
-          <Font fontSize='1.4rem' ml='0.73rem'>
-            {romStar}
-          </Font>
+          <img src='/img/rentalcar/rentcar_list/bluestar.svg' alt='평점' />
+          <Font fontSize='1.4rem'>{romStar}</Font>
         </Star>
         <City>
-          <Rect />
+          <img
+            src='/img/rentalcar/rentcar_list/bluelocation.svg'
+            alt='픽업위치'
+          />
           <span>{rentLocation}</span>
         </City>
       </CityStar>

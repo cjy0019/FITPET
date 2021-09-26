@@ -7,6 +7,7 @@ import Modal from '../../modal/Modal';
 import CarInfo from './CarInfo';
 import RentCarFilter from './RentCarFilter';
 import RentCarHeader from './RentCarHeader';
+import Footer from '../../../components/common/Footer';
 
 const RentCarList = ({ rentcars, isLoading }) => {
   return (
@@ -50,6 +51,7 @@ const RentCarList = ({ rentcars, isLoading }) => {
           </PossibleCars>
           <GoUpBtn />
         </RentMain>
+        <Footer />
       </Container>
     </>
   );
