@@ -1,19 +1,31 @@
+import { push } from 'connected-react-router';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { RoundSquareBtn } from '../../../common';
 
-const RentDetails = ({ minPrice }) => {
+const RentDetails = ({ minPrice, _id }) => {
+  const dispatch = useDispatch();
+
   return (
     <DetailWrapper>
       <StyledP>일반자차 | 1일 기준</StyledP>
       <Price>
         {minPrice.toLocaleString()}~ <span>원</span>
       </Price>
-      <RoundSquareBtn main_color style={{ marginTop: '1.4rem' }}>
+      <RoundSquareBtn
+        move={move}
+        _id={_id}
+        main_color
+        style={{ marginTop: '1.4rem' }}>
         상세보기
       </RoundSquareBtn>
     </DetailWrapper>
   );
+
+  function move() {
+    dispatch(push(`/rentcardetail/${_id}`));
+  }
 };
 
 const DetailWrapper = styled.div`

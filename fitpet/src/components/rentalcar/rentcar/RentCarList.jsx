@@ -34,6 +34,7 @@ const RentCarList = ({ rentcars, isLoading }) => {
               return (
                 <React.Fragment key={car._id}>
                   <CarInfo
+                    _id={car._id}
                     carType={car.carType}
                     carName={car.carName}
                     minPrice={car.minPrice}

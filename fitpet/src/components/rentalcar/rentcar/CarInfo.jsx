@@ -11,6 +11,7 @@ const IMG_API = 'http://211.219.114.239:61010/public';
 
 const CarInfo = (props) => {
   const {
+    _id,
     carType,
     carName,
     minPrice,
@@ -44,6 +45,7 @@ const CarInfo = (props) => {
             RearCamera={RearCamera}
           />
           <RentDetails
+            _id={_id}
             carType={carType}
             minPrice={minPrice}
             picture={picture}
