@@ -16,7 +16,7 @@ const Receit = ({ rentcarDetail, insuranceFee }) => {
         <Content>116,000원</Content>
       </FlexC>
       <FlexC>
-        <Content>일반 자차 보험</Content>
+        <Content>보험료</Content>
         <Content>{insuranceFee.toLocaleString()}원</Content>
       </FlexC>
       <FlexC>

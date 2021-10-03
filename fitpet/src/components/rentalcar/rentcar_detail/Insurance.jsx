@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { HiCheck } from 'react-icons/hi';
 import styled, { css } from 'styled-components';
 import { StyledTitle } from './rentcarCommonStyle';
 
-const Insurance = ({ insuranceFee, setInsuranceFee }) => {
+const Insurance = ({ setInsuranceFee }) => {
+  const [selected, setSelected] = useState({ normal: false, luxury: false });
+  const normalRef = useRef(null);
+  const luxuryRef = useRef(null);
+
+  useEffect(() => {
+    if (selected.normal && !selected.luxury) {
+      normalRef.current.style = 'border : solid 2px blue; color : #4765ff;';
+      luxuryRef.current.style = 'border : solid 2px #e9e9e9';
+    } else {
+      normalRef.current.style = 'border :solid 2px #e9e9e9';
+      luxuryRef.current.style = 'border : solid 2px blue; color : #4765ff;';
+    }
+  }, [selected]);
+
   return (
     <InsuranceSection>
       <StyledTitle>보험 선택</StyledTitle>
 
       <SelectContainer>
-        <SelectBox htmlFor='normal'>
+        <SelectBox
+          htmlFor='normal'
+          ref={normalRef}
+          onClick={() => {
+            setSelected((state) => ({ ...state, normal: true, luxury: false }));
+          }}>
           <Text>일반자차</Text>
           <Checkbox
             onClick={() => {
@@ -30,7 +49,12 @@ const Insurance = ({ insuranceFee, setInsuranceFee }) => {
           </Text>
         </SelectBox>
 
-        <SelectBox htmlFor='prestige'>
+        <SelectBox
+          htmlFor='prestige'
+          ref={luxuryRef}
+          onClick={() =>
+            setSelected((state) => ({ ...state, normal: false, luxury: true }))
+          }>
           <Text>고급자차</Text>
           <Checkbox
             onClick={() => {
@@ -170,7 +194,7 @@ const Check = styled.div`
   right: 1.4rem;
   width: 2.8rem;
   height: 2.8rem;
-  border: solid 1px #979797;
+  border: solid 1px #e9e9e9;
   border-radius: 18px;
 
   &::after {
