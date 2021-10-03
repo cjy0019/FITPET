@@ -1,10 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Receit = () => {
+const Receit = ({ rentcarDetail }) => {
+  console.log(rentcarDetail);
+
   return (
     <Container>
-      <Title>THE NEW 아반떼 AD</Title>
+      <Title>{rentcarDetail.rentcarDetail.carName}</Title>
 
       <SubTitle>인수 및 반납 시간</SubTitle>
       <Content border>8월 6일 (금) 10:00 - 8월 7일 (토) 10:00</Content>

@@ -5,16 +5,19 @@ import { FlexC, IconBox, StyledP } from './rentcarCommonStyle';
 
 const img_url = '/img/rentalcar/rentcar_list';
 
-const RentCarTitle = () => {
+const RentCarTitle = ({ rentcarDetail }) => {
   return (
     <>
       <FlexC justi='space-between' align='center'>
         <div>
-          <CarSize>준중형차</CarSize>
-          <CarTitle>THE NEW 아반떼 AD</CarTitle>
+          <CarSize>{rentcarDetail.rentcarDetail.carType}차</CarSize>
+          <CarTitle>{rentcarDetail.rentcarDetail.carName}</CarTitle>
           <StyledLink to='/'>
             <img src={`${img_url}/bluestar.svg`} alt='평점' />
-            <span>4.5 이용후기 121건 &gt;</span>
+            <span>
+              {rentcarDetail.rentcarDetail.romStar} 이용후기{' '}
+              {rentcarDetail.rentcarDetail.isUse}건 &gt;
+            </span>
           </StyledLink>
           <FlexC mt='1.1rem'>
             <img
@@ -22,18 +25,26 @@ const RentCarTitle = () => {
               alt='위치'
               style={{ marginLeft: '-7px', marginRight: '0.5rem' }}
             />
-            <StyledP fs='1.4rem'>SK렌트카 서울역지점</StyledP>
+            <StyledP fs='1.4rem'>
+              {rentcarDetail.rentcarDetail.rentLocation}
+            </StyledP>
           </FlexC>
           <StyledP fs='1.4rem' mt='1.6rem'>
-            최대 5인 | 딜리버리 | 휘발유(가솔린) | 후방카메라
+            최대 {rentcarDetail.rentcarDetail.maximumPeople}인 | 딜리버리 |
+            휘발유(가솔린) | 후방카메라
           </StyledP>
           <FlexC mt='1.2rem'>
-            <IconBox />
-            <IconBox />
+            <IconBox src='/img/rentalcar/rentcar_detail/dibs.png' />
+            <IconBox src='/img/rentalcar/rentcar_detail/share.svg' />
           </FlexC>
         </div>
         <div>
-          <CarMainImg />
+          {rentcarDetail.rentcarDetail.picture &&
+            rentcarDetail.rentcarDetail.picture !== undefined && (
+              <CarMainImg
+                src={`/public/${rentcarDetail.rentcarDetail.picture}`}
+              />
+            )}
         </div>
       </FlexC>
     </>
@@ -76,11 +87,10 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const CarMainImg = styled.div`
+const CarMainImg = styled.img`
   width: 39rem;
   height: 24.5rem;
   border-radius: 25px;
-  background-color: #979797;
 `;
 
 export default RentCarTitle;

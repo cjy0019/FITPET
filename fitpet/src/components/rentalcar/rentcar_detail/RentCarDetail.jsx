@@ -10,18 +10,18 @@ import Rules from './Rules';
 import Header from '../../common/header/Header';
 import Footer from '../../common/Footer';
 
-const RentCarDetail = () => {
+const RentCarDetail = ({ rentcarDetail }) => {
   return (
     <>
       <Header />
       <StyledArticle>
         <section style={{ width: '100%' }}>
           {/* 차량 사진 & 종 part */}
-          <RentCarTitle />
+          <RentCarTitle rentcarDetail={rentcarDetail} />
           <Line />
 
           {/* 차량 옵션 */}
-          <CarOptions />
+          <CarOptions rentcarDetail={rentcarDetail} />
           <Line />
 
           {/* 픽업 및 반납 정보 */}
@@ -38,7 +38,7 @@ const RentCarDetail = () => {
           <Rules />
         </section>
 
-        <Receit />
+        <Receit rentcarDetail={rentcarDetail} />
       </StyledArticle>
       <Footer />
     </>

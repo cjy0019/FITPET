@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const IconBox = styled.div`
+export const IconBox = styled.img`
   width: 2.4rem;
   height: 2.4rem;
   margin-right: 0.6rem;
-  background-color: #979797;
+  cursor: pointer;
 `;
 
 export const StyledP = styled.p`

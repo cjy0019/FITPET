@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { RightButton } from '../../hotel/hotel_common/filterCommon';
@@ -6,7 +6,17 @@ import { FlexC, StyledP, StyledTitle } from './rentcarCommonStyle';
 
 const img_url = '/img/rentalcar/rentcar_about';
 
-const CarOptions = () => {
+const CarOptions = ({ rentcarDetail }) => {
+  const [date, setDate] = useState('');
+  const info = rentcarDetail.rentcarDetail;
+  console.log(info);
+
+  useEffect(() => {
+    if (rentcarDetail.rentcarDetail.registeredDate) {
+      setDate(rentcarDetail.rentcarDetail.registeredDate.split('T'));
+    }
+  }, [rentcarDetail.rentcarDetail.registeredDate]);
+
   return (
     <OptionSection>
       <StyledTitle>차량 옵션</StyledTitle>
@@ -15,11 +25,11 @@ const CarOptions = () => {
         <div>
           <FlexC align='center' mt='1.4rem'>
             <img src={`${img_url}/calandaricon.svg`} alt='날짜' />
-            <StyledP fs='1.6rem'>2018</StyledP>
+            <StyledP fs='1.6rem'>{date[0]}</StyledP>
           </FlexC>
           <FlexC align='center' mt='0.8rem'>
             <img src={`${img_url}/personicon.svg`} alt='최대 사람수' />
-            <StyledP fs='1.6rem'>최대 5인</StyledP>
+            <StyledP fs='1.6rem'>최대 {info.maximumPeople}인</StyledP>
           </FlexC>
           <FlexC align='center' mt='0.8rem'>
             <img src={`${img_url}/naviicon.svg`} alt='네비게이션' />
@@ -27,7 +37,10 @@ const CarOptions = () => {
           </FlexC>
           <FlexC align='center' mt='0.8rem'>
             <img src={`${img_url}/gasolineicon.svg`} alt='가솔린' />
-            <StyledP fs='1.6rem'>휘발유(가솔린)</StyledP>
+            <StyledP fs='1.6rem'>
+              {/* {rentcarDetail.rentcarDetail.options.fuelType} */}
+              가솔린
+            </StyledP>
           </FlexC>
         </div>
         <div>
