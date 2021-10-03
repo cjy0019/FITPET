@@ -184,7 +184,6 @@ export const ImgBox = styled.div`
   border-radius: 18px;
   background-image: url(${(props) => props.IMG_URL});
   background-color: #f9f9f9;
-  background-position-y: 3.5rem;
   background-size: contain;
   background-repeat: no-repeat;
 `;

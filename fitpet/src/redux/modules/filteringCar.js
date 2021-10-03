@@ -1,4 +1,4 @@
-import { call, put, select, takeLatest } from '@redux-saga/core/effects';
+import { call, put, takeLatest } from '@redux-saga/core/effects';
 import FilteringCarService from '../../services/FilteringCarService';
 
 // namespace
@@ -125,23 +125,11 @@ export const filteringCarSagaStart = (kind) => ({
   type: FILTERING_CAR_SAGA,
   kind,
 });
-const carKind = {
-  신차: 'newcar',
-  오픈카: 'opencar',
-  전기차: 'electronic',
-  수입: 'foreign',
-  SUV: 'suv',
-  경소형: 'smallcar',
-  준중형: 'middlecar',
-  중대형: 'middlebigcar',
-  승합차: 'vehicle',
-};
 
 // filtering car
 export function* filteringCarSaga(action) {
   try {
-    const store = yield select();
-    const cars = yield call(FilteringCarService.getNewCars, action.kind);
+    const cars = yield call(FilteringCarService.getCars, action.kind);
 
     switch (cars.data[0].carType) {
       case '신차':

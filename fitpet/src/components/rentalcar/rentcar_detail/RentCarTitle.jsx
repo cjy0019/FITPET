@@ -1,8 +1,9 @@
 import React from 'react';
-import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FlexC, IconBox, StyledP } from './rentcarCommonStyle';
+
+const img_url = '/img/rentalcar/rentcar_list';
 
 const RentCarTitle = () => {
   return (
@@ -12,11 +13,15 @@ const RentCarTitle = () => {
           <CarSize>준중형차</CarSize>
           <CarTitle>THE NEW 아반떼 AD</CarTitle>
           <StyledLink to='/'>
-            <AiFillStar />
+            <img src={`${img_url}/bluestar.svg`} alt='평점' />
             <span>4.5 이용후기 121건 &gt;</span>
           </StyledLink>
           <FlexC mt='1.1rem'>
-            <IconBox />
+            <img
+              src={`${img_url}/bluelocation.svg`}
+              alt='위치'
+              style={{ marginLeft: '-7px', marginRight: '0.5rem' }}
+            />
             <StyledP fs='1.4rem'>SK렌트카 서울역지점</StyledP>
           </FlexC>
           <StyledP fs='1.4rem' mt='1.6rem'>
@@ -40,7 +45,7 @@ const CarSize = styled.p`
   font-weight: bold;
   line-height: 1.5;
   letter-spacing: -0.32px;
-  color: ${(props) => props.theme.grey1_color};
+  color: ${(props) => props.theme.black_color};
 `;
 
 const CarTitle = styled.p`
@@ -49,7 +54,7 @@ const CarTitle = styled.p`
   line-height: 0.63;
   letter-spacing: -0.76px;
   margin-top: 1.4rem;
-  color: ${(props) => props.theme.grey1_color};
+  color: ${(props) => props.theme.black_color};
 `;
 
 const StyledLink = styled(Link)`
@@ -58,7 +63,17 @@ const StyledLink = styled(Link)`
   margin-top: 2rem;
   font-size: 1.6rem;
   font-weight: 500;
-  color: ${(props) => props.theme.grey1_color};
+  letter-spacing: -0.6px;
+  color: #2a2a2a;
+
+  &:hover {
+    color: #2a2a2a;
+  }
+
+  img {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 `;
 
 const CarMainImg = styled.div`
