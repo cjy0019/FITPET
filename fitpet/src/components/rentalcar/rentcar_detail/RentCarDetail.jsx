@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import CarOptions from './CarOptions';
 import Insurance from './Insurance';
@@ -11,6 +11,8 @@ import Header from '../../common/header/Header';
 import Footer from '../../common/Footer';
 
 const RentCarDetail = ({ rentcarDetail }) => {
+  const [insuranceFee, setInsuranceFee] = useState(0);
+
   return (
     <>
       <Header />
@@ -29,7 +31,10 @@ const RentCarDetail = ({ rentcarDetail }) => {
           <Line />
 
           {/* 보험 선택 */}
-          <Insurance />
+          <Insurance
+            insuranceFee={insuranceFee}
+            setInsuranceFee={setInsuranceFee}
+          />
 
           {/* 추가 옵션 선택 */}
           <MoreOptions />
@@ -38,7 +43,7 @@ const RentCarDetail = ({ rentcarDetail }) => {
           <Rules />
         </section>
 
-        <Receit rentcarDetail={rentcarDetail} />
+        <Receit rentcarDetail={rentcarDetail} insuranceFee={insuranceFee} />
       </StyledArticle>
       <Footer />
     </>

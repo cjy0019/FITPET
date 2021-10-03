@@ -3,7 +3,7 @@ import { HiCheck } from 'react-icons/hi';
 import styled, { css } from 'styled-components';
 import { StyledTitle } from './rentcarCommonStyle';
 
-const Insurance = () => {
+const Insurance = ({ insuranceFee, setInsuranceFee }) => {
   return (
     <InsuranceSection>
       <StyledTitle>보험 선택</StyledTitle>
@@ -11,7 +11,14 @@ const Insurance = () => {
       <SelectContainer>
         <SelectBox htmlFor='normal'>
           <Text>일반자차</Text>
-          <Checkbox type='radio' id='normal' name='insurance' />
+          <Checkbox
+            onClick={() => {
+              setInsuranceFee(156000);
+            }}
+            type='radio'
+            id='normal'
+            name='insurance'
+          />
 
           <Check>
             <IconWrapper>
@@ -25,7 +32,14 @@ const Insurance = () => {
 
         <SelectBox htmlFor='prestige'>
           <Text>고급자차</Text>
-          <Checkbox type='radio' id='prestige' name='insurance' />
+          <Checkbox
+            onClick={() => {
+              setInsuranceFee(256000);
+            }}
+            type='radio'
+            id='prestige'
+            name='insurance'
+          />
 
           <Check>
             <IconWrapper>

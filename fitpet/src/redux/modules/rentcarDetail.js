@@ -29,7 +29,7 @@ const initialState = {
 export default function rentcarDetail(state = initialState, action) {
   switch (action.type) {
     case GET_RENTCAR_DETAIL_INFO_SUCCESS:
-      return { ...state, rentcarDetail: action.carDetailInfo };
+      return { rentcarDetail: action.carDetailInfo };
 
     case GET_RENTCAR_DETAIL_INFO_FAIL:
       return { ...state, error: action.error };

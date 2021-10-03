@@ -1,9 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Receit = ({ rentcarDetail }) => {
-  console.log(rentcarDetail);
-
+const Receit = ({ rentcarDetail, insuranceFee }) => {
   return (
     <Container>
       <Title>{rentcarDetail.rentcarDetail.carName}</Title>
@@ -19,7 +17,7 @@ const Receit = ({ rentcarDetail }) => {
       </FlexC>
       <FlexC>
         <Content>일반 자차 보험</Content>
-        <Content>40,000원</Content>
+        <Content>{insuranceFee.toLocaleString()}원</Content>
       </FlexC>
       <FlexC>
         <Content>인수</Content>

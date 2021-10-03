@@ -22,7 +22,6 @@ export default function markers(state = initialState, action) {
         ],
       };
     case DELETE:
-      console.log(action.id, 'action.id');
       return {
         ...state,
         locations: state.locations.filter(

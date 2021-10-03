@@ -9,7 +9,6 @@ const img_url = '/img/rentalcar/rentcar_about';
 const CarOptions = ({ rentcarDetail }) => {
   const [date, setDate] = useState('');
   const info = rentcarDetail.rentcarDetail;
-  console.log(info);
 
   useEffect(() => {
     if (rentcarDetail.rentcarDetail.registeredDate) {
