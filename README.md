@@ -83,7 +83,7 @@ Designer : 2인 <br/>
 ### 👨‍👩‍👧‍👧 팀 구성
 
 [팀 소개 페이지로 이동하기](https://www.notion.so/8654f82b457e4781bb826e4f34f52df8) <br/>
-Front-end(React) : 3인 <br/>
+Front-end : 2인 <br/>
 Back-end : 2인 ([Github Repo](https://github.com/re-nolja/FITPET_BACKEND)) <br/>
 Designer : 2인 <br/>
 
