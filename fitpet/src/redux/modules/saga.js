@@ -5,6 +5,7 @@ import { authSaga } from './signup';
 import { watchHotelMain } from './hotelMain';
 import { watchHotelAbout } from './hotelAbout';
 import { watchFilteringCar } from './filteringCar';
+import { watchGetRentcarListInfo } from './rentcarDetail';
 
 export default function* rootSaga() {
   yield all([
@@ -14,5 +15,6 @@ export default function* rootSaga() {
     watchHotelMain(),
     watchHotelAbout(),
     watchFilteringCar(),
+    watchGetRentcarListInfo(),
   ]);
 }

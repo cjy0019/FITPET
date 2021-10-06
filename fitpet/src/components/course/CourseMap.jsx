@@ -42,7 +42,6 @@ const CourseMap = ({ center, zoom }) => {
     dispatch(markerAdd(e.lat, e.lng));
   }
   function deleteMarker(e) {
-    console.log(e.currentTarget.id, 'e.current');
     dispatch(markerDelete(e.currentTarget.id));
   }
 };

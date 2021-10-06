@@ -39,7 +39,7 @@ const Rentalcars = () => {
           {/* 태그 첫 번째 줄 */}
           <TagOne>
             <SmallBtn
-              to='/?kind=신차'
+              to='/?kind=listNew'
               style={styles}
               id='newcar'
               onClick={deliverParam}>

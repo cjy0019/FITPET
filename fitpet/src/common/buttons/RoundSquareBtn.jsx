@@ -2,8 +2,13 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const RoundSquareBtn = (props) => {
-  const { text, children } = props;
-  return <StyledButton {...props}>{text ? text : children}</StyledButton>;
+  const { text, children, move } = props;
+
+  return (
+    <StyledButton onClick={move} {...props}>
+      {text ? text : children}
+    </StyledButton>
+  );
 };
 
 // 기본 : 장바구니 버튼

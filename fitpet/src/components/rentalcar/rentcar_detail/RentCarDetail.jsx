@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import CarOptions from './CarOptions';
 import Insurance from './Insurance';
@@ -7,35 +7,46 @@ import PickupInfo from './PickupInfo';
 import Receit from './Receit';
 import RentCarTitle from './RentCarTitle';
 import Rules from './Rules';
+import Header from '../../common/header/Header';
+import Footer from '../../common/Footer';
 
-const RentCarDetail = () => {
+const RentCarDetail = ({ rentcarDetail }) => {
+  const [insuranceFee, setInsuranceFee] = useState(0);
+
   return (
-    <StyledArticle>
-      <section style={{ width: '100%' }}>
-        {/* 차량 사진 & 종 part */}
-        <RentCarTitle />
-        <Line />
+    <>
+      <Header />
+      <StyledArticle>
+        <section style={{ width: '100%' }}>
+          {/* 차량 사진 & 종 part */}
+          <RentCarTitle rentcarDetail={rentcarDetail} />
+          <Line />
 
-        {/* 차량 옵션 */}
-        <CarOptions />
-        <Line />
+          {/* 차량 옵션 */}
+          <CarOptions rentcarDetail={rentcarDetail} />
+          <Line />
 
-        {/* 픽업 및 반납 정보 */}
-        <PickupInfo />
-        <Line />
+          {/* 픽업 및 반납 정보 */}
+          <PickupInfo />
+          <Line />
 
-        {/* 보험 선택 */}
-        <Insurance />
+          {/* 보험 선택 */}
+          <Insurance
+            insuranceFee={insuranceFee}
+            setInsuranceFee={setInsuranceFee}
+          />
 
-        {/* 추가 옵션 선택 */}
-        <MoreOptions />
+          {/* 추가 옵션 선택 */}
+          <MoreOptions />
 
-        {/* 이용 규칙 */}
-        <Rules />
-      </section>
+          {/* 이용 규칙 */}
+          <Rules />
+        </section>
 
-      <Receit />
-    </StyledArticle>
+        <Receit rentcarDetail={rentcarDetail} insuranceFee={insuranceFee} />
+      </StyledArticle>
+      <Footer />
+    </>
   );
 };
 
@@ -46,8 +57,7 @@ const StyledArticle = styled.article`
   justify-content: space-between;
   gap: 3.2rem;
   margin: 0 auto 46rem;
-  padding-top: 6rem;
-  background-color: aliceblue;
+  padding-top: 14rem;
 `;
 
 const Line = styled.div`

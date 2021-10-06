@@ -1,11 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import {
-  BasicBox,
-  Font,
-  SliderLeftButton,
-  SliderRightButton,
-} from '../../../common';
+import { Font, SliderLeftButton, SliderRightButton } from '../../../common';
+import { driveCourses } from './RentalcarMainData';
 
 const TOTAL_SLIDES = 1;
 
@@ -35,84 +31,23 @@ const SliderDrive = () => {
       <Block>
         <Content>
           <RentalcarWrapper ref={slideRef}>
-            <Rentalcar>
-              <BasicBox rentalcar_box2 />
-              <Font
-                color='#2A2A2A'
-                fontSize='1.6rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span className='bold'>
-                  제주도
-                  <br />
-                </span>
-                청량한 바다가 아름다운 곳
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <BasicBox rentalcar_box2 />
-              <Font
-                color='#2A2A2A'
-                fontSize='1.6rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span className='bold'>
-                  안동
-                  <br />
-                </span>
-                역사가 살아 숨 쉬는 곳
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <BasicBox rentalcar_box2 />
-              <Font
-                color='#2A2A2A'
-                fontSize='1.6rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span className='bold'>
-                  통영
-                  <br />
-                </span>
-                아름다운 수국이 피어나는 곳
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <BasicBox rentalcar_box2 />
-              <Font
-                color='#2A2A2A'
-                fontSize='1.6rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span className='bold'>
-                  수원
-                  <br />
-                </span>
-                문득 생각나는 행궁의 야경
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <BasicBox rentalcar_box2 />
-              <Font
-                color='#2A2A2A'
-                fontSize='1.6rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span className='bold'>
-                  부산
-                  <br />
-                </span>
-                바다하면 부산!
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <BasicBox rentalcar_box2 />
-              <Font
-                color='#2A2A2A'
-                fontSize='1.6rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span className='bold'>
-                  안동
-                  <br />
-                </span>
-                역사가 살아 숨 쉬는 곳
-              </Font>
-            </Rentalcar>
+            {driveCourses.map((course) => {
+              return (
+                <Rentalcar>
+                  <LocationImg src={course.url} alt={course.id} />
+                  <Font
+                    color='#2A2A2A'
+                    fontSize='1.6rem'
+                    margin='1.4rem 0 3.8rem 2.3rem'>
+                    <span className='bold'>
+                      {course.location}
+                      <br />
+                    </span>
+                    {course.desc}
+                  </Font>
+                </Rentalcar>
+              );
+            })}
           </RentalcarWrapper>
         </Content>
         {/* 슬라이드 버튼 */}
@@ -175,6 +110,13 @@ const Rentalcar = styled.li`
     line-height: 25px;
   }
 `;
+
+const LocationImg = styled.img`
+  width: 29rem;
+  height: 29rem;
+  margin-right: 4rem;
+`;
+
 const ControlsBtn = styled.div`
   position: relative;
   width: 128rem;
@@ -183,12 +125,12 @@ const ControlsBtn = styled.div`
 const PrevBtn = styled.span`
   left: -2rem;
   position: absolute;
-  bottom: 22.3rem;
+  bottom: 24.4rem;
 `;
 const NextBtn = styled.span`
   right: -2rem;
   position: absolute;
-  bottom: 22.3rem;
+  bottom: 24.4rem;
 `;
 
 export default SliderDrive;

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default class FilteringCarService {
-  static async getNewCars(kind) {
+  static async getCars(kind) {
     const response = await axios.get(`api/rentcar/listRead/${kind}`);
     return response;
   }

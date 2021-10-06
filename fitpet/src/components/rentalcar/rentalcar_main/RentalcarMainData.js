@@ -26,3 +26,42 @@ export const mainBlock = [
       '차량 인수 72시간 전엔 무료취소가<br/>가능하니 부담없이 예약해보세요 :)',
   },
 ];
+
+export const driveCourses = [
+  {
+    id: 'jeju',
+    location: '제주도',
+    desc: '청량한 바다가 아름다운 곳',
+    url: '/img/rentalcar/rentalcar_main/drivecourse/jeju.png',
+  },
+  {
+    id: 'andong',
+    location: '안동',
+    desc: '역사가 살아 숨 쉬는 곳',
+    url: '/img/rentalcar/rentalcar_main/drivecourse/andong.png',
+  },
+  {
+    id: 'tongyeong',
+    location: '통영',
+    desc: '아름다운 수국이 피어나는 곳',
+    url: '/img/rentalcar/rentalcar_main/drivecourse/tongyeong.png',
+  },
+  {
+    id: 'suwon',
+    location: '수원',
+    desc: '문득 생각나는 행궁의 야경',
+    url: '/img/rentalcar/rentalcar_main/drivecourse/suwon.png',
+  },
+  {
+    id: 'gapyeong',
+    location: '가평',
+    desc: '시원한 계곡이 있는 즐거운 숙소',
+    url: '/img/rentalcar/rentalcar_main/drivecourse/gapyeong.png',
+  },
+  {
+    id: 'jeonju',
+    location: '전주',
+    desc: '다채롭고 풍부한 역사의 흔적들',
+    url: '/img/rentalcar/rentalcar_main/drivecourse/jeonju.png',
+  },
+];

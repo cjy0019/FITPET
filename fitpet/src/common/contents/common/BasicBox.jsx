@@ -75,15 +75,6 @@ const BoxStyle = css`
     `}
 `;
 
-// const TextBox = styled.div`
-//   width: 33.9rem;
-//   height: 7.7rem;
-//   position: relative;
-//   top: 70%;
-//   margin: 0 0 4.2rem 3.1rem;
-//   padding-bottom: 42px;
-// `;
-
 const StyledBox = styled.div`
   ${BoxStyle}
 `;

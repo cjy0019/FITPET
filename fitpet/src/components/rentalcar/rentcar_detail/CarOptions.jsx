@@ -1,48 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { RightButton } from '../../hotel/hotel_common/filterCommon';
-import { FlexC, IconBox, StyledP, StyledTitle } from './rentcarCommonStyle';
+import { FlexC, StyledP, StyledTitle } from './rentcarCommonStyle';
 
-const CarOptions = () => {
+const img_url = '/img/rentalcar/rentcar_about';
+
+const CarOptions = ({ rentcarDetail }) => {
+  const [date, setDate] = useState('');
+  const info = rentcarDetail.rentcarDetail;
+
+  useEffect(() => {
+    if (rentcarDetail.rentcarDetail.registeredDate) {
+      setDate(rentcarDetail.rentcarDetail.registeredDate.split('T'));
+    }
+  }, [rentcarDetail.rentcarDetail.registeredDate]);
+
   return (
     <OptionSection>
       <StyledTitle>차량 옵션</StyledTitle>
 
       <FlexC justi='space-between' mb='4rem'>
         <div>
-          <FlexC mt='1.4rem'>
-            <IconBox />
-            <StyledP fs='1.6rem'>2018</StyledP>
+          <FlexC align='center' mt='1.4rem'>
+            <img src={`${img_url}/calandaricon.svg`} alt='날짜' />
+            <StyledP fs='1.6rem'>{date[0]}</StyledP>
           </FlexC>
-          <FlexC mt='0.8rem'>
-            <IconBox />
-            <StyledP fs='1.6rem'>최대 5인</StyledP>
+          <FlexC align='center' mt='0.8rem'>
+            <img src={`${img_url}/personicon.svg`} alt='최대 사람수' />
+            <StyledP fs='1.6rem'>최대 {info.maximumPeople}인</StyledP>
           </FlexC>
-          <FlexC mt='0.8rem'>
-            <IconBox />
+          <FlexC align='center' mt='0.8rem'>
+            <img src={`${img_url}/naviicon.svg`} alt='네비게이션' />
             <StyledP fs='1.6rem'>네비게이션</StyledP>
           </FlexC>
-          <FlexC mt='0.8rem'>
-            <IconBox />
-            <StyledP fs='1.6rem'>휘발유(가솔린)</StyledP>
+          <FlexC align='center' mt='0.8rem'>
+            <img src={`${img_url}/gasolineicon.svg`} alt='가솔린' />
+            <StyledP fs='1.6rem'>
+              {/* {rentcarDetail.rentcarDetail.options.fuelType} */}
+              가솔린
+            </StyledP>
           </FlexC>
         </div>
         <div>
-          <FlexC mt='1.4rem'>
-            <IconBox />
+          <FlexC align='center' mt='1.4rem'>
+            <img src={`${img_url}/cameraicon.svg`} alt='카메라' />
             <StyledP fs='1.6rem'>후방카메라</StyledP>
           </FlexC>
-          <FlexC mt='0.8rem'>
-            <IconBox />
+          <FlexC align='center' mt='0.8rem'>
+            <img src={`${img_url}/blackboxicon.svg`} alt='가솔린' />
             <StyledP fs='1.6rem'>네비게이션</StyledP>
           </FlexC>
-          <FlexC mt='0.8rem'>
-            <IconBox />
+          <FlexC align='center' mt='0.8rem'>
+            <img src={`${img_url}/bluetoothicon.svg`} alt='블루투스' />
             <StyledP fs='1.6rem'>블루투스</StyledP>
           </FlexC>
-          <FlexC mt='0.8rem'>
-            <IconBox />
+          <FlexC align='center' mt='0.8rem'>
+            <img src={`${img_url}/autoicon.svg`} alt='가솔린' />
             <StyledP fs='1.6rem'>오토</StyledP>
           </FlexC>
         </div>

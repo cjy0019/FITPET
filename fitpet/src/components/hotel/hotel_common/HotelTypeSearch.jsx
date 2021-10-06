@@ -11,7 +11,6 @@ const HotelTypeSearch = () => {
   const [handleState, setHandleState] = useState(1);
   const handleClick = (index) => {
     setHandleState(index);
-    console.log(handleState);
   };
   return (
     <>
