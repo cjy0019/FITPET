@@ -12,6 +12,9 @@ const Insurance = ({ setInsuranceFee }) => {
     if (selected.normal && !selected.luxury) {
       normalRef.current.style = 'border : solid 2px blue; color : #4765ff;';
       luxuryRef.current.style = 'border : solid 2px #e9e9e9';
+    } else if (!selected.normal && !selected.luxury) {
+      luxuryRef.current.style = 'border : solid 2px #e9e9e9';
+      normalRef.current.style = 'border : solid 2px #e9e9e9';
     } else {
       normalRef.current.style = 'border :solid 2px #e9e9e9';
       luxuryRef.current.style = 'border : solid 2px blue; color : #4765ff;';
