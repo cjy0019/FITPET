@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Font } from '../../../common';
+import { Font, RoundSquareBtn } from '../../../common';
 
 const hotelTypes = [
   '호텔',
@@ -161,6 +161,23 @@ const AdminCreate = () => {
             </OptionBox>
           </ContentsWrapper>
         </form>
+        <ButtonWrapper>
+          <div>
+            <RoundSquareBtn grey_color style={{ padding: '0 4.4rem 0 4.4rem' }}>
+              취소
+            </RoundSquareBtn>
+          </div>
+          <div style={{ marginLeft: 'auto' }}>
+            <RoundSquareBtn
+              mint_color
+              style={{ padding: '0 3rem 0 3rem', marginRight: '2rem' }}>
+              미리보기
+            </RoundSquareBtn>
+            <RoundSquareBtn main_color style={{ padding: '0 4.4rem 0 4.4rem' }}>
+              등록
+            </RoundSquareBtn>
+          </div>
+        </ButtonWrapper>
       </InputBoxWrapper>
     </AdminCreateWrapper>
   );
@@ -237,6 +254,11 @@ const OptionBox = styled.li`
 `;
 const Checkbox = styled.input`
   margin-right: 1rem;
+`;
+
+const ButtonWrapper = styled.div`
+  margin: 4rem 0 12.3rem 0;
+  display: flex;
 `;
 
 export default AdminCreate;
