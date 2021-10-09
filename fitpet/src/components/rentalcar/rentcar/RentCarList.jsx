@@ -7,6 +7,7 @@ import Modal from '../../modal/Modal';
 import CarInfo from './CarInfo';
 import RentCarFilter from './RentCarFilter';
 import RentCarHeader from './RentCarHeader';
+import Footer from '../../../components/common/Footer';
 
 const RentCarList = ({ rentcars, isLoading }) => {
   return (
@@ -32,13 +33,26 @@ const RentCarList = ({ rentcars, isLoading }) => {
             {rentcars.map((car) => {
               return (
                 <React.Fragment key={car._id}>
-                  <CarInfo car={car} />
+                  <CarInfo
+                    _id={car._id}
+                    carType={car.carType}
+                    carName={car.carName}
+                    minPrice={car.minPrice}
+                    picture={car.picture}
+                    romStar={car.romStar}
+                    maximumPeople={car.maximumPeople}
+                    rentLocation={car.rentLocation}
+                    fuelType={car.options.fuelType}
+                    RearCamera={car.options.RearCamera}
+                    deliveryCheck={car.options.deliveryCheck}
+                  />
                 </React.Fragment>
               );
             })}
           </PossibleCars>
           <GoUpBtn />
         </RentMain>
+        <Footer />
       </Container>
     </>
   );

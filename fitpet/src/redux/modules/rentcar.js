@@ -44,8 +44,8 @@ export const getRentcarList = () => async (dispatch, getState) => {
 
     await sleep(1700);
 
-    const cars = (await RentcarService.getCars()).data;
-    dispatch(retncarListSuccess(cars));
+    const cars = await RentcarService.getCars();
+    dispatch(retncarListSuccess(cars.data));
   } catch (err) {
     dispatch(rentcarListFail(err));
   }

@@ -2,8 +2,13 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const RoundSquareBtn = (props) => {
-  const { text, children } = props;
-  return <StyledButton {...props}>{text ? text : children}</StyledButton>;
+  const { text, children, move } = props;
+
+  return (
+    <StyledButton onClick={move} {...props}>
+      {text ? text : children}
+    </StyledButton>
+  );
 };
 
 // 기본 : 장바구니 버튼
@@ -30,7 +35,10 @@ const buttonStyle = css`
   ${(props) =>
     props.search_btn &&
     css`
+      /* 210908 by.jy 왼쪽여백, whitespace 추가했습니다 */
+      white-space: nowrap;
       padding: 1.6rem;
+      margin-left: 1.1rem;
       background-color: ${(props) => props.theme.main_color};
       color: ${(props) => props.theme.white_color};
     `}

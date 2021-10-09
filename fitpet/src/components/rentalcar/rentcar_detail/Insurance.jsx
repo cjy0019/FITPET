@@ -1,17 +1,46 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { HiCheck } from 'react-icons/hi';
 import styled, { css } from 'styled-components';
 import { StyledTitle } from './rentcarCommonStyle';
 
-const Insurance = () => {
+const Insurance = ({ setInsuranceFee }) => {
+  const [selected, setSelected] = useState({ normal: false, luxury: false });
+  const normalRef = useRef(null);
+  const luxuryRef = useRef(null);
+
+  useEffect(() => {
+    if (selected.normal && !selected.luxury) {
+      normalRef.current.style = 'border : solid 2px blue; color : #4765ff;';
+      luxuryRef.current.style = 'border : solid 2px #e9e9e9';
+    } else if (!selected.normal && !selected.luxury) {
+      luxuryRef.current.style = 'border : solid 2px #e9e9e9';
+      normalRef.current.style = 'border : solid 2px #e9e9e9';
+    } else {
+      normalRef.current.style = 'border :solid 2px #e9e9e9';
+      luxuryRef.current.style = 'border : solid 2px blue; color : #4765ff;';
+    }
+  }, [selected]);
+
   return (
     <InsuranceSection>
       <StyledTitle>보험 선택</StyledTitle>
 
       <SelectContainer>
-        <SelectBox htmlFor='normal'>
+        <SelectBox
+          htmlFor='normal'
+          ref={normalRef}
+          onClick={() => {
+            setSelected((state) => ({ ...state, normal: true, luxury: false }));
+          }}>
           <Text>일반자차</Text>
-          <Checkbox type='radio' id='normal' name='insurance' />
+          <Checkbox
+            onClick={() => {
+              setInsuranceFee(156000);
+            }}
+            type='radio'
+            id='normal'
+            name='insurance'
+          />
 
           <Check>
             <IconWrapper>
@@ -23,9 +52,21 @@ const Insurance = () => {
           </Text>
         </SelectBox>
 
-        <SelectBox htmlFor='prestige'>
+        <SelectBox
+          htmlFor='prestige'
+          ref={luxuryRef}
+          onClick={() =>
+            setSelected((state) => ({ ...state, normal: false, luxury: true }))
+          }>
           <Text>고급자차</Text>
-          <Checkbox type='radio' id='prestige' name='insurance' />
+          <Checkbox
+            onClick={() => {
+              setInsuranceFee(256000);
+            }}
+            type='radio'
+            id='prestige'
+            name='insurance'
+          />
 
           <Check>
             <IconWrapper>
@@ -46,28 +87,36 @@ const Insurance = () => {
         </Text>
         <TextWrapper>
           <div>
-            <Text>조건</Text>
+            <Text mint>조건</Text>
             <Text>만 21세 이상, 운전 경력 1년 이상</Text>
 
-            <Text mt='2.8rem'>포함보험</Text>
+            <Text mint mt='2.8rem'>
+              포함보험
+            </Text>
             <Text>차량사고 면책보험(CDW)</Text>
             <Text> - 자기부담금 50만원(사고시 1건당 면책금 청구)</Text>
             <Text>도난보험(TP)</Text>
             <Text>제 3자 책임보험</Text>
 
-            <Text mt='2.8rem'>취소규정</Text>
+            <Text mint mt='2.8rem'>
+              취소규정
+            </Text>
             <Text>픽업 최대 24시간 전까지 무료취소</Text>
           </div>
 
           <div>
-            <Text>한도</Text>
+            <Text mint>한도</Text>
             <Text>200만원</Text>
 
-            <Text mt='2.8rem'>포함서비스</Text>
+            <Text mint mt='2.8rem'>
+              포함서비스
+            </Text>
             <Text>운전자 2인까지 무료 등록</Text>
             <Text>무료 GPS</Text>
 
-            <Text mt='2.8rem'>주행거리규정</Text>
+            <Text mint mt='2.8rem'>
+              주행거리규정
+            </Text>
             <Text>주행거리 무제한</Text>
           </div>
         </TextWrapper>
@@ -90,15 +139,14 @@ const SelectContainer = styled.div`
 
 const SelectBox = styled.label`
   position: relative;
-  padding: 2.4rem 9.3rem 2.4rem 2.4rem;
+  padding: 2rem 9.3rem 2rem 2rem;
   white-space: nowrap;
   width: 23rem;
   height: 10.8rem;
   border-radius: 10px;
-  border: solid 2px #707070;
+  border: solid 2px #eee;
   font-weight: 500;
   font-size: 1.8rem;
-  background-color: antiquewhite;
   cursor: pointer;
 `;
 
@@ -106,13 +154,19 @@ const Text = styled.p`
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.33;
-  color: ${(props) => props.theme.grey1_color};
   margin-top: ${(props) => props.mt || 0};
+
+  ${(props) =>
+    props.mint &&
+    css`
+      color: #32d8b8;
+    `}
+
   ${(props) =>
     props.line &&
     css`
       padding-bottom: 2.4rem;
-      border-bottom: solid 1px #cbcbcb;
+      border-bottom: solid 1px #eee;
     `}
 
   ${(props) =>
@@ -143,7 +197,7 @@ const Check = styled.div`
   right: 1.4rem;
   width: 2.8rem;
   height: 2.8rem;
-  border: solid 3px #979797;
+  border: solid 1px #e9e9e9;
   border-radius: 18px;
 
   &::after {
@@ -155,12 +209,12 @@ const Check = styled.div`
     transform: scale(0);
   }
   input:checked + &::after {
-    background-color: #0186df;
-    transform: scale(1.1);
+    background-color: ${(props) => props.theme.main_color};
+    transform: scale(1);
   }
 
   input:checked + & div {
-    color: yellow;
+    color: #fff;
   }
 `;
 

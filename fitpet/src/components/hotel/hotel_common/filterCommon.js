@@ -96,6 +96,7 @@ export const UpButton = (props) => {
         backColor='#fff'
         border='none'
         borderRadius='0'
+        fontSize='1.9rem'
         color='black'
         handleClick={props.handleClick}
       />
@@ -114,6 +115,7 @@ export const DownButton = (props) => {
         border='none'
         backColor='#fff'
         borderRadius='0'
+        fontSize='1.9rem'
         color='black'
         handleClick={props.handleClick}
       />
@@ -181,13 +183,14 @@ export const ImgBox = styled.div`
   height: 22rem;
   border-radius: 18px;
   background-image: url(${(props) => props.IMG_URL});
-  background-size: cover;
+  background-color: #f9f9f9;
+  background-size: contain;
   background-repeat: no-repeat;
 `;
 
 export const LikeBtn = styled.div`
   position: absolute;
-  top: 1.4rem;
+  top: 1rem;
   right: 1.4rem;
   cursor: pointer;
   width: 4rem;

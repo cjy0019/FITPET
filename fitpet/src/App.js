@@ -47,7 +47,7 @@ function App() {
             />
             <Route component={RentCarPage} path='/rentcar/searchcars' />
             <Route component={RentalcarMainPage} path='/rentcar' />
-            <Route component={RentCarDetailPage} path='/rentcardetail' />
+            <Route component={RentCarDetailPage} path='/rentcardetail/:_id' />
             <Route component={DriverInfoPage} path='/driver' />
             <Route component={CourseMainPage} path='/course' />
             <Route component={NotFoundPage} />

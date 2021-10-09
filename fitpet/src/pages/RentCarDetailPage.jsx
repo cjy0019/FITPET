@@ -1,8 +1,8 @@
 import React from 'react';
-import RentCarDetail from '../components/rentalcar/rentcar_detail/RentCarDetail';
+import RentcarDetailInfoContainer from '../containers/RentcarDetailInfoContainer';
 
 const RentCarDetailPage = () => {
-  return <RentCarDetail />;
+  return <RentcarDetailInfoContainer />;
 };
 
 export default RentCarDetailPage;

@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import {
   Font,
@@ -6,15 +8,16 @@ import {
   SliderRightButton,
   WishSmall,
 } from '../../../common';
+import { filteringCarSagaStart } from '../../../redux/modules/filteringCar';
 
 const TOTAL_SLIDES = 1;
 
-const SliderRentalcar = () => {
+const SliderRentalcar = ({ cars }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const prevBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
-
+  const dispatch = useDispatch();
   // 6개 슬라이드 효과 주기 translateX(-51.5%)
   useEffect(() => {
     let slideValue = currentSlide * 5 * 10;
@@ -30,95 +33,40 @@ const SliderRentalcar = () => {
     slideRef.current.style.transform = `translateX(-${slideValue}0%)`;
   }, [currentSlide]);
 
+  useEffect(() => {
+    dispatch(filteringCarSagaStart());
+  }, [dispatch]);
+
   return (
     <ContentBox>
       <Block>
         <Content>
           <RentalcarWrapper ref={slideRef}>
-            <Rentalcar>
-              <WishSmall margin='0 4rem 0 0'></WishSmall>
-              <Font
-                color='#2A2A2A'
-                fontSize='1.8rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span>
-                  [경차] 레이
-                  <br />
-                  44,900
-                </span>
-                ~ 50,000
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <WishSmall margin='0 4rem 0 0'></WishSmall>
-              <Font
-                color='#2A2A2A'
-                fontSize='1.8rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span>
-                  [경차] 레이
-                  <br />
-                  44,900
-                </span>
-                ~ 50,000
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <WishSmall margin='0 4rem 0 0'></WishSmall>
-              <Font
-                color='#2A2A2A'
-                fontSize='1.8rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span>
-                  [경차] 레이
-                  <br />
-                  44,900
-                </span>
-                ~ 50,000
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <WishSmall margin='0 4rem 0 0'></WishSmall>
-              <Font
-                color='#2A2A2A'
-                fontSize='1.8rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span>
-                  [경차] 레이
-                  <br />
-                  44,900
-                </span>
-                ~ 50,000
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <WishSmall margin='0 4rem 0 0'></WishSmall>
-              <Font
-                color='#2A2A2A'
-                fontSize='1.8rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span>
-                  [경차] 레이
-                  <br />
-                  44,900
-                </span>
-                ~ 50,000
-              </Font>
-            </Rentalcar>
-            <Rentalcar>
-              <WishSmall></WishSmall>
-              <Font
-                color='#2A2A2A'
-                fontSize='1.8rem'
-                margin='1.4rem 0 3.8rem 2.3rem'>
-                <span>
-                  [경차] 레이
-                  <br />
-                  44,900
-                </span>
-                ~ 50,000
-              </Font>
-            </Rentalcar>
+            {cars ? (
+              cars.map((car) => {
+                return (
+                  <Rentalcar key={car._id}>
+                    <WishSmall
+                      picture={car.picture}
+                      margin='0 4rem 0 0'></WishSmall>
+                    <Font
+                      color='#2A2A2A'
+                      fontSize='1.8rem'
+                      margin='1.4rem 0 3.8rem 2.3rem'>
+                      <span>
+                        [{car.carType}]<br />
+                        {car.carName}
+                        <br />
+                        {car.minPrice.toLocaleString()}{' '}
+                      </span>
+                      ~ {car.maxPrice.toLocaleString()}
+                    </Font>
+                  </Rentalcar>
+                );
+              })
+            ) : (
+              <Rentalcar />
+            )}
           </RentalcarWrapper>
         </Content>
         {/* 슬라이드 버튼 */}

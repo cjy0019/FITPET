@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const IconBox = styled.div`
+export const IconBox = styled.img`
   width: 2.4rem;
   height: 2.4rem;
   margin-right: 0.6rem;
-  background-color: #979797;
+  cursor: pointer;
 `;
 
 export const StyledP = styled.p`
@@ -13,7 +13,7 @@ export const StyledP = styled.p`
   margin-bottom: ${(props) => props.mb};
   line-height: 1.71;
   letter-spacing: -0.28px;
-  color: ${(props) => props.theme.grey2_color};
+  color: ${(props) => props.theme.black1_color};
 `;
 
 export const FlexC = styled.div`
@@ -28,5 +28,5 @@ export const StyledTitle = styled.p`
   font-size: 2.4rem;
   font-weight: bold;
   line-height: 1;
-  color: ${(props) => props.theme.grey1_color};
+  color: ${(props) => props.theme.black1_color};
 `;

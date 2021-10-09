@@ -8,6 +8,9 @@ const MiddleBtn = (props) => {
 
 // 기본 : 다양한 숙소 둘러보기 버튼
 const buttonStyle = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 26px;
   color: ${(props) => props.theme.white_color};
@@ -23,6 +26,7 @@ const buttonStyle = css`
   /* 210904 by.jy 호버시 박스 쉐도우 스타일 적용 추가 */
   &:hover {
     box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
+    color: white;
   }
 
   // 코스 보러가기, 나만의 맞춤코스 짜기, 다른 사람들의 코스 구경하기 버튼

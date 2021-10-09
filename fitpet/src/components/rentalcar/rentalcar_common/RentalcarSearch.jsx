@@ -1,16 +1,25 @@
 import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
-import { Font, RoundSquareBtn, SampleIcon } from '../../../common';
+import { Font, RoundSquareBtn } from '../../../common';
 import SearchCarBox from './search_box/SearchCarBox';
 import SearchDateBox from './search_box/SearchDateBox';
 import SearchLocationBox from './search_box/SearchLocationBox';
 
-const RentalcarSearch = ({ isScroll }) => {
+const RentalcarSearch = () => {
+  // by.dy
+  // 다른 장소에서 반납 체크 시 반납 인풋 창 추가
+  const [checked, setChecked] = useState(false);
+  const checkHandler = () => {
+    setChecked(!checked);
+  };
+  console.log(checked);
+
   return (
     <>
       <SearchContainer>
         <div className='checkBox'>
-          <SampleIcon width='2.4rem' height='2.4rem' borderRadius='3px' />
+          <Checkbox type='checkbox' checked={checked} onChange={checkHandler} />
           <Font
             fontSize='1.4rem'
             fontWeight='normal'
@@ -21,10 +30,22 @@ const RentalcarSearch = ({ isScroll }) => {
           </Font>
         </div>
         <div className='inputBox'>
-          {/* 어디서 픽업하세요? */}
-          <SearchLocationBox className='location' />
-          {/* 어디서 반납하세요?*/}
-          <SearchLocationBox className='location' />
+          {checked ? (
+            <>
+              {/* 다른 장소에서 반납 체크 한 경우 */}
+              {/* 어디서 픽업하세요? */}
+              <SearchLocationBox width='21rem' />
+              {/* 어디서 반납하세요?*/}
+              <SearchLocationBox width='21rem' />
+            </>
+          ) : (
+            <>
+              {/* 다른 장소에서 반납 체크 안 한 경우 */}
+              {/* 어디서 픽업하세요? */}
+              <SearchLocationBox width='42.9rem' />
+            </>
+          )}
+
           {/* 8월 6일 (금) - 8월 7일(토) | 1박' */}
           <SearchDateBox />
           {/* 차종 */}
@@ -40,7 +61,7 @@ const RentalcarSearch = ({ isScroll }) => {
             margin='auto 0'>
             운전자 연령
           </Font>
-          <SampleIcon width='2.4rem' height='2.4rem' borderRadius='3px' />
+          <IconImg src='/img/icon/infoicon.svg' />
           <Font
             fontSize='1.4rem'
             fontWeight='normal'
@@ -50,7 +71,7 @@ const RentalcarSearch = ({ isScroll }) => {
             margin='auto 0'>
             : 25~ 65세
           </Font>
-          <SampleIcon width='2.4rem' height='2.4rem' borderRadius='3px' />
+          <IconImg src='/img/search_box/bottomArrow.png' />
         </div>
       </SearchContainer>
     </>
@@ -80,6 +101,17 @@ const SearchContainer = styled.div`
     margin-top: 1.4rem;
     text-align: center;
   }
+`;
+
+const Checkbox = styled.input`
+  width: 2.4rem;
+  height: 2.4rem;
+`;
+const IconImg = styled.img`
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  margin-right: 0.4rem;
 `;
 
 // const SearchLocationBox = styled.input`

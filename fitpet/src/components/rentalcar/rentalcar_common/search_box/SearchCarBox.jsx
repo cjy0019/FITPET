@@ -14,14 +14,22 @@ const SearchCarBox = () => {
   return (
     <>
       <MenuContainer>
-        <SearchPeopleWrapper onClick={onClick}>
+        <SearchCarWrapper onClick={onClick}>
           <img
             className='buttonImg'
-            src='/img/search_box/people.png'
+            src='/img/search_box/car.png'
             alt='location'
           />
           <span className='buttonText'>차종</span>
-        </SearchPeopleWrapper>
+          <button>
+            <img
+              width='20px'
+              height='20px'
+              src='/img/search_box/carArrow.png'
+              alt='location'
+            />
+          </button>
+        </SearchCarWrapper>
         <nav
           ref={dropdownRef}
           className={`menu ${isPeople ? 'active' : 'inactive'}`}>
@@ -170,7 +178,7 @@ const ButtonBlock = styled.div`
     margin: 0 1.5rem;
   }
 `;
-const SearchPeopleWrapper = styled.button`
+const SearchCarWrapper = styled.button`
   display: flex;
   width: 14.3rem;
   height: 4.8rem;
@@ -192,6 +200,10 @@ const SearchPeopleWrapper = styled.button`
     color: ${(props) => props.theme.black1_color};
     margin-left: 1.2rem;
     font-size: 1.6rem;
+  }
+  button {
+    margin-left: auto;
+    border-radius: 20px;
   }
 `;
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Receit = () => {
+const Receit = ({ rentcarDetail, insuranceFee }) => {
   return (
     <Container>
-      <Title>THE NEW 아반떼 AD</Title>
+      <Title>{rentcarDetail.rentcarDetail.carName}</Title>
 
       <SubTitle>인수 및 반납 시간</SubTitle>
       <Content border>8월 6일 (금) 10:00 - 8월 7일 (토) 10:00</Content>
@@ -16,8 +16,8 @@ const Receit = () => {
         <Content>116,000원</Content>
       </FlexC>
       <FlexC>
-        <Content>일반 자차 보험</Content>
-        <Content>40,000원</Content>
+        <Content>보험료</Content>
+        <Content>{insuranceFee.toLocaleString()}원</Content>
       </FlexC>
       <FlexC>
         <Content>인수</Content>
@@ -44,11 +44,11 @@ const Receit = () => {
 
 const Container = styled.div`
   position: sticky;
-  top: 5%;
+  top: 13%;
   min-width: 39.8rem;
   height: 57.3rem;
   padding: 4.2rem 3.55rem 4.2rem 3.6rem;
-  background-color: #cbcbcb;
+  background-color: #f9f9f9;
 
   color: ${(props) => props.theme.grey1_color};
 `;
@@ -61,6 +61,7 @@ const Title = styled.p`
   text-align: left;
   padding-bottom: 1.3rem;
   border-bottom: solid 0.5px #979797;
+  color: ${(props) => props.theme.black1_color};
 `;
 
 const SubTitle = styled.p`
@@ -71,6 +72,7 @@ const SubTitle = styled.p`
   letter-spacing: -0.28px;
   margin-top: 2.8rem;
   text-align: left;
+  color: ${(props) => props.theme.black1_color};
 `;
 
 const Content = styled.p`
@@ -80,6 +82,7 @@ const Content = styled.p`
   line-height: 1.17;
   letter-spacing: -0.36px;
   margin-top: 0.6rem;
+  color: ${(props) => props.theme.black1_color};
 
   ${(props) =>
     props.border &&
@@ -102,6 +105,7 @@ const Price = styled.p`
   letter-spacing: -0.56px;
   text-align: left;
   margin-top: 1.3rem;
+  color: ${(props) => props.theme.main_color};
 
   span {
     font-size: 1.8rem;
@@ -128,6 +132,7 @@ const PickUpButton = styled.button`
   border: none;
   outline: none;
   color: #ffffff;
+  background-color: ${(props) => props.theme.main_color};
 `;
 
 export default Receit;
