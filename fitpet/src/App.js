@@ -20,6 +20,7 @@ import create from './redux/create';
 import { ConnectedRouter } from 'connected-react-router';
 import CourseMapPage from './pages/CourseMapPage';
 import CourseMainPage from './pages/CourseMainPage';
+import AdminCreatePage from './pages/AdminCreatePage';
 
 const history = createBrowserHistory();
 
@@ -50,8 +51,8 @@ function App() {
             <Route component={RentCarDetailPage} path='/rentcardetail/:_id' />
             <Route component={DriverInfoPage} path='/driver' />
             <Route component={CourseMainPage} path='/course' />
+            <Route component={AdminCreatePage} path='/admin/create' />
             <Route component={NotFoundPage} />
-            <Route component={NotFoundPage} path='/admin/create' />
           </Switch>
         </ConnectedRouter>
         <GlobalStyles />
