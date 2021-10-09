@@ -18,7 +18,9 @@ const SearchDateBox = () => {
             src='/img/search_box/date.png'
             alt='location'
           />
-          <span className='buttonText'>8월 6일 (금) - 8월 7일(토) | 1박</span>
+          <span className='buttonText'>
+            8월 6일 (금) 10:00 - 8월 7일(토) 10:00
+          </span>
         </SearchDateWrapper>
 
         <nav
