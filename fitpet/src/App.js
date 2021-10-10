@@ -21,6 +21,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import CourseMapPage from './pages/CourseMapPage';
 import CourseMainPage from './pages/CourseMainPage';
 import AdminCreatePage from './pages/AdminCreatePage';
+import AdminHotelListPage from './pages/AdminHotelListPage';
 
 const history = createBrowserHistory();
 
@@ -33,6 +34,7 @@ function App() {
         <ConnectedRouter history={history}>
           <Switch>
             <Route component={MainPage} exact path='/' />
+            <Route component={AdminHotelListPage} path='/admin/hotellist' />
             <Route component={CommonPage} path='/common' />
             <Route component={CourseMapPage} path='/course/mymap' />
             <Route component={ReservationPage} path='/hotel/reservation' />
