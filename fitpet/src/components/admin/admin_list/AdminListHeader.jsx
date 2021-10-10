@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import AdminListButton from './AdminListButton';
 
-const AdminListHeader = () => {
+const AdminListHeader = ({ rooms }) => {
   return (
     <StyledHeader>
-      <h2>숙소리스트</h2>
-      <AdminListButton register>숙소등록</AdminListButton>
+      {rooms ? <h2>객실 리스트</h2> : <h2>숙소 리스트</h2>}
+      {!rooms && <AdminListButton register>숙소등록</AdminListButton>}
     </StyledHeader>
   );
 };

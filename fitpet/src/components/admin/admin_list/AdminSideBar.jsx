@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const SideBar = styled.div`
   width: 23rem;
-  padding-top: 1.2rem;
   height: 25rem;
   position: sticky;
   top: 10rem;

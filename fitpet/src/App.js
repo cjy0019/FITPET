@@ -22,6 +22,7 @@ import CourseMapPage from './pages/CourseMapPage';
 import CourseMainPage from './pages/CourseMainPage';
 import AdminCreatePage from './pages/AdminCreatePage';
 import AdminHotelListPage from './pages/AdminHotelListPage';
+import AdminRoomListPage from './pages/AdminRoomListPage';
 
 const history = createBrowserHistory();
 
@@ -35,6 +36,7 @@ function App() {
           <Switch>
             <Route component={MainPage} exact path='/' />
             <Route component={AdminHotelListPage} path='/admin/hotellist' />
+            <Route component={AdminRoomListPage} path='/admin/rooms' />
             <Route component={CommonPage} path='/common' />
             <Route component={CourseMapPage} path='/course/mymap' />
             <Route component={ReservationPage} path='/hotel/reservation' />
