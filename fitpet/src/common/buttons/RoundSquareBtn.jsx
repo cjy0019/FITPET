@@ -61,6 +61,15 @@ const buttonStyle = css`
       font-size: 2rem;
       line-height: 1.2;
     `}
+
+  // 211009 by.dy 
+  // 관리자 페이지 미리보기 버튼 (민트 색상)
+  ${(props) =>
+    props.mint_color &&
+    css`
+      background-color: ${(props) => props.theme.sub_color};
+      color: ${(props) => props.theme.white_color};
+    `}
 `;
 
 const StyledButton = styled.button`
