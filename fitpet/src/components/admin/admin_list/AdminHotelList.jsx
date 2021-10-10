@@ -30,7 +30,7 @@ const AdminHotelList = () => {
   );
 };
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 128.2rem;
   gap: 6.6rem;
   padding-top: 120px;
