@@ -14,10 +14,10 @@ const MainPage = () => {
       <MainWrapper>
         <HeaderContainer />
         <Banner />
-        <Sliders />
-        <Course />
-        <Rentalcars />
-        <Community />
+        {/* <Sliders /> */}
+        {/* <Course /> */}
+        {/* <Rentalcars /> */}
+        {/* <Community /> */}
         <GoUpBtn />
       </MainWrapper>
       <Footer />

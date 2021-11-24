@@ -3,7 +3,6 @@ import FilteringCarService from '../../services/FilteringCarService';
 
 // namespace
 const namespace = 'fitpet/filteringCar';
-
 // action types
 const START = namespace + '/START';
 const NEW_CAR = namespace + '/NEW_CAR';
@@ -15,7 +14,6 @@ const SMALLCAR = namespace + '/SMALLCAR';
 const MIDDLECAR = namespace + '/MIDDLECAR';
 const MIDDLE_BIG_CAR = namespace + '/MIDDLE_BIG_CAR';
 const VEHICLE = namespace + '/VEHICLE';
-
 const SUCCESS = namespace + '/SUCCESS';
 const FAIL = namespace + '/FAIL';
 

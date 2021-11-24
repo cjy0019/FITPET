@@ -34,6 +34,9 @@ const HeaderNav = () => {
         <MenuLi>
           <NavLink to='community'>커뮤니티</NavLink>
         </MenuLi>
+        <MenuLi>
+          <NavLink to='/admin/hotellist'>어드민</NavLink>
+        </MenuLi>
       </ListWrapper>
     </StyledNav>
   );
