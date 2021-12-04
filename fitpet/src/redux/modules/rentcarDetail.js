@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from '@redux-saga/core/effects';
-import RentcarDetailService from '../../services/RentcarDetailService';
+import RentcarDetailService from '../../api/services/RentcarDetailService';
 
 const namespace = 'fitpet/rencarDetail';
 

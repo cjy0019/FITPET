@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from '@redux-saga/core/effects';
 import { delay } from 'redux-saga/effects';
-import HotelService from '../../services/HotelService';
+import HotelService from '../../api/services/HotelService';
 
 // namespace
 const namespace = 'fitpet/hotelList';

@@ -1,4 +1,4 @@
-import RentcarService from '../../services/RentcarService';
+import RentcarService from '../../api/services/RentcarService';
 import { sleep } from '../../utils';
 
 // namespace

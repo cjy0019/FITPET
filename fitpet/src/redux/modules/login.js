@@ -1,5 +1,5 @@
 import { call, delay, put, takeEvery } from 'redux-saga/effects';
-import AuthService from '../../services/AuthService';
+import AuthService from '../../api/services/AuthService';
 import { closeLogin, openLoginFail } from './modal';
 
 // namespace
