@@ -28,7 +28,7 @@ const HotelList = ({ hotels, isLoading }) => {
 
             {/* 210903 by.jy 
             로딩 스피너 제거 & 스켈레톤 UI 적용 */}
-            {isLoading &&
+            {/* {isLoading &&
               list.map((v, i) => {
                 return (
                   <div
@@ -41,19 +41,20 @@ const HotelList = ({ hotels, isLoading }) => {
                     <Skeleton active={true} avatar paragraph={{ rows: 4 }} />
                   </div>
                 );
-              })}
+              })} */}
 
-            {hotels.map((hotel, i) => {
-              return (
-                <React.Fragment key={i}>
-                  <HotelInfo
-                    isLoading={isLoading}
-                    key={hotel.id}
-                    hotel={hotel}
-                  />
-                </React.Fragment>
-              );
-            })}
+            {hotels.length > 0 &&
+              hotels.map((hotel, i) => {
+                return (
+                  <React.Fragment key={i}>
+                    <HotelInfo
+                      isLoading={isLoading}
+                      key={hotel.id}
+                      hotel={hotel}
+                    />
+                  </React.Fragment>
+                );
+              })}
             <Pagenations>
               <Link to='/'>
                 <img
